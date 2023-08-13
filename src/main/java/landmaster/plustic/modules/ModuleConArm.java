@@ -83,7 +83,7 @@ public class ModuleConArm implements IModule {
 
 	@Override
 	public void init2() {
-		if (Config.jetpackConarmModifier && Loader.isModLoaded("simplyjetpacks")) {
+		if (Config.jetpackConarmModifier && Loader.isModLoaded("simplyjetpacks") && Loader.isModLoaded("conarm")) {
 			SJ.init();
 		}
 	}

@@ -28,7 +28,7 @@ plugins {
 
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "8.0.5"
+version = "8.0.6"
 group= "landmaster.plustic" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "plustic"
 
