@@ -8,8 +8,6 @@ CurseForge page: https://www.curseforge.com/minecraft/mc-mods/plusticminusbad
 ## A note about Natural Pledge
 Starting in 5.1.2.0, PlusTiC forces out and *overrides* Natural Pledge TiC materials by default. This can be changed in the config so that PlusTiC does *not* add Botania materials if Natural Pledge is loaded.
 ## Supported mods
-- LandCore (by this mod's author)
-- LandCraft (also by this mod's author)
 - Biomes o Plenty by Glitchfiend
 - Project Red by MrTJP
 - Mekanism by aidencbrady

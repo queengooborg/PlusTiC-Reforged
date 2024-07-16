@@ -118,8 +118,6 @@ public class PlusTiC {
 				new ModuleActAdd(),
 				new ModulePsi(),
 				new ModuleAvaritia(),
-				new ModuleLandCraft(),
-				new ModuleLandCore(),
 				new ModuleGalacticraft(),
 				new ModuleSurvivalist(),
 				new ModuleProjectE(),
