@@ -16,7 +16,7 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and
 
 ## Supported Mods
 
-- [Biomes o Plenty](https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty)
+- [Biomes o' Plenty](https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty)
 - [Project Red](https://www.curseforge.com/minecraft/mc-mods/project-red-core)
 - [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism)
 - [Botania](https://www.curseforge.com/minecraft/mc-mods/botania)
@@ -28,8 +28,8 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and
 - [Natura](https://www.curseforge.com/minecraft/mc-mods/natura)
 - [Psi](https://www.curseforge.com/minecraft/mc-mods/psi)
 - [Avaritia](https://www.curseforge.com/minecraft/mc-mods/avaritia-1-10)
-- [MineFactory Reloaded](https://www.curseforge.com/minecraft/mc-mods/minefactory-reloaded) / [Industrial Foregoing](https://legacy.curseforge.com/minecraft/mc-mods/industrial-foregoing)
-- [Galacticraft](https://micdoodle8.com/mods/galacticraft/)
+- [Industrial Foregoing](https://www.curseforge.com/minecraft/mc-mods/industrial-foregoing) / [MineFactory Reloaded](https://www.curseforge.com/minecraft/mc-mods/minefactory-reloaded)
+- [Galacticraft Legacy](https://www.curseforge.com/minecraft/mc-mods/galacticraft-legacy)
 - [Survivalist](https://www.curseforge.com/minecraft/mc-mods/survivalist)
 - [ProjectE](https://www.curseforge.com/minecraft/mc-mods/projecte)
 - [GemsPlusPlus](https://www.curseforge.com/minecraft/mc-mods/gemsplusplus)
