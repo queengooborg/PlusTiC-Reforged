@@ -37,6 +37,7 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and
 - [Environmental Tech](https://www.curseforge.com/minecraft/mc-mods/environmental-tech)
 - [Thaumcraft](https://www.curseforge.com/minecraft/mc-mods/thaumcraft)
 - [Simply Jetpacks 2](https://www.curseforge.com/minecraft/mc-mods/simply-jetpacks-2)
+- [Advent of Ascension (Nevermine)](https://www.curseforge.com/minecraft/mc-mods/advent-of-ascension-nevermine)
 
 ### A note about Natural Pledge
 
