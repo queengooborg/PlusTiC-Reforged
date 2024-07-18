@@ -220,3 +220,16 @@ jar {
     }
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
+
+task deobfJar(type: Jar) { // Generate deobfuscated
+    from sourceSets.main.output
+    classifier = 'deobf'
+}
+
+tasks.build.dependsOn('deobfJar')
+
+artifacts {
+    archives deobfJar
+    archives sourceJar
+    archives jar
+}
