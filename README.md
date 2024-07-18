@@ -16,6 +16,8 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and
 
 ## Supported Mods
 
+### Materials
+
 - [Biomes o' Plenty](https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty)
 - [Project Red](https://www.curseforge.com/minecraft/mc-mods/project-red-core)
 - [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism)
@@ -38,6 +40,12 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and
 - [Thaumcraft](https://www.curseforge.com/minecraft/mc-mods/thaumcraft)
 - [Simply Jetpacks 2](https://www.curseforge.com/minecraft/mc-mods/simply-jetpacks-2)
 - [Advent of Ascension (Nevermine)](https://www.curseforge.com/minecraft/mc-mods/advent-of-ascension-nevermine)
+
+### Utility
+
+- [Construct's Armory](https://www.curseforge.com/minecraft/mc-mods/constructs-armory)
+- [Just Enough Items](https://www.curseforge.com/minecraft/mc-mods/jei)
+- [HWYLA](https://www.curseforge.com/minecraft/mc-mods/hwyla)
 
 ### A note about Natural Pledge
 
