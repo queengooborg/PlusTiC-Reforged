@@ -33,15 +33,22 @@ group= "queengooborg.plustic" // http://maven.apache.org/guides/mini/guide-namin
 archivesBaseName = "plustic"
 
 repositories {
-//    maven {
-//        url "https://maven.mcmoddev.com"
-//    }
-//    maven {
-//        url "https://maven.blamejared.com"
-//    }
+    maven {
+        url 'https://www.cursemaven.com'
+        // Enable for ForgeGradle 4+
+//         content {
+//             includeGroup "curse.maven"
+//         }
+    }
+    maven {
+        url "https://maven.blamejared.com"
+    }
     maven {
         url "https://dvs1.progwml6.com/files/maven"
     }
+//    maven {
+//        url "https://maven.mcmoddev.com"
+//    }
 //    maven {
 //        url "https://maven.covers1624.net"
 //    }
@@ -57,13 +64,6 @@ repositories {
 //    maven {
 //        url "https://maven.hellfiredev.net"
 //    }
-    maven {
-        url 'https://www.cursemaven.com'
-        // Enable for ForgeGradle 4+
-//         content {
-//             includeGroup "curse.maven"
-//         }
-    }
 }
 
 sourceCompatibility = targetCompatibility = "1.8" // Need this here so eclipse task generates correctly.
