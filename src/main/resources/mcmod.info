@@ -2,13 +2,13 @@
 {
   "modid": "plustic",
   "name": "PlusTiC Reforged",
-  "description": "Add new tools to and integrate various mods with Tinker's Construct",
+  "description": "Add new tools to and integrate various mods with Tinker's Construct.\n\nSupported Mods: https://github.com/queengooborg/PlusTiC-Reforged/blob/main/README.md#supported-mods",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "https://minecraft.curseforge.com/projects/plustic-reforged",
   "updateUrl": "https://minecraft.curseforge.com/projects/plustic-reforged/files",
   "authorList": ["queengooborg"],
-  "credits": "Originally developed by Landmaster, TeamDman. See https://github.com/queengooborg/PlusTiC-Reforged/blob/main/README.md#developerscredits for all contributors",
+  "credits": "Originally developed by Landmaster, TeamDman and various GitHub contributors",
   "logoFile": "assets/mcfmt/logo.png",
   "screenshots": [],
   "dependencies": []
