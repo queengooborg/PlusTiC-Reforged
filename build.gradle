@@ -94,7 +94,6 @@ dependencies {
     deobfCompile 'slimeknights:TConstruct:1.12.2-2.13.0.190'
     deobfCompile 'slimeknights.mantle:Mantle:1.12-1.3.3.56'
 
-    runtime 'curse.maven:shadowfacts-forgelin-248453:2785465'
     runtime 'curse.maven:autoreglib-250363:2746011'
 
     // Deobfuscating causes "Duplicate file: META-INF/crafttweaker_at.cfg"
@@ -109,7 +108,6 @@ dependencies {
     deobfCompile 'curse.maven:redstone-flux-270789:2920436'
     deobfCompile 'curse.maven:psi-241665:3085917' // 'vazkii.psi:Psi:1.19-101.530'
     deobfCompile 'curse.maven:tesla-244651:2487959-sources-2487960-deobf-2487962' // 'net.darkhax.tesla:Tesla-1.12.2:1.0.63'
-    deobfCompile 'curse.maven:tesla-core-lib-254602:3438487-deobf-3438489-sources-3438488'
     deobfCompile 'curse.maven:advent-of-ascension-nevermine-311054:2714823' // 'curse.maven:advent-of-ascension-nevermine-311054:3054253'
     deobfCompile 'curse.maven:botania-225643:3330934' // 'vazkii.botania:Botania:1.20.1-445-FORGE'
     deobfCompile 'curse.maven:actually-additions-228404:3117927'
@@ -118,6 +116,9 @@ dependencies {
     deobfCompile 'curse.maven:industrial-foregoing-266515:2745321-sources-2745322-api-2745323-deobf-2745324' // 'com.buuz135:industrial-foregoing:1.20.1-3.5.19'
     deobfCompile 'curse.maven:natura-74120:2711439'// 'com.progwml6.natura:Natura-1.12:1.12-4.3.0.8' // 'com.progwml6.natura:natura:1.18.2-5.0.3'
     deobfCompile 'curse.maven:jei-238222:5101347' // 'mezz.jei:jei_1.12.2:4.16.1.1012' // 'mezz.jei:jei-1.20.1-common-api:15.8.0.11'
+
+    runtime 'curse.maven:shadowfacts-forgelin-248453:2785465'
+    runtime 'curse.maven:tesla-core-lib-254602:3438487-deobf-3438489-sources-3438488'
 
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
