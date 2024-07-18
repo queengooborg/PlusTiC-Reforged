@@ -64,6 +64,9 @@ repositories {
 //    maven {
 //        url "https://maven.hellfiredev.net"
 //    }
+//    maven {
+//        url "https://maven.firstdarkdev.xyz/releases/"
+//    }
 }
 
 sourceCompatibility = targetCompatibility = "1.8" // Need this here so eclipse task generates correctly.
@@ -91,23 +94,31 @@ dependencies {
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"
     //compile "some.group:artifact:version"
+
+    // Tinkers' Construct
     deobfCompile 'slimeknights:TConstruct:1.12.2-2.13.0.190'
     deobfCompile 'slimeknights.mantle:Mantle:1.12-1.3.3.56'
 
+    // Dependencies for mods required for compilation
+    runtime 'curse.maven:shadowfacts-forgelin-248453:2785465'
     runtime 'curse.maven:autoreglib-250363:2746011'
+    runtime 'curse.maven:tesla-core-lib-254602:3438487-deobf-3438489-sources-3438488'
 
-    // Deobfuscating causes "Duplicate file: META-INF/crafttweaker_at.cfg"
-    compile 'curse.maven:crafttweaker-239197:3040575' // 'CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.700'
+    // Mods required for compilation
+
+    // Deobfuscating causes "Duplicate file: META-INF/crafttweaker_at.cfg" error
+    compile 'curse.maven:crafttweaker-239197:5486112' // 'CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.700'
+
+    deobfCompile 'curse.maven:mtlib-253211:3308160'
+    deobfCompile 'curse.maven:tesla-244651:2487959-sources-2487960-deobf-2487962' // 'net.darkhax.tesla:Tesla-1.12.2:1.0.63'
+    deobfCompile 'curse.maven:redstone-flux-270789:2920436'
 
     deobfCompile 'curse.maven:modtweaker-220954:3840577'
-    deobfCompile 'curse.maven:mtlib-253211:3308160'
     deobfCompile 'curse.maven:baubles-227083:2518667'
     deobfCompile 'curse.maven:constructs-armory-287683:2962662-sources-2962663' // curse.maven:constructs-armory-287683:3174535-sources-3174536
     deobfCompile 'curse.maven:simply-jetpacks-2-251792:3294422'
     deobfCompile 'curse.maven:applied-energistics-2-223794:2747063' // 'appeng:appliedenergistics2-forge:15.2.8'
-    deobfCompile 'curse.maven:redstone-flux-270789:2920436'
     deobfCompile 'curse.maven:psi-241665:3085917' // 'vazkii.psi:Psi:1.19-101.530'
-    deobfCompile 'curse.maven:tesla-244651:2487959-sources-2487960-deobf-2487962' // 'net.darkhax.tesla:Tesla-1.12.2:1.0.63'
     deobfCompile 'curse.maven:advent-of-ascension-nevermine-311054:2714823' // 'curse.maven:advent-of-ascension-nevermine-311054:3054253'
     deobfCompile 'curse.maven:botania-225643:3330934' // 'vazkii.botania:Botania:1.20.1-445-FORGE'
     deobfCompile 'curse.maven:actually-additions-228404:3117927'
@@ -117,8 +128,38 @@ dependencies {
     deobfCompile 'curse.maven:natura-74120:2711439'// 'com.progwml6.natura:Natura-1.12:1.12-4.3.0.8' // 'com.progwml6.natura:natura:1.18.2-5.0.3'
     deobfCompile 'curse.maven:jei-238222:5101347' // 'mezz.jei:jei_1.12.2:4.16.1.1012' // 'mezz.jei:jei-1.20.1-common-api:15.8.0.11'
 
-    runtime 'curse.maven:shadowfacts-forgelin-248453:2785465'
-    runtime 'curse.maven:tesla-core-lib-254602:3438487-deobf-3438489-sources-3438488'
+    // Libs for optional mods
+    runtime 'curse.maven:codechicken-lib-242818:2779848-deobf-2779849' // 'codechicken:CodeChickenLib:1.12.2-3.2.3.358' // 'codechicken:CodeChickenLib:1.16.5-4.0.1.426'
+//    runtime 'curse.maven:cb-multipart-258426:2755790-deobf-2755791' // 'codechicken:ForgeMultipart:1.12.2-2.6.2.83'
+    runtime 'curse.maven:mrtjpcore-229002:2735197' // 'mrtjp:MrTJPCore:1.12.2-2.1.4.43'
+    runtime 'curse.maven:libvulpes-236541:3801015-deobf-3801016'
+    runtime 'curse.maven:thedragonlib-248055:2580332'
+    runtime 'curse.maven:cofh-core-69162:2920433'
+    runtime 'curse.maven:cofh-world-271384:2920434'
+    runtime 'curse.maven:brandons-core-231382:3408276'
+    runtime 'curse.maven:valkyrielib-245480:2691542'
+
+    // Optional mods
+    runtime 'curse.maven:thaumcraft-223628:2629023' // 'com.azanor:Thaumcraft:1.12.2-6.1.BETA26'
+//    runtime 'curse.maven:project-red-core-228702:2745545' // 'mrtjp:ProjectRed:1.12.2-4.9.4.120'
+    runtime 'curse.maven:mekanism-268560:2835175-api-2835176' // 'mekanism:Mekanism:1.21-10.6.3.49'
+    runtime 'curse.maven:advanced-rocketry-236542:4671856'
+//    runtime 'curse.maven:armorplus-237366:2952741'
+    runtime 'curse.maven:thermal-foundation-222880:2926428'
+    runtime 'curse.maven:draconic-evolution-223565:3431261'
+    runtime 'curse.maven:avaritia-1-10-261348:3143349'
+    runtime 'curse.maven:survivalist-242289:2625075'
+//    runtime 'curse.maven:projecte-226410:2702991'
+    runtime 'curse.maven:gemsplusplus-310914:3029335-sources-3029336'
+    runtime 'curse.maven:environmental-tech-245453:2691536'
+
+    // XXX Requires for 14.23.5.2847+
+//    runtime 'curse.maven:galacticraft-legacy-564236:4671122'
+
+    // XXX Requires Forge 14.23.5.2858+
+//    runtime 'curse.maven:biomes-o-plenty-220318:3558882'
+
+//    Environmental Tech
 
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
