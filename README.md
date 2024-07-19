@@ -87,7 +87,13 @@ Contrary to what many may think, the name "Reforged" wasn't inspired by the NeoF
 
 ### Will you port this mod to Fabric or Quilt?
 
-Tinkers' Construct itself doesn't support Fabric or Quilt, so...definitely not.
+Tinkers' Construct itself doesn't support Fabric/Quilt, so...definitely not.
+
+If Tinker's Construct _did_ introduce support for Fabric/Quilt, however, I probably still wouldn't implement support.  It's not because I dislike those modloaders, but rather that this is 100% a hobby project, and I just don't have the time to learn a completely new modloader.
+
+### For versions of Minecraft that NeoForge is available, will you port it to the original Forge too?
+
+I don't particlarly plan to support the original Forge from Minecraft 1.20.2 and up, which are the versions that NeoForge is available for.  While it should "just work" as they share similar codebases (at least at first), my time to work on this is limited.
 
 ### Are you going to add code that blocks a specific player's UUID from joining servers?
 
