@@ -147,14 +147,10 @@ dependencies {
 //    runtime 'curse.maven:projecte-226410:2702991'
     runtime 'curse.maven:gemsplusplus-310914:3029335-sources-3029336'
     runtime 'curse.maven:environmental-tech-245453:2691536'
-
-    // XXX Requires for 14.23.5.2847+
 //    runtime 'curse.maven:galacticraft-legacy-564236:4671122'
 
     // XXX Requires Forge 14.23.5.2858+
 //    runtime 'curse.maven:biomes-o-plenty-220318:3558882'
-
-//    Environmental Tech
 
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
