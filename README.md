@@ -2,9 +2,6 @@
 
 Remember the classic [PlusTiC mod](https://www.curseforge.com/minecraft/mc-mods/plusticminusbad) for 1.12.2?  Ever wanted to see an update for modern Minecraft versions?  Well, look no further, because PlusTiC Reforged is here!
 
-> [!NOTE]
-> This version is still in early development, and is not ready for testing.  Please check back later.
-
 ## About
 
 PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various other mods, adding support for new material types that the mods introduce, such as Steel, Osmium, Refined Obsidian, Dark Matter and more.  PlusTiC Reforged is a continuation off of the original PlusTiC mod, ported for newer versions of Minecraft.
