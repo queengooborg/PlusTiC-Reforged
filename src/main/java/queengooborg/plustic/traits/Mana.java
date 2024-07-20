@@ -1,7 +1,5 @@
 package queengooborg.plustic.traits;
 
-import baubles.api.*;
-import baubles.api.cap.*;
 import queengooborg.plustic.api.*;
 
 import net.minecraft.entity.*;
@@ -56,13 +54,6 @@ public class Mana extends AbstractTrait {
 		IItemHandler handler = ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
 		for (int i=0; i<handler.getSlots(); ++i) {
 			if (ManaItemHandler.requestManaExactForTool(handler.getStackInSlot(i), ent, MANA_DRAW, true)) {
-				return true;
-			}
-		}
-		
-		IBaublesItemHandler ib = BaublesApi.getBaublesHandler(ent);
-		for (int i=0; i<ib.getSlots(); ++i) {
-			if (ManaItemHandler.requestManaExactForTool(ib.getStackInSlot(i), ent, MANA_DRAW, true)) {
 				return true;
 			}
 		}
