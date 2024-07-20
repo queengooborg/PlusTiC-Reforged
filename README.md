@@ -53,23 +53,6 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 
 Starting in 5.1.2.0, PlusTiC forces out and *overrides* Natural Pledge TiC materials by default. This can be changed in the config so that PlusTiC does *not* add Botania materials if Natural Pledge is loaded.
 
-## Building from Source
-
-After cloning this repository, run the command (with working directory in the folder with the repository)
-```
-./gradlew setupDecompWorkspace
-```
-
-If you're using Eclipse, run `./gradlew eclipse` to generate IDE files for Eclipse.
-
-If you're using IntelliJ IDEA, open the project folder in IDEA or run `./gradlew idea` to generate IDE files.
-
-Build with
-```
-./gradlew clean
-./gradlew build
-```
-
 ## Frequently Asked Questions (FAQ)
 
 ### What happened to the original PlusTiC mod?
@@ -100,11 +83,33 @@ I don't particlarly plan to support the original Forge from Minecraft 1.20.2 and
 
 Of course not, that would be silly and stupid!
 
+## Contributing
+
+### Building from Source
+
+After cloning this repository, run the command (with working directory in the folder with the repository)
+```
+./gradlew setupDecompWorkspace
+```
+
+If you're using Eclipse, run `./gradlew eclipse` to generate IDE files for Eclipse.
+
+If you're using IntelliJ IDEA, open the project folder in IDEA or run `./gradlew idea` to generate IDE files.
+
+Build with
+```
+./gradlew clean
+./gradlew build
+```
+
+### Localizations
+
+If you are interested in localizing this mod for your language, I would love to include the localizations!  Simply submit a pull request to the GitHub repository adding the new language file with all of the localizations, and I will happily add it in!
+
 ## Developers/Credits
+
 PlusTiC Reforged maintained by @queengooborg and [various contributors on GitHub](https://github.com/queengooborg/PlusTiC-Reforged/graphs/contributors)
 
 Original PlusTiC developed by @Landmaster, then maintained by @TeamDman
 
-Chinese Translations: @DYColdWind
-
-New Weapon Textures: @Tenebris11
+Katana and Laser Gun Textures: @Tenebris11
