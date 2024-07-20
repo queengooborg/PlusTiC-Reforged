@@ -51,7 +51,7 @@ Between 5.1.2 and 9.x, PlusTiC forces out and *overrides* Natural Pledge TiC mat
 ### Utility
 
 - [Just Enough Items](https://www.curseforge.com/minecraft/mc-mods/jei)
-- [HWYLA](https://www.curseforge.com/minecraft/mc-mods/hwyla)
+- [HWYLA](https://www.curseforge.com/minecraft/mc-mods/hwyla) / [Jade](https://www.curseforge.com/minecraft/mc-mods/jade)
 - [CraftTweaker](https://www.curseforge.com/minecraft/mc-mods/crafttweaker)
 - [Tesla](https://www.curseforge.com/minecraft/mc-mods/tesla)
 - [Tesla Core Lib](https://www.curseforge.com/minecraft/mc-mods/tesla-core-lib)
