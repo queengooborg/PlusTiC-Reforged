@@ -5,11 +5,11 @@ import net.minecraft.entity.player.*;
 import net.minecraft.item.*;
 import slimeknights.tconstruct.library.traits.*;
 
-public class StopBeingSelfish extends AbstractTrait {
-	public static final StopBeingSelfish stopbeingselfish = new StopBeingSelfish();
+public class TeamPlayer extends AbstractTrait {
+	public static final TeamPlayer teamplayer = new TeamPlayer();
 	
-	public StopBeingSelfish() {
-		super("stopbeingselfish", 0x070070);
+	public TeamPlayer() {
+		super("teamplayer", 0x070070);
 	}
 	
 	@Override

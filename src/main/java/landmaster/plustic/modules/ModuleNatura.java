@@ -64,7 +64,7 @@ public class ModuleNatura implements IModule {
 			PlusTiC.materialIntegrationStages.put("ghostwood", ghostwoodPromise);
 			
 			Material fusewood = new Material("fusewood_plustic", 0x00D18E);
-			fusewood.addTrait(DPRK.dprk);
+			fusewood.addTrait(UnstableMatter.unstablematter);
 			fusewood.addTrait(ecological);
 			CompletableFuture<?> fusewoodPromise = itemPromise.thenRun(() -> {
 				fusewood.addItem(ModuleNaturaStuff.fusewoodPlankStack(), 1, Material.VALUE_Ingot);

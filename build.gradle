@@ -22,7 +22,7 @@ plugins {
 
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-def modVersion = "9.0.1"
+def modVersion = "9.0.2"
 def mcVersion = "1.12.2"
 
 version = modVersion + "-original-mc" + mcVersion

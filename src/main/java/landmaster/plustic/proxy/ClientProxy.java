@@ -117,7 +117,6 @@ public class ClientProxy extends CommonProxy {
 	public void initEntities() {
 		super.initEntities();
 		RenderingRegistry.registerEntityRenderingHandler(EntityBlindBandit.class, RenderBlindBandit::new);
-		RenderingRegistry.registerEntityRenderingHandler(EntitySupremeLeader.class, RenderSupremeLeader::new);
 	}
 	
 	@Override

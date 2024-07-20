@@ -11,13 +11,13 @@ import net.minecraft.world.*;
 import slimeknights.tconstruct.library.potion.*;
 import slimeknights.tconstruct.library.traits.*;
 
-public class ChadThunder extends AbstractTrait {
-	public static final ChadThunder chadthunder = new ChadThunder();
+public class LightningRod extends AbstractTrait {
+	public static final LightningRod lightningrod = new LightningRod();
 	
-	public static final ChadPotion chadPotion = new ChadPotion();
+	public static final LightningPotion lightningPotion = new LightningPotion();
 	
-	public ChadThunder() {
-		super("chadthunder", 0x6df5ff);
+	public LightningRod() {
+		super("lightningrod", 0x6df5ff);
 	}
 	
 	@Override
@@ -29,12 +29,12 @@ public class ChadThunder extends AbstractTrait {
 
 	@Override
 	public void afterHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damageDealt, boolean wasCritical, boolean wasHit) {
-		chadPotion.apply(target, 10*20);
+		lightningPotion.apply(target, 10*20);
 	}
 	
-	private static class ChadPotion extends TinkerPotion {
-		public ChadPotion() {
-			super(new ResourceLocation(ModInfo.MODID, "chad_potion"), true, false, 0x6df5ff);
+	private static class LightningPotion extends TinkerPotion {
+		public LightningPotion() {
+			super(new ResourceLocation(ModInfo.MODID, "lightning_potion"), true, false, 0x6df5ff);
 		}
 		
 		@Override

@@ -70,7 +70,7 @@ public class ModuleEnvironTech implements IModule {
 			PlusTiC.materialOreDicts.put("kyronite", "crystalKyronite");
 			
 			Material pladium = new Material("pladium", 0x070070);
-			pladium.addTrait(StopBeingSelfish.stopbeingselfish);
+			pladium.addTrait(TeamPlayer.teamplayer);
 			pladium.addItem("crystalPladium", 1, Material.VALUE_Ingot);
 			pladium.setCraftable(true);
 			PlusTiC.proxy.setRenderInfo(pladium, 0x070070);
@@ -82,7 +82,7 @@ public class ModuleEnvironTech implements IModule {
 			PlusTiC.materialOreDicts.put("pladium", "crystalPladium");
 			
 			Material ionite = new Material("ionite", 0x6df5ff);
-			ionite.addTrait(ChadThunder.chadthunder, HEAD);
+			ionite.addTrait(LightningRod.lightningrod, HEAD);
 			ionite.addTrait(Illuminati.illuminati);
 			ionite.addItem("crystalIonite", 1, Material.VALUE_Ingot);
 			ionite.setCraftable(true);
