@@ -13,9 +13,8 @@ public class PacketRequestToggleGui implements IMessage {
 	public static IMessage onMessage(PacketRequestToggleGui message, MessageContext ctx) {
 		IThreadListener mainThread = (WorldServer)ctx.getServerHandler().player.getEntityWorld();
 		mainThread.addScheduledTask(() -> {
-			List<String> toggleableArmor = Toggle.getToggleableArmor(ctx.getServerHandler().player).collect(Collectors.toList());
-			if (Toggle.canToggle(ctx.getServerHandler().player.getHeldItemMainhand()) || !toggleableArmor.isEmpty()) {
-				PacketHandler.INSTANCE.sendTo(new PacketOpenToggleGui(toggleableArmor), ctx.getServerHandler().player);
+			if (Toggle.canToggle(ctx.getServerHandler().player.getHeldItemMainhand())) {
+				PacketHandler.INSTANCE.sendTo(new PacketOpenToggleGui(), ctx.getServerHandler().player);
 			}
 		});
 		return null;

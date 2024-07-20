@@ -126,10 +126,8 @@ public class PlusTiC {
 				new ModuleTools(),
 				new ModuleModifiers(),
 				
-				new ModuleConArm(),
-				
 				new ModuleMachines()
-				));
+		));
 		
 		IModule.modules.forEach(IModule::init);
 		

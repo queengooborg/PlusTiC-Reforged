@@ -15,9 +15,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.*;
 import slimeknights.tconstruct.library.utils.*;
 
 public class PacketSetPortal implements IMessage {
-	@CapabilityInject(Portal.IPortalArmor.class)
-	private static Capability<Portal.IPortalArmor> PORTAL_ARMOR = null;
-	
+
 	public static IMessage onMessage(PacketSetPortal message, MessageContext ctx) {
 		IThreadListener mainThread = (WorldServer)ctx.getServerHandler().player.getEntityWorld();
 		mainThread.addScheduledTask(() -> {
@@ -43,11 +41,6 @@ public class PacketSetPortal implements IMessage {
 							"msg.plustic.portal.set", nick.getInteger("x"),
 							nick.getInteger("y"), nick.getInteger("z"), nick.getInteger("dim")));
 				}
-			} else if (ep.hasCapability(PORTAL_ARMOR, null)) {
-				Coord4D newCoord = new Coord4D(rtr.getBlockPos(), ep.getEntityWorld());
-				ep.getCapability(PORTAL_ARMOR, null).location(newCoord);
-				ep.sendMessage(new TextComponentTranslation(
-						"msg.plustic.portal.armor.set", newCoord.xCoord, newCoord.yCoord, newCoord.zCoord, newCoord.dimensionId));
 			}
 		});
 		return null;

@@ -40,7 +40,6 @@ public class Config extends Configuration {
 	public static boolean projectE;
 	public static boolean gemsplus;
 	public static boolean appEng2;
-	public static boolean constructsArmory;
 	public static boolean machines;
 	public static boolean astralSorcery;
 	public static boolean aoa;
@@ -147,7 +146,6 @@ public class Config extends Configuration {
 		projectE = getBoolean("Enable ProjectE support", "modules", true, "Integrate with ProjectE");
 		gemsplus = getBoolean("Enable Gems+ support", "modules", true, "Integrate with Gems+");
 		appEng2 = getBoolean("Enable Applied Energistics 2 support", "modules", true, "Integrate with Applied Energistics 2");
-		constructsArmory = getBoolean("Enable Constructs Armory support", "modules", true, "Integrate with Constructs Armory");
 		machines = getBoolean("Enable Machines addon", "modules", true, "Enable the machines from this mod (Centrifuge, etc.)");
 		astralSorcery = getBoolean("Enable Astral Sorcery support", "modules", true, "Integrate with Astral Sorcery");
 		aoa = getBoolean("Enable AoA support", "modules", true, "Integrate with AoA");

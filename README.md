@@ -41,13 +41,13 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 
 ### Utility
 
-- [Construct's Armory](https://www.curseforge.com/minecraft/mc-mods/constructs-armory)
 - [Just Enough Items](https://www.curseforge.com/minecraft/mc-mods/jei)
 - [HWYLA](https://www.curseforge.com/minecraft/mc-mods/hwyla)
 - [CraftTweaker](https://www.curseforge.com/minecraft/mc-mods/crafttweaker)
 - [ModTweaker](https://www.curseforge.com/minecraft/mc-mods/modtweaker)
 - [Tesla](https://www.curseforge.com/minecraft/mc-mods/tesla)
 - [Tesla Core Lib](https://www.curseforge.com/minecraft/mc-mods/tesla-core-lib)
+- [Construct's Armory](https://www.curseforge.com/minecraft/mc-mods/constructs-armory) (removed in v10)
 
 ### A note about Natural Pledge
 

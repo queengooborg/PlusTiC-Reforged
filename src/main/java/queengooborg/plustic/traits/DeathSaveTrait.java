@@ -3,9 +3,6 @@ package queengooborg.plustic.traits;
 import java.util.*;
 import java.util.function.*;
 
-import c4.conarm.lib.armor.*;
-import c4.conarm.lib.capabilities.*;
-import c4.conarm.lib.traits.*;
 import queengooborg.plustic.api.*;
 import queengooborg.plustic.util.*;
 import net.minecraft.entity.*;
@@ -25,7 +22,6 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.*;
 import net.minecraftforge.fml.common.gameevent.*;
 import net.minecraftforge.items.*;
-import slimeknights.tconstruct.library.modifiers.ModifierNBT;
 import slimeknights.tconstruct.library.traits.*;
 import slimeknights.tconstruct.library.utils.*;
 
@@ -34,14 +30,7 @@ import slimeknights.tconstruct.library.utils.*;
  * @author Landmaster
  *
  */
-@net.minecraftforge.fml.common.Optional.Interface(iface = "c4.conarm.lib.traits.IArmorTrait", modid = "conarm")
-@net.minecraftforge.fml.common.Optional.Interface(iface = "c4.conarm.lib.traits.IArmorAbility", modid = "conarm")
-public abstract class DeathSaveTrait extends AbstractTrait implements IArmorTrait, IArmorAbility {
-	@CapabilityInject(Portal.IPortalArmor.class)
-	private static Capability<Portal.IPortalArmor> PORTAL_ARMOR = null;
-	@CapabilityInject(Toggle.IToggleArmor.class)
-	private static Capability<Toggle.IToggleArmor> TOGGLE_ARMOR = null;
-	
+public abstract class DeathSaveTrait extends AbstractTrait {
 	private final int cost;
 	private final Predicate<ItemStack> stackMatcher;
 	private final String unlocSaveMessage;
@@ -53,7 +42,6 @@ public abstract class DeathSaveTrait extends AbstractTrait implements IArmorTrai
 		this.unlocSaveMessage = unlocSaveMessage;
 		MinecraftForge.EVENT_BUS.register(this);
 		Toggle.addToggleable(identifier);
-		Toggle.addToggleable(Toggle.ARMOR_FLAG+identifier);
 		Portal.addPortalable(identifier);
 	}
 	
@@ -69,41 +57,22 @@ public abstract class DeathSaveTrait extends AbstractTrait implements IArmorTrai
 				|| !(event.getEntity() instanceof EntityPlayerMP)) {
 			return;
 		}
-		
-		//System.out.println("Hmm… "+hasDeathSaveArmor);
-		if (Loader.isModLoaded("conarm")
-				&& hasDeathSaveArmor((EntityPlayer)event.getEntity())
-				&& event.getEntity().hasCapability(PORTAL_ARMOR, null)
-				&& event.getEntity().hasCapability(TOGGLE_ARMOR, null)
-				&& !event.getEntity().getCapability(TOGGLE_ARMOR, null).getDisabled().contains(identifier)
-				&& Utils.canTeleportTo((EntityPlayer)event.getEntity(), event.getEntity().getCapability(PORTAL_ARMOR, null).location())
-				&& !event.getEntity().getCapability(PORTAL_ARMOR, null).location().equals(Coord4D.NIHIL)) {
-			checkItems(event, event.getEntity().getCapability(PORTAL_ARMOR, null).location());
-		} else {
-			Arrays.stream(EnumHand.values())
-			.map(event.getEntityLiving()::getHeldItem)
-			.map(TagUtil::getTagSafe)
-			.filter(nbt -> TinkerUtil.hasTrait(nbt, identifier)
-					&& Toggle.getToggleState(nbt, identifier)
-					&& nbt.hasKey(Portal.PORTAL_NBT, 10))
-			.map(nbt -> nbt.getCompoundTag(Portal.PORTAL_NBT))
-			.map(Coord4D::fromNBT)
-			.filter(coord -> Utils.canTeleportTo((EntityPlayer)event.getEntity(), coord))
-			.findFirst().ifPresent(coord -> {
-				checkItems(event, coord);
-			});
-		}
-	}
-	
-	private boolean hasDeathSaveArmor(EntityPlayer player) {
-		return Optional.ofNullable(ArmorAbilityHandler.getArmorAbilitiesData(player))
-				.map(ArmorAbilityHandler.IArmorAbilities::getAbilityMap)
-				.filter(map -> map.containsKey(identifier))
-				.isPresent();
+
+		Arrays.stream(EnumHand.values())
+		.map(event.getEntityLiving()::getHeldItem)
+		.map(TagUtil::getTagSafe)
+		.filter(nbt -> TinkerUtil.hasTrait(nbt, identifier)
+				&& Toggle.getToggleState(nbt, identifier)
+				&& nbt.hasKey(Portal.PORTAL_NBT, 10))
+		.map(nbt -> nbt.getCompoundTag(Portal.PORTAL_NBT))
+		.map(Coord4D::fromNBT)
+		.filter(coord -> Utils.canTeleportTo((EntityPlayer)event.getEntity(), coord))
+		.findFirst().ifPresent(coord -> {
+			checkItems(event, coord);
+		});
 	}
 	
 	private void checkItems(LivingDeathEvent event, Coord4D coord) {
-		//System.out.println("Checking items "+event.getSource().getDamageType());
 		IItemHandler ih = event.getEntity().getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
 		for (int i=0; i<ih.getSlots(); ++i) {
 			ItemStack is = ih.extractItem(i, cost, true);
@@ -130,77 +99,5 @@ public abstract class DeathSaveTrait extends AbstractTrait implements IArmorTrai
 				return;
 			}
 		}
-	}
-
-	@Override
-	public boolean disableRendering(ItemStack arg0, EntityLivingBase arg1) {
-		return false;
-	}
-
-	@Override
-	@net.minecraftforge.fml.common.Optional.Method(modid = "conarm")
-	public ArmorModifications getModifications(EntityPlayer arg0, ArmorModifications arg1, ItemStack arg2,
-			DamageSource arg3, double arg4, int arg5) {
-		return arg1;
-	}
-
-	@Override
-	public void onAbilityTick(int arg0, World arg1, EntityPlayer arg2) {
-	}
-
-	@Override
-	public int onArmorDamage(ItemStack arg0, DamageSource arg1, int arg2, int arg3, EntityPlayer arg4, int arg5) {
-		return arg3;
-	}
-
-	@Override
-	public void onArmorEquipped(ItemStack arg0, EntityPlayer arg1, int arg2) {
-	}
-
-	@Override
-	public int onArmorHeal(ItemStack arg0, DamageSource arg1, int arg2, int arg3, EntityPlayer arg4, int arg5) {
-		return arg3;
-	}
-
-	@Override
-	public void onArmorRemoved(ItemStack arg0, EntityPlayer arg1, int arg2) {
-	}
-
-	@Override
-	public float onDamaged(ItemStack arg0, EntityPlayer arg1, DamageSource arg2, float arg3, float arg4,
-			LivingDamageEvent arg5) {
-		return arg4;
-	}
-
-	@Override
-	public void onFalling(ItemStack arg0, EntityPlayer arg1, LivingFallEvent arg2) {
-	}
-
-	@Override
-	public float onHeal(ItemStack arg0, EntityPlayer arg1, float arg2, float arg3, LivingHealEvent arg4) {
-		return arg3;
-	}
-
-	@Override
-	public float onHurt(ItemStack arg0, EntityPlayer arg1, DamageSource arg2, float arg3, float arg4,
-			LivingHurtEvent arg5) {
-		return arg4;
-	}
-
-	@Override
-	public void onItemPickup(ItemStack arg0, EntityItem arg1, EntityItemPickupEvent arg2) {
-	}
-
-	@Override
-	public void onJumping(ItemStack arg0, EntityPlayer arg1, LivingEvent.LivingJumpEvent arg2) {
-	}
-
-	@Override
-	public void onKnockback(ItemStack arg0, EntityPlayer arg1, LivingKnockBackEvent arg2) {
-	}
-	
-	@Override
-	public int getAbilityLevel(ModifierNBT arg0) {
-		return arg0.level;
 	}
 }

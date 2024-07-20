@@ -6,7 +6,6 @@ import java.util.stream.*;
 
 import org.lwjgl.opengl.*;
 
-import c4.conarm.lib.capabilities.*;
 import it.unimi.dsi.fastutil.booleans.*;
 import it.unimi.dsi.fastutil.objects.*;
 import queengooborg.plustic.*;
@@ -38,91 +37,14 @@ import slimeknights.tconstruct.library.utils.*;
  *
  */
 public class Toggle {
-	public static final ResourceLocation TOGGLEARMOR_CAPLOCATION = new ResourceLocation(ModInfo.MODID, "togglearmor_cap");
-	
 	private static final Set<String> toggleable = new HashSet<>();
 	private static final Map<String, String> toggleableAlias = new HashMap<>();
 	
-	@CapabilityInject(IToggleArmor.class)
-	private static Capability<IToggleArmor> TOGGLE_ARMOR = null;
-	
 	static {
 		MinecraftForge.EVENT_BUS.register(Toggle.class);
-		CapabilityManager.INSTANCE.register(IToggleArmor.class, new Capability.IStorage<IToggleArmor>() {
-			@Override
-			public NBTBase writeNBT(Capability<IToggleArmor> capability, IToggleArmor instance, EnumFacing side) {
-				NBTTagList nbt = new NBTTagList();
-				for (String disabled : instance.getDisabled()) {
-					nbt.appendTag(new NBTTagString(disabled));
-				}
-				return nbt;
-			}
-
-			@Override
-			public void readNBT(Capability<IToggleArmor> capability, IToggleArmor instance, EnumFacing side,
-					NBTBase nbt) {
-				for (NBTBase elem: (NBTTagList)nbt) {
-					instance.getDisabled().add(((NBTTagString)elem).getString());
-				}
-			}
-		}, ToggleArmor::new);
 	}
-	
-	public static final String ARMOR_FLAG = "\\";
-	
-	public static interface IToggleArmor {
-		Set<String> getDisabled();
-	}
-	private static class ToggleArmor implements IToggleArmor {
-		private Set<String> disableds = new ObjectOpenHashSet<>();
-		
-		@Override
-		public Set<String> getDisabled() {
-			return disableds;
-		}
-	}
-	private static class ToggleArmorProvider implements ICapabilitySerializable<NBTTagList> {
-		@CapabilityInject(IToggleArmor.class)
-		private static Capability<IToggleArmor> TOGGLE_ARMOR = null;
-		
-		private final ToggleArmor cap;
-		public ToggleArmorProvider() { this.cap = new ToggleArmor(); }
-		
-		@Override
-		public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
-			return capability == TOGGLE_ARMOR;
-		}
 
-		@SuppressWarnings("unchecked")
-		@Override
-		public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
-			if (capability == TOGGLE_ARMOR) {
-				return (T)cap;
-			}
-			return null;
-		}
-
-		@Override
-		public NBTTagList serializeNBT() {
-			return (NBTTagList)TOGGLE_ARMOR.writeNBT(cap, null);
-		}
-
-		@Override
-		public void deserializeNBT(NBTTagList nbt) {
-			TOGGLE_ARMOR.readNBT(cap, null, nbt);
-		}
-		
-	};
-	
-	@SubscribeEvent
-	public static void addToggleArmorCapability(AttachCapabilitiesEvent<Entity> event) {
-		if (Loader.isModLoaded("conarm") && event.getObject() instanceof EntityPlayer) {
-			event.addCapability(TOGGLEARMOR_CAPLOCATION, new ToggleArmorProvider());
-		}
-	}
-	
 	public static void addToggleable(String trait) {
-		//System.out.println(toggleable);
 		toggleable.add(trait);
 	}
 	public static void addToggleableAlias(String trait, String alias) {
@@ -135,17 +57,8 @@ public class Toggle {
 		}
 		return res;
 	}
-	public static String rawIdentifier(String identifier) {
-		if (identifier.startsWith(ARMOR_FLAG)) {
-			return identifier.substring(ARMOR_FLAG.length());
-		}
-		return identifier;
-	}
 	
 	public static class Gui extends GuiScreen {
-		@CapabilityInject(IToggleArmor.class)
-		private static Capability<IToggleArmor> TOGGLE_ARMOR = null;
-		
 		public static final int OPTIONS_PER_PAGE = 6;
 		
 		private final ResourceLocation background = new ResourceLocation(ModInfo.MODID, "textures/gui/toggle.png");
@@ -159,7 +72,7 @@ public class Toggle {
 		private int ySize = 128;
 		private int guiLeft, guiTop;
 		
-		public Gui(EntityPlayer player, Collection<String> armorAbilities) {
+		public Gui(EntityPlayer player) {
 			this.player = player;
 			page = 0;
 			Object2BooleanMap<String> temp = new Object2BooleanLinkedOpenHashMap<>();
@@ -173,15 +86,6 @@ public class Toggle {
 			}
 			identifiers = new ArrayList<>(temp.keySet());
 			enableds = new BooleanArrayList(temp.values());
-			
-			if (player.hasCapability(TOGGLE_ARMOR, null)) {
-				IToggleArmor cap = player.getCapability(TOGGLE_ARMOR, null);
-				Set<String> disabled = cap.getDisabled();
-				for (String ability: armorAbilities) {
-					identifiers.add(ARMOR_FLAG+ability);
-					enableds.add(!disabled.contains(ability));
-				}
-			}
 		}
 		
 		@Override
@@ -221,10 +125,8 @@ public class Toggle {
 			// draw items
 			for (int i=page*OPTIONS_PER_PAGE; i<Math.min((page+1)*OPTIONS_PER_PAGE, identifiers.size()); ++i) {
 				String identifier = identifiers.get(i);
-				String rawIdentifier = rawIdentifier(identifier);
-				boolean isArmor = identifier.startsWith(ARMOR_FLAG);
 				boolean enabled = enableds.get(i);
-				String locName = I18n.format(isArmor ? "gui.toggle.armor" : "gui.toggle.tool", I18n.format("modifier."+rawIdentifier+".name"));
+				String locName = I18n.format("gui.toggle.tool", I18n.format("modifier."+identifier+".name"));
 				fontRenderer.drawString(locName, guiLeft+10, guiTop+18*(i%OPTIONS_PER_PAGE+1)+3, 0xFFFFFF);
 				mc.renderEngine.bindTexture(background);
 				drawTexturedModalRect(guiLeft+130, guiTop+18*(i%OPTIONS_PER_PAGE+1)+1,176+(enabled ? 0 : 12), 0, 12, 12);
@@ -242,7 +144,6 @@ public class Toggle {
 			for (int i=0; i<Math.min(OPTIONS_PER_PAGE, identifiers.size() - page*OPTIONS_PER_PAGE); ++i) {
 				if (isPointInRegion(7, 18*(i+1), 152, 16, mouseX, mouseY)) {
 					String identifier = identifiers.get(page*OPTIONS_PER_PAGE+i);
-					PacketHandler.INSTANCE.sendToServer(new PacketHandleToggleGui(identifier));
 					return;
 				}
 			}
@@ -264,40 +165,6 @@ public class Toggle {
 		public void update(String identifier, boolean value) {
 			int ind = identifiers.indexOf(identifier);
 			if (ind>=0) enableds.set(ind, value);
-		}
-	}
-	
-	@SubscribeEvent
-	public static void copyOnDeath(net.minecraftforge.event.entity.player.PlayerEvent.Clone event) {
-		IToggleArmor oldCap = event.getOriginal().getCapability(TOGGLE_ARMOR, null);
-		IToggleArmor newCap = event.getEntityPlayer().getCapability(TOGGLE_ARMOR, null);
-		if (oldCap != null && newCap != null) {
-			newCap.getDisabled().clear();
-			newCap.getDisabled().addAll(oldCap.getDisabled());
-		}
-	}
-	
-	@SubscribeEvent
-	public static void onPlayerRespawn(net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerRespawnEvent event) {
-		syncArmorToClient(event);
-	}
-	
-	@SubscribeEvent
-	public static void onPlayerLogin(net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent event) {
-		syncArmorToClient(event);
-	}
-	
-	@SubscribeEvent
-	public static void changeDim(net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerChangedDimensionEvent event) {
-		syncArmorToClient(event);
-	}
-	
-	protected static void syncArmorToClient(net.minecraftforge.fml.common.gameevent.PlayerEvent event) {
-		IToggleArmor cap = event.player.getCapability(TOGGLE_ARMOR, null);
-		if (cap != null && !event.player.world.isRemote) {
-			for (String disabled: cap.getDisabled()) {
-				PacketHandler.INSTANCE.sendTo(new PacketUpdateToggleGui(ARMOR_FLAG+disabled, false), (EntityPlayerMP)event.player);
-			}
 		}
 	}
 	
@@ -326,16 +193,6 @@ public class Toggle {
 									TinkerRegistry.getModifier(identifier).getLocalizedName()));
 			}
 		}
-	}
-	
-	public static Stream<String> getToggleableArmor(EntityPlayer player) {
-		//System.out.println(Arrays.toString(toggleable.toArray()));
-		return Loader.isModLoaded("conarm") ? Optional.ofNullable(ArmorAbilityHandler.getArmorAbilitiesData(player))
-				.map(ArmorAbilityHandler.IArmorAbilities::getAbilityMap)
-				.map(Map::keySet)
-				//.map(set -> { System.out.println(Arrays.toString(set.toArray())); return set; })
-				.map(set -> set.stream().filter(str -> toggleable.contains(ARMOR_FLAG+str)))
-				.orElse(Stream.empty()) : Stream.empty();
 	}
 	
 	public static boolean canToggle(ItemStack is) {

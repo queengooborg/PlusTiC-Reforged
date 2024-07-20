@@ -113,7 +113,6 @@ dependencies {
 
     deobfCompile 'curse.maven:modtweaker-220954:3840577'
     deobfCompile 'curse.maven:baubles-227083:2518667'
-    deobfCompile 'curse.maven:constructs-armory-287683:2962662-sources-2962663' // curse.maven:constructs-armory-287683:3174535-sources-3174536
     deobfCompile 'curse.maven:applied-energistics-2-223794:2747063' // 'appeng:appliedenergistics2-forge:15.2.8'
     deobfCompile 'curse.maven:psi-241665:3085917' // 'vazkii.psi:Psi:1.19-101.530'
     deobfCompile 'curse.maven:advent-of-ascension-nevermine-311054:2714823' // 'curse.maven:advent-of-ascension-nevermine-311054:3054253'
