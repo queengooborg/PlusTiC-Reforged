@@ -16,7 +16,7 @@ public class ModInfo {
 	+ "after:tesla;after:baubles;after:actuallyadditions;"
 	+ "after:psi;after:avaritia;"
 	+ "after:botanicaladdons;after:survivalist;after:modernmetals;after:basemetals;"
-	+ "after:projecte;after:gemsplus;after:appliedenergistics2;after:environmentaltech;"
+	+ "after:projecte;after:gemsplus;after:appliedenergistics2;"
 	+ "after:industrialforegoing;after:twilightforest@[3.7,);after:thaumcraft;after:crafttweaker;"
 	+ "after:modtweaker;after:conarm;after:micsiege;after:simplyjetpacks;after:astralsorcery;after:aoa3;"
 	+ "after:erebus;";

@@ -30,13 +30,13 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 - [ProjectE](https://www.curseforge.com/minecraft/mc-mods/projecte)
 - [GemsPlusPlus](https://www.curseforge.com/minecraft/mc-mods/gemsplusplus)
 - [Applied Energistics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2)
-- [Environmental Tech](https://www.curseforge.com/minecraft/mc-mods/environmental-tech)
 - [Thaumcraft](https://www.curseforge.com/minecraft/mc-mods/thaumcraft)
 - [Simply Jetpacks 2](https://www.curseforge.com/minecraft/mc-mods/simply-jetpacks-2)
 - [Advent of Ascension (Nevermine)](https://www.curseforge.com/minecraft/mc-mods/advent-of-ascension-nevermine)
 - [Advanced Rocketry](https://www.curseforge.com/minecraft/mc-mods/advanced-rocketry) (removed in v10)
 - [Natura](https://www.curseforge.com/minecraft/mc-mods/natura) (removed in v10)
 - [Galacticraft Legacy](https://www.curseforge.com/minecraft/mc-mods/galacticraft-legacy) (removed in v10)
+- [Environmental Tech](https://www.curseforge.com/minecraft/mc-mods/environmental-tech) (removed in v10)
 
 ### Utility
 
