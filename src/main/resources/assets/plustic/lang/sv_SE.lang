@@ -307,9 +307,6 @@ modifier.dunanstransport_armor.name=Dunans transport
 modifier.dunanstransport_armor.desc=§oNär man vill känna sig säker och samtidigt vila benen.§r\nBonusskydd och -rustning för ridande spelare.
 modifier.invariant_armor.name=Oföränderlig
 modifier.invariant_armor.desc=§oJu mer saker förändras, desto mer kommer de vara densamma.§r\nFörhindrar terrängrelaterad skada (inte entitetrelaterad) från explosioner i närheten.
-modifier.jetpackpancakehippos.name=Ryggraketsbärande pankaksflodhästar
-modifier.jetpackpancakehippos.desc=§oTOUCHDOWN!§r\nGör det möjligt för användaren att flyga omkring med energi. (Med samma värden som ryggraketen använder.) Ger även en hållbarhetsbonus.
-
 # MISCELLANEOUS
 
 item.tindust.name=Tenndamm

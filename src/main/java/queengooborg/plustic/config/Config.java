@@ -45,9 +45,6 @@ public class Config extends Configuration {
 	public static boolean astralSorcery;
 	public static boolean aoa;
 	
-	public static boolean jetpackConarmModifier;
-	public static float jetpackDurabilityBonusScale;
-	
 	// alas…
 	public static boolean forceOutNaturalPledgeMaterials;
 	
@@ -155,9 +152,6 @@ public class Config extends Configuration {
 		astralSorcery = getBoolean("Enable Astral Sorcery support", "modules", true, "Integrate with Astral Sorcery");
 		aoa = getBoolean("Enable AoA support", "modules", true, "Integrate with AoA");
 
-		jetpackConarmModifier = getBoolean("Add Simply Jetpacks as ConArm modifiers", "modifiers", true, "Add Simply Jetpacks as ConArm modifiers");
-		jetpackDurabilityBonusScale = getFloat("Durability bonus scalar for Simply Jetpacks modifiers", "modifiers", 1f/8000, 0, Float.MAX_VALUE, "Durability bonus calculated as FUEL_CAPACITY_OF_JETPACK*this_scalar");
-		
 		// TOOLS
 		katana = getBoolean("Enable Katana", "tools", true, "Enable Katana");
 		katana_combo_multiplier = getFloat("Katana combo multiplier", "tools", 1.25f, 0, Float.MAX_VALUE, "Multiply combo value by this to calculate bonus damage");

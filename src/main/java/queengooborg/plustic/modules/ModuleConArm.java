@@ -80,19 +80,4 @@ public class ModuleConArm implements IModule {
 			});
 		}
 	}
-
-	@Override
-	public void init2() {
-		if (Config.jetpackConarmModifier && Loader.isModLoaded("simplyjetpacks") && Loader.isModLoaded("conarm")) {
-			SJ.init();
-		}
-	}
-	
-	private static class SJ {
-		public static void init() {
-			JetpackPancakeHippos.jetpackpancakehippos.values().forEach(mod -> {
-				RecipeMatchHolder.addItem(mod, mod.jetpack.getStackJetpack(), 1, 1);
-			});
-		}
-	}
 }
