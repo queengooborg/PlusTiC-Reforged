@@ -1,14 +1,13 @@
 package queengooborg.plustic.crafttweaker;
 
-import com.blamejared.compat.tconstruct.materials.*;
-
-import crafttweaker.*;
-//import crafttweaker.IAction;
-import crafttweaker.annotations.*;
-import queengooborg.plustic.tools.stats.*;
-import slimeknights.tconstruct.library.materials.*;
-//import crafttweaker.zenscript.IBracketHandler;
-import stanhebben.zenscript.annotations.*;
+import crafttweaker.CraftTweakerAPI;
+import crafttweaker.annotations.ModOnly;
+import crafttweaker.annotations.ZenRegister;
+import queengooborg.plustic.tools.stats.BatteryCellMaterialStats;
+import queengooborg.plustic.tools.stats.LaserMediumMaterialStats;
+import slimeknights.tconstruct.library.materials.Material;
+import stanhebben.zenscript.annotations.ZenClass;
+import stanhebben.zenscript.annotations.ZenMethod;
 
 @ZenClass("mods.plustic.toolstats")
 @ZenRegister
@@ -20,35 +19,35 @@ public class ToolStats {
 	*/
 	
 	@ZenMethod("energy")
-	public static int getEnergy(ITICMaterial mat) {
-		BatteryCellMaterialStats stats = ((Material)mat.getInternal()).getStatsOrUnknown(BatteryCellMaterialStats.TYPE);
+	public static int getEnergy(Material mat) {
+		BatteryCellMaterialStats stats = mat.getStatsOrUnknown(BatteryCellMaterialStats.TYPE);
 		return stats.energy;
 	}
 	
 	@ZenMethod("energy")
-	public static void setEnergy(ITICMaterial mat, int energy) {
+	public static void setEnergy(Material mat, int energy) {
 		CraftTweakerAPI.apply(new SetEnergyAction(mat, energy));
 	}
 	
 	@ZenMethod("laserPower")
-	public static float getLaserPower(ITICMaterial mat) {
-		LaserMediumMaterialStats stats = ((Material)mat.getInternal()).getStatsOrUnknown(LaserMediumMaterialStats.TYPE);
+	public static float getLaserPower(Material mat) {
+		LaserMediumMaterialStats stats = mat.getStatsOrUnknown(LaserMediumMaterialStats.TYPE);
 		return stats.power;
 	}
 	
 	@ZenMethod("laserPower")
-	public static void setLaserPower(ITICMaterial mat, float power) {
+	public static void setLaserPower(Material mat, float power) {
 		CraftTweakerAPI.apply(new SetLaserPowerAction(mat, power));
 	}
 	
 	@ZenMethod("laserRange")
-	public static float getLaserRange(ITICMaterial mat) {
-		LaserMediumMaterialStats stats = ((Material)mat.getInternal()).getStatsOrUnknown(LaserMediumMaterialStats.TYPE);
+	public static float getLaserRange(Material mat) {
+		LaserMediumMaterialStats stats = mat.getStatsOrUnknown(LaserMediumMaterialStats.TYPE);
 		return stats.range;
 	}
 	
 	@ZenMethod("laserRange")
-	public static void setLaserRange(ITICMaterial mat, float range) {
+	public static void setLaserRange(Material mat, float range) {
 		CraftTweakerAPI.apply(new SetLaserRangeAction(mat, range));
 	}
 }

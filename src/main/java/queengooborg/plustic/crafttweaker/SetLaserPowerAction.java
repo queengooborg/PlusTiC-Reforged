@@ -1,29 +1,27 @@
 package queengooborg.plustic.crafttweaker;
 
-import com.blamejared.compat.tconstruct.materials.*;
-
-import crafttweaker.*;
-import queengooborg.plustic.tools.stats.*;
-import slimeknights.tconstruct.library.materials.*;
+import crafttweaker.IAction;
+import queengooborg.plustic.tools.stats.LaserMediumMaterialStats;
+import slimeknights.tconstruct.library.materials.Material;
 
 public class SetLaserPowerAction implements IAction {
-	private final ITICMaterial mat;
+	private final Material mat;
 	private final float power;
 	
-	public SetLaserPowerAction(ITICMaterial mat, float power) {
+	public SetLaserPowerAction(Material mat, float power) {
 		this.mat = mat;
 		this.power = power;
 	}
 	
 	@Override
 	public void apply() {
-		LaserMediumMaterialStats oldStats = ((Material)mat.getInternal()).getStatsOrUnknown(LaserMediumMaterialStats.TYPE);
+		LaserMediumMaterialStats oldStats = mat.getStatsOrUnknown(LaserMediumMaterialStats.TYPE);
 		LaserMediumMaterialStats newStats = new LaserMediumMaterialStats(this.power, oldStats.range);
-		((Material)mat.getInternal()).addStats(newStats);
+		mat.addStats(newStats);
 	}
 	
 	@Override
 	public String describe() {
-		return "Setting laser power of " + mat.getName() + " to " + power;
+		return "Setting laser power of " + mat.getLocalizedName() + " to " + power;
 	}
 }
