@@ -106,8 +106,7 @@ public class PlusTiC {
 		
 		IModule.modules.addAll(Arrays.asList(
 				new ModuleBase(),
-				
-				new ModuleNatura(),
+
 				new ModuleGems(),
 				new ModuleMekanism(),
 				new ModuleBotania(),
@@ -184,9 +183,5 @@ public class PlusTiC {
 				});
 			}
 		});
-	}
-	
-	private static void postIntegrate() {
-		Utils.displace(TinkerMaterials.wood.getIdentifier()); // so that natura woods are prioritized
 	}
 }

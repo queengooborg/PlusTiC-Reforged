@@ -23,7 +23,6 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 - [Thermal Foundation](https://www.curseforge.com/minecraft/mc-mods/thermal-foundation)
 - [Draconic Evolution](https://www.curseforge.com/minecraft/mc-mods/draconic-evolution)
 - [Actually Additions](https://www.curseforge.com/minecraft/mc-mods/actually-additions)
-- [Natura](https://www.curseforge.com/minecraft/mc-mods/natura)
 - [Psi](https://www.curseforge.com/minecraft/mc-mods/psi)
 - [Avaritia](https://www.curseforge.com/minecraft/mc-mods/avaritia-1-10)
 - [Industrial Foregoing](https://www.curseforge.com/minecraft/mc-mods/industrial-foregoing)
@@ -37,6 +36,7 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 - [Simply Jetpacks 2](https://www.curseforge.com/minecraft/mc-mods/simply-jetpacks-2)
 - [Advent of Ascension (Nevermine)](https://www.curseforge.com/minecraft/mc-mods/advent-of-ascension-nevermine)
 - [Advanced Rocketry](https://www.curseforge.com/minecraft/mc-mods/advanced-rocketry) (removed in v10)
+- [Natura](https://www.curseforge.com/minecraft/mc-mods/natura) (removed in v10)
 
 ### Utility
 
