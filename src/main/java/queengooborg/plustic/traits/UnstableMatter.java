@@ -20,11 +20,11 @@ import net.minecraftforge.fml.common.eventhandler.*;
 import slimeknights.tconstruct.library.traits.*;
 import slimeknights.tconstruct.library.utils.*;
 
-public class HailHydra extends AbstractTrait {
-	public static final HailHydra hailhydra = new HailHydra();
+public class UnstableMatter extends AbstractTrait {
+	public static final UnstableMatter unstablematter = new UnstableMatter();
 	
-	public HailHydra() {
-		super("hailhydra", 0xFFFFFF);
+	public UnstableMatter() {
+		super("unstablematter", 0xFFFFFF);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 	
@@ -62,7 +62,7 @@ public class HailHydra extends AbstractTrait {
 		}
 		if (random.nextFloat() < event.getAmount()/8.0f) { // probability increases with damage
 			event.getEntityLiving().addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 1600, 3));
-			event.getEntityLiving().sendMessage(new TextComponentTranslation("msg.plustic.hailhydra.use"));
+			event.getEntityLiving().sendMessage(new TextComponentTranslation("msg.plustic.unstablematter.use"));
 		}
 	}
 	

@@ -66,7 +66,7 @@ public class ModuleDraconicEvolution implements IModule {
 				TinkerRegistry.addMaterialStats(awakened, new ExtraMaterialStats(500));
 				TinkerRegistry.addMaterialStats(awakened, new BowMaterialStats(1.9f, 2.8f, 20));
 				
-				chaotic.addTrait(HailHydra.hailhydra, HEAD);
+				chaotic.addTrait(UnstableMatter.unstablematter, HEAD);
 				chaotic.addTrait(Vindictive.vindictive, HEAD);
 				chaotic.addTrait(DarkTraveler.darktraveler);
 				chaotic.addItem(chaotic_core, 1, Material.VALUE_Ingot);
