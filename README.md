@@ -58,6 +58,7 @@ Between 5.1.2 and 9.x, PlusTiC forces out and *overrides* Natural Pledge TiC mat
 - [Construct's Armory](https://www.curseforge.com/minecraft/mc-mods/constructs-armory) (removed in v10)
 - [Tesla](https://www.curseforge.com/minecraft/mc-mods/tesla) (removed in v10)
 - [Tesla Core Lib](https://www.curseforge.com/minecraft/mc-mods/tesla-core-lib) (removed in v10)
+- [Redstone Flux](https://www.curseforge.com/minecraft/mc-mods/redstone-flux) (removed in v10)
 
 ## Frequently Asked Questions (FAQ)
 

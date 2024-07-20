@@ -48,9 +48,8 @@ import slimeknights.tconstruct.library.tools.*;
 import slimeknights.tconstruct.library.utils.*;
 import slimeknights.tconstruct.tools.*;
 
-@net.minecraftforge.fml.common.Optional.Interface(iface = "cofh.redstoneflux.api.IEnergyContainerItem", modid = "redstoneflux")
 @net.minecraftforge.fml.common.Optional.Interface(iface = "appeng.api.implementations.items.IAEItemPowerStorage", modid = "appliedenergistics2")
-public class ToolLaserGun extends TinkerToolCore implements cofh.redstoneflux.api.IEnergyContainerItem, IAEItemPowerStorage, IToggleTool<ToolLaserGun.Mode> {
+public class ToolLaserGun extends TinkerToolCore implements IAEItemPowerStorage, IToggleTool<ToolLaserGun.Mode> {
 	public static class LaserDamageSource extends EntityDamageSource {
 		private final ItemStack stack;
 		
@@ -415,8 +414,7 @@ public class ToolLaserGun extends TinkerToolCore implements cofh.redstoneflux.ap
 		
 		return EnumActionResult.PASS;
 	}
-	
-	@Override
+
 	public int receiveEnergy(ItemStack container, int maxReceive, boolean simulate) {
 		return (int)this._receiveEnergy(container, maxReceive, simulate);
 	}
@@ -434,8 +432,7 @@ public class ToolLaserGun extends TinkerToolCore implements cofh.redstoneflux.ap
 		}
 		return energyReceived;
 	}
-	
-	@Override
+
 	public int extractEnergy(ItemStack container, int maxExtract, boolean simulate) {
 		return (int)this._extractEnergy(container, maxExtract, simulate);
 	}
@@ -453,16 +450,14 @@ public class ToolLaserGun extends TinkerToolCore implements cofh.redstoneflux.ap
 		}
 		return energyExtracted;
 	}
-	
-	@Override
+
 	public int getEnergyStored(ItemStack container) {
 		if (container.getTagCompound() == null || !container.getTagCompound().hasKey(ENERGY_NBT)) {
 			return 0;
 		}
 		return container.getTagCompound().getInteger(ENERGY_NBT);
 	}
-	
-	@Override
+
 	public int getMaxEnergyStored(ItemStack container) {
 		return getFullEnergy(container);
 	}
