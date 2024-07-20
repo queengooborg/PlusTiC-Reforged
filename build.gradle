@@ -100,7 +100,6 @@ dependencies {
     // Dependencies for mods required for compilation
     runtime 'curse.maven:shadowfacts-forgelin-248453:2785465'
     runtime 'curse.maven:autoreglib-250363:2746011'
-    runtime 'curse.maven:tesla-core-lib-254602:3438487-deobf-3438489-sources-3438488'
 
     // Mods required for compilation
 
@@ -108,7 +107,6 @@ dependencies {
     compile 'curse.maven:crafttweaker-239197:5486112' // 'CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.700'
 
     deobfCompile 'curse.maven:mtlib-253211:3308160'
-    deobfCompile 'curse.maven:tesla-244651:2487959-sources-2487960-deobf-2487962' // 'net.darkhax.tesla:Tesla-1.12.2:1.0.63'
     deobfCompile 'curse.maven:redstone-flux-270789:2920436'
 
     deobfCompile 'curse.maven:applied-energistics-2-223794:2747063' // 'appeng:appliedenergistics2-forge:15.2.8'

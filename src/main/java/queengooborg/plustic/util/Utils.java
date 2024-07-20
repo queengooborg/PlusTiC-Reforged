@@ -17,7 +17,6 @@ import queengooborg.plustic.*;
 import queengooborg.plustic.api.*;
 import queengooborg.plustic.block.*;
 import queengooborg.plustic.fluids.*;
-import net.darkhax.tesla.capability.*;
 import net.minecraft.block.*;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.*;
@@ -304,9 +303,6 @@ public class Utils {
 		if (is != null) {
 			if (is.hasCapability(CapabilityEnergy.ENERGY, null)) {
 				return is.getCapability(CapabilityEnergy.ENERGY, null).extractEnergy(amount, simulate);
-			}
-			if (Loader.isModLoaded("tesla") && is.hasCapability(TeslaCapabilities.CAPABILITY_PRODUCER, null)) {
-				return (int) is.getCapability(TeslaCapabilities.CAPABILITY_PRODUCER, null).takePower(amount, simulate);
 			}
 		}
 		return 0;

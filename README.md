@@ -9,7 +9,7 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 ## New Tools
 
 - Katana. A fast two-handed weapon that deals increasing damage the more mobs you kill.
-- Laser Gun. A ranged weapon that requires durability and energy (Forge, Tesla, RF).
+- Laser Gun. A ranged weapon that requires durability and energy.
 
 ## Supported Mods
 
@@ -53,11 +53,11 @@ Between 5.1.2 and 9.x, PlusTiC forces out and *overrides* Natural Pledge TiC mat
 - [Just Enough Items](https://www.curseforge.com/minecraft/mc-mods/jei)
 - [HWYLA](https://www.curseforge.com/minecraft/mc-mods/hwyla) / [Jade](https://www.curseforge.com/minecraft/mc-mods/jade)
 - [CraftTweaker](https://www.curseforge.com/minecraft/mc-mods/crafttweaker)
-- [Tesla](https://www.curseforge.com/minecraft/mc-mods/tesla)
-- [Tesla Core Lib](https://www.curseforge.com/minecraft/mc-mods/tesla-core-lib)
 - [ModTweaker](https://www.curseforge.com/minecraft/mc-mods/modtweaker) (removed in v10)
 - [Baubles](https://www.curseforge.com/minecraft/mc-mods/baubles) (removed in v10)
 - [Construct's Armory](https://www.curseforge.com/minecraft/mc-mods/constructs-armory) (removed in v10)
+- [Tesla](https://www.curseforge.com/minecraft/mc-mods/tesla) (removed in v10)
+- [Tesla Core Lib](https://www.curseforge.com/minecraft/mc-mods/tesla-core-lib) (removed in v10)
 
 ## Frequently Asked Questions (FAQ)
 
