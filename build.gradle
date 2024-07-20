@@ -11,57 +11,60 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.+', changing: true
     }
 }
 
-plugins {
-    id 'java'
-    id 'idea'
-}
-
-apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven-publish'
 
 def modVersion = "9.0.0"
 def mcVersion = "1.12.2"
 
 version = modVersion + "-mc" + mcVersion
-group= "queengooborg.plustic" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group = "queengooborg.plustic" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "plustic"
 
 repositories {
     maven {
+        name "cursemaven"
         url 'https://www.cursemaven.com'
-        // Enable for ForgeGradle 4+
-//         content {
-//             includeGroup "curse.maven"
-//         }
+        content {
+            includeGroup "curse.maven"
+        }
     }
     maven {
-        url "https://maven.blamejared.com"
-    }
-    maven {
+        name "ProgWML6"
         url "https://dvs1.progwml6.com/files/maven"
     }
+    maven {
+        name "BlameJared"
+        url "https://maven.blamejared.com"
+    }
 //    maven {
+//        name "MCModDev"
 //        url "https://maven.mcmoddev.com"
 //    }
 //    maven {
+//        name "covers1624"
 //        url "https://maven.covers1624.net"
 //    }
 //    maven {
+//        name "ChaosField"
 //        url "https://maven.chaosfield.at"
 //    }
 //    maven {
-//        url "https://minecraft.curseforge.com/api/maven/"
-//    }
-//    maven {
+//        name "tehnut"
 //        url "https://tehnut.info/maven"
 //    }
 //    maven {
+//        name "HellFireDev"
 //        url "https://maven.hellfiredev.net"
 //    }
 //    maven {
+//        name "firstdarkdev"
 //        url "https://maven.firstdarkdev.xyz/releases/"
 //    }
 }
@@ -72,93 +75,103 @@ compileJava {
 }
 
 minecraft {
-    // Target version: 14.23.5.2859
-    version = "1.12.2-14.23.5.2847"
-    runDir = "run"
+    // Minecraft MCP Mappings
+//    mappings channel: 'snapshot', version: '20171003-1.12'
+//    mappings channel: 'snapshot', version: '20180814-1.12'
+    mappings channel: 'stable', version: '39-1.12'
 
-    // the mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   snapshot are built nightly.
-    // stable_#            stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not allways work.
-    // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = "stable_39"
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-    replaceIn "ModInfo.java"
-    replace "@VERSION@", project.version
+    accessTransformer = file('src/main/resources/META-INF/plustic_at.cfg')
+
+    // Default run configurations.
+    // These can be tweaked, removed, or duplicated as needed.
+    runs {
+        client {
+            workingDirectory project.file('run')
+
+            // Recommended logging data for a userdev environment
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+
+            // Recommended logging level for the console
+            property 'forge.logging.console.level', 'debug'
+        }
+
+        server {
+            // Recommended logging data for a userdev environment
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+
+            // Recommended logging level for the console
+            property 'forge.logging.console.level', 'debug'
+        }
+    }
 }
 
 dependencies {
+    // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
+    // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
+    // The userdev artifact is a special name and will get all sorts of transformations applied to it.
+    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2859'
+
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"
     //compile "some.group:artifact:version"
 
     // Tinkers' Construct
-    deobfCompile 'slimeknights:TConstruct:1.12.2-2.13.0.190'
-    deobfCompile 'slimeknights.mantle:Mantle:1.12-1.3.3.56'
+    implementation fg.deobf('slimeknights:TConstruct:1.12.2-2.13.0.190')
+    implementation fg.deobf('slimeknights.mantle:Mantle:1.12-1.3.3.56')
 
     // Dependencies for mods required for compilation
-    runtime 'curse.maven:shadowfacts-forgelin-248453:2785465'
-    runtime 'curse.maven:autoreglib-250363:2746011'
-    runtime 'curse.maven:redstone-flux-270789:2920436'
-    runtime 'curse.maven:baubles-227083:2518667'
-    runtime 'curse.maven:tesla-core-lib-254602:3438487-deobf-3438489-sources-3438488'
-    runtime 'curse.maven:mtlib-253211:3308160'
+    runtimeOnly 'curse.maven:shadowfacts-forgelin-248453:2785465'
+    runtimeOnly 'curse.maven:autoreglib-250363:2746011'
+    runtimeOnly 'curse.maven:baubles-227083:2518667'
+    runtimeOnly 'curse.maven:tesla-core-lib-254602:3438487-deobf-3438489-sources-3438488'
+    runtimeOnly 'curse.maven:mtlib-253211:3308160'
+    runtimeOnly 'curse.maven:redstone-flux-270789:2920436'
 
     // Mods required for compilation
 
     // Deobfuscating causes "Duplicate file: META-INF/crafttweaker_at.cfg" error
-    compile 'curse.maven:crafttweaker-239197:5486112' // 'CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.700'
+    implementation 'CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.700'
 
-    deobfCompile 'curse.maven:applied-energistics-2-223794:2747063' // 'appeng:appliedenergistics2-forge:15.2.8'
-    deobfCompile 'curse.maven:psi-241665:3085917' // 'vazkii.psi:Psi:1.19-101.530'
-    deobfCompile 'curse.maven:advent-of-ascension-nevermine-311054:2714823' // 'curse.maven:advent-of-ascension-nevermine-311054:3054253'
-    deobfCompile 'curse.maven:botania-225643:3330934' // 'vazkii.botania:Botania:1.20.1-445-FORGE'
-    deobfCompile 'curse.maven:actually-additions-228404:3117927'
-    deobfCompile 'curse.maven:astral-sorcery-241721:3044416'// 'hellfirepvp.astralsorcery:astralsorcery:1.12.2-1.10.25-v167'
-    deobfCompile 'curse.maven:hwyla-253449:2568751-sources-2568752-api-2568753'
-    deobfCompile 'curse.maven:industrial-foregoing-266515:2745321-sources-2745322-api-2745323-deobf-2745324' // 'com.buuz135:industrial-foregoing:1.20.1-3.5.19'
-    deobfCompile 'curse.maven:jei-238222:5101347' // 'mezz.jei:jei_1.12.2:4.16.1.1012' // 'mezz.jei:jei-1.20.1-common-api:15.8.0.11'
+    implementation fg.deobf('curse.maven:applied-energistics-2-223794:2747063') // 'appeng:appliedenergistics2-forge:15.2.8'
+    implementation fg.deobf('curse.maven:psi-241665:3085917') // 'vazkii.psi:Psi:1.19-101.530'
+    implementation fg.deobf('curse.maven:advent-of-ascension-nevermine-311054:2714823') // 'curse.maven:advent-of-ascension-nevermine-311054:3054253'
+    implementation fg.deobf('curse.maven:botania-225643:3330934') // 'vazkii.botania:Botania:1.20.1-445-FORGE'
+    implementation fg.deobf('curse.maven:actually-additions-228404:3117927')
+    implementation fg.deobf('curse.maven:astral-sorcery-241721:3044416') // 'hellfirepvp.astralsorcery:astralsorcery:1.12.2-1.10.25-v167'
+    implementation fg.deobf('curse.maven:hwyla-253449:2568751-sources-2568752-api-2568753')
+    implementation fg.deobf('curse.maven:industrial-foregoing-266515:2745321-sources-2745322-api-2745323-deobf-2745324') // 'com.buuz135:industrial-foregoing:1.20.1-3.5.19'
+    implementation fg.deobf('curse.maven:jei-238222:5101347') // 'mezz.jei:jei_1.12.2:4.16.1.1012' // 'mezz.jei:jei-1.20.1-common-api:15.8.0.11'
 
     // Libs for optional mods
-    runtime 'curse.maven:codechicken-lib-242818:2779848-deobf-2779849' // 'codechicken:CodeChickenLib:1.12.2-3.2.3.358' // 'codechicken:CodeChickenLib:1.16.5-4.0.1.426'
-//    runtime 'curse.maven:cb-multipart-258426:2755790-deobf-2755791' // 'codechicken:ForgeMultipart:1.12.2-2.6.2.83'
-    runtime 'curse.maven:mrtjpcore-229002:2735197' // 'mrtjp:MrTJPCore:1.12.2-2.1.4.43'
-    runtime 'curse.maven:libvulpes-236541:3801015-deobf-3801016'
-    runtime 'curse.maven:thedragonlib-248055:2580332'
-    runtime 'curse.maven:cofh-core-69162:2920433'
-    runtime 'curse.maven:cofh-world-271384:2920434'
-    runtime 'curse.maven:brandons-core-231382:3408276'
-    runtime 'curse.maven:valkyrielib-245480:2691542'
+    runtimeOnly 'curse.maven:codechicken-lib-242818:2779848-deobf-2779849' // 'codechicken:CodeChickenLib:1.12.2-3.2.3.358' // 'codechicken:CodeChickenLib:1.16.5-4.0.1.426'
+    runtimeOnly 'curse.maven:cb-multipart-258426:2755790-deobf-2755791' // 'codechicken:ForgeMultipart:1.12.2-2.6.2.83'
+    runtimeOnly 'curse.maven:mrtjpcore-229002:2735197' // 'mrtjp:MrTJPCore:1.12.2-2.1.4.43'
+    runtimeOnly 'curse.maven:libvulpes-236541:3801015-deobf-3801016'
+    runtimeOnly 'curse.maven:thedragonlib-248055:2580332'
+    runtimeOnly 'curse.maven:cofh-core-69162:2920433'
+    runtimeOnly 'curse.maven:cofh-world-271384:2920434'
+    runtimeOnly 'curse.maven:brandons-core-231382:3408276'
+    runtimeOnly 'curse.maven:valkyrielib-245480:2691542'
 
     // Optional mods
-//    runtime 'curse.maven:project-red-core-228702:2745545' // 'mrtjp:ProjectRed:1.12.2-4.9.4.120'
-    runtime 'curse.maven:mekanism-268560:2835175-api-2835176' // 'mekanism:Mekanism:1.21-10.6.3.49'
-//    runtime 'curse.maven:armorplus-237366:2952741'
-    runtime 'curse.maven:thermal-foundation-222880:2926428'
-    runtime 'curse.maven:draconic-evolution-223565:3431261'
-    runtime 'curse.maven:avaritia-1-10-261348:3143349'
-    runtime 'curse.maven:survivalist-242289:2625075'
-//    runtime 'curse.maven:projecte-226410:2702991'
-    runtime 'curse.maven:gemsplusplus-310914:3029335-sources-3029336'
-    runtime 'curse.maven:biomes-o-plenty-220318:2715506' // 'curse.maven:biomes-o-plenty-220318:3558882'
-    runtime 'curse.maven:the-twilight-forest-227639:3051450'
+    runtimeOnly 'curse.maven:project-red-core-228702:2745545' // 'mrtjp:ProjectRed:1.12.2-4.9.4.120'
+    runtimeOnly 'curse.maven:mekanism-268560:2835175-api-2835176' // 'mekanism:Mekanism:1.21-10.6.3.49'
+    runtimeOnly 'curse.maven:armorplus-237366:2952741'
+    runtimeOnly 'curse.maven:thermal-foundation-222880:2926428'
+    runtimeOnly 'curse.maven:draconic-evolution-223565:3431261'
+    runtimeOnly 'curse.maven:avaritia-1-10-261348:3143349'
+    runtimeOnly 'curse.maven:survivalist-242289:2625075'
+    runtimeOnly 'curse.maven:projecte-226410:2702991'
+    runtimeOnly 'curse.maven:gemsplusplus-310914:3029335-sources-3029336'
+    runtimeOnly 'curse.maven:biomes-o-plenty-220318:2715506' // 'curse.maven:biomes-o-plenty-220318:3558882'
 
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // the 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
-    //provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // the deobf configurations:  'deobfCompile' and 'deobfProvided' are the same as the normal compile and provided,
-    // except that these dependencies get remapped to your current MCP mappings
-    //deobfCompile 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-    //deobfProvided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // for more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+    // Mitigates a bug in Forge FML
+    implementation ("net.minecraftforge:mergetool") {
+        version {
+            strictly '0.2.3.3'
+        }
+    }
 }
 
 idea {
@@ -175,44 +188,72 @@ idea {
 //  }
 //}
 
+
+//processResources {
+//    exclude '**/*.xcf'
 //
-processResources {
-    exclude '**/*.xcf'
-
-    // this will ensure that this task is redone when the versions change.
-    inputs.property "version", modVersion
-    inputs.property "mcversion", project.minecraft.version
-
-    // replace stuff in mcmod.info, nothing else
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-
-        // replace version and mcversion
-        expand 'version': modVersion, 'mcversion':project.minecraft.version
-    }
-
-    // copy everything else, thats not the mcmod.info
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
-    }
-}
+//    // this will ensure that this task is redone when the versions change.
+//    inputs.property "version", project.version
+//    inputs.property "mcversion", project.minecraft.version
+//
+//    // replace stuff in mcmod.info, nothing else
+//    from(sourceSets.main.resources.srcDirs) {
+//        include 'mcmod.info'
+//
+//        // replace version and mcversion
+//        expand 'version':project.version, 'mcversion':project.minecraft.version
+//    }
+//
+//    // copy everything else, thats not the mcmod.info
+//    from(sourceSets.main.resources.srcDirs) {
+//        exclude 'mcmod.info'
+//    }
+//}
 
 jar {
-    manifest {
-        attributes 'FMLAT': 'plustic_at.cfg'
-    }
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes([
+//                'FMLAT': 'plustic_at.cfg',
+"Specification-Title": "PlusTiC Reforged",
+"Specification-Vendor": "queengooborg",
+"Specification-Version": "1",
+"Implementation-Title": project.name,
+"Implementation-Version": "${modVersion}",
+"Implementation-Vendor" :"queengooborg",
+"Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
 }
 
-task deobfJar(type: Jar) { // Generate deobfuscated
-    from sourceSets.main.output
-    classifier = 'deobf'
-}
+//task deobfJar(type: Jar) { // Generate deobfuscated
+//    from sourceSets.main.output
+//    classifier = 'deobf'
+//}
+//
+//tasks.build.dependsOn('deobfJar')
+//
+//artifacts {
+//    archives deobfJar
+//    archives sourceJar
+//    archives jar
+//}
 
-tasks.build.dependsOn('deobfJar')
+// Example configuration to allow publishing using the maven-publish task
+// This is the preferred method to reobfuscate your jar file
+jar.finalizedBy('reobfJar')
+// However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
+//publish.dependsOn('reobfJar')
 
-artifacts {
-    archives deobfJar
-    archives sourceJar
-    archives jar
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url "file:///${project.projectDir}/mcmodsrepo"
+        }
+    }
 }
