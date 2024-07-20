@@ -44,9 +44,6 @@ public class Config extends Configuration {
 	public static boolean astralSorcery;
 	public static boolean aoa;
 	
-	// alas…
-	public static boolean forceOutNaturalPledgeMaterials;
-	
 	public static boolean pyrotheumSmelt;
 	public static boolean tfMelt;
 	
@@ -125,12 +122,6 @@ public class Config extends Configuration {
 		projectRed = getBoolean("Enable Project Red integration", "modules", true, "Integrate with Project Red-Core");
 		mekanism = getBoolean("Enable Mekanism integration", "modules", true, "Integrate with Mekanism");
 		botania = getBoolean("Enable Botania integration", "modules", true, "Integrate with Botania");
-		{
-			forceOutNaturalPledgeMaterials = getBoolean("Force out Natural Pledge TiC materials", "tweaks", true,
-					"If Natural Pledge is loaded:\n"
-					+ "If true: replace Natural Pledge Botania TiC materials with PlusTiC ones;\n"
-					+ "Otherwise: do *not* load the Botania module for PlusTiC, overriding other settings.");
-		}
 		armorPlus = getBoolean("Enable ArmorPlus integration", "modules", true, "Integrate with ArmorPlus");
 		thermalFoundation = getBoolean("Enable Thermal Foundation integration", "modules", true, "Integrate with Thermal Foundation");
 		{

@@ -19,6 +19,7 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 - [Project Red](https://www.curseforge.com/minecraft/mc-mods/project-red-core)
 - [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism)
 - [Botania](https://www.curseforge.com/minecraft/mc-mods/botania)
+  - [Natural Pledge](https://www.curseforge.com/minecraft/mc-mods/natural-pledge)* (removed in v10)
 - [ArmorPlus](https://www.curseforge.com/minecraft/mc-mods/armorplus)
 - [Thermal Foundation](https://www.curseforge.com/minecraft/mc-mods/thermal-foundation)
 - [Draconic Evolution](https://www.curseforge.com/minecraft/mc-mods/draconic-evolution)
@@ -39,6 +40,13 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 - [Erebus](https://www.curseforge.com/minecraft/mc-mods/the-erebus) (removed in v10)
 - [Simply Jetpacks 2](https://www.curseforge.com/minecraft/mc-mods/simply-jetpacks-2) (removed in v10)
 
+#### Natural Pledge
+
+> [!NOTE]
+> As of v10, since Natural Pledge has not been updated past 1.12.2, this note is no longer applicable.
+
+Between 5.1.2 and 9.x, PlusTiC forces out and *overrides* Natural Pledge TiC materials by default. This can be changed in the config so that PlusTiC does *not* add Botania materials if Natural Pledge is loaded.
+
 ### Utility
 
 - [Just Enough Items](https://www.curseforge.com/minecraft/mc-mods/jei)
@@ -48,10 +56,6 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 - [Tesla Core Lib](https://www.curseforge.com/minecraft/mc-mods/tesla-core-lib)
 - [ModTweaker](https://www.curseforge.com/minecraft/mc-mods/modtweaker) (removed in v10)
 - [Construct's Armory](https://www.curseforge.com/minecraft/mc-mods/constructs-armory) (removed in v10)
-
-### A note about Natural Pledge
-
-Starting in 5.1.2.0, PlusTiC forces out and *overrides* Natural Pledge TiC materials by default. This can be changed in the config so that PlusTiC does *not* add Botania materials if Natural Pledge is loaded.
 
 ## Frequently Asked Questions (FAQ)
 
