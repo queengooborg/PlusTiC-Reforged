@@ -32,6 +32,7 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 - [GemsPlusPlus](https://www.curseforge.com/minecraft/mc-mods/gemsplusplus)
 - [Applied Energistics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2)
 - [Advent of Ascension (Nevermine)](https://www.curseforge.com/minecraft/mc-mods/advent-of-ascension-nevermine)
+- [The Twilight Forest](https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest)
 - [Advanced Rocketry](https://www.curseforge.com/minecraft/mc-mods/advanced-rocketry) (removed in v10)
 - [Natura](https://www.curseforge.com/minecraft/mc-mods/natura) (removed in v10)
 - [Galacticraft Legacy](https://www.curseforge.com/minecraft/mc-mods/galacticraft-legacy) (removed in v10)
