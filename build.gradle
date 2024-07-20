@@ -152,6 +152,7 @@ dependencies {
     runtime 'curse.maven:environmental-tech-245453:2691536'
 //    runtime 'curse.maven:galacticraft-legacy-564236:4671122'
     runtime 'curse.maven:biomes-o-plenty-220318:2715506' // 'curse.maven:biomes-o-plenty-220318:3558882'
+    runtime 'curse.maven:the-twilight-forest-227639:3051450'
 
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
