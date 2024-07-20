@@ -19,7 +19,6 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 - [Project Red](https://www.curseforge.com/minecraft/mc-mods/project-red-core)
 - [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism)
 - [Botania](https://www.curseforge.com/minecraft/mc-mods/botania)
-- [Advanced Rocketry](https://www.curseforge.com/minecraft/mc-mods/advanced-rocketry)
 - [ArmorPlus](https://www.curseforge.com/minecraft/mc-mods/armorplus)
 - [Thermal Foundation](https://www.curseforge.com/minecraft/mc-mods/thermal-foundation)
 - [Draconic Evolution](https://www.curseforge.com/minecraft/mc-mods/draconic-evolution)
@@ -37,6 +36,7 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 - [Thaumcraft](https://www.curseforge.com/minecraft/mc-mods/thaumcraft)
 - [Simply Jetpacks 2](https://www.curseforge.com/minecraft/mc-mods/simply-jetpacks-2)
 - [Advent of Ascension (Nevermine)](https://www.curseforge.com/minecraft/mc-mods/advent-of-ascension-nevermine)
+- [Advanced Rocketry](https://www.curseforge.com/minecraft/mc-mods/advanced-rocketry) (removed in v10)
 
 ### Utility
 

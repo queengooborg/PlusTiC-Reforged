@@ -141,7 +141,6 @@ dependencies {
     runtime 'curse.maven:thaumcraft-223628:2629023' // 'com.azanor:Thaumcraft:1.12.2-6.1.BETA26'
 //    runtime 'curse.maven:project-red-core-228702:2745545' // 'mrtjp:ProjectRed:1.12.2-4.9.4.120'
     runtime 'curse.maven:mekanism-268560:2835175-api-2835176' // 'mekanism:Mekanism:1.21-10.6.3.49'
-    runtime 'curse.maven:advanced-rocketry-236542:4671856'
 //    runtime 'curse.maven:armorplus-237366:2952741'
     runtime 'curse.maven:thermal-foundation-222880:2926428'
     runtime 'curse.maven:draconic-evolution-223565:3431261'

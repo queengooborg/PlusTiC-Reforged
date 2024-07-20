@@ -110,7 +110,6 @@ public class PlusTiC {
 				new ModuleNatura(),
 				new ModuleGems(),
 				new ModuleMekanism(),
-				new ModuleAdvRocketry(),
 				new ModuleBotania(),
 				new ModuleArmorPlus(),
 				new ModuleTF(),

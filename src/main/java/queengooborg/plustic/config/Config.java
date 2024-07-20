@@ -29,7 +29,6 @@ public class Config extends Configuration {
 	public static boolean projectRed;
 	public static boolean mekanism;
 	public static boolean botania;
-	public static boolean advancedRocketry;
 	public static boolean armorPlus;
 	public static boolean thermalFoundation;
 	public static boolean draconicEvolution;
@@ -141,7 +140,6 @@ public class Config extends Configuration {
 					+ "If true: replace Natural Pledge Botania TiC materials with PlusTiC ones;\n"
 					+ "Otherwise: do *not* load the Botania module for PlusTiC, overriding other settings.");
 		}
-		advancedRocketry = getBoolean("Enable Advanced Rocketry integration", "modules", true, "Integrate with Advanced Rocketry (actually LibVulpes)");
 		armorPlus = getBoolean("Enable ArmorPlus integration", "modules", true, "Integrate with ArmorPlus");
 		thermalFoundation = getBoolean("Enable Thermal Foundation integration", "modules", true, "Integrate with Thermal Foundation");
 		{
