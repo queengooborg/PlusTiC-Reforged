@@ -26,7 +26,6 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 - [Psi](https://www.curseforge.com/minecraft/mc-mods/psi)
 - [Avaritia](https://www.curseforge.com/minecraft/mc-mods/avaritia-1-10)
 - [Industrial Foregoing](https://www.curseforge.com/minecraft/mc-mods/industrial-foregoing)
-- [Galacticraft Legacy](https://www.curseforge.com/minecraft/mc-mods/galacticraft-legacy)
 - [Survivalist](https://www.curseforge.com/minecraft/mc-mods/survivalist)
 - [ProjectE](https://www.curseforge.com/minecraft/mc-mods/projecte)
 - [GemsPlusPlus](https://www.curseforge.com/minecraft/mc-mods/gemsplusplus)
@@ -37,6 +36,7 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 - [Advent of Ascension (Nevermine)](https://www.curseforge.com/minecraft/mc-mods/advent-of-ascension-nevermine)
 - [Advanced Rocketry](https://www.curseforge.com/minecraft/mc-mods/advanced-rocketry) (removed in v10)
 - [Natura](https://www.curseforge.com/minecraft/mc-mods/natura) (removed in v10)
+- [Galacticraft Legacy](https://www.curseforge.com/minecraft/mc-mods/galacticraft-legacy) (removed in v10)
 
 ### Utility
 

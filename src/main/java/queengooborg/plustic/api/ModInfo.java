@@ -15,7 +15,6 @@ public class ModInfo {
 	+ "after:thermalfoundation;after:substratum;after:draconicevolution;"
 	+ "after:tesla;after:baubles;after:actuallyadditions;"
 	+ "after:psi;after:avaritia;"
-	+ "after:galacticraftcore;after:galacticraftplanets;"
 	+ "after:botanicaladdons;after:survivalist;after:modernmetals;after:basemetals;"
 	+ "after:projecte;after:gemsplus;after:appliedenergistics2;after:environmentaltech;"
 	+ "after:industrialforegoing;after:twilightforest@[3.7,);after:thaumcraft;after:crafttweaker;"

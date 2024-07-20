@@ -116,7 +116,6 @@ public class PlusTiC {
 				new ModuleActAdd(),
 				new ModulePsi(),
 				new ModuleAvaritia(),
-				new ModuleGalacticraft(),
 				new ModuleSurvivalist(),
 				new ModuleProjectE(),
 				new ModuleGemsPlus(),
@@ -154,8 +153,6 @@ public class PlusTiC {
 		PacketHandler.init();
 		
 		IModule.modules.forEach(IModule::init2);
-		
-		postIntegrate();
 	}
 	
 	@EventHandler
