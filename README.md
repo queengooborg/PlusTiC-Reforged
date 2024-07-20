@@ -37,6 +37,7 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 - [Galacticraft Legacy](https://www.curseforge.com/minecraft/mc-mods/galacticraft-legacy) (removed in v10)
 - [Environmental Tech](https://www.curseforge.com/minecraft/mc-mods/environmental-tech) (removed in v10)
 - [Thaumcraft](https://www.curseforge.com/minecraft/mc-mods/thaumcraft) (removed in v10)
+- [Erebus](https://www.curseforge.com/minecraft/mc-mods/the-erebus) (removed in v10)
 
 ### Utility
 

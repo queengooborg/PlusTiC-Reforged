@@ -42,8 +42,7 @@ public class ModuleGems implements IModule {
 			PlusTiC.materials.put("aoa_sapphire", aoaSapphire);
 		}
 		
-		if ((Config.aoa && Loader.isModLoaded("aoa3"))
-				|| (Config.erebus && Loader.isModLoaded("erebus"))) {
+		if ((Config.aoa && Loader.isModLoaded("aoa3"))) {
 			Material jade = new Material("jade", 0x00e682);
 			jade.addTrait(Jaded.jaded);
 			jade.addItem("gemJade", 1, Material.VALUE_Ingot);

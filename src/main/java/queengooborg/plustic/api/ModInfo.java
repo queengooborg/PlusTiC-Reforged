@@ -18,7 +18,6 @@ public class ModInfo {
 	+ "after:botanicaladdons;after:survivalist;after:modernmetals;after:basemetals;"
 	+ "after:projecte;after:gemsplus;after:appliedenergistics2;"
 	+ "after:industrialforegoing;after:twilightforest@[3.7,);after:crafttweaker;"
-	+ "after:modtweaker;after:conarm;after:micsiege;after:simplyjetpacks;after:astralsorcery;after:aoa3;"
-	+ "after:erebus;";
+	+ "after:modtweaker;after:conarm;after:micsiege;after:simplyjetpacks;after:astralsorcery;after:aoa3;";
 	
 }
