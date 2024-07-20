@@ -22,7 +22,10 @@ plugins {
 
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "9.0.0"
+def modVersion = "9.0.0"
+def mcVersion = "1.12.2"
+
+version = modVersion + "-mc" + mcVersion
 group= "queengooborg.plustic" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "plustic"
 
@@ -186,7 +189,7 @@ processResources {
     exclude '**/*.xcf'
 
     // this will ensure that this task is redone when the versions change.
-    inputs.property "version", project.version
+    inputs.property "version", modVersion
     inputs.property "mcversion", project.minecraft.version
 
     // replace stuff in mcmod.info, nothing else
@@ -194,7 +197,7 @@ processResources {
         include 'mcmod.info'
 
         // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+        expand 'version': modVersion, 'mcversion':project.minecraft.version
     }
 
     // copy everything else, thats not the mcmod.info
