@@ -1,7 +1,6 @@
 package queengooborg.plustic.modules;
 
 import static slimeknights.tconstruct.library.materials.MaterialTypes.*;
-import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
 import static slimeknights.tconstruct.tools.TinkerTraits.*;
 
 import queengooborg.plustic.*;
@@ -9,9 +8,6 @@ import queengooborg.plustic.config.*;
 import queengooborg.plustic.traits.*;
 import queengooborg.plustic.util.Utils;
 import net.minecraft.util.text.*;
-import net.minecraftforge.fml.common.*;
-import slimeknights.tconstruct.library.*;
-import slimeknights.tconstruct.library.materials.*;
 
 public class ModuleArmorPlus implements IModule {
 
@@ -24,7 +20,7 @@ public class ModuleArmorPlus implements IModule {
 			PlusTiC.proxy.setRenderInfo(witherBone, 0x000000);
 			TinkerRegistry.addMaterialStats(witherBone, new ArrowShaftMaterialStats(1.0f, 20));
 			PlusTiC.materials.put("witherbone", witherBone);
-			
+
 			Material guardianScale = new Material("guardianscale", TextFormatting.AQUA);
 			guardianScale.addTrait(DivineShield.divineShield, HEAD);
 			guardianScale.addTrait(aquadynamic);
@@ -38,11 +34,11 @@ public class ModuleArmorPlus implements IModule {
 			PlusTiC.materials.put("guardianscale", guardianScale);
 		}
 	}
-	
+
 	public void init2() {
 		// NOT REGISTERING YOUR OREDICTS IN PREINIT, ARMORPLUS?
 		Utils.setDispItem(PlusTiC.materials.get("witherbone"), "witherBone");
 		Utils.setDispItem(PlusTiC.materials.get("guardianscale"), "scaleGuardian");
 	}
-	
+
 }

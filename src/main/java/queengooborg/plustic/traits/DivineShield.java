@@ -1,11 +1,9 @@
-
 package queengooborg.plustic.traits;
 
 import queengooborg.plustic.api.*;
 import net.minecraft.entity.*;
 import net.minecraft.init.*;
 import net.minecraft.item.*;
-import net.minecraft.potion.*;
 import net.minecraft.world.*;
 import net.minecraftforge.common.*;
 import net.minecraftforge.event.entity.living.*;
@@ -15,17 +13,17 @@ import slimeknights.tconstruct.library.utils.*;
 
 public class DivineShield extends AbstractTrait {
 	public static final DivineShield divineShield = new DivineShield();
-	
+
 	public DivineShield() {
 		super("divineshield", 0x00FFFF);
 		MinecraftForge.EVENT_BUS.register(this);
 		Toggle.addToggleable(identifier);
 	}
-	
+
 	@Override
 	public void onUpdate(ItemStack tool, World world, Entity entity, int itemSlot, boolean isSelected) {
 		if (isSelected && entity instanceof EntityLivingBase) {
-			((EntityLivingBase)entity).addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 20));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 20));
 		}
 	}
 
@@ -40,8 +38,8 @@ public class DivineShield extends AbstractTrait {
 				|| !Toggle.getToggleState(tool, identifier)
 				|| event.isCanceled()
 				|| !TinkerUtil.hasTrait(
-						TagUtil.getTagSafe(tool),
-						getIdentifier())
+				TagUtil.getTagSafe(tool),
+				getIdentifier())
 				|| ToolHelper.getCurrentDurability(tool) < 1)
 			return;
 		event.setAmount(event.getAmount() * 0.85f);

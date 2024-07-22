@@ -1,13 +1,11 @@
 package queengooborg.plustic.net;
 
-import queengooborg.plustic.api.*;
-import net.minecraftforge.fml.common.network.*;
 import net.minecraftforge.fml.common.network.simpleimpl.*;
-import net.minecraftforge.fml.relauncher.*;
+import queengooborg.plustic.config.ModInfo;
 
 public class PacketHandler {
 	public static final SimpleNetworkWrapper INSTANCE = NetworkRegistry.INSTANCE.newSimpleChannel(ModInfo.MODID);
-	
+
 	public static void init() {
 		INSTANCE.registerMessage(PacketReleaseEntity::onMessage, PacketReleaseEntity.class, 0, Side.SERVER);
 		INSTANCE.registerMessage(PacketHandleToggleGui::onMessage, PacketHandleToggleGui.class, 1, Side.SERVER);
@@ -25,7 +23,7 @@ public class PacketHandler {
 		INSTANCE.registerMessage(PacketUpdateTECentrifugeLiquid::onMessage, PacketUpdateTECentrifugeLiquid.class, 13, Side.CLIENT);
 		INSTANCE.registerMessage(PacketUpdateTECentrifugeCoreEnergy::onMessage, PacketUpdateTECentrifugeCoreEnergy.class, 14, Side.CLIENT);
 		INSTANCE.registerMessage(PacketRequestUpdateTECentrifuge::onMessage, PacketRequestUpdateTECentrifuge.class, 15, Side.SERVER);
-		
+
 		// TODO add mroe messages when needed
 	}
 }

@@ -13,9 +13,6 @@ import queengooborg.plustic.traits.*;
 import queengooborg.plustic.util.*;
 import net.minecraft.item.*;
 import net.minecraft.util.text.*;
-import net.minecraftforge.fml.common.*;
-import slimeknights.tconstruct.library.*;
-import slimeknights.tconstruct.library.materials.*;
 
 public class ModuleActAdd implements IModule {
 
@@ -32,7 +29,7 @@ public class ModuleActAdd implements IModule {
 					new ExtraMaterialStats(50),
 					PlusTiC.justWhy);
 			PlusTiC.materials.put("blackquartz", blackQuartz);
-			
+
 			Material Void = new Material("void_actadd_plustic", TextFormatting.BLACK);
 			Void.addTrait(Unnamed.unnamed, HEAD);
 			Void.addTrait(crude, HEAD);
@@ -44,7 +41,7 @@ public class ModuleActAdd implements IModule {
 					new ExtraMaterialStats(140),
 					new BowMaterialStats(1, 1.3f, 3.5f));
 			PlusTiC.materials.put("Void", Void);
-			
+
 			Material enori = new Material("enori_actadd_plustic", TextFormatting.WHITE);
 			enori.addTrait(Starfishy.starfishy, HEAD);
 			enori.addTrait(Anticorrosion.anticorrosion);
@@ -56,7 +53,7 @@ public class ModuleActAdd implements IModule {
 					new BowMaterialStats(1.2f, 1.2f, 5.1f),
 					new BatteryCellMaterialStats(72000));
 			PlusTiC.materials.put("enori", enori);
-			
+
 			Material palis = new Material("palis_actadd_plustic", TextFormatting.DARK_BLUE);
 			palis.addTrait(Spades.spades);
 			palis.setCraftable(true);
@@ -67,7 +64,7 @@ public class ModuleActAdd implements IModule {
 					PlusTiC.justWhy,
 					new LaserMediumMaterialStats(9, 17));
 			PlusTiC.materials.put("palis", palis);
-			
+
 			Material restonia = new Material("restonia_actadd_plustic", TextFormatting.DARK_RED);
 			restonia.addTrait(Hearts.hearts);
 			restonia.setCraftable(true);
@@ -78,7 +75,7 @@ public class ModuleActAdd implements IModule {
 					new BowMaterialStats(1.4f, 1.7f, 5.7f),
 					new BatteryCellMaterialStats(80000));
 			PlusTiC.materials.put("restonia", restonia);
-			
+
 			Material emeradic = new Material("emeradic_actadd_plustic", TextFormatting.DARK_GREEN);
 			emeradic.addTrait(Vindictive.vindictive);
 			emeradic.setCraftable(true);
@@ -89,7 +86,7 @@ public class ModuleActAdd implements IModule {
 					new BowMaterialStats(1.1f, 2.0f, 7.0f),
 					new LaserMediumMaterialStats(10, 24));
 			PlusTiC.materials.put("emeradic", emeradic);
-			
+
 			Material diamatine = new Material("diamatine_actadd_plustic", TextFormatting.BLUE);
 			diamatine.addTrait(MorganLeFay.morganlefay);
 			diamatine.setCraftable(true);
@@ -102,7 +99,7 @@ public class ModuleActAdd implements IModule {
 			PlusTiC.materials.put("diamatine", diamatine);
 		}
 	}
-	
+
 	public void init2() {
 		final Material Void = PlusTiC.materials.get("Void");
 		if (Void != null) {
@@ -110,43 +107,43 @@ public class ModuleActAdd implements IModule {
 			Void.addItem(voidStack, 1, Material.VALUE_Ingot);
 			Void.setRepresentativeItem(voidStack);
 		}
-		
+
 		final Material enori = PlusTiC.materials.get("enori");
 		if (enori != null) {
 			ItemStack enoriStack = new ItemStack(InitItems.itemCrystal, 1, 5);
 			enori.addItem(enoriStack, 1, Material.VALUE_Ingot);
 			enori.setRepresentativeItem(enoriStack);
 		}
-		
+
 		final Material palis = PlusTiC.materials.get("palis");
 		if (palis != null) {
 			ItemStack palisStack = new ItemStack(InitItems.itemCrystal, 1, 1);
 			palis.addItem(palisStack, 1, Material.VALUE_Ingot);
 			palis.setRepresentativeItem(palisStack);
 		}
-		
+
 		final Material restonia = PlusTiC.materials.get("restonia");
 		if (restonia != null) {
 			restonia.addItem(InitItems.itemCrystal, 1, Material.VALUE_Ingot);
 			restonia.setRepresentativeItem(InitItems.itemCrystal);
 		}
-		
+
 		final Material emeradic = PlusTiC.materials.get("emeradic");
 		if (emeradic != null) {
 			ItemStack emeradicStack = new ItemStack(InitItems.itemCrystal, 1, 4);
 			emeradic.addItem(emeradicStack, 1, Material.VALUE_Ingot);
 			emeradic.setRepresentativeItem(emeradicStack);
 		}
-		
+
 		final Material diamatine = PlusTiC.materials.get("diamatine");
 		if (diamatine != null) {
 			ItemStack diamatineStack = new ItemStack(InitItems.itemCrystal, 1, 2);
 			diamatine.addItem(diamatineStack, 1, Material.VALUE_Ingot);
 			diamatine.setRepresentativeItem(diamatineStack);
 		}
-		
+
 		// YOU TOO, ACTUALLY ADDITIONS?
 		Utils.setDispItem(PlusTiC.materials.get("blackquartz"), "gemQuartzBlack");
 	}
-	
+
 }

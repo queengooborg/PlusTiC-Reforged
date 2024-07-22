@@ -5,29 +5,24 @@ import queengooborg.plustic.api.*;
 import queengooborg.plustic.net.*;
 import net.minecraft.client.resources.*;
 import net.minecraft.entity.*;
-import net.minecraft.entity.player.*;
 import net.minecraft.init.*;
 import net.minecraft.item.*;
-import net.minecraft.nbt.*;
 import net.minecraft.util.*;
-import net.minecraft.util.text.*;
 import net.minecraft.world.*;
 import net.minecraftforge.common.*;
 import net.minecraftforge.event.entity.player.*;
-import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.eventhandler.*;
-import net.minecraftforge.fml.relauncher.*;
 import slimeknights.tconstruct.library.traits.*;
 import slimeknights.tconstruct.library.utils.*;
 
 public class Portly extends AbstractTrait {
 	public static final Portly portly = new Portly();
-	
+
 	public Portly() {
 		super("portly", 0x00443B);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
-	
+
 	@Override
 	public void onUpdate(ItemStack tool, World world, Entity entity, int itemSlot, boolean isSelected) {
 		if (isSelected && FMLCommonHandler.instance().getSide().isClient()) {
@@ -36,7 +31,7 @@ public class Portly extends AbstractTrait {
 			}
 		}
 	}
-	
+
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public void captureEntity(PlayerInteractEvent.EntityInteract event) {
 		NBTTagCompound nbt = TagUtil.getTagSafe(event.getItemStack());
@@ -62,6 +57,7 @@ public class Portly extends AbstractTrait {
 		event.setCanceled(true);
 		event.setCancellationResult(EnumActionResult.SUCCESS);
 	}
+
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent
 	public void tooltip(ItemTooltipEvent event) {
@@ -73,8 +69,9 @@ public class Portly extends AbstractTrait {
 					nbt.getCompoundTag("portlyGentleman").getString("id")));
 		}
 	}
+
 	private int durabilityCost(Entity entity) {
 		return Math.max(15, entity instanceof EntityLivingBase ?
-				(int)((EntityLivingBase)entity).getHealth() : 15);
+				(int) ((EntityLivingBase) entity).getHealth() : 15);
 	}
 }

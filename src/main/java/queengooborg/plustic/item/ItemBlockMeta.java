@@ -10,14 +10,14 @@ public class ItemBlockMeta extends ItemBlock {
 		setMaxDamage(0);
 		setHasSubtypes(true);
 	}
-	
+
 	@Override
 	public int getMetadata(int damage) {
 		return damage;
 	}
-	
+
 	@Override
 	public String getTranslationKey(ItemStack stack) {
-		return super.getTranslationKey(stack) + "." + ((IMetaBlockName)block).getSpecialName(stack);
+		return super.getTranslationKey(stack) + "." + ((IMetaBlockName) block).getSpecialName(stack);
 	}
 }

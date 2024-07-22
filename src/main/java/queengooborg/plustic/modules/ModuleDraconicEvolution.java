@@ -5,7 +5,6 @@ import static slimeknights.tconstruct.library.materials.MaterialTypes.*;
 import java.util.concurrent.*;
 
 import queengooborg.plustic.*;
-import queengooborg.plustic.api.*;
 import queengooborg.plustic.config.*;
 import queengooborg.plustic.tools.stats.*;
 import queengooborg.plustic.traits.*;
@@ -15,8 +14,6 @@ import net.minecraftforge.event.*;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.eventhandler.*;
 import net.minecraftforge.fml.common.registry.*;
-import slimeknights.tconstruct.library.*;
-import slimeknights.tconstruct.library.materials.*;
 
 @Mod.EventBusSubscriber(modid = ModInfo.MODID)
 public class ModuleDraconicEvolution implements IModule {
@@ -26,7 +23,7 @@ public class ModuleDraconicEvolution implements IModule {
 	public static final Item awakened_core = null;
 	@GameRegistry.ObjectHolder(value = "draconicevolution:chaotic_core")
 	public static final Item chaotic_core = null;
-	
+
 	private static final CompletableFuture<?> regFut = new CompletableFuture<>();
 
 	public void init() {
@@ -34,11 +31,11 @@ public class ModuleDraconicEvolution implements IModule {
 			Material wyvern = new Material("wyvern_plustic", TextFormatting.DARK_PURPLE),
 					awakened = new Material("awakened_plustic", TextFormatting.GOLD),
 					chaotic = new Material("chaotic_plustic", TextFormatting.GRAY);
-			
+
 			PlusTiC.materials.put("wyvern_core", wyvern);
 			PlusTiC.materials.put("awakened_core", awakened);
 			PlusTiC.materials.put("chaotic_core", chaotic);
-			
+
 			final CompletableFuture<?> draconicFut = regFut.thenRun(() -> {
 				wyvern.addTrait(BrownMagic.brownmagic, HEAD);
 				wyvern.addTrait(BlindBandit.blindbandit, HEAD);
@@ -51,7 +48,7 @@ public class ModuleDraconicEvolution implements IModule {
 				TinkerRegistry.addMaterialStats(wyvern, new HandleMaterialStats(1.6f, 130));
 				TinkerRegistry.addMaterialStats(wyvern, new ExtraMaterialStats(240));
 				TinkerRegistry.addMaterialStats(wyvern, new BowMaterialStats(1.6f, 2, 11));
-				
+
 				awakened.addTrait(RudeAwakening.rudeawakening, HEAD);
 				awakened.addTrait(BrownMagic.brownmagic, HEAD);
 				awakened.addTrait(BlindBandit.blindbandit);
@@ -65,7 +62,7 @@ public class ModuleDraconicEvolution implements IModule {
 				TinkerRegistry.addMaterialStats(awakened, new HandleMaterialStats(1.8f, 500));
 				TinkerRegistry.addMaterialStats(awakened, new ExtraMaterialStats(500));
 				TinkerRegistry.addMaterialStats(awakened, new BowMaterialStats(1.9f, 2.8f, 20));
-				
+
 				chaotic.addTrait(UnstableMatter.unstablematter, HEAD);
 				chaotic.addTrait(Vindictive.vindictive, HEAD);
 				chaotic.addTrait(DarkTraveler.darktraveler);
@@ -79,16 +76,16 @@ public class ModuleDraconicEvolution implements IModule {
 				TinkerRegistry.addMaterialStats(chaotic, new BowMaterialStats(2.3f, 4.0f, 24));
 				TinkerRegistry.addMaterialStats(chaotic, new LaserMediumMaterialStats(45, 256));
 			});
-			
+
 			PlusTiC.materialIntegrationStages.put("wyvern_core", draconicFut);
 			PlusTiC.materialIntegrationStages.put("awakened_core", draconicFut);
 			PlusTiC.materialIntegrationStages.put("chaotic_core", draconicFut);
 		}
 	}
-	
+
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public static void onItemReg(RegistryEvent.Register<Item> event) {
 		regFut.complete(null);
 	}
-	
+
 }

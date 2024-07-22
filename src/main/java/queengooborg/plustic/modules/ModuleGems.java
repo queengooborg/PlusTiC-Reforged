@@ -1,26 +1,20 @@
 package queengooborg.plustic.modules;
 
 import static slimeknights.tconstruct.library.materials.MaterialTypes.*;
-import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
 import static slimeknights.tconstruct.tools.TinkerTraits.*;
 
 import queengooborg.plustic.*;
-import queengooborg.plustic.api.*;
 import queengooborg.plustic.config.*;
 import queengooborg.plustic.tools.stats.*;
 import queengooborg.plustic.traits.*;
 import queengooborg.plustic.util.*;
 import net.minecraft.client.resources.*;
 import net.minecraft.item.*;
-import net.minecraft.nbt.*;
 import net.minecraft.util.*;
 import net.minecraft.util.text.*;
 import net.minecraftforge.event.entity.player.*;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.eventhandler.*;
-import net.minecraftforge.fml.relauncher.*;
-import slimeknights.tconstruct.library.*;
-import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.*;
 
 @Mod.EventBusSubscriber(modid = ModInfo.MODID, value = Side.CLIENT)
@@ -28,7 +22,7 @@ public class ModuleGems implements IModule {
 
 	public void init() {
 		final boolean isBoPLoaded = Loader.isModLoaded("BiomesOPlenty") || Loader.isModLoaded("biomesoplenty");
-		
+
 		// Register AoA3 sapphire before BoP sapphire
 		if (Config.aoa && Loader.isModLoaded("aoa3")) {
 			Material aoaSapphire = new Material("sapphire_aoa", TextFormatting.BLUE);
@@ -41,7 +35,7 @@ public class ModuleGems implements IModule {
 			TinkerRegistry.addMaterialStats(aoaSapphire, new BowMaterialStats(1.3f, 1.5f, 4));
 			PlusTiC.materials.put("aoa_sapphire", aoaSapphire);
 		}
-		
+
 		if ((Config.aoa && Loader.isModLoaded("aoa3"))) {
 			Material jade = new Material("jade", 0x00e682);
 			jade.addTrait(Jaded.jaded);
@@ -57,7 +51,7 @@ public class ModuleGems implements IModule {
 					new LaserMediumMaterialStats(7, 60));
 			PlusTiC.materials.put("jade", jade);
 		}
-		
+
 		if ((Config.bop && isBoPLoaded)
 				|| (Config.projectRed && Loader.isModLoaded("projectred-core"))) {
 			Material sapphire = new Material("sapphire", TextFormatting.BLUE);
@@ -71,7 +65,7 @@ public class ModuleGems implements IModule {
 			TinkerRegistry.addMaterialStats(sapphire, new ExtraMaterialStats(120));
 			TinkerRegistry.addMaterialStats(sapphire, new BowMaterialStats(1, 1.5f, 4));
 			PlusTiC.materials.put("sapphire", sapphire);
-			
+
 			Material ruby = new Material("ruby", TextFormatting.RED);
 			ruby.addTrait(BloodyMary.bloodymary);
 			ruby.addTrait(sharp, HEAD);
@@ -84,7 +78,7 @@ public class ModuleGems implements IModule {
 			TinkerRegistry.addMaterialStats(ruby, new ExtraMaterialStats(20));
 			TinkerRegistry.addMaterialStats(ruby, new BowMaterialStats(1.5f, 1.4f, 4));
 			PlusTiC.materials.put("ruby", ruby);
-			
+
 			Material peridot = new Material("peridot", TextFormatting.GREEN);
 			peridot.addTrait(NaturesBlessing.naturesblessing);
 			peridot.addItem("gemPeridot", 1, Material.VALUE_Ingot);
@@ -109,7 +103,7 @@ public class ModuleGems implements IModule {
 			TinkerRegistry.addMaterialStats(malachite, new ExtraMaterialStats(20));
 			TinkerRegistry.addMaterialStats(malachite, new BowMaterialStats(1.4f, 1.4f, 4));
 			PlusTiC.materials.put("malachite", malachite);
-			
+
 			Material amber = new Material("amber", TextFormatting.GOLD);
 			amber.addTrait(shocking);
 			amber.addTrait(Thundering.thundering, PROJECTILE);
@@ -124,7 +118,7 @@ public class ModuleGems implements IModule {
 			TinkerRegistry.addMaterialStats(amber, PlusTiC.justWhy);
 			TinkerRegistry.addMaterialStats(amber, new ArrowShaftMaterialStats(1, 5));
 			PlusTiC.materials.put("amber", amber);
-			
+
 			Material topaz = new Material("topaz", TextFormatting.GOLD);
 			topaz.addTrait(NaturesPower.naturespower);
 			topaz.addItem("gemTopaz", 1, Material.VALUE_Ingot);
@@ -136,7 +130,7 @@ public class ModuleGems implements IModule {
 			TinkerRegistry.addMaterialStats(topaz, new ExtraMaterialStats(65));
 			TinkerRegistry.addMaterialStats(topaz, new BowMaterialStats(0.4f, 1.4f, 7));
 			PlusTiC.materials.put("topaz", topaz);
-			
+
 			Material tanzanite = new Material("tanzanite", TextFormatting.LIGHT_PURPLE);
 			tanzanite.addTrait(freezing);
 			tanzanite.addItem("gemTanzanite", 1, Material.VALUE_Ingot);
@@ -164,7 +158,7 @@ public class ModuleGems implements IModule {
 			PlusTiC.materials.put("amethyst", amethyst);
 		}
 	}
-	
+
 	@Override
 	public void init2() {
 		Material aoaSapphire = PlusTiC.materials.get("aoa_sapphire");
@@ -174,13 +168,13 @@ public class ModuleGems implements IModule {
 			aoaSapphire.setRepresentativeItem(aoaSapphireItem);
 		}
 	}
-	
+
 	@SubscribeEvent
 	public static void tooltip(ItemTooltipEvent event) { // warn that AoA sapphire is a distinct material
 		if (!PlusTiC.materials.containsKey("aoa_sapphire")) return;
 		NBTTagList mats = TagUtil.getBaseMaterialsTagList(event.getItemStack());
 		boolean warned = false;
-		for (int i=0; i<mats.tagCount(); ++i) {
+		for (int i = 0; i < mats.tagCount(); ++i) {
 			if ("sapphire".equals(mats.getStringTagAt(i)) && !warned) {
 				warned = true;
 				event.getToolTip().add(I18n.format("tooltip.plustic.sapphire.warn"));

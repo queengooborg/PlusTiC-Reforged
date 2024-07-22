@@ -9,11 +9,15 @@ import net.minecraftforge.fml.common.network.simpleimpl.*;
 
 public class PacketRequestUpdateTECentrifuge implements IMessage {
 	private Coord4D coord;
-	
-	public PacketRequestUpdateTECentrifuge() {}
-	public PacketRequestUpdateTECentrifuge(Coord4D coord) { this.coord = coord; }
-	
-	
+
+	public PacketRequestUpdateTECentrifuge() {
+	}
+
+	public PacketRequestUpdateTECentrifuge(Coord4D coord) {
+		this.coord = coord;
+	}
+
+
 	public static IMessage onMessage(PacketRequestUpdateTECentrifuge packet, MessageContext ctx) {
 		TileEntity te = packet.coord.TE();
 		if (te instanceof TECentrifugeCore) {
@@ -24,15 +28,15 @@ public class PacketRequestUpdateTECentrifuge implements IMessage {
 		}
 		return null;
 	}
-	
+
 	@Override
 	public void fromBytes(ByteBuf buf) {
 		coord = Coord4D.fromByteBuf(buf);
 	}
-	
+
 	@Override
 	public void toBytes(ByteBuf buf) {
 		coord.toByteBuf(buf);
 	}
-	
+
 }

@@ -9,9 +9,6 @@ import queengooborg.plustic.fluids.*;
 import queengooborg.plustic.tools.stats.*;
 import queengooborg.plustic.traits.*;
 import queengooborg.plustic.util.*;
-import net.minecraftforge.fml.common.*;
-import slimeknights.tconstruct.library.*;
-import slimeknights.tconstruct.library.materials.*;
 
 public class ModuleAstralSorcery implements IModule {
 	@Override
@@ -24,19 +21,19 @@ public class ModuleAstralSorcery implements IModule {
 			starmetal.addItem("ingotAstralStarmetal", 1, Material.VALUE_Ingot);
 			starmetal.setCraftable(false).setCastable(true);
 			PlusTiC.proxy.setRenderInfo(starmetal, 0x000b56);
-			
+
 			FluidMolten starmetalFluid = Utils.fluidMetal("starmetal", 0x000b56);
 			starmetalFluid.setTemperature(999);
 			Utils.initFluidMetal(starmetalFluid);
 			starmetal.setFluid(starmetalFluid);
-			
+
 			TinkerRegistry.addMaterialStats(starmetal,
 					new HeadMaterialStats(204, 6.00f, 4.00f, DIAMOND),
 					new HandleMaterialStats(1.0f, 60),
 					new ExtraMaterialStats(100),
 					new BowMaterialStats(0.5f, 1.5f, 7f),
 					new LaserMediumMaterialStats(4.6f, 70));
-			
+
 			PlusTiC.materials.put("astralStarmetal", starmetal);
 		}
 	}

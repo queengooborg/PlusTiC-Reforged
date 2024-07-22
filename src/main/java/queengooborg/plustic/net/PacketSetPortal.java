@@ -2,22 +2,14 @@ package queengooborg.plustic.net;
 
 import io.netty.buffer.*;
 import queengooborg.plustic.api.*;
-import queengooborg.plustic.util.*;
-import net.minecraft.entity.player.*;
-import net.minecraft.nbt.*;
-import net.minecraft.util.*;
 import net.minecraft.util.math.*;
-import net.minecraft.util.text.*;
-import net.minecraft.world.*;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.fml.common.network.simpleimpl.*;
 import slimeknights.tconstruct.library.utils.*;
 
 public class PacketSetPortal implements IMessage {
 
 	public static IMessage onMessage(PacketSetPortal message, MessageContext ctx) {
-		IThreadListener mainThread = (WorldServer)ctx.getServerHandler().player.getEntityWorld();
+		IThreadListener mainThread = (WorldServer) ctx.getServerHandler().player.getEntityWorld();
 		mainThread.addScheduledTask(() -> {
 			EntityPlayerMP ep = ctx.getServerHandler().player;
 			if (ep.getEntityWorld().isRemote) {

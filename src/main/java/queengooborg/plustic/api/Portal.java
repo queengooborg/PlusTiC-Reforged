@@ -4,40 +4,31 @@ import java.util.*;
 
 import queengooborg.plustic.*;
 import queengooborg.plustic.net.*;
-import queengooborg.plustic.util.*;
 import net.minecraft.client.resources.*;
-import net.minecraft.entity.*;
-import net.minecraft.entity.player.*;
-import net.minecraft.nbt.*;
-import net.minecraft.util.*;
-import net.minecraftforge.common.*;
-import net.minecraftforge.common.capabilities.*;
-import net.minecraftforge.event.*;
 import net.minecraftforge.event.entity.player.*;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.*;
 import net.minecraftforge.fml.common.gameevent.*;
-import net.minecraftforge.fml.relauncher.*;
 import slimeknights.tconstruct.library.utils.*;
 
 public class Portal {
 	public static final String PORTAL_NBT = "nickoftime";
-	
+
 	private static final Set<String> portalable = new HashSet<>();
+
 	public static void addPortalable(String identifier) {
 		portalable.add(identifier);
 	}
-	
+
 	public static boolean canUse(NBTTagCompound nbt) {
-		for (String identifier: portalable) {
+		for (String identifier : portalable) {
 			if (TinkerUtil.hasTrait(nbt, identifier)) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent
 	public static void testSetPortal(InputEvent.KeyInputEvent event) {
@@ -45,7 +36,7 @@ public class Portal {
 			PacketHandler.INSTANCE.sendToServer(new PacketSetPortal());
 		}
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent
 	public static void tooltip(ItemTooltipEvent event) {

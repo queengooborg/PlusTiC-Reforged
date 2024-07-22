@@ -1,7 +1,6 @@
 package queengooborg.plustic.modules;
 
 import queengooborg.plustic.*;
-import queengooborg.plustic.api.*;
 import queengooborg.plustic.block.*;
 import queengooborg.plustic.config.*;
 import queengooborg.plustic.item.*;
@@ -16,21 +15,20 @@ import net.minecraftforge.event.*;
 import net.minecraftforge.fml.client.registry.*;
 import net.minecraftforge.fml.common.eventhandler.*;
 import net.minecraftforge.fml.common.registry.*;
-import net.minecraftforge.fml.relauncher.*;
 
 public class ModuleMachines implements IModule {
 	public static final BlockCentrifuge centrifuge = new BlockCentrifuge();
-	
+
 	static {
 		MinecraftForge.EVENT_BUS.register(ModuleMachines.class);
 	}
-	
+
 	@Override
 	public void init() {
 		if (Config.machines) {
 			GameRegistry.registerTileEntity(TECentrifugeCore.class, new ResourceLocation(ModInfo.MODID, "centrifuge_core"));
 			GameRegistry.registerTileEntity(TECentrifugeTank.class, new ResourceLocation(ModInfo.MODID, "centrifuge_tank"));
-			
+
 			PlusTiC.proxy.runOnClient(new RunnableDefaultNoop() {
 				@SideOnly(Side.CLIENT)
 				@Override
@@ -42,14 +40,14 @@ public class ModuleMachines implements IModule {
 			});
 		}
 	}
-	
+
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
 		if (Config.machines) {
 			event.getRegistry().register(centrifuge);
 		}
 	}
-	
+
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event) {
 		if (Config.machines) {

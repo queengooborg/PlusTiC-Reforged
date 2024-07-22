@@ -11,7 +11,7 @@ import com.google.common.collect.*;
 
 import it.unimi.dsi.fastutil.objects.*;
 import queengooborg.plustic.*;
-import queengooborg.plustic.api.ModInfo;
+import queengooborg.plustic.config.ModInfo;
 import queengooborg.plustic.config.*;
 import queengooborg.plustic.fluids.*;
 import queengooborg.plustic.traits.*;
@@ -23,9 +23,6 @@ import net.minecraftforge.fluids.*;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.*;
-import slimeknights.tconstruct.library.*;
-import slimeknights.tconstruct.library.materials.*;
-import slimeknights.tconstruct.shared.*;
 
 @Mod.EventBusSubscriber(modid = ModInfo.MODID)
 public class ModuleBotania implements IModule {
@@ -147,7 +144,7 @@ public class ModuleBotania implements IModule {
 			PlusTiC.materialIntegrationStages.putAll(Maps.transformValues(botaniaMaterials, mat -> integrationPromise));
 		}
 	}
-	
+
 	@SubscribeEvent
 	public static void onItemReg(RegistryEvent.Register<Item> event) {
 		itemPromise.complete(null);

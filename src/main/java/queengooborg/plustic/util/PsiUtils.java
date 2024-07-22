@@ -1,7 +1,5 @@
 package queengooborg.plustic.util;
 
-import net.minecraft.entity.player.*;
-import net.minecraftforge.fml.common.*;
 import vazkii.psi.common.core.handler.*;
 
 public class PsiUtils {
@@ -13,7 +11,7 @@ public class PsiUtils {
 		}
 		return 0;
 	}
-	
+
 	public static int extractPsiExact(EntityPlayer player, int extract) {
 		if ((Loader.isModLoaded("Psi") || Loader.isModLoaded("psi")) && PlayerDataHandler.get(player) != null && PlayerDataHandler.get(player).getCAD() != null) {
 			int amount = PlayerDataHandler.get(player).getAvailablePsi();
