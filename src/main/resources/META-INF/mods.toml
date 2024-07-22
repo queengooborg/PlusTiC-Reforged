@@ -23,7 +23,7 @@ displayURL = "https://minecraft.curseforge.com/projects/plustic-reforged" #optio
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile = "logo.png" #optional
 # A text field displayed in the mod UI
-credits = "Originally developed by Landmaster, TeamDman and various GitHub contributors" #optional
+credits = "Original PlusTiC mod developed by Landmaster and TeamDman" #optional
 # A text field displayed in the mod UI
 authors = "${mod_authors}" #optional
 
