@@ -2,14 +2,13 @@
 
 Remember the classic [PlusTiC mod](https://www.curseforge.com/minecraft/mc-mods/plusticminusbad) for 1.12.2?  Ever wanted to see an update for modern Minecraft versions?  Well, look no further, because PlusTiC Reforged is here!
 
+> [!NOTE]
+> PlusTiC Reforged is still in early development stages and is not ready for testing.  Please check back at a later time.
+> In the meantime, downloads for 1.12.2 are available through the CurseForge pages of both the [original mod](https://www.curseforge.com/minecraft/mc-mods/plusticminusbad) and [this one](https://www.curseforge.com/minecraft/mc-mods/plustic-reforged).
+
 ## About
 
 PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various other mods, adding support for new material types that the mods introduce, such as Steel, Osmium, Refined Obsidian, Dark Matter and more.  PlusTiC Reforged is a continuation off of the original PlusTiC mod, ported for newer versions of Minecraft.
-
-## New Tools
-
-- Katana. A fast two-handed weapon that deals increasing damage the more mobs you kill.
-- Laser Gun. A ranged weapon that requires durability and energy.
 
 ## Supported Mods
 
@@ -19,7 +18,6 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 - [Project Red](https://www.curseforge.com/minecraft/mc-mods/project-red-core)
 - [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism)
 - [Botania](https://www.curseforge.com/minecraft/mc-mods/botania)
-  - [Natural Pledge](https://www.curseforge.com/minecraft/mc-mods/natural-pledge)* (removed in v10)
 - [ArmorPlus](https://www.curseforge.com/minecraft/mc-mods/armorplus)
 - [Thermal Foundation](https://www.curseforge.com/minecraft/mc-mods/thermal-foundation)
 - [Draconic Evolution](https://www.curseforge.com/minecraft/mc-mods/draconic-evolution)
@@ -33,32 +31,17 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 - [Applied Energistics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2)
 - [Advent of Ascension (Nevermine)](https://www.curseforge.com/minecraft/mc-mods/advent-of-ascension-nevermine)
 - [The Twilight Forest](https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest)
-- [Advanced Rocketry](https://www.curseforge.com/minecraft/mc-mods/advanced-rocketry) (removed in v10)
-- [Natura](https://www.curseforge.com/minecraft/mc-mods/natura) (removed in v10)
-- [Galacticraft Legacy](https://www.curseforge.com/minecraft/mc-mods/galacticraft-legacy) (removed in v10)
-- [Environmental Tech](https://www.curseforge.com/minecraft/mc-mods/environmental-tech) (removed in v10)
-- [Thaumcraft](https://www.curseforge.com/minecraft/mc-mods/thaumcraft) (removed in v10)
-- [Erebus](https://www.curseforge.com/minecraft/mc-mods/the-erebus) (removed in v10)
-- [Simply Jetpacks 2](https://www.curseforge.com/minecraft/mc-mods/simply-jetpacks-2) (removed in v10)
-
-#### Natural Pledge
-
-> [!NOTE]
-> As of v10, since Natural Pledge has not been updated past 1.12.2, this note is no longer applicable.
-
-Between 5.1.2 and 9.x, PlusTiC forces out and *overrides* Natural Pledge TiC materials by default. This can be changed in the config so that PlusTiC does *not* add Botania materials if Natural Pledge is loaded.
 
 ### Utility
 
 - [Just Enough Items](https://www.curseforge.com/minecraft/mc-mods/jei)
-- [HWYLA](https://www.curseforge.com/minecraft/mc-mods/hwyla) / [Jade](https://www.curseforge.com/minecraft/mc-mods/jade)
+- [Jade](https://www.curseforge.com/minecraft/mc-mods/jade)
 - [CraftTweaker](https://www.curseforge.com/minecraft/mc-mods/crafttweaker)
-- [ModTweaker](https://www.curseforge.com/minecraft/mc-mods/modtweaker) (removed in v10)
-- [Baubles](https://www.curseforge.com/minecraft/mc-mods/baubles) (removed in v10)
-- [Construct's Armory](https://www.curseforge.com/minecraft/mc-mods/constructs-armory) (removed in v10)
-- [Tesla](https://www.curseforge.com/minecraft/mc-mods/tesla) (removed in v10)
-- [Tesla Core Lib](https://www.curseforge.com/minecraft/mc-mods/tesla-core-lib) (removed in v10)
-- [Redstone Flux](https://www.curseforge.com/minecraft/mc-mods/redstone-flux) (removed in v10)
+
+## New Tools
+
+- Katana. A fast two-handed weapon that deals increasing damage the more mobs you kill.
+- Laser Gun. A ranged weapon that requires durability and energy.
 
 ## Frequently Asked Questions (FAQ)
 
@@ -68,13 +51,15 @@ PlusTiC was originally developed by Landmaster, a developer with a rich history 
 
 However, the mods that Landmaster developed have all been removed from CurseForge, due to an [introduction of malicious code that would prevent a specific player from being able to log onto any servers](https://github.com/TeamDman/PlusTiC/commit/9147573c6d514ff88825a8cc1ab8438f9c80a14c).  While they had [removed the code and released a new version just a few days later](https://github.com/TeamDman/PlusTiC/commit/d0b4d17ce542a186a1660c7fac6083aa3eea37aa#diff-a516bfe6aaa4dd4f38abbd0de3bdd0dbL197-L204), the damage was already done.  Since then, their mods have completely vanished from the internet, including the GitHub repositories.
 
-PlusTiC was eventually forked by TeamDman in 2020, released as "xXx_MoreToolMats_xXx (a PlusTiC fork without the evil)", and maintained by them for almost exactly three years.  Development on the original mod had unfortunately come to a complete halt.
+PlusTiC was eventually forked by TeamDman in 2020, released as "xXx_MoreToolMats_xXx (a PlusTiC fork without the evil)", and maintained by them for almost exactly three years.  Development on the original mod had unfortunately came to a complete halt.
 
-There was one feature in particular that I was looking forward to seeing at some point: an update for modern versions of Minecraft. Since it was never updated for versions beyond 1.12.2, it was one of the mods that kept me from upgrading my own modpack for playing with friends.  As such, I wanted to try my hand at updating the mod for newer versions of Minecraft, so I forked it and started developing PlusTiC Reforged.
+There was one feature in particular that I was looking forward to seeing at some point: an update for modern versions of Minecraft. Since it was never updated for versions beyond 1.12.2, it was one of the mods that kept me from upgrading my own modpack for playing with friends.  As such, I wanted to try my hand at updating the mod for newer versions of Minecraft, so started developing PlusTiC Reforged.
 
 ### Why is this version called "Reforged"?
 
-Contrary to what many may think, the name "Reforged" wasn't inspired by the NeoForge (or original Forge) modloader.  I felt that it was important to distinguish this version as a separate mod from the original, and as Tinkers' Construct is all about tool forging, I felt that it was fitting to utilize that as a part of the name!
+Contrary to what many may think, the name "Reforged" wasn't inspired by the NeoForge (or original Forge) modloader.  The word "reforged" came from the idea of blacksmiths forging new tools/weapons, since Tinkers' Construct is all about smithing.
+
+Originally, I picked the name to distinguish the port of the original PlusTiC mod.  But upon further researching what would be required to perform the port and realizing that a complete rewrite would be far better, the name became much more fitting, like a tool that's melted back into molten metal and reforged.
 
 ### Will you port this mod to Fabric or Quilt?
 
@@ -118,5 +103,3 @@ If you are interested in localizing this mod for your language, I would love to 
 PlusTiC Reforged maintained by @queengooborg and [various contributors on GitHub](https://github.com/queengooborg/PlusTiC-Reforged/graphs/contributors)
 
 Original PlusTiC developed by @Landmaster, then maintained by @TeamDman
-
-Katana and Laser Gun Textures: @Tenebris11
