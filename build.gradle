@@ -22,7 +22,7 @@ plugins {
 
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-def modVersion = "9.0.0"
+def modVersion = "9.0.1"
 def mcVersion = "1.12.2"
 
 version = modVersion + "-mc" + mcVersion
@@ -73,7 +73,7 @@ compileJava {
 
 minecraft {
     // Target version: 14.23.5.2859
-    version = "1.12.2-14.23.5.2847"
+    version = "1.12.2-14.23.5.2838"
     runDir = "run"
 
     // the mappings can be changed at any time, and must be in the following format.
