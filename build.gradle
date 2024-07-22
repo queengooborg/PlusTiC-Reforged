@@ -25,8 +25,8 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 def modVersion = "9.0.1"
 def mcVersion = "1.12.2"
 
-version = modVersion + "-mc" + mcVersion
-group= "queengooborg.plustic" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+version = modVersion + "-original-mc" + mcVersion
+group= "landmaster.plustic" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "plustic"
 
 repositories {
