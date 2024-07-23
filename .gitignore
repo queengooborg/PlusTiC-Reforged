@@ -22,5 +22,5 @@ build
 # other
 eclipse
 run
-
-*.psd
+run-data
+src/generated
