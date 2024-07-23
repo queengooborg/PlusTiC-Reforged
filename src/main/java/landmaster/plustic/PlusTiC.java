@@ -124,7 +124,7 @@ public class PlusTiC {
 				new ModuleGemsPlus(),
 				new ModuleAppEng2(),
 				new ModuleEnvironTech(),
-				new ModuleMFR(),
+				new ModuleIndusForego(),
 				new ModuleThaumcraft(),
 				new ModuleAstralSorcery(),
 				

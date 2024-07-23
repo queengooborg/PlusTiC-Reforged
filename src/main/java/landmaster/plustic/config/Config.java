@@ -37,7 +37,7 @@ public class Config extends Configuration {
 	public static boolean natura;
 	public static boolean psi;
 	public static boolean avaritia;
-	public static boolean mfr;
+	public static boolean industrialForegoing;
 	public static boolean galacticraft;
 	public static boolean survivalist;
 	public static boolean projectE;
@@ -153,7 +153,7 @@ public class Config extends Configuration {
 		natura = getBoolean("Enable Natura support", "modules", true, "Integrate with Natura");
 		psi = getBoolean("Enable Psi support", "modules", true, "Integrate with Psi");
 		avaritia = getBoolean("Enable Avaritia support", "modules", true, "Integrate with Avaritia");
-		mfr = getBoolean("Enable MFR support", "modules", true, "Integrate with Minefactory Reloaded");
+		industrialForegoing = getBoolean("Enable Industrial Foregoing support", "modules", true, "Integrate with Industrial Foregoing");
 		galacticraft = getBoolean("Enable Galacticraft support", "modules", true, "Integrate with Galacticraft");
 		survivalist = getBoolean("Enable Survivalist support", "modules", true, "Integrate with Survivalist");
 		projectE = getBoolean("Enable ProjectE support", "modules", true, "Integrate with ProjectE");

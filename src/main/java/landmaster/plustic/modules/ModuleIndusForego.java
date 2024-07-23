@@ -16,12 +16,12 @@ import slimeknights.tconstruct.library.*;
 import slimeknights.tconstruct.library.materials.*;
 
 @Mod.EventBusSubscriber(modid = ModInfo.MODID)
-public class ModuleMFR implements IModule {
+public class ModuleIndusForego implements IModule {
 	private static final CompletableFuture<?> regFut = new CompletableFuture<>();
 	
 	@Override
 	public void init() {
-		if (Config.mfr && (Loader.isModLoaded("industrialforegoing"))) {
+		if (Config.industrialForegoing && (Loader.isModLoaded("industrialforegoing"))) {
 			Material pink_slime_mat = new Material("pink_slime", 0xFF84AD);
 			
 			PlusTiC.materials.put("pink_slime", pink_slime_mat);
@@ -29,7 +29,7 @@ public class ModuleMFR implements IModule {
 			final CompletableFuture<?> mfrFut = regFut.thenRun(() -> {
 				final Item pink_slime = Item.REGISTRY.getObject(new ResourceLocation("industrialforegoing:pink_slime"));
 				
-				pink_slime_mat.addTrait(ModuleMFRStuff.slimey_pink);
+				pink_slime_mat.addTrait(ModuleIndusForegoStuff.slimey_pink);
 				pink_slime_mat.addItem(pink_slime, 1, Material.VALUE_Ingot);
 				pink_slime_mat.setCraftable(true);
 				pink_slime_mat.setRepresentativeItem(pink_slime);
