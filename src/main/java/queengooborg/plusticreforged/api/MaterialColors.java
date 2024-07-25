@@ -51,4 +51,15 @@ public class MaterialColors {
 		this.f255 = 0xFF000000 + base;
 		this.luminosity = luminosity;
 	}
+
+	public MaterialColors(int base, int luminosity, int f63, int f102, int f140, int f178, int f216, int f255) {
+		this.base = base;
+		this.f63 = f63;
+		this.f102 = f102;
+		this.f140 = f140;
+		this.f178 = f178;
+		this.f216 = f216;
+		this.f255 = f255;
+		this.luminosity = luminosity;
+	}
 }
