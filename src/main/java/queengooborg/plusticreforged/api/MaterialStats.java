@@ -5,9 +5,9 @@ import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 
 public class MaterialStats {
-	HeadMaterialStats head = HeadMaterialStats.DEFAULT;
-	HandleMaterialStats handle = HandleMaterialStats.DEFAULT;
-	ExtraMaterialStats extra = ExtraMaterialStats.DEFAULT;
+	public HeadMaterialStats head = HeadMaterialStats.DEFAULT;
+	public HandleMaterialStats handle = HandleMaterialStats.DEFAULT;
+	public ExtraMaterialStats extra = ExtraMaterialStats.DEFAULT;
 
 	public MaterialStats() {}
 

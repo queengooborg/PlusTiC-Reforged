@@ -1,14 +1,14 @@
 package queengooborg.plusticreforged.api;
 
 public class MaterialColors {
-	int base = 0xD8D8D8;
-	int f63 = 0xFF3F3F3F;
-	int f102 = 0xFF5E5E5E;
-	int f140 = 0xFF828282;
-	int f178 = 0xFFA8A8A8;
-	int f216 = 0xFFD8D8D8;
-	int f255 = 0xFFFFFFFF;
-	int luminosity = 0;
+	public int base = 0xD8D8D8;
+	public int f63 = 0xFF3F3F3F;
+	public int f102 = 0xFF5E5E5E;
+	public int f140 = 0xFF828282;
+	public int f178 = 0xFFA8A8A8;
+	public int f216 = 0xFFD8D8D8;
+	public int f255 = 0xFFFFFFFF;
+	public int luminosity = 0;
 
 	public MaterialColors() {}
 

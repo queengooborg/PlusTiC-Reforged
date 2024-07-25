@@ -1,8 +1,8 @@
 package queengooborg.plusticreforged.api;
 
 public class Description {
-	String flavor = "";
-	String traits = "";
+	public String flavor = "";
+	public String traits = "";
 
 	public Description() {}
 

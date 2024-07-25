@@ -7,17 +7,17 @@ import slimeknights.tconstruct.library.modifiers.Modifier;
 import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.*;
 
 public class Material {
-	protected String id;
-	protected String name;
-	protected String item;
-	protected Description description;
-	protected int tier = 1;
-	protected String[] type = {"metal"};
-	protected int order = ORDER_HARVEST + ORDER_COMPAT;
-	protected MaterialColors color;
-	protected MaterialStats stats;
-	protected Modifier[] traits;
-	protected FluidObject<?> moltenFluid;
+	public String id;
+	public String name;
+	public String item;
+	public Description description;
+	public int tier = 1;
+	public String[] type = {"metal"};
+	public int order = ORDER_HARVEST + ORDER_COMPAT;
+	public MaterialColors color;
+	public MaterialStats stats;
+	public Modifier[] traits;
+	public FluidObject<?> moltenFluid;
 
 	public Material(String id, String name, String item, Description description, int tier, String type, int order, MaterialColors color, MaterialStats stats, Modifier[] traits, FluidObject<?> moltenFluid) {
 		this(id, name, item, description, tier, new String[]{type}, order, color, stats, traits, moltenFluid);
