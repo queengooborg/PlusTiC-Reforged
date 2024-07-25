@@ -4,6 +4,6 @@ import queengooborg.plusticreforged.api.Material;
 
 public interface _Materials {
 	Material[] materials = {
-			new Bedrock()
+			new BedrockMaterial()
 	};
 }

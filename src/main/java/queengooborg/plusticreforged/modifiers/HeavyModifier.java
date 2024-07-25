@@ -5,11 +5,10 @@ import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
-public class Heavy extends Modifier {
-	public static final Heavy heavy = new Heavy();
+public class HeavyModifier extends Modifier {
 	public static String id = "heavy_metal";
 
-	public Heavy() {
+	public HeavyModifier() {
 		super("heavy_metal", "Heavy", new Description(), 0x555555);
 	}
 

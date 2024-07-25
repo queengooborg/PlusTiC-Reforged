@@ -7,8 +7,8 @@ import slimeknights.tconstruct.fluids.TinkerFluids;
 
 import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.*;
 
-public class Bedrock extends Material {
-	public Bedrock() {
+public class BedrockMaterial extends Material {
+	public BedrockMaterial() {
 		super(
 			"bedrock",
 			"Bedrock",
