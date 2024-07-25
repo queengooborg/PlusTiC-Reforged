@@ -1,5 +1,8 @@
 package queengooborg.plusticreforged.api;
 
+import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToColorMapping;
+import slimeknights.tconstruct.library.client.data.spritetransformer.IColorMapping;
+
 public class MaterialColors {
 	public int base = 0xD8D8D8;
 	public int f63 = 0xFF3F3F3F;
@@ -61,5 +64,16 @@ public class MaterialColors {
 		this.f216 = f216;
 		this.f255 = f255;
 		this.luminosity = luminosity;
+	}
+
+	public IColorMapping getColorMapper() {
+		return GreyToColorMapping.builderFromBlack()
+			.addARGB(63, f63)
+			.addARGB(102, f102)
+			.addARGB(140, f140)
+			.addARGB(178, f178)
+			.addARGB(216, f216)
+			.addARGB(255, f255)
+			.build();
 	}
 }
