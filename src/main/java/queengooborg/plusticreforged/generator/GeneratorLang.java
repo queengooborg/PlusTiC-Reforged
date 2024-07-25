@@ -1,7 +1,6 @@
 package queengooborg.plusticreforged.generator;
 
 import net.minecraft.data.DataGenerator;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.LanguageProvider;
 import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.api.Modifier;
@@ -10,10 +9,9 @@ import queengooborg.plusticreforged.materials._Materials;
 import queengooborg.plusticreforged.modifiers._Modifiers;
 
 public class GeneratorLang extends LanguageProvider {
-
-		public GeneratorLang(DataGenerator gen) {
-			super(gen, ModInfo.MOD_ID, "en_us");
-		}
+	public GeneratorLang(DataGenerator gen) {
+		super(gen, ModInfo.MOD_ID, "en_us");
+	}
 
 	@Override
 	protected void addTranslations() {
