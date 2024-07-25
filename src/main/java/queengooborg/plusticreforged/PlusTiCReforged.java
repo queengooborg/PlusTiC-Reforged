@@ -17,7 +17,8 @@ import org.apache.logging.log4j.Logger;
 import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.api.Modifier;
 import queengooborg.plusticreforged.config.ModInfo;
-import queengooborg.plusticreforged.materials.*;
+import queengooborg.plusticreforged.materials._Materials;
+import queengooborg.plusticreforged.modifiers._Modifiers;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ModInfo.MOD_ID)
@@ -26,11 +27,8 @@ public class PlusTiCReforged {
 	// Directly reference a log4j logger.
 	private static final Logger LOGGER = LogManager.getLogger();
 
-	public static Material[] materials = {
-		new Bedrock()
-	};
-
-	public static Modifier[] modifiers = {};
+	private static final Material[] materials = _Materials.materials;
+	private static final Modifier[] modifiers = _Modifiers.modifiers;
 
 	public PlusTiCReforged() {
 		// Register the setup method for modloading
