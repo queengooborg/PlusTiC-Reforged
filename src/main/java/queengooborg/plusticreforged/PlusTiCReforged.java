@@ -1,12 +1,10 @@
 package queengooborg.plusticreforged;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.*;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
@@ -17,6 +15,7 @@ import org.apache.logging.log4j.Logger;
 import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.api.Modifier;
 import queengooborg.plusticreforged.config.ModInfo;
+import queengooborg.plusticreforged.generator.*;
 import queengooborg.plusticreforged.materials._Materials;
 import queengooborg.plusticreforged.modifiers._Modifiers;
 
@@ -81,6 +80,9 @@ public class PlusTiCReforged {
 
 		if (event.includeClient()) {
 			// Generate client-side data
+
+			// Generate language file
+			gen.addProvider(new GeneratorLang(gen));
 		}
 
 		if (event.includeServer()) {
