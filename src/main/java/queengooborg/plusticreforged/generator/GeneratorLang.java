@@ -16,7 +16,7 @@ public class GeneratorLang extends LanguageProvider {
 	@Override
 	protected void addTranslations() {
 		Material[] materials = _Materials.materials;
-		Modifier[] modifiers = _Modifiers.modifierObjects;
+		Modifier[] modifiers = _Modifiers.modifiers;
 
 		for (Material material : materials) {
 			add(String.format("material.%s.%s", ModInfo.MOD_ID, material.id), material.name);

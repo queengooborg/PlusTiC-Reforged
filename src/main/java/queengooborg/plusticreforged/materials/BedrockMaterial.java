@@ -1,6 +1,5 @@
 package queengooborg.plusticreforged.materials;
 
-import net.minecraftforge.fml.RegistryObject;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.api.MaterialColors;
@@ -17,11 +16,11 @@ public class BedrockMaterial extends Material {
 			"minecraft:bedrock",
 			new Description("-10% attack damage, +15% attack speed per level"),
 			2,
-			"metal",
+			new String[]{"misc"},
 			ORDER_HARVEST + ORDER_COMPAT,
 			new MaterialColors(0xE6B7BF),
 			null,
-			new RegistryObject[]{_Modifiers.modifiers.get("heavy_metal")},
+			_Modifiers.get("heavy_metal"),
 			TinkerFluids.moltenAluminum
 		);
 	}

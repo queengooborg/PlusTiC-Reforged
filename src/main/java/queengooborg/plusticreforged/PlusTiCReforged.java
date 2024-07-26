@@ -14,6 +14,7 @@ import org.apache.logging.log4j.Logger;
 
 import queengooborg.plusticreforged.config.ModInfo;
 import queengooborg.plusticreforged.generator.*;
+import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ModInfo.MOD_ID)

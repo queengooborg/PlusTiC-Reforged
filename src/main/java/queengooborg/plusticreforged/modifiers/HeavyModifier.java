@@ -6,8 +6,6 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
 public class HeavyModifier extends Modifier {
-	public static String id = "heavy_metal";
-
 	public HeavyModifier() {
 		super("heavy_metal", "Heavy", null, 0x555555);
 	}
