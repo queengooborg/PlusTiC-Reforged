@@ -12,12 +12,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import queengooborg.plusticreforged.api.Material;
-import queengooborg.plusticreforged.api.Modifier;
 import queengooborg.plusticreforged.config.ModInfo;
 import queengooborg.plusticreforged.generator.*;
-import queengooborg.plusticreforged.materials._Materials;
-import queengooborg.plusticreforged.modifiers._Modifiers;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ModInfo.MOD_ID)
@@ -25,9 +21,6 @@ import queengooborg.plusticreforged.modifiers._Modifiers;
 public class PlusTiCReforged {
 	// Directly reference a log4j logger.
 	private static final Logger LOGGER = LogManager.getLogger();
-
-	private static final Material[] materials = _Materials.materials;
-	private static final Modifier[] modifiers = _Modifiers.modifiers;
 
 	public PlusTiCReforged() {
 		// Register the setup method for modloading
@@ -87,6 +80,12 @@ public class PlusTiCReforged {
 
 		if (event.includeServer()) {
 			// Generate server-side data
+
+			// Generate material information
+			AbstractMaterialDataProvider materialData = new GeneratorMaterials(gen);
+			gen.addProvider(materialData);
+			gen.addProvider(new GeneratorMaterialStats(gen, materialData));
+			gen.addProvider(new GeneratorMaterialTraits(gen, materialData));
 		}
 	}
 

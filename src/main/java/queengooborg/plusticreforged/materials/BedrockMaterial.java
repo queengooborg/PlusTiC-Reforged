@@ -3,6 +3,7 @@ package queengooborg.plusticreforged.materials;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.api.MaterialColors;
+import queengooborg.plusticreforged.modifiers._Modifiers;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 
 import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.*;
@@ -19,7 +20,7 @@ public class BedrockMaterial extends Material {
 			ORDER_HARVEST + ORDER_COMPAT,
 			new MaterialColors(0xE6B7BF),
 			null,
-			null,
+			new net.minecraftforge.fml.RegistryObject[]{_Modifiers.modifiers.get("heavy")},
 			TinkerFluids.moltenAluminum
 		);
 	}

@@ -1,7 +1,10 @@
 package queengooborg.plusticreforged.api;
 
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.RegistryObject;
+import queengooborg.plusticreforged.config.ModInfo;
 import slimeknights.mantle.registration.object.FluidObject;
-import slimeknights.tconstruct.fluids.TinkerFluids;
+import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 
 import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.*;
@@ -16,14 +19,16 @@ public class Material {
 	public int order = ORDER_HARVEST + ORDER_COMPAT;
 	public MaterialColors color;
 	public MaterialStats stats;
-	public Modifier[] traits;
+	public RegistryObject<Modifier>[] traits;
 	public FluidObject<?> moltenFluid;
 
-	public Material(String id, String name, String item, Description description, int tier, String type, int order, MaterialColors color, MaterialStats stats, Modifier[] traits, FluidObject<?> moltenFluid) {
+	public MaterialId resourceLocation;
+
+	public Material(String id, String name, String item, Description description, int tier, String type, int order, MaterialColors color, MaterialStats stats, RegistryObject<slimeknights.tconstruct.library.modifiers.Modifier>[] traits, FluidObject<?> moltenFluid) {
 		this(id, name, item, description, tier, new String[]{type}, order, color, stats, traits, moltenFluid);
 	}
 
-	public Material(String id, String name, String item, Description description, int tier, String[] type, int order, MaterialColors color, MaterialStats stats, Modifier[] traits, FluidObject<?> moltenFluid) {
+	public Material(String id, String name, String item, Description description, int tier, String[] type, int order, MaterialColors color, MaterialStats stats, RegistryObject<slimeknights.tconstruct.library.modifiers.Modifier>[] traits, FluidObject<?> moltenFluid) {
 		this.id = id;
 		this.name = name;
 		this.item = item;
@@ -35,6 +40,8 @@ public class Material {
 		this.stats = stats;
 		this.traits = traits;
 		this.moltenFluid = moltenFluid;
+
+		this.resourceLocation = new MaterialId(ModInfo.MOD_ID, id);
 	}
 }
 
