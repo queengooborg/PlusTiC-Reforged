@@ -1,5 +1,6 @@
 package queengooborg.plusticreforged.materials;
 
+import net.minecraftforge.fml.RegistryObject;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.api.MaterialColors;
@@ -20,7 +21,7 @@ public class BedrockMaterial extends Material {
 			ORDER_HARVEST + ORDER_COMPAT,
 			new MaterialColors(0xE6B7BF),
 			null,
-			new net.minecraftforge.fml.RegistryObject[]{_Modifiers.modifiers.get("heavy")},
+			new RegistryObject[]{_Modifiers.modifiers.get("heavy_metal")},
 			TinkerFluids.moltenAluminum
 		);
 	}
