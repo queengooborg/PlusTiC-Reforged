@@ -12,8 +12,8 @@ public class MaterialStats {
 	public MaterialStats() {}
 
 	public MaterialStats(HeadMaterialStats head, HandleMaterialStats handle, ExtraMaterialStats extra) {
-		this.head = head;
-		this.handle = handle;
-		this.extra = extra;
+		if (head != null) this.head = head;
+		if (handle != null) this.handle = handle;
+		if (extra != null) this.extra = extra;
 	}
 }

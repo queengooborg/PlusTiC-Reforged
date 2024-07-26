@@ -9,7 +9,7 @@ public class HeavyModifier extends Modifier {
 	public static String id = "heavy_metal";
 
 	public HeavyModifier() {
-		super("heavy_metal", "Heavy", new Description(), 0x555555);
+		super("heavy_metal", "Heavy", null, 0x555555);
 	}
 
 	@Override

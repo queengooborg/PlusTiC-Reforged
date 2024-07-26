@@ -13,7 +13,9 @@ public class MaterialColors {
 	public int f255 = 0xFFFFFFFF;
 	public int luminosity = 0;
 
-	public MaterialColors() {}
+	public MaterialColors() {
+		this(0xD8D8D8, 0);
+	}
 
 	public MaterialColors(int base) {
 		this(base, 0);

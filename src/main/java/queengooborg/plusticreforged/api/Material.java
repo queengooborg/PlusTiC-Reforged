@@ -2,10 +2,14 @@ package queengooborg.plusticreforged.api;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.RegistryObject;
+import org.lwjgl.system.NonnullDefault;
 import queengooborg.plusticreforged.config.ModInfo;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.Modifier;
+
+import javax.annotation.Nonnull;
+import java.util.Objects;
 
 import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.*;
 
@@ -13,13 +17,13 @@ public class Material {
 	public String id;
 	public String name;
 	public String item;
-	public Description description;
+	public Description description = new Description();
 	public int tier = 1;
 	public String[] type = {"metal"};
 	public int order = ORDER_HARVEST + ORDER_COMPAT;
-	public MaterialColors color;
-	public MaterialStats stats;
-	public RegistryObject<Modifier>[] traits;
+	public MaterialColors color = new MaterialColors();
+	public MaterialStats stats = new MaterialStats();
+	public RegistryObject<Modifier>[] traits = new RegistryObject[]{};
 	public FluidObject<?> moltenFluid;
 
 	public MaterialId resourceLocation;
@@ -29,17 +33,17 @@ public class Material {
 	}
 
 	public Material(String id, String name, String item, Description description, int tier, String[] type, int order, MaterialColors color, MaterialStats stats, RegistryObject<slimeknights.tconstruct.library.modifiers.Modifier>[] traits, FluidObject<?> moltenFluid) {
-		this.id = id;
-		this.name = name;
-		this.item = item;
-		this.description = description;
+		this.id = Objects.requireNonNull(id);
+		this.name = Objects.requireNonNull(name);
+		this.item = Objects.requireNonNull(item);
+		if (description != null) this.description = description;
 		this.tier = tier;
 		this.order = order;
-		this.type = type;
-		this.color = color;
-		this.stats = stats;
-		this.traits = traits;
-		this.moltenFluid = moltenFluid;
+		if (type != null) this.type = type;
+		if (color != null) this.color = color;
+		if (stats != null) this.stats = stats;
+		if (traits != null) this.traits = traits;
+		this.moltenFluid = Objects.requireNonNull(moltenFluid);
 
 		this.resourceLocation = new MaterialId(ModInfo.MOD_ID, id);
 	}
