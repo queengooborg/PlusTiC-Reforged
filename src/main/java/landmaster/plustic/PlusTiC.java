@@ -127,6 +127,7 @@ public class PlusTiC {
 				new ModuleIndusForego(),
 				new ModuleThaumcraft(),
 				new ModuleAstralSorcery(),
+				new ModuleFuture(),
 				
 				new ModuleTools(),
 				new ModuleModifiers(),

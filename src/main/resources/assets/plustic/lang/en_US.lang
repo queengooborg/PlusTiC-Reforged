@@ -61,6 +61,7 @@ fluid.plustic.emberstone.name=Molten Emberstone
 fluid.plustic.skeletal.name=Molten Skeletal
 fluid.plustic.mystite.name=Molten Mystite
 fluid.plustic.blazium.name=Molten Blazium
+fluid.plustic.netherite.name=Molten Netherite
 
 material.sapphire.name=Sapphire
 material.ruby.name=Ruby
@@ -148,6 +149,7 @@ material.mystite.name=Mystite
 material.ghostlystone.name=Ghostly Stone
 material.bloodstone.name=Bloodstone
 material.blazium.name=Blazium
+material.netherite.name=Netherite
 
 modifier.bloodymary.name=Bloody Mary
 modifier.bloodymary.desc=§oBrought to you by the legendary Queen of England...§r\nDeals bonus damage depending on the amount of health already lost by the target. Also, a chance to drop a Coagulated Blood for each hit.

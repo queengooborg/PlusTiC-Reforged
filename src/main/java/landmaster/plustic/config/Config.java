@@ -50,6 +50,7 @@ public class Config extends Configuration {
 	public static boolean astralSorcery;
 	public static boolean aoa;
 	public static boolean erebus;
+	public static boolean future;
 	
 	public static boolean jetpackConarmModifier;
 	public static float jetpackDurabilityBonusScale;
@@ -74,7 +75,7 @@ public class Config extends Configuration {
 	private static final IntArrayList botan_amount = new IntArrayList(Botanical.MAX_LEVELS);
 	
 	private static final Set<Pair<String, Set<String>>> blacklistedForCentrifuge = new HashSet<>();
-	
+
 	public static IntList getBotanAmount() {
 		return IntLists.unmodifiable(botan_amount);
 	}
@@ -166,6 +167,7 @@ public class Config extends Configuration {
 		astralSorcery = getBoolean("Enable Astral Sorcery support", "modules", true, "Integrate with Astral Sorcery");
 		aoa = getBoolean("Enable AoA support", "modules", true, "Integrate with AoA");
 		erebus = getBoolean("Enable Erebus support", "modules", true, "Integrate with Erebus");
+		future = getBoolean("Enable Future MC (Netherite) support", "modules", true, "Integrate with Future MC (to add Netherite)");
 		
 		jetpackConarmModifier = getBoolean("Add Simply Jetpacks as ConArm modifiers", "modifiers", true, "Add Simply Jetpacks as ConArm modifiers");
 		jetpackDurabilityBonusScale = getFloat("Durability bonus scalar for Simply Jetpacks modifiers", "modifiers", 1f/8000, 0, Float.MAX_VALUE, "Durability bonus calculated as FUEL_CAPACITY_OF_JETPACK*this_scalar");
