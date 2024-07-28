@@ -14,7 +14,10 @@ import org.apache.logging.log4j.Logger;
 
 import queengooborg.plusticreforged.config.ModInfo;
 import queengooborg.plusticreforged.generator.*;
+import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
+import slimeknights.tconstruct.tools.data.sprite.TinkerMaterialSpriteProvider;
+import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ModInfo.MOD_ID)
@@ -77,6 +80,13 @@ public class PlusTiCReforged {
 
 			// Generate language file
 			gen.addProvider(new GeneratorLang(gen));
+
+			// Generate models and textures
+			GeneratorMaterialTextures materialSprites = new GeneratorMaterialTextures();
+			gen.addProvider(new GeneratorRenderInfo(gen, materialSprites));
+			// Generate Tinkers' parts with our materials
+			// XXX The following causes: Caused by: java.lang.IllegalStateException: Missing sprite at tconstruct:item/tool/parts/large_plate.png, cannot generate textures
+//			gen.addProvider(new MaterialPartTextureGenerator(gen, event.getExistingFileHelper(), new TinkerPartSpriteProvider(), materialSprites));
 		}
 
 		if (event.includeServer()) {
