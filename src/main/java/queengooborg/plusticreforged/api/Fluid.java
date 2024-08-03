@@ -5,6 +5,7 @@ import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Items;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
 import net.minecraftforge.fluids.FluidAttributes;
@@ -57,5 +58,17 @@ public class Fluid {
 
 	public ForgeFlowingFluid.Properties getFluidProperties() {
 		return FLUID_PROPERTIES;
+	}
+
+	public ForgeFlowingFluid getFluid() {
+		return FLUID.get();
+	}
+
+	public ITag.INamedTag<net.minecraft.fluid.Fluid> getLocalTag() {
+		return FLUID_OBJECT.getLocalTag();
+	}
+
+	public ITag.INamedTag<net.minecraft.fluid.Fluid> getForgeTag() {
+		return FLUID_OBJECT.getForgeTag();
 	}
 }
