@@ -16,6 +16,7 @@ import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.IToolRecipeHelper;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
+import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 
 import java.util.function.Consumer;
 
@@ -53,13 +54,14 @@ public class GeneratorRecipes extends RecipeProvider implements IConditionBuilde
 //				metalTagCasting(consumer, material.moltenFluid.FLUID_OBJECT, material.id, castingFolder, false);
 				metalMelting(consumer, material.moltenFluid.getFluid(), material.id, false, meltingFolder, true);
 			} else {
-				MeltingRecipeBuilder.melting(ItemNameIngredient.from(material.item), material.moltenFluid.getFluid(), FluidValues.INGOT, 1.0f).build(consumer, modResource(meltingFolder + material.id));
+				MeltingRecipeBuilder.melting(ItemNameIngredient.from(material.item), material.moltenFluid.getFluid(), FluidValues.METAL_BLOCK, 1.0f).build(consumer, modResource(meltingFolder + material.id));
+//				tagCasting(consumer, material.moltenFluid.FLUID_OBJECT, FluidValues.METAL_BLOCK, TinkerSmeltery.basin, "blocks/" + material.id, castingFolder, false);
 //				tagCasting(consumer, material.moltenFluid.FLUID_OBJECT, FluidValues.INGOT, material.id, castingFolder, false);
 			}
 
 			materialMeltingCasting(consumer, material.item, material.moltenFluid.FLUID_OBJECT, materialFolder);
 
-			// XXX Generate more recipes here (such as blocks, ingots, nuggets, etc.)
+			// XXX Generate more recipes as needed here (such as blocks, ingots, nuggets, etc.)
 		}
 	}
 }
