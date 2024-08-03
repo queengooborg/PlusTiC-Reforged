@@ -1,9 +1,9 @@
 package queengooborg.plusticreforged;
 
 import net.minecraft.fluid.Fluid;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryManager;
 import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.api.Modifier;
 import queengooborg.plusticreforged.config.ModInfo;
