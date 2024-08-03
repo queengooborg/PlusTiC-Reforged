@@ -1,6 +1,7 @@
 package queengooborg.plusticreforged.materials;
 
 import queengooborg.plusticreforged.api.Description;
+import queengooborg.plusticreforged.api.Fluid;
 import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.api.MaterialColors;
 import queengooborg.plusticreforged.modifiers._Modifiers;
@@ -21,7 +22,7 @@ public class BedrockMaterial extends Material {
 			new MaterialColors(0xE6B7BF),
 			null,
 			_Modifiers.get("heavy_metal"),
-			TinkerFluids.moltenAluminum
+			new Fluid("molten_bedrock", "Molten Bedrock", 1600, 15, 3000, 6000)
 		);
 	}
 }

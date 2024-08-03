@@ -19,11 +19,11 @@ public class Material {
 	public MaterialColors color = new MaterialColors();
 	public MaterialStats stats = new MaterialStats();
 	public Modifier traits = null;
-	public FluidObject<?> moltenFluid;
+	public Fluid moltenFluid;
 
 	public MaterialId resourceLocation;
 
-	public Material(String id, String name, String item, Description description, int tier, String[] type, int order, MaterialColors color, MaterialStats stats, Modifier traits, FluidObject<?> moltenFluid) {
+	public Material(String id, String name, String item, Description description, int tier, String[] type, int order, MaterialColors color, MaterialStats stats, Modifier traits, Fluid moltenFluid) {
 		this.id = Objects.requireNonNull(id);
 		this.name = Objects.requireNonNull(name);
 		this.item = Objects.requireNonNull(item);
