@@ -1,7 +1,6 @@
 package queengooborg.plusticreforged.api;
 
 import queengooborg.plusticreforged.config.ModInfo;
-import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 
 import java.util.Objects;

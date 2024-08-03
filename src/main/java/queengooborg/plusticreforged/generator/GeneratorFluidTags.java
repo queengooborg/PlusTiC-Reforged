@@ -4,9 +4,9 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.FluidTagsProvider;
 import net.minecraft.data.IDataProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.config.ModInfo;
-import queengooborg.plusticreforged.materials._Materials;
 import slimeknights.tconstruct.common.TinkerTags;
 
 public class GeneratorFluidTags extends FluidTagsProvider {
@@ -15,9 +15,9 @@ public class GeneratorFluidTags extends FluidTagsProvider {
 	}
 
 	public void addTags() {
-		for (Material material : _Materials.materials) {
-			tag(material.moltenFluid.getLocalTag()).add(material.moltenFluid.getFluid());
-			tag(material.moltenFluid.getForgeTag()).add(material.moltenFluid.getFluid());
+		for (Material material : Resources.MATERIALS) {
+			tag(material.moltenFluid.getLocalTag()).add(material.moltenFluid.FLUID.get());
+			tag(material.moltenFluid.getForgeTag()).add(material.moltenFluid.FLUID.get());
 			tag(TinkerTags.Fluids.METAL_LIKE).addTag(material.moltenFluid.getForgeTag());
 		}
 	}

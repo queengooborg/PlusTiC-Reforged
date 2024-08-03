@@ -1,8 +1,8 @@
 package queengooborg.plusticreforged.generator;
 
 import net.minecraft.data.DataGenerator;
+import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.Material;
-import queengooborg.plusticreforged.materials._Materials;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialRenderInfoProvider;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 
@@ -13,7 +13,7 @@ public class GeneratorRenderInfo extends AbstractMaterialRenderInfoProvider {
 
 	@Override
 	protected void addMaterialRenderInfo() {
-		for (Material material : _Materials.materials) {
+		for (Material material : Resources.MATERIALS) {
 			buildRenderInfo(material.resourceLocation).color(material.color.base).luminosity(material.color.luminosity);
 		}
 	}

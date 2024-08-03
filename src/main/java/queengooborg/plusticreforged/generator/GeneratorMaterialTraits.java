@@ -1,8 +1,8 @@
 package queengooborg.plusticreforged.generator;
 
 import net.minecraft.data.DataGenerator;
+import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.Material;
-import queengooborg.plusticreforged.materials._Materials;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 
@@ -13,7 +13,7 @@ public class GeneratorMaterialTraits extends AbstractMaterialTraitDataProvider {
 
 	@Override
 	protected void addMaterialTraits() {
-		for (Material material : _Materials.materials) {
+		for (Material material : Resources.MATERIALS) {
 			if (material.traits == null) {
 				noTraits(material.resourceLocation);
 			} else {

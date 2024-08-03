@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.*;
@@ -27,14 +28,19 @@ public class PlusTiCReforged {
 	private static final Logger LOGGER = LogManager.getLogger();
 
 	public PlusTiCReforged() {
+		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
 		// Register the setup method for modloading
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+		modEventBus.addListener(this::setup);
 		// Register the enqueueIMC method for modloading
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
+		modEventBus.addListener(this::enqueueIMC);
 		// Register the processIMC method for modloading
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
+		modEventBus.addListener(this::processIMC);
 		// Register the doClientStuff method for modloading
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+		modEventBus.addListener(this::doClientStuff);
+
+		// Register all the resource registries
+		Resources.FLUIDS.register(modEventBus);
 
 		// Register ourselves for server and other game events we are interested in
 		MinecraftForge.EVENT_BUS.register(this);
@@ -110,7 +116,7 @@ public class PlusTiCReforged {
 		@SubscribeEvent
 		public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
 			// register a new block here
-			LOGGER.info("HELLO from Register Block");
+//			LOGGER.info("HELLO from Register Block");
 		}
 	}
 }

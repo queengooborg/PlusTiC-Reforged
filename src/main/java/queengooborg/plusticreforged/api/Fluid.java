@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
 import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
+import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.config.ModInfo;
 import slimeknights.mantle.registration.object.FluidObject;
 
@@ -40,8 +41,8 @@ public class Fluid {
 		this.density = density;
 		this.viscosity = viscosity;
 
-		FLUID = () -> new ForgeFlowingFluid.Source(getFluidProperties());
-		FLUID_FLOWING = () -> new ForgeFlowingFluid.Flowing(getFluidProperties());
+		FLUID = Resources.FLUIDS.register(id, () -> new ForgeFlowingFluid.Source(getFluidProperties()));
+		FLUID_FLOWING = Resources.FLUIDS.register("flowing_" + id, () -> new ForgeFlowingFluid.Flowing(getFluidProperties()));
 
 		TEXTURE_STILL = new ResourceLocation(ModInfo.MOD_ID, "block/fluid/" + id + "_still");
 		TEXTURE_FLOWING = new ResourceLocation(ModInfo.MOD_ID, "block/fluid/" + id + "_flow");
