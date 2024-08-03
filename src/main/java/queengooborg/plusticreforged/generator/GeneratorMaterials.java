@@ -1,6 +1,7 @@
 package queengooborg.plusticreforged.generator;
 
 import net.minecraft.data.DataGenerator;
+import net.minecraftforge.fml.RegistryObject;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.Material;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;

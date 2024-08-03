@@ -12,6 +12,7 @@ import queengooborg.plusticreforged.materials.*;
 
 public class Resources {
 	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, ModInfo.MOD_ID);
+	public static final DeferredRegister<slimeknights.tconstruct.library.modifiers.Modifier> _MODIFIERS = DeferredRegister.create(slimeknights.tconstruct.library.modifiers.Modifier.class, ModInfo.MOD_ID);
 
 	public static final Modifier[] MODIFIERS = new Modifier[]{
 		new HeavyModifier()

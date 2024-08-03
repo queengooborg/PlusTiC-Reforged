@@ -10,19 +10,19 @@ import static slimeknights.tconstruct.library.data.material.AbstractMaterialData
 public class Material {
 	public String id;
 	public String name;
-	public String item;
+	public MaterialId item;
 	public Description description = new Description();
 	public int tier = 1;
 	public String[] type = {"metal"};
 	public int order = ORDER_HARVEST + ORDER_COMPAT;
 	public MaterialColors color = new MaterialColors();
 	public MaterialStats stats = new MaterialStats();
-	public Modifier traits = null;
+	public Modifier modifier = null;
 	public Fluid moltenFluid;
 
 	public MaterialId resourceLocation;
 
-	public Material(String id, String name, String item, Description description, int tier, String[] type, int order, MaterialColors color, MaterialStats stats, Modifier traits, Fluid moltenFluid) {
+	public Material(String id, String name, MaterialId item, Description description, int tier, String[] type, int order, MaterialColors color, MaterialStats stats, Modifier modifier, Fluid moltenFluid) {
 		this.id = Objects.requireNonNull(id);
 		this.name = Objects.requireNonNull(name);
 		this.item = Objects.requireNonNull(item);
@@ -32,7 +32,7 @@ public class Material {
 		if (type != null) this.type = type;
 		if (color != null) this.color = color;
 		if (stats != null) this.stats = stats;
-		this.traits = traits;
+		this.modifier = modifier;
 		this.moltenFluid = Objects.requireNonNull(moltenFluid);
 
 		this.resourceLocation = new MaterialId(ModInfo.MOD_ID, id);
