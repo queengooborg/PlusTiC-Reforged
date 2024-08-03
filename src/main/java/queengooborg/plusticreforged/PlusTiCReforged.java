@@ -15,9 +15,9 @@ import org.apache.logging.log4j.Logger;
 
 import queengooborg.plusticreforged.config.ModInfo;
 import queengooborg.plusticreforged.generator.*;
+import queengooborg.plusticreforged.generator.GeneratorLang;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
-import slimeknights.tconstruct.tools.data.sprite.TinkerMaterialSpriteProvider;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -39,8 +39,14 @@ public class PlusTiCReforged {
 		// Register the doClientStuff method for modloading
 		modEventBus.addListener(this::doClientStuff);
 
+		// Load the materials and modifiers before registering the registries
+		new Resources();
+
 		// Register all the resource registries
-		Resources.FLUIDS.register(modEventBus);
+		Registries.FLUIDS.register(modEventBus);
+		Registries.ITEMS.register(modEventBus);
+		Registries.BLOCKS.register(modEventBus);
+		Registries.MODIFIERS.register(modEventBus);
 
 		// Register ourselves for server and other game events we are interested in
 		MinecraftForge.EVENT_BUS.register(this);
@@ -88,8 +94,11 @@ public class PlusTiCReforged {
 			gen.addProvider(new GeneratorLang(gen));
 
 			// Generate models and textures
+			gen.addProvider(new GeneratorItemModels(gen, event.getExistingFileHelper()));
+//			gen.addProvider(new GeneratorBlockStates(gen, event.getExistingFileHelper()));
 			GeneratorMaterialTextures materialSprites = new GeneratorMaterialTextures();
 			gen.addProvider(new GeneratorRenderInfo(gen, materialSprites));
+
 			// Generate Tinkers' parts with our materials
 			// XXX The following causes: Caused by: java.lang.IllegalStateException: Missing sprite at tconstruct:item/tool/parts/large_plate.png, cannot generate textures
 //			gen.addProvider(new MaterialPartTextureGenerator(gen, event.getExistingFileHelper(), new TinkerPartSpriteProvider(), materialSprites));

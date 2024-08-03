@@ -3,25 +3,32 @@ package queengooborg.plusticreforged.api;
 import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToColorMapping;
 import slimeknights.tconstruct.library.client.data.spritetransformer.IColorMapping;
 
+import java.awt.Color;
+import java.util.Objects;
+
 public class MaterialColors {
-	public int base = 0xD8D8D8;
-	public int f63 = 0xFF3F3F3F;
-	public int f102 = 0xFF5E5E5E;
-	public int f140 = 0xFF828282;
-	public int f178 = 0xFFA8A8A8;
-	public int f216 = 0xFFD8D8D8;
-	public int f255 = 0xFFFFFFFF;
+	public Color base;
+	public Color f63 = new Color(0x3F3F3F);
+	public Color f102 = new Color(0x5E5E5E);
+	public Color f140 = new Color(0x828282);
+	public Color f178 = new Color(0xA8A8A8);
+	public Color f216 = new Color(0xD8D8D8);
+	public Color f255 = new Color(0xFFFFFF);
 	public int luminosity = 0;
 
 	public MaterialColors() {
-		this(0xD8D8D8, 0);
+		this(new Color(0xD8D8D8), 0);
 	}
 
 	public MaterialColors(int base) {
+		this(new Color(base), 0);
+	}
+
+	public MaterialColors(Color base) {
 		this(base, 0);
 	}
 
-	public MaterialColors(int base, int luminosity) {
+	public MaterialColors(Color base, int luminosity) {
 		// XXX This is a placeholder for the actual color calculation
 		// Iron example (base: 0xD8D8D8):
 		// [...].colorMapper(
@@ -47,17 +54,17 @@ public class MaterialColors {
 		//  .build()
 		// );
 
-		this.base = base;
-		this.f63 = 0xFF000000 + base;
-		this.f102 = 0xFF000000 + base;
-		this.f140 = 0xFF000000 + base;
-		this.f178 = 0xFF000000 + base;
-		this.f216 = 0xFF000000 + base;
-		this.f255 = 0xFF000000 + base;
+		this.base = Objects.requireNonNull(base);
+		this.f63 = adjustColorBrightness(base, 63);
+		this.f102 = adjustColorBrightness(base, 102);
+		this.f140 = adjustColorBrightness(base, 140);
+		this.f178 = adjustColorBrightness(base, 178);
+		this.f216 = adjustColorBrightness(base, 216);
+		this.f255 = adjustColorBrightness(base, 255);
 		this.luminosity = luminosity;
 	}
 
-	public MaterialColors(int base, int luminosity, int f63, int f102, int f140, int f178, int f216, int f255) {
+	public MaterialColors(Color base, int luminosity, Color f63, Color f102, Color f140, Color f178, Color f216, Color f255) {
 		this.base = base;
 		this.f63 = f63;
 		this.f102 = f102;
@@ -70,12 +77,21 @@ public class MaterialColors {
 
 	public IColorMapping getColorMapper() {
 		return GreyToColorMapping.builderFromBlack()
-			.addARGB(63, f63)
-			.addARGB(102, f102)
-			.addARGB(140, f140)
-			.addARGB(178, f178)
-			.addARGB(216, f216)
-			.addARGB(255, f255)
+			.addARGB(63, f63.getRGB())
+			.addARGB(102, f102.getRGB())
+			.addARGB(140, f140.getRGB())
+			.addARGB(178, f178.getRGB())
+			.addARGB(216, f216.getRGB())
+			.addARGB(255, f255.getRGB())
 			.build();
+	}
+
+	public Color adjustColorBrightness(Color input, int brightness) {
+		return new Color(
+			Math.min(255, Math.max(0, input.getRed() + brightness)),
+			Math.min(255, Math.max(0, input.getGreen() + brightness)),
+			Math.min(255, Math.max(0, input.getBlue() + brightness)),
+			input.getAlpha()
+		);
 	}
 }

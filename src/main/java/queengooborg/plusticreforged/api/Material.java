@@ -22,7 +22,7 @@ public class Material {
 
 	public MaterialId resourceLocation;
 
-	public Material(String id, String name, MaterialId item, Description description, int tier, String[] type, int order, MaterialColors color, MaterialStats stats, Modifier modifier, Fluid moltenFluid) {
+	public Material(String id, String name, MaterialId item, Description description, int tier, String[] type, int order, MaterialColors color, MaterialStats stats, Modifier modifier, int fluidTemperature) {
 		this.id = Objects.requireNonNull(id);
 		this.name = Objects.requireNonNull(name);
 		this.item = Objects.requireNonNull(item);
@@ -33,7 +33,7 @@ public class Material {
 		if (color != null) this.color = color;
 		if (stats != null) this.stats = stats;
 		this.modifier = modifier;
-		this.moltenFluid = Objects.requireNonNull(moltenFluid);
+		this.moltenFluid = new Fluid("molten_" + id, "Molten " + name, fluidTemperature, 15, 3000, 6000, this.color.base);
 
 		this.resourceLocation = new MaterialId(ModInfo.MOD_ID, id);
 	}

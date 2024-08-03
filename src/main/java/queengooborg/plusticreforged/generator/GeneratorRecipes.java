@@ -3,16 +3,13 @@ package queengooborg.plusticreforged.generator;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
-import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.config.ModInfo;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
-import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.ICommonRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
@@ -61,6 +58,8 @@ public class GeneratorRecipes extends RecipeProvider implements IConditionBuilde
 			}
 
 			materialMeltingCasting(consumer, material.item, material.moltenFluid.FLUID_OBJECT, materialFolder);
+
+			// XXX Generate more recipes here (such as blocks, ingots, nuggets, etc.)
 		}
 	}
 }

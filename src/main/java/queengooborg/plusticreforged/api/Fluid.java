@@ -10,10 +10,12 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
 import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
-import queengooborg.plusticreforged.Resources;
+import net.minecraftforge.fml.RegistryObject;
+import queengooborg.plusticreforged.Registries;
 import queengooborg.plusticreforged.config.ModInfo;
 import slimeknights.mantle.registration.object.FluidObject;
 
+import java.awt.Color;
 import java.util.function.Supplier;
 
 public class Fluid {
@@ -29,11 +31,11 @@ public class Fluid {
 	public final FluidObject<ForgeFlowingFluid> FLUID_OBJECT;
 	public final ForgeFlowingFluid.Properties FLUID_PROPERTIES;
 	public final Supplier<FlowingFluidBlock> FLUID_BLOCK;
-	public final Supplier<BucketItem> FLUID_BUCKET;
+	public final RegistryObject<BucketItem> FLUID_BUCKET;
 	public final ResourceLocation TEXTURE_STILL;
 	public final ResourceLocation TEXTURE_FLOWING;
 
-	public Fluid(String id, String name, int temperature, int light, int density, int viscosity) {
+	public Fluid(String id, String name, int temperature, int light, int density, int viscosity, Color color) {
 		this.id = id;
 		this.name = name;
 		this.temperature = temperature;
@@ -41,20 +43,24 @@ public class Fluid {
 		this.density = density;
 		this.viscosity = viscosity;
 
-		FLUID = Resources.FLUIDS.register(id, () -> new ForgeFlowingFluid.Source(getFluidProperties()));
-		FLUID_FLOWING = Resources.FLUIDS.register("flowing_" + id, () -> new ForgeFlowingFluid.Flowing(getFluidProperties()));
+		FLUID = Registries.FLUIDS.register(id, () -> new ForgeFlowingFluid.Source(getFluidProperties()));
+		FLUID_FLOWING = Registries.FLUIDS.register("flowing_" + id, () -> new ForgeFlowingFluid.Flowing(getFluidProperties()));
 
-		TEXTURE_STILL = new ResourceLocation(ModInfo.MOD_ID, "block/fluid/" + id + "_still");
-		TEXTURE_FLOWING = new ResourceLocation(ModInfo.MOD_ID, "block/fluid/" + id + "_flow");
+		TEXTURE_STILL = new ResourceLocation(ModInfo.MOD_ID, "block/fluids/molten_metal");
+		TEXTURE_FLOWING = new ResourceLocation(ModInfo.MOD_ID, "block/fluids/molten_metal_flow");
 
-		FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(FLUID, FLUID_FLOWING, FluidAttributes.builder(TEXTURE_STILL, TEXTURE_FLOWING).overlay(TEXTURE_STILL).luminosity(light).density(density).viscosity(viscosity).temperature(temperature).sound(SoundEvents.BUCKET_FILL_LAVA, SoundEvents.BUCKET_EMPTY_LAVA));
+		FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(FLUID, FLUID_FLOWING, FluidAttributes.builder(TEXTURE_STILL, TEXTURE_FLOWING).overlay(TEXTURE_STILL).color(color.getRGB()).luminosity(light).density(density).viscosity(viscosity).temperature(temperature).sound(this.isHot() ? SoundEvents.BUCKET_FILL : SoundEvents.BUCKET_FILL_LAVA, this.isHot() ? SoundEvents.BUCKET_EMPTY : SoundEvents.BUCKET_EMPTY_LAVA));
 
-		FLUID_BLOCK = () -> new FlowingFluidBlock(FLUID, Block.Properties.of(net.minecraft.block.material.Material.LAVA).lightLevel((state) -> { return light; }).randomTicks().strength(100.0F).noDrops());
-		FLUID_BUCKET = () -> new BucketItem(FLUID, new BucketItem.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(ItemGroup.TAB_MISC));
+		FLUID_BLOCK = Registries.BLOCKS.register(id + "_block", () -> new FlowingFluidBlock(FLUID, Block.Properties.of(net.minecraft.block.material.Material.LAVA).lightLevel((state) -> { return light; }).randomTicks().strength(100.0F).noDrops()));
+		FLUID_BUCKET = Registries.ITEMS.register(id + "_bucket", () -> new BucketItem(FLUID, new BucketItem.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(ItemGroup.TAB_MISC)));
 
 		FLUID_PROPERTIES.bucket(FLUID_BUCKET).block(FLUID_BLOCK).explosionResistance(1000F).tickRate(9);
 
 		FLUID_OBJECT = new FluidObject<>(new ResourceLocation(ModInfo.MOD_ID, id), id, FLUID, FLUID_FLOWING, FLUID_BLOCK);
+	}
+
+	public boolean isHot() {
+		return temperature > 600;
 	}
 
 	public ForgeFlowingFluid.Properties getFluidProperties() {

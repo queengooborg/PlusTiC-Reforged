@@ -24,6 +24,8 @@ public class GeneratorLang extends LanguageProvider {
 			}
 
 			if (material.moltenFluid != null) {
+				addBlock(material.moltenFluid.FLUID_BLOCK, material.moltenFluid.name);
+				addItem(material.moltenFluid.FLUID_BUCKET, material.moltenFluid.name + " Bucket");
 				add(String.format("fluid.%s.%s", ModInfo.MOD_ID, material.moltenFluid.id), material.moltenFluid.name);
 			}
 		}

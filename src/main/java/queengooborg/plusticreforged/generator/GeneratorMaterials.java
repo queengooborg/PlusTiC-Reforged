@@ -1,7 +1,6 @@
 package queengooborg.plusticreforged.generator;
 
 import net.minecraft.data.DataGenerator;
-import net.minecraftforge.fml.RegistryObject;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.Material;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
@@ -17,9 +16,9 @@ public class GeneratorMaterials extends AbstractMaterialDataProvider {
 	protected void addMaterials() {
 		for (Material material : Resources.MATERIALS) {
 			if (Objects.equals(material.type[0], "metal")) {
-				addCompatMetalMaterial(material.resourceLocation, material.tier, material.order, material.color.base);
+				addCompatMetalMaterial(material.resourceLocation, material.tier, material.order, material.color.base.getRGB());
 			} else {
-				addMaterial(material.resourceLocation, material.tier, material.order, true, material.color.base);
+				addMaterial(material.resourceLocation, material.tier, material.order, true, material.color.base.getRGB());
 			}
 		}
 	}

@@ -2,7 +2,6 @@ package queengooborg.plusticreforged.generator;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.FluidTagsProvider;
-import net.minecraft.data.IDataProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.Material;

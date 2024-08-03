@@ -7,6 +7,8 @@ import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.api.MaterialColors;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 
+import java.awt.Color;
+
 import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.*;
 
 public class BedrockMaterial extends Material {
@@ -19,10 +21,10 @@ public class BedrockMaterial extends Material {
 			2,
 			new String[]{"misc"},
 			ORDER_HARVEST + ORDER_COMPAT,
-			new MaterialColors(0xE6B7BF),
+			new MaterialColors(new Color(88, 88, 88)),
 			null,
 			Resources.getModifier("heavy_metal"),
-			new Fluid("molten_bedrock", "Molten Bedrock", 1000, 15, 3000, 6000)
+			1000
 		);
 	}
 }

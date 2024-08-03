@@ -14,7 +14,7 @@ public class GeneratorRenderInfo extends AbstractMaterialRenderInfoProvider {
 	@Override
 	protected void addMaterialRenderInfo() {
 		for (Material material : Resources.MATERIALS) {
-			buildRenderInfo(material.resourceLocation).color(material.color.base).luminosity(material.color.luminosity);
+			buildRenderInfo(material.resourceLocation).color(material.color.base.getRGB()).luminosity(material.color.luminosity);
 		}
 	}
 

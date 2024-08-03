@@ -1,19 +1,11 @@
 package queengooborg.plusticreforged;
 
-import net.minecraft.fluid.Fluid;
-import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.api.Modifier;
-import queengooborg.plusticreforged.config.ModInfo;
 import queengooborg.plusticreforged.modifiers.*;
 import queengooborg.plusticreforged.materials.*;
 
 public class Resources {
-	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, ModInfo.MOD_ID);
-	public static final DeferredRegister<slimeknights.tconstruct.library.modifiers.Modifier> _MODIFIERS = DeferredRegister.create(slimeknights.tconstruct.library.modifiers.Modifier.class, ModInfo.MOD_ID);
-
 	public static final Modifier[] MODIFIERS = new Modifier[]{
 		new HeavyModifier()
 	};
