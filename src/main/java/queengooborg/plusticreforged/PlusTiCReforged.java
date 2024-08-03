@@ -103,6 +103,7 @@ public class PlusTiCReforged {
 			gen.addProvider(materialData);
 			gen.addProvider(new GeneratorMaterialStats(gen, materialData));
 			gen.addProvider(new GeneratorMaterialTraits(gen, materialData));
+			gen.addProvider(new GeneratorRecipes(gen));
 
 			// Generate tags
 			gen.addProvider(new GeneratorFluidTags(gen, event.getExistingFileHelper()));
