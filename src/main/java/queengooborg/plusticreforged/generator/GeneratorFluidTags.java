@@ -20,4 +20,9 @@ public class GeneratorFluidTags extends FluidTagsProvider {
 			tag(TinkerTags.Fluids.METAL_LIKE).addTag(material.moltenFluid.getForgeTag());
 		}
 	}
+
+	@Override
+	public String getName() {
+		return "PlusTiC Reforged Fluid Tags";
+	}
 }

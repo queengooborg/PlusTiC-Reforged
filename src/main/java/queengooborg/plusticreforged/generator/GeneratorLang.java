@@ -40,4 +40,9 @@ public class GeneratorLang extends LanguageProvider {
 			}
 		}
 	}
+
+	@Override
+	public String getName() {
+		return "PlusTiC Reforged Language File Generator";
+	}
 }
