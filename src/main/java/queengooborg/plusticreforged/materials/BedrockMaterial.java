@@ -19,7 +19,7 @@ public class BedrockMaterial extends Material {
 			new MaterialId("minecraft", "bedrock"),
 			new Description("-10% attack damage, +15% attack speed per level"),
 			2,
-			new String[]{"misc"},
+			new String[]{"rock"},
 			ORDER_HARVEST + ORDER_COMPAT,
 			new MaterialColors(new Color(88, 88, 88)),
 			null,
