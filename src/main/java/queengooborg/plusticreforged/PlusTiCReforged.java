@@ -99,9 +99,8 @@ public class PlusTiCReforged {
 			GeneratorMaterialTextures materialSprites = new GeneratorMaterialTextures();
 			gen.addProvider(new GeneratorRenderInfo(gen, materialSprites));
 
-			// Generate Tinkers' parts with our materials
-			// XXX The following causes: Caused by: java.lang.IllegalStateException: Missing sprite at tconstruct:item/tool/parts/large_plate.png, cannot generate textures
-//			gen.addProvider(new MaterialPartTextureGenerator(gen, event.getExistingFileHelper(), new TinkerPartSpriteProvider(), materialSprites));
+			// Generate parts with our new materials
+			gen.addProvider(new MaterialPartTextureGenerator(gen, event.getExistingFileHelper(), new TinkerPartSpriteProvider(), materialSprites));
 		}
 
 		if (event.includeServer()) {
