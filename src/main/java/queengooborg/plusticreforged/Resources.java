@@ -7,7 +7,8 @@ import queengooborg.plusticreforged.materials.*;
 
 public class Resources {
 	public static final Modifier[] MODIFIERS = new Modifier[]{
-			new HeavyModifier()
+			new HeavyModifier(),
+			new InvulnerableModifier()
 	};
 
 	public static final Material[] MATERIALS = new Material[]{

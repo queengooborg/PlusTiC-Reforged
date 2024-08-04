@@ -6,6 +6,7 @@ import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.api.MaterialColors;
 import queengooborg.plusticreforged.api.MaterialStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
@@ -20,13 +21,13 @@ public class BedrockMaterial extends Material {
 				"bedrock",
 				"Bedrock",
 				new MaterialId("minecraft", "bedrock"),
-				new Description("-10% attack damage, +15% attack speed per level"),
+				new Description("You could only obtain these tools through Creative or cheats -- so if you're gonna cheat, you might as well commit, right?", "The tool takes no damage"),
 				2,
 				new String[]{"rock"},
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(60, 60, 60)),
-				new MaterialStats(new HeadMaterialStats(999999, 10, 9999, 99), new HandleMaterialStats(999999, 10, 10, 99), ExtraMaterialStats.DEFAULT),
-				Resources.getModifier("heavy_metal"),
+				new MaterialStats(new HeadMaterialStats(99999999, 10, HarvestLevels.NETHERITE, 99), new HandleMaterialStats(9999999, 10, 10, 99), ExtraMaterialStats.DEFAULT),
+				Resources.getModifier("invulnerable"),
 				1000
 		);
 	}
