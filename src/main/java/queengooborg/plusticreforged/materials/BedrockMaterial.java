@@ -1,10 +1,7 @@
 package queengooborg.plusticreforged.materials;
 
 import queengooborg.plusticreforged.Resources;
-import queengooborg.plusticreforged.api.Description;
-import queengooborg.plusticreforged.api.Material;
-import queengooborg.plusticreforged.api.MaterialColors;
-import queengooborg.plusticreforged.api.MaterialStats;
+import queengooborg.plusticreforged.api.*;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
@@ -23,7 +20,7 @@ public class BedrockMaterial extends Material {
 				new MaterialId("minecraft", "bedrock"),
 				new Description("You could only obtain these tools through Creative or cheats -- so if you're gonna cheat, you might as well commit, right?", "The tool takes no damage"),
 				2,
-				new String[]{"rock"},
+				MaterialType.STONE,
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(60, 60, 60)),
 				new MaterialStats(new HeadMaterialStats(99999999, 10, HarvestLevels.NETHERITE, 99), new HandleMaterialStats(9999999, 10, 10, 99), ExtraMaterialStats.DEFAULT),

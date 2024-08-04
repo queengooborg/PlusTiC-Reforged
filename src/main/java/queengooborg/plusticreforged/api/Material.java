@@ -13,7 +13,7 @@ public class Material {
 	public MaterialId item;
 	public Description description = new Description();
 	public int tier = 1;
-	public String[] type = {"metal"};
+	public MaterialType type;
 	public int order = ORDER_HARVEST + ORDER_COMPAT;
 	public MaterialColors color = new MaterialColors();
 	public MaterialStats stats = new MaterialStats();
@@ -22,11 +22,11 @@ public class Material {
 
 	public MaterialId resourceLocation;
 
-	public Material(String id, String name, MaterialId item, Description description, int tier, String[] type, int order, MaterialColors color, MaterialStats stats, Modifier modifier, int fluidTemperature) {
+	public Material(String id, String name, MaterialId item, Description description, int tier, MaterialType type, int order, MaterialColors color, MaterialStats stats, Modifier modifier, int fluidTemperature) {
 		this(id, name, item, description, tier, type, order, color, stats, new Modifier[]{modifier}, fluidTemperature);
 	}
 
-	public Material(String id, String name, MaterialId item, Description description, int tier, String[] type, int order, MaterialColors color, MaterialStats stats, Modifier[] modifiers, int fluidTemperature) {
+	public Material(String id, String name, MaterialId item, Description description, int tier, MaterialType type, int order, MaterialColors color, MaterialStats stats, Modifier[] modifiers, int fluidTemperature) {
 		this.id = Objects.requireNonNull(id);
 		this.name = Objects.requireNonNull(name);
 		this.item = Objects.requireNonNull(item);
