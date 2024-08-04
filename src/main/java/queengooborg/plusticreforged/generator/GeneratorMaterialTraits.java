@@ -14,10 +14,10 @@ public class GeneratorMaterialTraits extends AbstractMaterialTraitDataProvider {
 	@Override
 	protected void addMaterialTraits() {
 		for (Material material : Resources.MATERIALS) {
-			if (material.modifier == null) {
+			if (material.modifiers.length == 0) {
 				noTraits(material.resourceLocation);
 			} else {
-				addDefaultTraits(material.resourceLocation, material.modifier);
+				addDefaultTraits(material.resourceLocation, material.modifiers);
 			}
 		}
 	}

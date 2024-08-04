@@ -17,12 +17,16 @@ public class Material {
 	public int order = ORDER_HARVEST + ORDER_COMPAT;
 	public MaterialColors color = new MaterialColors();
 	public MaterialStats stats = new MaterialStats();
-	public Modifier modifier = null;
+	public Modifier[] modifiers;
 	public Fluid moltenFluid;
 
 	public MaterialId resourceLocation;
 
 	public Material(String id, String name, MaterialId item, Description description, int tier, String[] type, int order, MaterialColors color, MaterialStats stats, Modifier modifier, int fluidTemperature) {
+		this(id, name, item, description, tier, type, order, color, stats, new Modifier[]{modifier}, fluidTemperature);
+	}
+
+	public Material(String id, String name, MaterialId item, Description description, int tier, String[] type, int order, MaterialColors color, MaterialStats stats, Modifier[] modifiers, int fluidTemperature) {
 		this.id = Objects.requireNonNull(id);
 		this.name = Objects.requireNonNull(name);
 		this.item = Objects.requireNonNull(item);
@@ -32,7 +36,7 @@ public class Material {
 		if (type != null) this.type = type;
 		if (color != null) this.color = color;
 		if (stats != null) this.stats = stats;
-		this.modifier = modifier;
+		this.modifiers = modifiers;
 		this.moltenFluid = new Fluid("molten_" + id, "Molten " + name, fluidTemperature, 15, 3000, 6000, this.color.base);
 
 		this.resourceLocation = new MaterialId(ModInfo.MOD_ID, id);
