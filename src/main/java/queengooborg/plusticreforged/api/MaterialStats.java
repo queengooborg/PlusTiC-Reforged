@@ -9,7 +9,8 @@ public class MaterialStats {
 	public HandleMaterialStats handle = HandleMaterialStats.DEFAULT;
 	public ExtraMaterialStats extra = ExtraMaterialStats.DEFAULT;
 
-	public MaterialStats() {}
+	public MaterialStats() {
+	}
 
 	public MaterialStats(HeadMaterialStats head, HandleMaterialStats handle, ExtraMaterialStats extra) {
 		if (head != null) this.head = head;

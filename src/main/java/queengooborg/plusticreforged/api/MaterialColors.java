@@ -3,7 +3,7 @@ package queengooborg.plusticreforged.api;
 import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToColorMapping;
 import slimeknights.tconstruct.library.client.data.spritetransformer.IColorMapping;
 
-import java.awt.Color;
+import java.awt.*;
 import java.util.Objects;
 
 public class MaterialColors {
@@ -77,23 +77,23 @@ public class MaterialColors {
 
 	public IColorMapping getColorMapper() {
 		return GreyToColorMapping.builderFromBlack()
-			.addARGB(63, f63.getRGB())
-			.addARGB(102, f102.getRGB())
-			.addARGB(140, f140.getRGB())
-			.addARGB(178, f178.getRGB())
-			.addARGB(216, f216.getRGB())
-			.addARGB(255, f255.getRGB())
-			.build();
+				.addARGB(63, f63.getRGB())
+				.addARGB(102, f102.getRGB())
+				.addARGB(140, f140.getRGB())
+				.addARGB(178, f178.getRGB())
+				.addARGB(216, f216.getRGB())
+				.addARGB(255, f255.getRGB())
+				.build();
 	}
 
 	public Color adjustColorBrightness(Color input, int brightness) {
 		// XXX This is a placeholder for the actual color brightness calculation
 		int shift = (brightness - 127) / 3;
 		return new Color(
-			Math.min(255, Math.max(0, input.getRed() + shift)),
-			Math.min(255, Math.max(0, input.getGreen() + shift)),
-			Math.min(255, Math.max(0, input.getBlue() + shift)),
-			input.getAlpha()
+				Math.min(255, Math.max(0, input.getRed() + shift)),
+				Math.min(255, Math.max(0, input.getGreen() + shift)),
+				Math.min(255, Math.max(0, input.getBlue() + shift)),
+				input.getAlpha()
 		);
 	}
 }

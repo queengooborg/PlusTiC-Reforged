@@ -15,7 +15,7 @@ import queengooborg.plusticreforged.Registries;
 import queengooborg.plusticreforged.config.ModInfo;
 import slimeknights.mantle.registration.object.FluidObject;
 
-import java.awt.Color;
+import java.awt.*;
 import java.util.function.Supplier;
 
 public class Fluid {
@@ -51,7 +51,9 @@ public class Fluid {
 
 		FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(FLUID, FLUID_FLOWING, FluidAttributes.builder(TEXTURE_STILL, TEXTURE_FLOWING).overlay(TEXTURE_STILL).color(color.getRGB()).luminosity(light).density(density).viscosity(viscosity).temperature(temperature).sound(this.isHot() ? SoundEvents.BUCKET_FILL : SoundEvents.BUCKET_FILL_LAVA, this.isHot() ? SoundEvents.BUCKET_EMPTY : SoundEvents.BUCKET_EMPTY_LAVA));
 
-		FLUID_BLOCK = Registries.BLOCKS.register(id + "_block", () -> new FlowingFluidBlock(FLUID, Block.Properties.of(net.minecraft.block.material.Material.LAVA).lightLevel((state) -> { return light; }).randomTicks().strength(100.0F).noDrops()));
+		FLUID_BLOCK = Registries.BLOCKS.register(id + "_block", () -> new FlowingFluidBlock(FLUID, Block.Properties.of(net.minecraft.block.material.Material.LAVA).lightLevel((state) -> {
+			return light;
+		}).randomTicks().strength(100.0F).noDrops()));
 		FLUID_BUCKET = Registries.ITEMS.register(id + "_bucket", () -> new BucketItem(FLUID, new BucketItem.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(ItemGroup.TAB_MISC)));
 
 		FLUID_PROPERTIES.bucket(FLUID_BUCKET).block(FLUID_BLOCK).explosionResistance(1000F).tickRate(9);

@@ -12,10 +12,8 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import queengooborg.plusticreforged.config.ModInfo;
 import queengooborg.plusticreforged.generator.*;
-import queengooborg.plusticreforged.generator.GeneratorLang;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
@@ -52,36 +50,6 @@ public class PlusTiCReforged {
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
-	private void setup(final FMLCommonSetupEvent event) {
-		// some preinit code
-//		LOGGER.info("HELLO FROM PREINIT");
-//		LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
-	}
-
-	private void doClientStuff(final FMLClientSetupEvent event) {
-		// do something that can only be done on the client
-//        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
-	}
-
-	private void enqueueIMC(final InterModEnqueueEvent event) {
-		// some example code to dispatch IMC to another mod
-//        InterModComms.sendTo("examplemod", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
-	}
-
-	private void processIMC(final InterModProcessEvent event) {
-		// some example code to receive and process InterModComms from other mods
-//		LOGGER.info("Got IMC {}", event.getIMCStream().
-//				map(m -> m.getMessageSupplier().get()).
-//				collect(Collectors.toList()));
-	}
-
-	// You can use SubscribeEvent and let the Event Bus discover methods to call
-	@SubscribeEvent
-	public void onServerStarting(FMLServerStartingEvent event) {
-		// do something when the server starts
-//		LOGGER.info("HELLO from server starting");
-	}
-
 	// Gather data to be generated
 	@SubscribeEvent
 	public static void gatherData(GatherDataEvent event) {
@@ -116,6 +84,36 @@ public class PlusTiCReforged {
 			// Generate tags
 			gen.addProvider(new GeneratorFluidTags(gen, event.getExistingFileHelper()));
 		}
+	}
+
+	private void setup(final FMLCommonSetupEvent event) {
+		// some preinit code
+//		LOGGER.info("HELLO FROM PREINIT");
+//		LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+	}
+
+	private void doClientStuff(final FMLClientSetupEvent event) {
+		// do something that can only be done on the client
+//        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
+	}
+
+	private void enqueueIMC(final InterModEnqueueEvent event) {
+		// some example code to dispatch IMC to another mod
+//        InterModComms.sendTo("examplemod", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
+	}
+
+	private void processIMC(final InterModProcessEvent event) {
+		// some example code to receive and process InterModComms from other mods
+//		LOGGER.info("Got IMC {}", event.getIMCStream().
+//				map(m -> m.getMessageSupplier().get()).
+//				collect(Collectors.toList()));
+	}
+
+	// You can use SubscribeEvent and let the Event Bus discover methods to call
+	@SubscribeEvent
+	public void onServerStarting(FMLServerStartingEvent event) {
+		// do something when the server starts
+//		LOGGER.info("HELLO from server starting");
 	}
 
 	// You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
