@@ -3,8 +3,6 @@ package queengooborg.plusticreforged.generator;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.config.ModInfo;
@@ -22,8 +20,6 @@ import slimeknights.tconstruct.tools.data.material.MaterialRecipeProvider;
 import java.util.function.Consumer;
 
 public class GeneratorRecipes extends MaterialRecipeProvider implements IConditionBuilder, IMaterialRecipeHelper, IToolRecipeHelper, ISmelteryRecipeHelper, ICommonRecipeHelper {
-	private static final Logger log = LogManager.getLogger(GeneratorRecipes.class);
-
 	public GeneratorRecipes(DataGenerator gen) {
 		super(gen);
 	}
