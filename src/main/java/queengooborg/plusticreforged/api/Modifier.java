@@ -21,8 +21,7 @@ public abstract class Modifier extends slimeknights.tconstruct.library.modifiers
 		if (description != null) this.description = description;
 
 		this.resourceLocation = new ResourceLocation(ModInfo.MOD_ID, id);
-		this.setRegistryName(this.resourceLocation);
 
-//		Registries.MODIFIERS.register(id, () -> this);
+		Registries.MODIFIERS.register(id, () -> this);
 	}
 }
