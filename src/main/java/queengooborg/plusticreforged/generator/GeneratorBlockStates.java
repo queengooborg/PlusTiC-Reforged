@@ -26,7 +26,7 @@ public class GeneratorBlockStates extends BlockStateProvider {
 			// Register blockstates for fluids
 			Supplier<FlowingFluidBlock> fluid = material.moltenFluid.FLUID_BLOCK;
 			ResourceLocation name = fluid.get().getRegistryName();
-			simpleBlock(fluid.get(), models().cubeAll(name.getPath(), new ResourceLocation(ModInfo.MOD_ID, ModelProvider.BLOCK_FOLDER + "/fluids/molten_metal")));
+			simpleBlock(fluid.get(), models().cubeAll(name.getPath(), new ResourceLocation("tconstruct", "block/fluid/molten/still")));
 		}
 	}
 }

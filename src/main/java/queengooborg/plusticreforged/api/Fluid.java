@@ -46,8 +46,8 @@ public class Fluid {
 		FLUID = Registries.FLUIDS.register(id, () -> new ForgeFlowingFluid.Source(getFluidProperties()));
 		FLUID_FLOWING = Registries.FLUIDS.register("flowing_" + id, () -> new ForgeFlowingFluid.Flowing(getFluidProperties()));
 
-		TEXTURE_STILL = new ResourceLocation(ModInfo.MOD_ID, "block/fluids/molten_metal");
-		TEXTURE_FLOWING = new ResourceLocation(ModInfo.MOD_ID, "block/fluids/molten_metal_flow");
+		TEXTURE_STILL = new ResourceLocation("tconstruct", "block/fluid/molten/still");
+		TEXTURE_FLOWING = new ResourceLocation("tconstruct", "block/fluid/molten/flowing");
 
 		FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(FLUID, FLUID_FLOWING, FluidAttributes.builder(TEXTURE_STILL, TEXTURE_FLOWING).overlay(TEXTURE_STILL).color(color.getRGB()).luminosity(light).density(density).viscosity(viscosity).temperature(temperature).sound(this.isHot() ? SoundEvents.BUCKET_FILL : SoundEvents.BUCKET_FILL_LAVA, this.isHot() ? SoundEvents.BUCKET_EMPTY : SoundEvents.BUCKET_EMPTY_LAVA));
 

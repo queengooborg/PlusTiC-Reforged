@@ -2,7 +2,6 @@ package queengooborg.plusticreforged.materials;
 
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.Description;
-import queengooborg.plusticreforged.api.Fluid;
 import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.api.MaterialColors;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
