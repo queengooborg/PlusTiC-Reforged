@@ -11,6 +11,7 @@ import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.config.ModInfo;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.data.ItemNameOutput;
+import slimeknights.tconstruct.common.data.BaseRecipeProvider;
 import slimeknights.tconstruct.library.data.recipe.ICommonRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
@@ -19,14 +20,20 @@ import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
+import slimeknights.tconstruct.tools.data.material.MaterialRecipeProvider;
 
 import java.util.function.Consumer;
 
-public class GeneratorRecipes extends RecipeProvider implements IConditionBuilder, IMaterialRecipeHelper, IToolRecipeHelper, ISmelteryRecipeHelper, ICommonRecipeHelper {
+public class GeneratorRecipes extends MaterialRecipeProvider implements IConditionBuilder, IMaterialRecipeHelper, IToolRecipeHelper, ISmelteryRecipeHelper, ICommonRecipeHelper {
 	private static final Logger log = LogManager.getLogger(GeneratorRecipes.class);
 
 	public GeneratorRecipes(DataGenerator gen) {
 		super(gen);
+	}
+
+	@Override
+	public String getName() {
+		return "PlusTiC Reforged Recipes";
 	}
 
 	@Override
@@ -58,11 +65,11 @@ public class GeneratorRecipes extends RecipeProvider implements IConditionBuilde
 			} else {
 				MeltingRecipeBuilder.melting(ItemNameIngredient.from(material.item), material.moltenFluid.getFluid(), FluidValues.METAL_BLOCK, 1.0f).build(consumer, modResource(meltingFolder + material.id));
 				ItemCastingRecipeBuilder.basinRecipe(ItemNameOutput.fromName(material.item)).setFluidAndTime(material.moltenFluid.FLUID_OBJECT, true, FluidValues.METAL_BLOCK).build(consumer, this.modResource(castingFolder + material.id));
-				tagCasting(consumer, material.moltenFluid.FLUID_OBJECT, FluidValues.METAL_BLOCK, TinkerSmeltery.plateCast, "plates/" + material.id, castingFolder + material.id + "/plate", true);
-				tagCasting(consumer, material.moltenFluid.FLUID_OBJECT, true, FluidValues.METAL_BLOCK * 4, TinkerSmeltery.gearCast, "gears/" + material.id, castingFolder + material.id + "/gear", true);
-				tagCasting(consumer, material.moltenFluid.FLUID_OBJECT, true, FluidValues.METAL_BLOCK / 3, TinkerSmeltery.coinCast, "coins/" + material.id, castingFolder + material.id + "/coin", true);
-				tagCasting(consumer, material.moltenFluid.FLUID_OBJECT, true, FluidValues.METAL_BLOCK / 2, TinkerSmeltery.rodCast, "rods/" + material.id, castingFolder + material.id + "/rod", true);
-				tagCasting(consumer, material.moltenFluid.FLUID_OBJECT, true, FluidValues.METAL_BLOCK / 2, TinkerSmeltery.wireCast, "wires/" + material.id, castingFolder + material.id + "/wire", true);
+//				tagCasting(consumer, material.moltenFluid.FLUID_OBJECT, FluidValues.METAL_BLOCK, TinkerSmeltery.plateCast, "plates/" + material.id, castingFolder + material.id + "/plate", false);
+//				tagCasting(consumer, material.moltenFluid.FLUID_OBJECT, true, FluidValues.METAL_BLOCK * 4, TinkerSmeltery.gearCast, "gears/" + material.id, castingFolder + material.id + "/gear", false);
+//				tagCasting(consumer, material.moltenFluid.FLUID_OBJECT, true, FluidValues.METAL_BLOCK / 3, TinkerSmeltery.coinCast, "coins/" + material.id, castingFolder + material.id + "/coin", false);
+//				tagCasting(consumer, material.moltenFluid.FLUID_OBJECT, true, FluidValues.METAL_BLOCK / 2, TinkerSmeltery.rodCast, "rods/" + material.id, castingFolder + material.id + "/rod", false);
+//				tagCasting(consumer, material.moltenFluid.FLUID_OBJECT, true, FluidValues.METAL_BLOCK / 2, TinkerSmeltery.wireCast, "wires/" + material.id, castingFolder + material.id + "/wire", false);
 			}
 		}
 	}

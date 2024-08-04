@@ -18,7 +18,7 @@ public class GeneratorMaterials extends AbstractMaterialDataProvider {
 			if (Objects.equals(material.type[0], "metal")) {
 				addCompatMetalMaterial(material.resourceLocation, material.tier, material.order, material.color.base.getRGB());
 			} else {
-				addMaterial(material.resourceLocation, material.tier, material.order, true, material.color.base.getRGB());
+				addMaterial(material.resourceLocation, material.tier, material.order, false, material.color.base.getRGB());
 			}
 		}
 	}
