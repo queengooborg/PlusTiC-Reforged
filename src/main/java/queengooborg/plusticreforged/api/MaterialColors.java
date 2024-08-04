@@ -88,10 +88,11 @@ public class MaterialColors {
 
 	public Color adjustColorBrightness(Color input, int brightness) {
 		// XXX This is a placeholder for the actual color brightness calculation
+		int shift = (brightness - 127) / 3;
 		return new Color(
-			Math.min(255, Math.max(0, input.getRed() + brightness)),
-			Math.min(255, Math.max(0, input.getGreen() + brightness)),
-			Math.min(255, Math.max(0, input.getBlue() + brightness)),
+			Math.min(255, Math.max(0, input.getRed() + shift)),
+			Math.min(255, Math.max(0, input.getGreen() + shift)),
+			Math.min(255, Math.max(0, input.getBlue() + shift)),
 			input.getAlpha()
 		);
 	}

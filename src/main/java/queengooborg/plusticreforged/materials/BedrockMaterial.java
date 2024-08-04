@@ -21,7 +21,7 @@ public class BedrockMaterial extends Material {
 			2,
 			new String[]{"rock"},
 			ORDER_HARVEST + ORDER_COMPAT,
-			new MaterialColors(new Color(88, 88, 88)),
+			new MaterialColors(new Color(60, 60, 60)),
 			null,
 			Resources.getModifier("heavy_metal"),
 			1000
