@@ -31,7 +31,7 @@ public class GeneratorLang extends LanguageProvider {
 		}
 
 		for (Modifier modifier : Resources.MODIFIERS) {
-			add("modifier.plustic." + modifier.id, modifier.name);
+			add(String.format("modifier.%s.%s", ModInfo.MOD_ID, modifier.id), modifier.name);
 			if (!modifier.description.flavor.isEmpty()) {
 				add(String.format("modifier.%s.%s.flavor", ModInfo.MOD_ID, modifier.id), modifier.description.flavor);
 			}
