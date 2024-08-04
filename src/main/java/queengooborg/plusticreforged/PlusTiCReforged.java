@@ -95,7 +95,7 @@ public class PlusTiCReforged {
 
 			// Generate models and textures
 			gen.addProvider(new GeneratorItemModels(gen, event.getExistingFileHelper()));
-//			gen.addProvider(new GeneratorBlockStates(gen, event.getExistingFileHelper()));
+			gen.addProvider(new GeneratorBlockStates(gen, event.getExistingFileHelper()));
 			GeneratorMaterialTextures materialSprites = new GeneratorMaterialTextures();
 			gen.addProvider(new GeneratorRenderInfo(gen, materialSprites));
 
