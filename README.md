@@ -69,6 +69,12 @@ I'm afraid not, sorry. Due to my limited time to work on this project, I am only
 
 Of course, you don't even need to ask! Just make sure that your modpack complies with the licenses of all the mods you include, and include a link to the mod's CurseForge page in your modpack's description!
 
+### Where can I download the mod?
+
+Downloads for PlusTiC Reforged are available on the [CurseForge page](https://www.curseforge.com/minecraft/mc-mods/plustic-reforged) and [Modrinth page](https://modrinth.com/project/plustic-reforged) for the mod. Please be weary of downloads from any other sources, as they are not controlled by me and may contain malicious code.
+
+Remember that PlusTiC Reforged is still in early development stages and is not ready for testing!
+
 ## Contributing
 
 ### Building from Source
