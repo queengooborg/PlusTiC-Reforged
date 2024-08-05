@@ -61,6 +61,10 @@ If you are a developer and would like to add support for a mod yourself, please 
 
 Please open an issue on the Issues page on the GitHub repository with your suggestion, and I will consider it! Please note that it may take some time to add new features, as I have a limited amount of time to work on this project.
 
+### May I use this mod in my modpack?
+
+Of course, you don't even need to ask! Just make sure that your modpack complies with the licenses of all the mods you include, and include a link to the mod's CurseForge page in your modpack's description!
+
 ## Contributing
 
 ### Building from Source
