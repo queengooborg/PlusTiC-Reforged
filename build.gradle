@@ -156,16 +156,12 @@ dependencies {
     // Dependencies for mods required for compilation
 //    runtimeOnly "curse.maven:shadowfacts-forgelin-248453:2785465"
 //    runtimeOnly "curse.maven:autoreglib-250363:2746011"
-//    runtimeOnly "curse.maven:tesla-core-lib-254602:3438487-deobf-3438489-sources-3438488"
 //    runtimeOnly "curse.maven:mtlib-253211:3308160"
-//    runtimeOnly "curse.maven:redstone-flux-270789:2920436"
 
     // Mods required for compilation
 
-//    implementation "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.700"
 //    implementation fg.deobf("curse.maven:applied-energistics-2-223794:2747063") // "appeng:appliedenergistics2-forge:15.2.8"
 //    implementation fg.deobf("curse.maven:psi-241665:3085917") // "vazkii.psi:Psi:1.19-101.530"
-//    implementation fg.deobf("curse.maven:advent-of-ascension-nevermine-311054:2714823") // "curse.maven:advent-of-ascension-nevermine-311054:3054253"
 //    implementation fg.deobf("curse.maven:botania-225643:3330934") // "vazkii.botania:Botania:1.20.1-445-FORGE"
 ////    implementation fg.deobf("curse.maven:actually-additions-228404:3117927")
 //    implementation fg.deobf("curse.maven:astral-sorcery-241721:3044416") // "hellfirepvp.astralsorcery:astralsorcery:1.12.2-1.10.25-v167"
