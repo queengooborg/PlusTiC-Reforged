@@ -73,20 +73,15 @@ Of course, you don't even need to ask! Just make sure that your modpack complies
 
 ### Building from Source
 
-After cloning this repository, run the command (with working directory in the folder with the repository)
+The easiest way to build the mod is to use IntelliJ IDEA or Eclipse. Simply import the project as a Gradle project in your IDE of choice, and then run the `gen[IDE]Runs` task to generate the run configurations. Then, you can run the `runData` task to generate the data files, the `runClient` task to run the mod in a test environment, or the `build` task to build a JAR file.
+
+If you prefer to build the mod from the command line, you can use the Gradle wrapper included with the project:
 
 ```
-./gradlew setupDecompWorkspace
-```
-
-If you're using Eclipse, run `./gradlew eclipse` to generate IDE files for Eclipse.
-
-If you're using IntelliJ IDEA, open the project folder in IDEA or run `./gradlew idea` to generate IDE files.
-
-Build with
-
-```
-./gradlew clean
+./gradlew
+./gradlew prepareRuns
+./gradlew runData
+./gradlew runClient
 ./gradlew build
 ```
 
