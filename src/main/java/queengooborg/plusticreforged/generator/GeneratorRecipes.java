@@ -47,8 +47,7 @@ public class GeneratorRecipes extends MaterialRecipeProvider implements IConditi
 
 		// Generate the recipes
 		for (Material material : Resources.MATERIALS) {
-			String namespace = material.item.getNamespace();
-			Consumer<IFinishedRecipe> wrappedConsumer = namespace.equals("minecraft") || namespace.equals("tconstruct") ? consumer : withCondition(consumer, modLoaded(material.item.getNamespace()));
+			Consumer<IFinishedRecipe> wrappedConsumer = material.condition == null ? consumer : withCondition(consumer, material.condition);
 
 			if (material.type == MaterialType.METAL) {
 				// Metals are pretty straightforward

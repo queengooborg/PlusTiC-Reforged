@@ -17,8 +17,9 @@ public class BedrockMaterial extends Material {
 		super(
 				"bedrock",
 				"Bedrock",
-				new MaterialId("minecraft", "bedrock"),
 				new Description("You could only obtain these tools through Creative or cheats -- so if you're gonna cheat, you might as well commit, right?", "The tool takes no damage"),
+				new MaterialId("minecraft", "bedrock"),
+				null,
 				2,
 				MaterialType.STONE,
 				ORDER_HARVEST + ORDER_COMPAT,
