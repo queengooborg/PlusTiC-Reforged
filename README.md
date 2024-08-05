@@ -16,6 +16,10 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 - Katana. A fast two-handed weapon that deals increasing damage the more mobs you kill.
 - Laser Gun. A ranged weapon that requires durability and energy (Forge, Tesla, RF).
 
+## New Features
+
+- Centrifuge. (Not sure what this actually does, as there was no description in the original mod.)
+
 ## Supported Mods
 
 ### Materials
