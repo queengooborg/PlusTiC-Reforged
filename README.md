@@ -16,7 +16,6 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 
 -   [Biomes o' Plenty](https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty)
 -   [Project Red](https://www.curseforge.com/minecraft/mc-mods/project-red-core)
--   [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism)
 -   [Botania](https://www.curseforge.com/minecraft/mc-mods/botania)
 -   [ArmorPlus](https://www.curseforge.com/minecraft/mc-mods/armorplus)
 -   [Thermal Foundation](https://www.curseforge.com/minecraft/mc-mods/thermal-foundation)

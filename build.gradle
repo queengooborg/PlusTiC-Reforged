@@ -185,7 +185,6 @@ dependencies {
 
     // Optional mods
 //    runtimeOnly "mrtjp:ProjectRed:1.12.2-4.9.4.120"
-//    runtimeOnly "mekanism:Mekanism:1.21-10.6.3.49"
 //    runtimeOnly "curse.maven:armorplus-237366:2952741"
 //    runtimeOnly "curse.maven:thermal-foundation-222880:2926428"
 //    runtimeOnly "curse.maven:draconic-evolution-223565:3431261"
