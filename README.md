@@ -16,8 +16,8 @@ See [Mod Support](./docs/Mod%20Support.md) for a list of mods that PlusTiC Refor
 
 ## New Tools
 
--   Katana. A fast two-handed weapon that deals increasing damage the more mobs you kill.
--   Laser Gun. A ranged weapon that requires durability and energy.
+- Katana: a fast two-handed weapon that deals increasing damage the more mobs you kill.
+- Laser Gun: a ranged weapon that requires durability and energy.
 
 ## Frequently Asked Questions (FAQ)
 
@@ -45,11 +45,21 @@ If Tinker's Construct _did_ introduce support for Fabric/Quilt, however, I proba
 
 ### For versions of Minecraft that NeoForge is available, will you port it to the original Forge too?
 
-I don't particlarly plan to support the original Forge from Minecraft 1.20.2 and up, which are the versions that NeoForge is available for. While it should "just work" as they share similar codebases (at least at first), my time to work on this is limited.
+I don't particularly plan to support the original Forge from Minecraft 1.20.2 and up, which are the versions that NeoForge is available for. While it should "just work" as they share similar codebases (at least at first), my time to work on this is limited.
 
 ### Are you going to add code that blocks a specific player's UUID from joining servers?
 
 Of course not, that would be silly and stupid!
+
+### Will you add support for [mod]?
+
+I'm always open to adding support for new mods! If you have a mod that you'd like to see supported and it does not already have its own support, please open an issue on the Issues page on the GitHub repository. Please note that it may take some time to add support for new mods, as I have a limited amount of time to work on this project.
+
+If you are a developer and would like to add support for a mod yourself, please feel free to submit a pull request on the GitHub repository. I would be happy to include your changes in the mod!
+
+### Will you add [feature]?
+
+Please open an issue on the Issues page on the GitHub repository with your suggestion, and I will consider it! Please note that it may take some time to add new features, as I have a limited amount of time to work on this project.
 
 ## Contributing
 
@@ -74,7 +84,11 @@ Build with
 
 ### Localizations
 
-If you are interested in localizing this mod for your language, I would love to include the localizations! Simply submit a pull request to the GitHub repository adding the new language file with all of the localizations, and I will happily add it in!
+If you are interested in localizing this mod for your language, I would love to include the localizations! Simply submit a [pull request](https://github.com/queengooborg/plustic-reforged/pulls) to the GitHub repository adding the new language file with all the localizations, and I will happily add it in!
+
+### Bug Reports
+
+If you find any bugs, please report them on the [Issues](https://github.com/queengooborg/plustic-reforged/issues) page on the GitHub repository. Please include as much information as possible, such as the version of the mod you are using, the version of Minecraft you are playing on, any other mods you have installed, and a crash log or other log file as applicable.
 
 ## Developers/Credits
 
