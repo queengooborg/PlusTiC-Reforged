@@ -48,7 +48,6 @@ public class Config extends Configuration {
 	public static boolean constructsArmory;
 	public static boolean machines;
 	public static boolean astralSorcery;
-	public static boolean aoa;
 	public static boolean erebus;
 	public static boolean future;
 	
@@ -165,7 +164,6 @@ public class Config extends Configuration {
 		constructsArmory = getBoolean("Enable Constructs Armory support", "modules", true, "Integrate with Constructs Armory");
 		machines = getBoolean("Enable Machines addon", "modules", true, "Enable the machines from this mod (Centrifuge, etc.)");
 		astralSorcery = getBoolean("Enable Astral Sorcery support", "modules", true, "Integrate with Astral Sorcery");
-		aoa = getBoolean("Enable AoA support", "modules", true, "Integrate with AoA");
 		erebus = getBoolean("Enable Erebus support", "modules", true, "Integrate with Erebus");
 		future = getBoolean("Enable Future MC (Netherite) support", "modules", true, "Integrate with Future MC (to add Netherite)");
 		

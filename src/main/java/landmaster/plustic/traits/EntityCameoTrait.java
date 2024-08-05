@@ -13,7 +13,7 @@ import slimeknights.tconstruct.library.utils.*;
 
 public class EntityCameoTrait extends AbstractTrait {
 	@FunctionalInterface
-	public static interface ICameoFactory {
+	public interface ICameoFactory {
 		Entity create(World world, Entity summoner, EntityLivingBase target);
 	}
 	

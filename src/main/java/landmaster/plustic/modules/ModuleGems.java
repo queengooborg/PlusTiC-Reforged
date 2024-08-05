@@ -29,21 +29,7 @@ public class ModuleGems implements IModule {
 	public void init() {
 		final boolean isBoPLoaded = Loader.isModLoaded("BiomesOPlenty") || Loader.isModLoaded("biomesoplenty");
 		
-		// Register AoA3 sapphire before BoP sapphire
-		if (Config.aoa && Loader.isModLoaded("aoa3")) {
-			Material aoaSapphire = new Material("sapphire_aoa", TextFormatting.BLUE);
-			aoaSapphire.addTrait(aquadynamic);
-			aoaSapphire.setCraftable(true);
-			PlusTiC.proxy.setRenderInfo(aoaSapphire, 0x0000ab);
-			TinkerRegistry.addMaterialStats(aoaSapphire, new HeadMaterialStats(1400, 8, 6.4f, COBALT));
-			TinkerRegistry.addMaterialStats(aoaSapphire, new HandleMaterialStats(1.25f, 100));
-			TinkerRegistry.addMaterialStats(aoaSapphire, new ExtraMaterialStats(120));
-			TinkerRegistry.addMaterialStats(aoaSapphire, new BowMaterialStats(1.3f, 1.5f, 4));
-			PlusTiC.materials.put("aoa_sapphire", aoaSapphire);
-		}
-		
-		if ((Config.aoa && Loader.isModLoaded("aoa3"))
-				|| (Config.erebus && Loader.isModLoaded("erebus"))) {
+		if (Config.erebus && Loader.isModLoaded("erebus")) {
 			Material jade = new Material("jade", 0x00e682);
 			jade.addTrait(Jaded.jaded);
 			jade.addItem("gemJade", 1, Material.VALUE_Ingot);
@@ -65,7 +51,6 @@ public class ModuleGems implements IModule {
 			sapphire.addTrait(aquadynamic);
 			sapphire.addItem("gemSapphire", 1, Material.VALUE_Ingot);
 			sapphire.setCraftable(true);
-			new OreRegisterPromise("gemSapphire", "aoa3").thenAccept(sapphire::setRepresentativeItem);
 			PlusTiC.proxy.setRenderInfo(sapphire, 0x0000FF);
 			TinkerRegistry.addMaterialStats(sapphire, new HeadMaterialStats(700, 5, 6.4f, OBSIDIAN));
 			TinkerRegistry.addMaterialStats(sapphire, new HandleMaterialStats(1, 100));
@@ -150,8 +135,7 @@ public class ModuleGems implements IModule {
 			TinkerRegistry.addMaterialStats(tanzanite, PlusTiC.justWhy);
 			PlusTiC.materials.put("tanzanite", tanzanite);
 		}
-		if ((Config.bop && isBoPLoaded)
-				|| (Config.aoa && Loader.isModLoaded("aoa3"))) {
+		if (Config.bop && isBoPLoaded) {
 			Material amethyst = new Material("amethyst", TextFormatting.LIGHT_PURPLE);
 			amethyst.addTrait(Apocalypse.apocalypse);
 			amethyst.addItem("gemAmethyst", 1, Material.VALUE_Ingot);
@@ -163,29 +147,6 @@ public class ModuleGems implements IModule {
 			TinkerRegistry.addMaterialStats(amethyst, new ExtraMaterialStats(100));
 			TinkerRegistry.addMaterialStats(amethyst, new BowMaterialStats(0.65f, 1.7f, 6.5f));
 			PlusTiC.materials.put("amethyst", amethyst);
-		}
-	}
-	
-	@Override
-	public void init2() {
-		Material aoaSapphire = PlusTiC.materials.get("aoa_sapphire");
-		if (aoaSapphire != null) {
-			Item aoaSapphireItem = Item.REGISTRY.getObject(new ResourceLocation("aoa3:sapphire"));
-			aoaSapphire.addItem(aoaSapphireItem, 1, Material.VALUE_Ingot);
-			aoaSapphire.setRepresentativeItem(aoaSapphireItem);
-		}
-	}
-	
-	@SubscribeEvent
-	public static void tooltip(ItemTooltipEvent event) { // warn that AoA sapphire is a distinct material
-		if (!PlusTiC.materials.containsKey("aoa_sapphire")) return;
-		NBTTagList mats = TagUtil.getBaseMaterialsTagList(event.getItemStack());
-		boolean warned = false;
-		for (int i=0; i<mats.tagCount(); ++i) {
-			if ("sapphire".equals(mats.getStringTagAt(i)) && !warned) {
-				warned = true;
-				event.getToolTip().add(I18n.format("tooltip.plustic.sapphire.warn"));
-			}
 		}
 	}
 }

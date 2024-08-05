@@ -266,10 +266,6 @@ modifier.autorepair.name=Autorepair
 modifier.autorepair.desc=§oHandy!§r\nWhen the tool breaks, a sharpening kit is grabbed from your inventory to repair it. If the tool is unbreakable, gain 1 modifier instead.
 modifier.jaded.name=Jaded
 modifier.jaded.desc=§oCat§r\nMobs attacked with this tool have their ability to heal temporarily hindered.
-modifier.soulcharge.name=Soul Charge
-modifier.soulcharge.desc=§oThe soul is charged on a googolplex counts§r\nAdds Soul Power per block mined: +5, +2, and +1 for pickaxe, axe, and shovel-minable blocks respectively.
-modifier.soulpower.name=Soul Power
-modifier.soulpower.desc=§oI hereby declare defendant guilty on all charges§r\nAttack damage increases based on the amount of Soul Power you have, but attacks use it up.
 modifier.aoa_threshold.name=Requires %s Level %d
 modifier.aoa_threshold.desc=§oYou thought you could get away with an overpowered tool, did you?§r\nThis tool requires %s Level %d.
 
