@@ -69,7 +69,7 @@ public class GeneratorRecipes extends MaterialRecipeProvider implements IConditi
 					log.warn("Unhandled material " + material.id + " of type: " + material.type);
 				}
 				MeltingRecipeBuilder.melting(ItemNameIngredient.from(material.item), material.moltenFluid.getFluid(), fluidValue, 1.0f).build(wrappedConsumer, modResource(meltingDir + material.id));
-				materialMeltingCasting(wrappedConsumer, material.resourceLocation, material.moltenFluid.FLUID_OBJECT, false, FluidValues.INGOT * 2, materialDir + material.id);
+				materialMeltingCasting(wrappedConsumer, material.resourceLocation, material.moltenFluid.FLUID_OBJECT, false, FluidValues.INGOT * 2, materialDir);
 			}
 		}
 	}
