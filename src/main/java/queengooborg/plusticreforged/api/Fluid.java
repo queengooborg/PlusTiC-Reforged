@@ -20,7 +20,7 @@ import java.util.function.Supplier;
 
 public class Fluid {
 	public final String id;
-	public final String name;
+	public final String materialName;
 	public final int temperature;
 	public final int light;
 	public final int density;
@@ -35,9 +35,9 @@ public class Fluid {
 	public final ResourceLocation TEXTURE_STILL;
 	public final ResourceLocation TEXTURE_FLOWING;
 
-	public Fluid(String id, String name, int temperature, int light, int density, int viscosity, Color color) {
+	public Fluid(String id, String materialName, int temperature, int light, int density, int viscosity, Color color) {
 		this.id = id;
-		this.name = name;
+		this.materialName = materialName;
 		this.temperature = temperature;
 		this.light = light;
 		this.density = density;

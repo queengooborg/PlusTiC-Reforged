@@ -37,7 +37,7 @@ public class Material {
 		if (color != null) this.color = color;
 		if (stats != null) this.stats = stats;
 		this.modifiers = modifiers;
-		this.moltenFluid = new Fluid("molten_" + id, "Molten " + name, fluidTemperature, 15, 3000, 6000, this.color.base);
+		this.moltenFluid = new Fluid("molten_" + id, name, fluidTemperature, 15, 3000, 6000, this.color.base);
 
 		this.resourceLocation = new MaterialId(ModInfo.MOD_ID, id);
 	}
