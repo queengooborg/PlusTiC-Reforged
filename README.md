@@ -88,11 +88,11 @@ Build with
 
 ### Localizations
 
-If you are interested in localizing this mod for your language, I would love to include the localizations! Simply submit a [pull request](https://github.com/queengooborg/plustic-reforged/pulls) to the GitHub repository adding the new language file with all the localizations, and I will happily add it in!
+If you are interested in localizing this mod for your language, I would love to include the localizations! Simply submit a [pull request to the GitHub repository](https://github.com/queengooborg/plustic-reforged/pulls) adding the new language file with all the localizations, and I will happily add it in!
 
 ### Bug Reports
 
-If you find any bugs, please report them on the [Issues](https://github.com/queengooborg/plustic-reforged/issues) page on the GitHub repository. Please include as much information as possible, such as the version of the mod you are using, the version of Minecraft you are playing on, any other mods you have installed, and a crash log or other log file as applicable.
+If you find any bugs, please report them on the [Issues page on the GitHub repository](https://github.com/queengooborg/plustic-reforged/issues). Please include as much information as possible, such as the version of the mod you are using, the version of Minecraft you are playing on, any other mods you have installed, and a crash log or other log file as applicable.
 
 ## Developers/Credits
 

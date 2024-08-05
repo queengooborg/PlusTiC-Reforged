@@ -52,3 +52,19 @@ PlusTiC Reforged is designed to add support to a variety of mods. The following 
 - [ModTweaker](https://www.curseforge.com/minecraft/mc-mods/modtweaker) (discontinued since MC 1.12)
 - [Tesla](https://www.curseforge.com/minecraft/mc-mods/tesla) (discontinued since MC 1.12)
 - [Tesla Core Lib](https://www.curseforge.com/minecraft/mc-mods/tesla-core-lib) (discontinued since MC 1.12)
+
+## New Mod Support
+
+If you would like to request support for a mod, please open an [issue on the GitHub repository](https://github.com/queengooborg/plustic-reforged/issues)!
+
+### Mods With Plans to Support
+
+The following is a list of mods that are planned to be supported by PlusTiC Reforged:
+
+_So far, there have been no requests to add support for new mods (PlusTiC Reforged is still in early development after all). This section will eventually contain the list of requested mods to support._
+
+### Mods That Will Not Be Supported
+
+The following is a list of mods that will not be supported by PlusTiC Reforged, whether the mod already has Tinkers' Construct or for other reasons:
+
+- [Future Versions](https://www.curseforge.com/minecraft/mc-mods/future-versions) (similar mod to Future MC -- tried to implement support, but ran into issues and decided not to continue)
