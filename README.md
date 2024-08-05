@@ -52,7 +52,7 @@ However, the mods that Landmaster developed have all been removed from CurseForg
 
 PlusTiC was eventually forked by TeamDman in 2020, released as "xXx_MoreToolMats_xXx (a PlusTiC fork without the evil)", and maintained by them for almost exactly three years. Development on the original mod had unfortunately came to a complete halt.
 
-There was one feature in particular that I was looking forward to seeing at some point: an update for modern versions of Minecraft. Since it was never updated for versions beyond 1.12.2, it was one of the mods that kept me from upgrading my own modpack for playing with friends. As such, I wanted to try my hand at updating the mod for newer versions of Minecraft, so started developing PlusTiC Reforged.
+There was one feature in particular that I was looking forward to seeing at some point: an update for modern versions of Minecraft. Since it was never updated for versions beyond 1.12.2, it was one of the mods that kept me from upgrading my own modpack for playing with friends. As such, I wanted to try my hand at updating the mod for newer versions of Minecraft, so I started developing PlusTiC Reforged.
 
 ### Why is this version called "Reforged"?
 
