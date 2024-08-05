@@ -27,7 +27,7 @@ PlusTiC was originally developed by Landmaster, a developer with a rich history 
 
 However, the mods that Landmaster developed have all been removed from CurseForge, due to an [introduction of malicious code that would prevent a specific player from being able to log onto any servers](https://github.com/TeamDman/PlusTiC/commit/9147573c6d514ff88825a8cc1ab8438f9c80a14c). While they had [removed the code and released a new version just a few days later](https://github.com/TeamDman/PlusTiC/commit/d0b4d17ce542a186a1660c7fac6083aa3eea37aa#diff-a516bfe6aaa4dd4f38abbd0de3bdd0dbL197-L204), the damage was already done. Since then, their mods have completely vanished from the internet, including the GitHub repositories.
 
-PlusTiC was eventually forked by TeamDman in 2020, released as "xXx_MoreToolMats_xXx (a PlusTiC fork without the evil)", and maintained by them for almost exactly three years. Development on the original mod had unfortunately came to a complete halt.
+PlusTiC was eventually forked by TeamDman in 2020, released as "xXx_MoreToolMats_xXx (a PlusTiC fork without the evil)", and maintained by them for almost exactly three years. Development on the original mod had unfortunately come to a complete halt.
 
 There was one feature in particular that I was looking forward to seeing at some point: an update for modern versions of Minecraft. Since it was never updated for versions beyond 1.12.2, it was one of the mods that kept me from upgrading my own modpack for playing with friends. As such, I wanted to try my hand at updating the mod for newer versions of Minecraft, so I started developing PlusTiC Reforged.
 
