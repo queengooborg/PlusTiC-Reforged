@@ -15,6 +15,7 @@ PlusTiC Reforged is designed to add support to a variety of mods. The following 
 - [Applied Energistics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2)
 - [The Twilight Forest](https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest)
 - [Draconic Evolution](https://www.curseforge.com/minecraft/mc-mods/draconic-evolution) (unavailable in 1.19)
+- [Astral Sorcery](https://www.curseforge.com/minecraft/mc-mods/astral-sorcery) (discontinued since 1.16)
 - [Survivalist](https://www.curseforge.com/minecraft/mc-mods/survivalist) (discontinued since 1.16)
 - [GemsPlusPlus](https://www.curseforge.com/minecraft/mc-mods/gemsplusplus) (discontinued since 1.16)
 - [Avaritia](https://www.curseforge.com/minecraft/mc-mods/avaritia-1-10) (unavailable in 1.16, discontinued since 1.18)
