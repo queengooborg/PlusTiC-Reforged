@@ -15,6 +15,10 @@ public class GeneratorFluidTags extends FluidTagsProvider {
 
 	public void addTags() {
 		for (Material material : Resources.MATERIALS) {
+			if (material.moltenFluid == null) {
+				continue;
+			}
+
 			tag(material.moltenFluid.getLocalTag()).add(material.moltenFluid.FLUID.get());
 			tag(material.moltenFluid.getForgeTag()).add(material.moltenFluid.FLUID.get());
 			tag(TinkerTags.Fluids.METAL_LIKE).addTag(material.moltenFluid.getForgeTag());

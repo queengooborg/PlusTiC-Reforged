@@ -19,6 +19,10 @@ public class GeneratorBlockStates extends BlockStateProvider {
 	@Override
 	protected void registerStatesAndModels() {
 		for (Material material : Resources.MATERIALS) {
+			if (material.moltenFluid == null) {
+				continue;
+			}
+
 			// Register blockstates for fluids
 			Supplier<FlowingFluidBlock> fluid = material.moltenFluid.FLUID_BLOCK;
 			ResourceLocation name = fluid.get().getRegistryName();

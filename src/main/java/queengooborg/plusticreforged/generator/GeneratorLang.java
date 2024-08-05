@@ -23,7 +23,7 @@ public class GeneratorLang extends LanguageProvider {
 				add(String.format("material.%s.%s.encyclopedia", ModInfo.MOD_ID, material.id), material.description.traits);
 			}
 
-			if (material.moltenFluid != null) {
+			if (material.moltenFluid != null && material.moltenFluid.id != null) {
 				addBlock(material.moltenFluid.FLUID_BLOCK, material.moltenFluid.materialName);
 				addItem(material.moltenFluid.FLUID_BUCKET, material.moltenFluid.materialName + " Bucket");
 				add(String.format("fluid.%s.%s", ModInfo.MOD_ID, material.moltenFluid.id), "Molten " + material.moltenFluid.materialName);

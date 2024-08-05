@@ -22,6 +22,10 @@ public class GeneratorItemModels extends ItemModelProvider {
 	@Override
 	protected void registerModels() {
 		for (Material material : Resources.MATERIALS) {
+			if (material.moltenFluid == null) {
+				continue;
+			}
+
 			bucketModel(material.moltenFluid);
 		}
 	}

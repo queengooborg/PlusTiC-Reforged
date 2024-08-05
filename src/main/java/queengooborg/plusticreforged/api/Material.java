@@ -26,7 +26,15 @@ public class Material {
 		this(id, name, item, description, tier, type, order, color, stats, new Modifier[]{modifier}, fluidTemperature);
 	}
 
+	public Material(String id, String name, MaterialId item, Description description, int tier, MaterialType type, int order, MaterialColors color, MaterialStats stats, Modifier modifier, Fluid fluid) {
+		this(id, name, item, description, tier, type, order, color, stats, new Modifier[]{modifier}, fluid);
+	}
+
 	public Material(String id, String name, MaterialId item, Description description, int tier, MaterialType type, int order, MaterialColors color, MaterialStats stats, Modifier[] modifiers, int fluidTemperature) {
+		this(id, name, item, description, tier, type, order, color, stats, modifiers, new Fluid("molten_" + id, name, fluidTemperature, 15, 3000, 6000, color.base));
+	}
+
+	public Material(String id, String name, MaterialId item, Description description, int tier, MaterialType type, int order, MaterialColors color, MaterialStats stats, Modifier[] modifiers, Fluid fluid) {
 		this.id = Objects.requireNonNull(id);
 		this.name = Objects.requireNonNull(name);
 		this.item = Objects.requireNonNull(item);
@@ -37,7 +45,7 @@ public class Material {
 		if (color != null) this.color = color;
 		if (stats != null) this.stats = stats;
 		this.modifiers = modifiers;
-		this.moltenFluid = new Fluid("molten_" + id, name, fluidTemperature, 15, 3000, 6000, this.color.base);
+		this.moltenFluid = fluid;
 
 		this.resourceLocation = new MaterialId(ModInfo.MOD_ID, id);
 	}

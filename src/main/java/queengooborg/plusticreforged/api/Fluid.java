@@ -35,6 +35,26 @@ public class Fluid {
 	public final ResourceLocation TEXTURE_STILL;
 	public final ResourceLocation TEXTURE_FLOWING;
 
+	public Fluid(FluidObject<ForgeFlowingFluid> fluid) {
+		this.id = null;
+		this.materialName = null;
+		this.temperature = fluid.get().getAttributes().getTemperature();
+		this.light = fluid.get().getAttributes().getLuminosity();
+		this.density = fluid.get().getAttributes().getDensity();
+		this.viscosity = fluid.get().getAttributes().getViscosity();
+
+		FLUID = () -> (ForgeFlowingFluid.Source) fluid.get();
+		FLUID_FLOWING = () -> (ForgeFlowingFluid.Flowing) fluid.getFlowing();
+		FLUID_BLOCK = fluid::getBlock;
+		FLUID_OBJECT = fluid;
+		TEXTURE_STILL = fluid.get().getAttributes().getStillTexture();
+		TEXTURE_FLOWING = fluid.getFlowing().getAttributes().getFlowingTexture();
+
+		// We can't get either of these from the fluid object, so we set them to null
+		FLUID_PROPERTIES = null;
+		FLUID_BUCKET = null;
+	}
+
 	public Fluid(String id, String materialName, int temperature, int light, int density, int viscosity, Color color) {
 		this.id = id;
 		this.materialName = materialName;
