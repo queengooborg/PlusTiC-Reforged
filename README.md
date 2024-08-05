@@ -12,30 +12,7 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 
 ## Supported Mods
 
-### Materials
-
--   [Biomes o' Plenty](https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty)
--   [Project Red](https://www.curseforge.com/minecraft/mc-mods/project-red-core)
--   [Botania](https://www.curseforge.com/minecraft/mc-mods/botania)
--   [ArmorPlus](https://www.curseforge.com/minecraft/mc-mods/armorplus)
--   [Thermal Foundation](https://www.curseforge.com/minecraft/mc-mods/thermal-foundation)
--   [Draconic Evolution](https://www.curseforge.com/minecraft/mc-mods/draconic-evolution)
--   [Actually Additions](https://www.curseforge.com/minecraft/mc-mods/actually-additions)
--   [Psi](https://www.curseforge.com/minecraft/mc-mods/psi)
--   [Avaritia](https://www.curseforge.com/minecraft/mc-mods/avaritia-1-10)
--   [Industrial Foregoing](https://www.curseforge.com/minecraft/mc-mods/industrial-foregoing)
--   [Survivalist](https://www.curseforge.com/minecraft/mc-mods/survivalist)
--   [ProjectE](https://www.curseforge.com/minecraft/mc-mods/projecte)
--   [GemsPlusPlus](https://www.curseforge.com/minecraft/mc-mods/gemsplusplus)
--   [Applied Energistics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2)
--   [Advent of Ascension (Nevermine)](https://www.curseforge.com/minecraft/mc-mods/advent-of-ascension-nevermine)
--   [The Twilight Forest](https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest)
-
-### Utility
-
--   [Just Enough Items](https://www.curseforge.com/minecraft/mc-mods/jei)
--   [Jade](https://www.curseforge.com/minecraft/mc-mods/jade)
--   [CraftTweaker](https://www.curseforge.com/minecraft/mc-mods/crafttweaker)
+See [Mod Support](./docs/Mod%20Support.md) for a list of mods that PlusTiC Reforged supports.
 
 ## New Tools
 
