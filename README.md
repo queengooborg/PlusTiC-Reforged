@@ -33,6 +33,7 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 - [Natura](https://www.curseforge.com/minecraft/mc-mods/natura)
 - [Psi](https://www.curseforge.com/minecraft/mc-mods/psi)
 - [Avaritia](https://www.curseforge.com/minecraft/mc-mods/avaritia-1-10)
+- [Astral Sorcery](https://www.curseforge.com/minecraft/mc-mods/astral-sorcery)
 - [Industrial Foregoing](https://www.curseforge.com/minecraft/mc-mods/industrial-foregoing)
 - [Galacticraft Legacy](https://www.curseforge.com/minecraft/mc-mods/galacticraft-legacy)
 - [Survivalist](https://www.curseforge.com/minecraft/mc-mods/survivalist)
