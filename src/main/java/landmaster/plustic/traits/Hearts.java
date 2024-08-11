@@ -15,7 +15,7 @@ public class Hearts extends AbstractTrait {
 	
 	@Override
 	public float damage(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damage, float newDamage, boolean isCritical) {
-		newDamage *= 1 + DAMAGE_MULT * player.getHealth() / player.getMaxHealth();
+		newDamage *= 1 + DAMAGE_MULT * Math.pow(player.getHealth() / player.getMaxHealth(), 3);
 		return super.damage(tool, player, target, damage, newDamage, isCritical);
 	}
 }
