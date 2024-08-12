@@ -75,6 +75,12 @@ Downloads for PlusTiC Reforged are available on the [CurseForge page](https://ww
 
 Remember that PlusTiC Reforged is still in early development stages and is not ready for testing!
 
+### What is the license for this mod?
+
+PlusTiC Reforged is licensed under the GNU GPL v3 License. You can view the full license in the [LICENSE file](./LICENSE) in the root of the repository.
+
+The original PlusTiC mod was licensed under the Apache License 2.0. Since the Reforged edition is a complete rewrite of the original mod, it does not need to be licensed under the same license.
+
 ## Contributing
 
 ### Building from Source
