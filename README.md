@@ -33,7 +33,7 @@ There was one feature in particular that I was looking forward to seeing at some
 
 ### Why is this version called "Reforged"?
 
-Contrary to what many may think, the name "Reforged" wasn't inspired by the NeoForge (or original Forge) modloader. The word "reforged" came from the idea of blacksmiths forging new tools/weapons, since Tinkers' Construct is all about smithing.
+Contrary to what some may think, the name "Reforged" wasn't inspired by the NeoForge (or original Forge) modloader. The word "reforged" came from the idea of blacksmiths forging new tools/weapons, since Tinkers' Construct is all about smithing.
 
 Originally, I picked the name to distinguish the port of the original PlusTiC mod. But upon further researching what would be required to perform the port and realizing that a complete rewrite would be far better, the name became much more fitting, like a tool that's melted back into molten metal and reforged.
 
@@ -49,11 +49,11 @@ One minor detail is that I personally like the name "PlusTiC" better -- it's sho
 
 Tinkers' Construct itself doesn't support Fabric/Quilt, so...definitely not.
 
-If Tinker's Construct _did_ introduce support for Fabric/Quilt, however, I probably still wouldn't implement support. It's not because I dislike those modloaders, but rather that this is 100% a hobby project, and I just don't have the time to learn a completely new modloader.
+If Tinker's Construct _did_ introduce support for Fabric/Quilt, however, I probably still wouldn't implement support. It's not because I dislike those modloaders, but rather that this is 100% a hobby project, and I just don't have the time to learn different modloaders.
 
 ### For versions of Minecraft that NeoForge is available, will you port it to the original Forge too?
 
-I don't particularly plan to support the original Forge from Minecraft 1.20.2 and up, which are the versions that NeoForge is available for. While it should "just work" as they share similar codebases (at least at first), my time to work on this is limited.
+I don't particularly plan to support the original Forge from Minecraft 1.20.2 and up, which are the versions that NeoForge is available for. While it should "just work" as they share similar codebases (at least for now), my time to work on this is limited.
 
 ### Are you going to add code that blocks a specific player's UUID from joining servers?
 
