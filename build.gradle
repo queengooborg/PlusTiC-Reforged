@@ -140,6 +140,10 @@ repositories {
         name "firstdarkdev"
         url "https://maven.firstdarkdev.xyz/releases/"
     }
+     flatDir {
+         name "local"
+         dir "libs"
+     }
 }
 
 dependencies {
