@@ -37,6 +37,14 @@ Contrary to what many may think, the name "Reforged" wasn't inspired by the NeoF
 
 Originally, I picked the name to distinguish the port of the original PlusTiC mod. But upon further researching what would be required to perform the port and realizing that a complete rewrite would be far better, the name became much more fitting, like a tool that's melted back into molten metal and reforged.
 
+### Why not just use/contribute to Materialis instead?
+
+Similar to PlusTiC, [Materialis](https://www.curseforge.com/minecraft/mc-mods/materialis) is a compatibility layer between Tinkers' Construct and various other mods, adding support for new material types. Personally, I had used PlusTiC in my own modpack and had grown accustomed to it, and had only learned about Materialis while I was developing PlusTiC Reforged. I have not tried it myself, but it seems to have a good userbase as well.
+
+However, I found that Materialis did not support some of the mods that PlusTiC did, though it also introduced support for other mods PlusTiC did not. I had considered contributing to Materialis to add support, but I was not too fond of the way the mod was structured from a development perspective, and PlusTiC (at the time of writing) seems to have a stronger userbase based on download count. I also wanted to learn more about Java and Minecraft modding, so I decided the best path forward was to continue the legacy of PlusTiC and develop PlusTiC Reforged.
+
+One minor detail is that I personally like the name "PlusTiC" better -- it's shorter, easier to remember (since it's so similar to "plastic"), and has a nice ring to it!
+
 ### Will you port this mod to Fabric or Quilt?
 
 Tinkers' Construct itself doesn't support Fabric/Quilt, so...definitely not.
