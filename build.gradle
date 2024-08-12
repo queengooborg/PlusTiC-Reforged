@@ -160,8 +160,9 @@ dependencies {
 //    implementation fg.deobf("curse.maven:hwyla-253449:2568751-sources-2568752-api-2568753")
 
     // Libs for optional mods
-//    runtimeOnly "curse.maven:codechicken-lib-242818:2779848-deobf-2779849" // "codechicken:CodeChickenLib:1.12.2-3.2.3.358" // "codechicken:CodeChickenLib:1.16.5-4.0.1.426"
-//    runtimeOnly "curse.maven:cb-multipart-258426:2755790-deobf-2755791" // "codechicken:ForgeMultipart:1.12.2-2.6.2.83"
+    runtimeOnly fg.deobf("curse.maven:scorge-471286:3276638")
+    runtimeOnly fg.deobf("local:codechickenlib:${minecraft_version}-4.0.7.445:universal") // "codechicken:CodeChickenLib:1.16.5-4.0.1.426"
+    runtimeOnly fg.deobf("local:CBMultipart:${minecraft_version}-3.0.4.123:universal") // "curse.maven:cb-multipart-258426:2755790-deobf-2755791"
 //    runtimeOnly "curse.maven:mrtjpcore-229002:2735197" // "mrtjp:MrTJPCore:1.12.2-2.1.4.43"
 //    runtimeOnly "curse.maven:libvulpes-236541:3801015-deobf-3801016"
 //    runtimeOnly "curse.maven:thedragonlib-248055:2580332"
@@ -174,9 +175,10 @@ dependencies {
 //    runtimeOnly "curse.maven:mtlib-253211:3308160"
 
     // Optional mods
+    runtimeOnly fg.deobf("curse.maven:project-red-core-228702:4607539") // "mrtjp:ProjectRed-${minecraft_version}:${projectred_version}:core"
+    runtimeOnly fg.deobf("curse.maven:project-red-exploration-229049:4607541") // "mrtjp:ProjectRed-${minecraft_version}:${projectred_version}:exploration"
 //    runtimeOnly fg.deobf("curse.maven:psi-241665:4458005") // 'vazkii.psi:Psi:1.16-97.474'
 //    runtimeOnly fg.deobf("curse.maven:botania-225643:3330934") // "vazkii.botania:Botania:1.20.1-445-FORGE"
-//    runtimeOnly "mrtjp:ProjectRed:1.12.2-4.9.4.120"
 //    runtimeOnly "curse.maven:armorplus-237366:2952741"
 //    runtimeOnly "curse.maven:thermal-foundation-222880:2926428"
 //    runtimeOnly "curse.maven:draconic-evolution-223565:3431261"
@@ -213,7 +215,12 @@ tasks.named('processResources', ProcessResources).configure {
     inputs.properties replaceProperties
 
     filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
-        expand replaceProperties + [project: project, tconstruct_version: tconstruct_version, mantle_version: mantle_version]
+        expand replaceProperties + [project: project] + [
+                tconstruct_version: tconstruct_version,
+                mantle_version: mantle_version,
+                jei_version: jei_version,
+                projectred_version: projectred_version,
+        ]
     }
 }
 
