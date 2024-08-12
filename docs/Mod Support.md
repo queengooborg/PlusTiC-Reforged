@@ -32,7 +32,7 @@ PlusTiC Reforged is designed to add support to a variety of mods. The following 
 - [Thaumcraft](https://www.curseforge.com/minecraft/mc-mods/thaumcraft) (discontinued since MC 1.12)
 - [Simply Jetpacks 2](https://www.curseforge.com/minecraft/mc-mods/simply-jetpacks-2) (discontinued since MC 1.12)
 - [Future MC](https://www.curseforge.com/minecraft/mc-mods/future-mc) (added in v9.1.0, mod is a compatibility layer to add MC 1.15+ features to MC 1.12, thus is not needed in newer versions)
-- [Actually Additions](https://www.curseforge.com/minecraft/mc-mods/actually-additions) (unavailable between MC 1.16 and 1.19, available for MC 1.20 -- support is planned to be re-added)
+- [Actually Additions](https://www.curseforge.com/minecraft/mc-mods/actually-additions) (unavailable between MC 1.16 and 1.19, available for MC 1.20 -- not planning to add support unless requested)
 - [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism) (has built-in support since MC 1.16)
 - [Advent of Ascension (Nevermine)](https://www.curseforge.com/minecraft/mc-mods/advent-of-ascension-nevermine) (has built-in support since AoA v3.3)
 
