@@ -8,11 +8,13 @@ import queengooborg.plusticreforged.materials.*;
 public class Resources {
 	public static final Modifier[] MODIFIERS = new Modifier[]{
 			new HeavyModifier(),
-			new InvulnerableModifier()
+			new InvulnerableModifier(),
+			new BloodyMaryModifier()
 	};
 
 	public static final Material[] MATERIALS = new Material[]{
-			new BedrockMaterial()
+			new BedrockMaterial(),
+			new RubyMaterial(),
 	};
 
 	public static Modifier getModifier(String id) {
