@@ -68,3 +68,9 @@ _So far, there have been no requests to add support for new mods (PlusTiC Reforg
 The following is a list of mods that will not be supported by PlusTiC Reforged, whether the mod already has Tinkers' Construct or for other reasons:
 
 - [Future Versions](https://www.curseforge.com/minecraft/mc-mods/future-versions) (similar mod to Future MC -- tried to implement support, but ran into issues and decided not to continue)
+
+### Mod Supported, But Not Listed?
+
+Since PlusTiC Reforged uses item tags to specify the ingredients needed for new materials, any mod that adds the specified material _should_ be supported automatically. For example, if a mod adds a Ruby gem, it should be usable in PlusTiC Reforged as long as the mod adds its gem to the `forge:gems/ruby` tag. This means that PlusTiC Reforged should be able to support a wide range of mods without needing to add explicit support for them.
+
+If a mod adds an item that should be supported but is not, you may want to file an issue with the developers of that mod to request that they add the item to the appropriate tag.
