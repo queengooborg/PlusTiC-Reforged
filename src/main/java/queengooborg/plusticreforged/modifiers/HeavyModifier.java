@@ -1,12 +1,13 @@
 package queengooborg.plusticreforged.modifiers;
 
+import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
 public class HeavyModifier extends Modifier {
 	public HeavyModifier() {
-		super("heavy_metal", "Heavy", null, 0x555555);
+		super("heavy_metal", "Heavy", new Description("Increased knockback + Slowness on target."), 0x555555);
 	}
 
 	@Override
