@@ -3,9 +3,11 @@ package queengooborg.plusticreforged.materials;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 
 import java.awt.*;
 

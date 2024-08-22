@@ -7,6 +7,7 @@ import net.minecraftforge.common.crafting.conditions.TagEmptyCondition;
 import queengooborg.plusticreforged.config.ModInfo;
 import slimeknights.tconstruct.common.json.ConfigEnabledCondition;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 
 import java.util.Objects;
 
