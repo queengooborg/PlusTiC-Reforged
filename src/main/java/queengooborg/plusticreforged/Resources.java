@@ -15,6 +15,7 @@ public class Resources {
 	public static final Material[] MATERIALS = new Material[]{
 			new BedrockMaterial(),
 			new RubyMaterial(),
+			new SapphireMaterial()
 	};
 
 	public static Modifier getModifier(String id) {
