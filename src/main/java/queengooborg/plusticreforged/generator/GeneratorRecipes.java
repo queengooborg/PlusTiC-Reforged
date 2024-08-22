@@ -2,6 +2,9 @@ package queengooborg.plusticreforged.generator;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
+import net.minecraft.item.Item;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.tags.ITag;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,6 +12,7 @@ import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.api.MaterialType;
 import queengooborg.plusticreforged.config.ModInfo;
+import slimeknights.mantle.recipe.ItemOutput;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.data.ItemNameOutput;
 import slimeknights.tconstruct.library.data.recipe.ICommonRecipeHelper;
@@ -50,6 +54,12 @@ public class GeneratorRecipes extends MaterialRecipeProvider implements IConditi
 		for (Material material : Resources.MATERIALS) {
 			Consumer<IFinishedRecipe> wrappedConsumer = material.condition == null ? consumer : withCondition(consumer, material.condition);
 
+			boolean isTag = material.ingredient.isTag;
+			ITag<Item> tag = getTag(material.ingredient.location.getNamespace(), material.ingredient.location.getPath());
+
+			ItemOutput output = isTag ? ItemNameOutput.fromTag(tag, 1) : ItemNameOutput.fromName(material.ingredient.location);
+			Ingredient input = isTag ? Ingredient.of(tag) : ItemNameIngredient.from(material.ingredient.location);
+
 			if (material.type == MaterialType.METAL) {
 				// Metals are pretty straightforward
 				metalMelting(wrappedConsumer, material.moltenFluid.getFluid(), material.id, false, meltingDir + "metal/", true);
@@ -60,10 +70,10 @@ public class GeneratorRecipes extends MaterialRecipeProvider implements IConditi
 
 				if (material.type == MaterialType.STONE || material.type == MaterialType.WOOD) {
 					fluidValue = FluidValues.METAL_BRICK;
-					ItemCastingRecipeBuilder.basinRecipe(ItemNameOutput.fromName(material.item)).setFluidAndTime(material.moltenFluid.FLUID_OBJECT, true, fluidValue).build(wrappedConsumer, this.modResource(castingDir + material.id));
+					ItemCastingRecipeBuilder.basinRecipe(output).setFluidAndTime(material.moltenFluid.FLUID_OBJECT, true, fluidValue).build(wrappedConsumer, this.modResource(castingDir + material.id));
 				} else if (material.type == MaterialType.GEM || material.type == MaterialType.POWDER) {
 					fluidValue = FluidValues.GEM;
-					castingWithCast(wrappedConsumer, material.moltenFluid.FLUID_OBJECT, fluidValue, TinkerSmeltery.gemCast, ItemNameOutput.fromName(material.item), castingDir + (material.type == MaterialType.GEM ? "gem/" : "powder/") + material.id);
+					castingWithCast(wrappedConsumer, material.moltenFluid.FLUID_OBJECT, fluidValue, TinkerSmeltery.gemCast, output, castingDir + (material.type == MaterialType.GEM ? "gem/" : "powder/") + material.id);
 
 					// XXX Create casting recipe for gem blocks
 
@@ -79,7 +89,8 @@ public class GeneratorRecipes extends MaterialRecipeProvider implements IConditi
 					// We should never reach this point yet
 					log.warn("Unhandled material " + material.id + " of type: " + material.type);
 				}
-				MeltingRecipeBuilder.melting(ItemNameIngredient.from(material.item), material.moltenFluid.getFluid(), fluidValue, 1.0f).build(wrappedConsumer, modResource(meltingDir + material.id));
+
+				MeltingRecipeBuilder.melting(input, material.moltenFluid.getFluid(), fluidValue, 1.0f).build(wrappedConsumer, modResource(meltingDir + material.id));
 				materialMeltingCasting(wrappedConsumer, material.resourceLocation, material.moltenFluid.FLUID_OBJECT, false, FluidValues.INGOT * 2, materialDir);
 			}
 		}
