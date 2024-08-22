@@ -191,13 +191,6 @@ dependencies {
 //    runtimeOnly fg.deobf("curse.maven:applied-energistics-2-223794:2747063") // "appeng:appliedenergistics2-forge:15.2.8"
 //    runtimeOnly fg.deobf("curse.maven:astral-sorcery-241721:3044416") // "hellfirepvp.astralsorcery:astralsorcery:1.12.2-1.10.25-v167"
 //    runtimeOnly fg.deobf("curse.maven:industrial-foregoing-266515:2745321-sources-2745322-api-2745323-deobf-2745324") // "com.buuz135:industrial-foregoing:1.20.1-3.5.19"
-
-    // Mitigates a bug in Forge FML
-//    implementation ("net.minecraftforge:mergetool") {
-//        version {
-//            strictly '0.2.3.3'
-//        }
-//    }
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
