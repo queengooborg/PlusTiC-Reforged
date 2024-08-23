@@ -58,5 +58,5 @@ side = "BOTH"
 modId = "tconstruct"
 mandatory = true
 versionRange = "[${tconstruct_version},)"
-ordering = "BEFORE"
+ordering = "NONE"
 side = "BOTH"
