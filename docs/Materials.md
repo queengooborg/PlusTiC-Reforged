@@ -22,6 +22,9 @@ See the [Mod Support](./Mod%20Support.md) page for a list of mods that PlusTiC R
 - Sapphire
   - Uses `forge:gems/sapphire` tag
   - Known compatible mods: Project Red, GemsPlusPlus, Biomes O' Plenty
+- Peridot
+  - Uses `forge:gems/peridot` tag
+  - Known compatible mods: Project Red, Biomes O' Plenty
 
 ## Requesting New Materials
 

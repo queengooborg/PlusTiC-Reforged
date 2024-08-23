@@ -9,13 +9,15 @@ public class Resources {
 	public static final Modifier[] MODIFIERS = new Modifier[]{
 			new HeavyModifier(),
 			new InvulnerableModifier(),
-			new BloodyMaryModifier()
+			new BloodyMaryModifier(),
+			new NaturesBlessingModifier()
 	};
 
 	public static final Material[] MATERIALS = new Material[]{
 			new BedrockMaterial(),
 			new RubyMaterial(),
-			new SapphireMaterial()
+			new SapphireMaterial(),
+			new PeridotMaterial()
 	};
 
 	public static Modifier getModifier(String id) {
