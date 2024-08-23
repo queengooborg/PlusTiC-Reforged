@@ -26,7 +26,7 @@ public class RubyMaterial extends Material {
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(200, 1, 1)),
 				new MaterialStats(new HeadMaterialStats(660, 4.6f, HarvestLevels.NETHERITE, 6.4f), new HandleMaterialStats(100, 4.6f, 5, 6.4f), ExtraMaterialStats.DEFAULT),
-				Resources.getModifier("bloodymary"), // new Modifier[]{Resources.getModifier("bloodymary"), (Modifier) TinkerModifiers.sharpness.get()},
+				Resources.getModifier("bloodymary"), // new Modifier[]{Resources.getModifier("bloodymary"), TinkerModifiers.sharpness.get()},
 				750
 		);
 	}
