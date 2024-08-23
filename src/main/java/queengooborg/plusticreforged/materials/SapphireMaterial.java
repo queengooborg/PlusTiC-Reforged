@@ -23,7 +23,7 @@ public class SapphireMaterial extends Material {
 			MaterialType.GEM,
 			ORDER_HARVEST + ORDER_COMPAT,
 			new MaterialColors(new Color(1, 1, 200)),
-			new MaterialStats(new HeadMaterialStats(700, 5, HarvestLevels.NETHERITE, 6.4f), new HandleMaterialStats(100, 5, 5, 6.4f), ExtraMaterialStats.DEFAULT),
+			new MaterialStats(new HeadMaterialStats(700, 5, HarvestLevels.NETHERITE, 6.4f), HandleMaterialStats.DEFAULT, ExtraMaterialStats.DEFAULT),
 			new Modifier[]{}, // TinkerModifiers.aquaaffinity.get(),
 			750
 		);

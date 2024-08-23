@@ -24,7 +24,7 @@ public class PeridotMaterial extends Material {
 			MaterialType.GEM,
 			ORDER_HARVEST + ORDER_COMPAT,
 			new MaterialColors(new Color(1, 200, 1)),
-			new MaterialStats(new HeadMaterialStats(640, 4, HarvestLevels.NETHERITE, 6.1f), new HandleMaterialStats(-30, 4, 5, 1.3f), ExtraMaterialStats.DEFAULT),
+			new MaterialStats(new HeadMaterialStats(640, 4, HarvestLevels.NETHERITE, 6.1f), new HandleMaterialStats(1.3f, 1, 1, 1.3f), ExtraMaterialStats.DEFAULT),
 			Resources.getModifier("naturesblessing"),
 			750
 		);
