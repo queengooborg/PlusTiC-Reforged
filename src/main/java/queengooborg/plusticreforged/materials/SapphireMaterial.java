@@ -16,7 +16,7 @@ public class SapphireMaterial extends Material {
 		super(
 			"sapphire",
 			"Sapphire",
-			new Description("A blue gemstone that is said to bring good luck to its owner."),
+			new Description("A blue gemstone that is said improve the owner's focus.", ""),
 			new ItemOrTag("forge", "gems/sapphire", true),
 			null,
 			2,

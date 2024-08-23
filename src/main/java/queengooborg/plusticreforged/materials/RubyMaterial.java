@@ -18,7 +18,7 @@ public class RubyMaterial extends Material {
 		super(
 				"ruby",
 				"Ruby",
-				new Description("A red gemstone that is said to bring good luck to its owner."),
+				new Description("A red gemstone that is said to increase the owner's vitality.", ""),
 				new ItemOrTag("forge", "gems/ruby", true),
 				null,
 				2,
