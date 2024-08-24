@@ -25,6 +25,27 @@ See the [Mod Support](./Mod%20Support.md) page for a list of mods that PlusTiC R
 - Peridot
   - Uses `forge:gems/peridot` tag
   - Known compatible mods: Project Red, Biomes O' Plenty
+- Jade
+  - Uses `forge:gems/jade` tag
+  - Known compatible mods: GemsPlusPlus
+- Malachite
+  - Uses `forge:gems/malachite` tag
+  - Known compatible mods: GemsPlusPlus, Biomes O' Plenty
+- Amber
+  - Uses `forge:gems/amber` tag
+  - Known compatible mods: Biomes O' Plenty
+- Topaz
+  - Uses `forge:gems/topaz` tag
+  - Known compatible mods: GemsPlusPlus, Biomes O' Plenty
+- Tanzanite
+  - Uses `forge:gems/tanzanite` tag
+  - Known compatible mods: Biomes O' Plenty
+- Amethyst
+  - Uses `forge:gems/amethyst` tag
+  - Known compatible mods: GemsPlusPlus, Biomes O' Plenty
+- Phoenixite
+  - Uses `forge:gems/phoenixite` tag
+  - Known compatible mods: GemsPlusPlus
 
 ## Requesting New Materials
 

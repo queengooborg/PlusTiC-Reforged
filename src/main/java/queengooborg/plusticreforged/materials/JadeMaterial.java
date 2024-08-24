@@ -12,21 +12,21 @@ import java.awt.*;
 import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.ORDER_COMPAT;
 import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.ORDER_HARVEST;
 
-public class PeridotMaterial extends Material {
-	public PeridotMaterial() {
+public class JadeMaterial extends Material {
+	public JadeMaterial() {
 		super(
-			"peridot",
-			"Peridot",
-			new Description("A green gemstone that vibrates with the energy of sunshine.", ""),
-			new ItemOrTag("forge", "gems/peridot", true),
-			null,
-			2,
-			MaterialType.GEM,
-			ORDER_HARVEST + ORDER_COMPAT,
-			new MaterialColors(new Color(50, 200, 50)),
-			new MaterialStats(new HeadMaterialStats(640, 4, HarvestLevels.NETHERITE, 6.1f), new HandleMaterialStats(1.3f, 1, 1, 1.3f), ExtraMaterialStats.DEFAULT),
-			Resources.getModifier("naturesblessing"),
-			750
+				"jade",
+				"Jade",
+				new Description("A green-ish gemstone that is said to have healing properties...which is ironic, considering this stops other mobs from healing.", ""),
+				new ItemOrTag("forge", "gems/jade", true),
+				null,
+				2,
+				MaterialType.GEM,
+				ORDER_HARVEST + ORDER_COMPAT,
+				new MaterialColors(new Color(1, 170, 1)),
+				new MaterialStats(new HeadMaterialStats(1600, 8, HarvestLevels.NETHERITE, 5), new HandleMaterialStats(1.35f, 1.1f, 1, 1), ExtraMaterialStats.DEFAULT),
+				Resources.getModifier("jaded"),
+				750
 		);
 	}
 }

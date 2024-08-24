@@ -12,21 +12,21 @@ import java.awt.*;
 import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.ORDER_COMPAT;
 import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.ORDER_HARVEST;
 
-public class PeridotMaterial extends Material {
-	public PeridotMaterial() {
+public class MalachiteMaterial extends Material {
+	public MalachiteMaterial() {
 		super(
-			"peridot",
-			"Peridot",
-			new Description("A green gemstone that vibrates with the energy of sunshine.", ""),
-			new ItemOrTag("forge", "gems/peridot", true),
-			null,
-			2,
-			MaterialType.GEM,
-			ORDER_HARVEST + ORDER_COMPAT,
-			new MaterialColors(new Color(50, 200, 50)),
-			new MaterialStats(new HeadMaterialStats(640, 4, HarvestLevels.NETHERITE, 6.1f), new HandleMaterialStats(1.3f, 1, 1, 1.3f), ExtraMaterialStats.DEFAULT),
-			Resources.getModifier("naturesblessing"),
-			750
+				"malachite",
+				"Malachite",
+				new Description("A dark green gemstone that is said to protect against negative energy.", ""),
+				new ItemOrTag("forge", "gems/malachite", true),
+				null,
+				2,
+				MaterialType.GEM,
+				ORDER_HARVEST + ORDER_COMPAT,
+				new MaterialColors(new Color(0, 117, 35)),
+				new MaterialStats(new HeadMaterialStats(640, 3, HarvestLevels.NETHERITE, 6.1f), new HandleMaterialStats(1.3f, 1.5f, 1, 1), ExtraMaterialStats.DEFAULT),
+				Resources.getModifier("natureswrath"),
+				750
 		);
 	}
 }

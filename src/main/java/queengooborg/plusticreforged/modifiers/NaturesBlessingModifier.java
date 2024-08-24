@@ -12,6 +12,8 @@ public class NaturesBlessingModifier extends Modifier {
 		super("naturesblessing", "Nature's Blessing", new Description("A chance to drop bread per mob killed or block broken. Sometimes heals the player by a bit after killing a mob."), 0xBEFA5C);
 	}
 
+	// XXX Convert me!
+
 	//	@Override
 	//	public void afterBlockBreak(ItemStack tool, World world, IBlockState state, BlockPos pos, EntityLivingBase player, boolean wasEffective) {
 	//		dropBread(player.getEntityWorld(), pos.getX(), pos.getY(), pos.getZ(), 0.005f);

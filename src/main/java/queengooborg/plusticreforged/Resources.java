@@ -10,14 +10,28 @@ public class Resources {
 			new HeavyModifier(),
 			new InvulnerableModifier(),
 			new BloodyMaryModifier(),
-			new NaturesBlessingModifier()
+			new NaturesBlessingModifier(),
+			new JadedModifier(),
+			new NaturesWrathModifier(),
+			new ThunderingModifier(),
+			new ApocalypseModifier(),
+			new GetLuckyModifier(),
 	};
 
 	public static final Material[] MATERIALS = new Material[]{
 			new BedrockMaterial(),
+
+			// ModuleGems + ModuleGemsPlus
 			new RubyMaterial(),
 			new SapphireMaterial(),
-			new PeridotMaterial()
+			new PeridotMaterial(),
+			new JadeMaterial(),
+			new MalachiteMaterial(),
+			new AmberMaterial(),
+			new TopazMaterial(),
+			new TanzaniteMaterial(),
+			new AmethystMaterial(),
+			new PhoenixiteMaterial(),
 	};
 
 	public static Modifier getModifier(String id) {

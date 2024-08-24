@@ -12,21 +12,21 @@ import java.awt.*;
 import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.ORDER_COMPAT;
 import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.ORDER_HARVEST;
 
-public class PeridotMaterial extends Material {
-	public PeridotMaterial() {
+public class AmethystMaterial extends Material {
+	public AmethystMaterial() {
 		super(
-			"peridot",
-			"Peridot",
-			new Description("A green gemstone that vibrates with the energy of sunshine.", ""),
-			new ItemOrTag("forge", "gems/peridot", true),
-			null,
-			2,
-			MaterialType.GEM,
-			ORDER_HARVEST + ORDER_COMPAT,
-			new MaterialColors(new Color(50, 200, 50)),
-			new MaterialStats(new HeadMaterialStats(640, 4, HarvestLevels.NETHERITE, 6.1f), new HandleMaterialStats(1.3f, 1, 1, 1.3f), ExtraMaterialStats.DEFAULT),
-			Resources.getModifier("naturesblessing"),
-			750
+				"amethyst",
+				"Amethyst",
+				new Description("A purple gemstone that vibrates at a high frequency."),
+				new ItemOrTag("forge", "gems/amethyst", true),
+				null,
+				2,
+				MaterialType.GEM,
+				ORDER_HARVEST + ORDER_COMPAT,
+				new MaterialColors(new Color(255, 0, 255)),
+				new MaterialStats(new HeadMaterialStats(1100, 6, HarvestLevels.NETHERITE, 8), new HandleMaterialStats(1.5f, 1, 1, 1), ExtraMaterialStats.DEFAULT),
+				Resources.getModifier("apocalypse"),
+				750
 		);
 	}
 }
