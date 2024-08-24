@@ -34,7 +34,7 @@ PlusTiC Reforged is designed to add support to a variety of mods. The following 
 - [Actually Additions](https://www.curseforge.com/minecraft/mc-mods/actually-additions) (unavailable between MC 1.16 and 1.19, available for MC 1.20 -- not planning to add support unless requested)
 - [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism) (has built-in support since MC 1.16)
 - [Advent of Ascension (Nevermine)](https://www.curseforge.com/minecraft/mc-mods/advent-of-ascension-nevermine) (has built-in support since AoA v3.3)
-- [Biomes o' Plenty](https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty) (removed the items used in PlusTiC materials in MC 1.16)
+- [Biomes o' Plenty](https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty) (items used in PlusTiC materials were removed in MC 1.16)
 
 \* About Natural Pledge: Starting in v5.1.2.0, PlusTiC forced out and overrode Natural Pledge TiC materials by default. This could be changed in the config so that PlusTiC did not add Botania materials if Natural Pledge was loaded.
 

@@ -19,6 +19,7 @@ public class Resources {
 	};
 
 	public static final Material[] MATERIALS = new Material[]{
+			// New!
 			new BedrockMaterial(),
 
 			// ModuleGems + ModuleGemsPlus
@@ -30,6 +31,23 @@ public class Resources {
 			new TopazMaterial(),
 			new AmethystMaterial(),
 			new PhoenixiteMaterial(),
+
+			// Available and maintained:
+			// ModuleBase
+			// ModuleAppEng2
+			// ModuleArmorPlus
+			// ModuleBotania
+			// ModuleIndusForego
+			// ModuleIndusForegoStuff
+			// ModuleProjectE
+			// ModulePsi
+			// ModuleTF
+			// ModuleDraconicEvolution -- unavailable in MC 1.19
+
+			// Discontinued:
+			// ModuleAvaritia -- unavailable in MC 1.16, discontinued since MC 1.18
+			// ModuleAstralSorcery -- discontinued since MC 1.16
+			// ModuleSurvivalist -- discontinued since MC 1.16
 	};
 
 	public static Modifier getModifier(String id) {
