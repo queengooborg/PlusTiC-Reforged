@@ -12,10 +12,12 @@ See the [Mod Support](./Mod%20Support.md) page for a list of mods that PlusTiC R
 
 ## Supported Materials
 
-- Bedrock
+- Bedrock (used only for testing purposes)
   - Uses `minecraft:bedrock` item ID
   - From: Minecraft
-  - Used only for testing purposes
+- TNT
+  - Uses `minecraft:tnt` item ID
+  - From: Minecraft
 - Ruby
   - Uses `forge:gems/ruby` tag
   - Known compatible mods: Project Red, GemsPlusPlus

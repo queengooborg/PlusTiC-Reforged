@@ -19,7 +19,7 @@ public class BedrockMaterial extends Material {
 				new Description("You could only obtain these tools through Creative or cheats -- so if you're gonna cheat, you might as well commit, right?", "The tool takes no damage"),
 				new ItemOrTag("minecraft", "bedrock", false),
 				null,
-				2,
+				6,
 				MaterialType.STONE,
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(60, 60, 60)),

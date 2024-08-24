@@ -16,11 +16,13 @@ public class Resources {
 			new NaturesPowerModifier(),
 			new ApocalypseModifier(),
 			new GetLuckyModifier(),
+			new ExplosiveModifier(),
 	};
 
 	public static final Material[] MATERIALS = new Material[]{
-			// New!
+			// ModuleBase + New
 			new BedrockMaterial(),
+			new TNTMaterial(),
 
 			// ModuleGems + ModuleGemsPlus
 			new RubyMaterial(),
@@ -33,7 +35,6 @@ public class Resources {
 			new PhoenixiteMaterial(),
 
 			// Available and maintained:
-			// ModuleBase
 			// ModuleAppEng2
 			// ModuleArmorPlus
 			// ModuleBotania
