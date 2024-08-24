@@ -52,6 +52,8 @@ public class GeneratorRecipes extends MaterialRecipeProvider implements IConditi
 
 		// Generate the recipes
 		for (Material material : Resources.MATERIALS) {
+			log.info("Adding recipes for material {}", material.id);
+
 			Consumer<IFinishedRecipe> wrappedConsumer = material.condition == null ? consumer : withCondition(consumer, material.condition);
 
 			boolean isTag = material.ingredient.isTag;
