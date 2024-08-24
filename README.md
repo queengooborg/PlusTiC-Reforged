@@ -3,8 +3,7 @@
 Remember the classic [PlusTiC mod](https://www.curseforge.com/minecraft/mc-mods/plusticminusbad) for 1.12.2? Ever wanted to see an update for modern Minecraft versions? Well, look no further, because PlusTiC Reforged is here!
 
 > [!NOTE]
-> PlusTiC Reforged is still in early development stages and is not ready for testing. Please check back at a later time.
-> In the meantime, downloads for 1.12.2 are available through the CurseForge pages of both the [original mod](https://www.curseforge.com/minecraft/mc-mods/plusticminusbad) and [this one](https://www.curseforge.com/minecraft/mc-mods/plustic-reforged).
+> PlusTiC Reforged is still in early development stages. As such, bugs and crashes may be present. Please report any bugs to the project's issue tracker so they may be fixed.
 
 ## About
 
