@@ -18,31 +18,25 @@ See the [Mod Support](./Mod%20Support.md) page for a list of mods that PlusTiC R
   - Used only for testing purposes
 - Ruby
   - Uses `forge:gems/ruby` tag
-  - Known compatible mods: Project Red, GemsPlusPlus, Biomes O' Plenty
+  - Known compatible mods: Project Red, GemsPlusPlus
 - Sapphire
   - Uses `forge:gems/sapphire` tag
-  - Known compatible mods: Project Red, GemsPlusPlus, Biomes O' Plenty
+  - Known compatible mods: Project Red, GemsPlusPlus
 - Peridot
   - Uses `forge:gems/peridot` tag
-  - Known compatible mods: Project Red, Biomes O' Plenty
+  - Known compatible mods: Project Red
 - Jade
   - Uses `forge:gems/jade` tag
   - Known compatible mods: GemsPlusPlus
 - Malachite
   - Uses `forge:gems/malachite` tag
-  - Known compatible mods: GemsPlusPlus, Biomes O' Plenty
-- Amber
-  - Uses `forge:gems/amber` tag
-  - Known compatible mods: Biomes O' Plenty
+  - Known compatible mods: GemsPlusPlus
 - Topaz
   - Uses `forge:gems/topaz` tag
-  - Known compatible mods: GemsPlusPlus, Biomes O' Plenty
-- Tanzanite
-  - Uses `forge:gems/tanzanite` tag
-  - Known compatible mods: Biomes O' Plenty
+  - Known compatible mods: GemsPlusPlus
 - Amethyst
   - Uses `forge:gems/amethyst` tag
-  - Known compatible mods: GemsPlusPlus, Biomes O' Plenty
+  - Known compatible mods: GemsPlusPlus
 - Phoenixite
   - Uses `forge:gems/phoenixite` tag
   - Known compatible mods: GemsPlusPlus

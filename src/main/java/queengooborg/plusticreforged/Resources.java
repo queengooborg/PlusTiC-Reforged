@@ -14,7 +14,6 @@ public class Resources {
 			new JadedModifier(),
 			new NaturesWrathModifier(),
 			new NaturesPowerModifier(),
-			new ThunderingModifier(),
 			new ApocalypseModifier(),
 			new GetLuckyModifier(),
 	};
@@ -28,9 +27,7 @@ public class Resources {
 			new PeridotMaterial(),
 			new JadeMaterial(),
 			new MalachiteMaterial(),
-			new AmberMaterial(),
 			new TopazMaterial(),
-			new TanzaniteMaterial(),
 			new AmethystMaterial(),
 			new PhoenixiteMaterial(),
 	};
