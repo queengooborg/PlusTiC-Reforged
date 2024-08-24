@@ -211,7 +211,6 @@ tasks.named('processResources', ProcessResources).configure {
                 tconstruct_version: tconstruct_version,
                 mantle_version: mantle_version,
                 jei_version: jei_version,
-                projectred_version: projectred_version,
         ]
     }
 }
