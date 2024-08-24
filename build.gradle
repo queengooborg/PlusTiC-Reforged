@@ -146,7 +146,7 @@ dependencies {
     runtime 'curse.maven:draconic-evolution-223565:3431261'
     runtime 'curse.maven:avaritia-1-10-261348:3143349'
     runtime 'curse.maven:survivalist-242289:2625075'
-//    runtime 'curse.maven:projecte-226410:2702991'
+    runtime 'curse.maven:projecte-226410:2702991'
     runtime 'curse.maven:gemsplusplus-310914:3029335-sources-3029336'
     runtime 'curse.maven:environmental-tech-245453:2691536'
 //    runtime 'curse.maven:galacticraft-legacy-564236:4671122'
