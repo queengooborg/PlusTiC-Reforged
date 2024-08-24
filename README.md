@@ -14,6 +14,10 @@ PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various
 
 See [Mod Support](./docs/Mod%20Support.md) for a list of mods that PlusTiC Reforged supports.
 
+## New Materials
+
+See [Materials](./docs/Materials.md) for a list of materials that PlusTiC Reforged introduces, as well as what items are accepted to create that material.
+
 ## New Tools
 
 - Katana: a fast two-handed weapon that deals increasing damage the more mobs you kill.
