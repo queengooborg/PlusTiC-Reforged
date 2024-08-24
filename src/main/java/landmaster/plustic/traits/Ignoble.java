@@ -64,15 +64,14 @@ public class Ignoble extends AbstractTrait {
 			NBTTagCompound nbt = TagUtil.getTagSafe(tool);
 			NBTTagCompound ignoble = TagUtil.getTagSafe(nbt, ENTITIES_TAG);
 
-			for (final Iterator<String> it = ignoble.getKeySet().iterator(); it.hasNext(); ) {
-				final String uuidString = it.next();
+			for (final String uuidString : ignoble.getKeySet()) {
 				final UUID uuid = UUID.fromString(uuidString);
 				final Entity victim = server.getEntityFromUuid(uuid);
 				if (victim != null && !victim.isEntityAlive()) {
 					float initialHealth = ignoble.getFloat(uuidString);
-					float diff = initialHealth - ((EntityLivingBase)entity).getHealth();
+					float diff = initialHealth - ((EntityLivingBase) entity).getHealth();
 					if (diff > 0) {
-						nbt.setFloat(METER_TAG, MathHelper.clamp(nbt.getFloat(METER_TAG)+diff, 0, MAX_IGNOBILITY));
+						nbt.setFloat(METER_TAG, MathHelper.clamp(nbt.getFloat(METER_TAG) + diff, 0, MAX_IGNOBILITY));
 					}
 				}
 			}
