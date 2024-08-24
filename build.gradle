@@ -233,26 +233,6 @@ tasks.named('jar', Jar).configure {
     finalizedBy 'reobfJar'
 }
 
-//task deobfJar(type: Jar) { // Generate deobfuscated
-//   from sourceSets.main.output
-//   classifier = 'deobf'
-//}
-//
-//tasks.named('build').configure {
-//    depends on 'deobfJar'
-//}
-//
-//artifacts {
-//   archives deobfJar
-//   archives sourceJar
-//   archives jar
-//}
-
-// However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing:
-// tasks.named('publish').configure {
-//     dependsOn 'reobfJar'
-// }
-
 publishing {
     publications {
         register('mavenJava', MavenPublication) {
