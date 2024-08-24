@@ -7,7 +7,7 @@ Remember the classic [PlusTiC mod](https://www.curseforge.com/minecraft/mc-mods/
 
 ## About
 
-PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various other mods, adding support for new material types that the mods introduce, such as Steel, Osmium, Refined Obsidian, Dark Matter and more. PlusTiC Reforged is a continuation off of the original PlusTiC mod, ported for newer versions of Minecraft.
+PlusTiC Reforged is a compatibility layer between Tinkers' Construct and various other mods, adding support for new material types that the mods introduce, such as Steel, Osmium, Refined Obsidian, Dark Matter and more. PlusTiC Reforged is a version of the original PlusTiC mod that has been rewritten and ported for newer versions of Minecraft.
 
 ## Supported Mods
 
@@ -82,9 +82,12 @@ Of course, you don't even need to ask! Just make sure that your modpack complies
 
 ### Where can I download the mod?
 
-Downloads for PlusTiC Reforged are available on the [CurseForge page](https://www.curseforge.com/minecraft/mc-mods/plustic-reforged) and [Modrinth page](https://modrinth.com/project/plustic-reforged) for the mod. Please be weary of downloads from any other sources, as they are not controlled by me and may contain malicious code.
+Downloads for PlusTiC Reforged are available in three locations:
+- The [CurseForge page](https://www.curseforge.com/minecraft/mc-mods/plustic-reforged)
+- The [Modrinth page](https://modrinth.com/project/plustic-reforged)
+- The [GitHub repository's Releases page](https://github.com/queengooborg/PlusTiC-Reforged/releases)
 
-Remember that PlusTiC Reforged is still in early development stages and is not ready for testing!
+Please be weary of downloads from any other sources, as they are not controlled by me and may contain malicious code.
 
 ### What is the license for this mod?
 
