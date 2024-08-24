@@ -13,6 +13,7 @@ public class Resources {
 			new NaturesBlessingModifier(),
 			new JadedModifier(),
 			new NaturesWrathModifier(),
+			new NaturesPowerModifier(),
 			new ThunderingModifier(),
 			new ApocalypseModifier(),
 			new GetLuckyModifier(),
