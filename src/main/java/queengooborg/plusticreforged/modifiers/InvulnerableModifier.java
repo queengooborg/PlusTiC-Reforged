@@ -11,8 +11,8 @@ import javax.annotation.Nullable;
 public class InvulnerableModifier extends Modifier {
 	public InvulnerableModifier() {
 		super("invulnerable", "Invulnerable", new Description("You could only obtain these tools through Creative or cheats -- so if you're gonna cheat, you might as well commit, right?", "The tool takes no damage"), 0x555555);
+		this.usable = true;
 	}
-
 
 	@Override
 	public int onDamageTool(IModifierToolStack toolStack, int level, int amount, @Nullable LivingEntity holder) {

@@ -32,8 +32,18 @@ public class GeneratorLang extends LanguageProvider {
 
 		for (Modifier modifier : Resources.MODIFIERS) {
 			add(String.format("modifier.%s.%s", ModInfo.MOD_ID, modifier.id), modifier.name);
-			if (!modifier.description.flavor.isEmpty()) {
-				add(String.format("modifier.%s.%s.flavor", ModInfo.MOD_ID, modifier.id), modifier.description.flavor);
+			if (modifier.usable) {
+				if (!modifier.description.flavor.isEmpty()) {
+					add(String.format("modifier.%s.%s.flavor", ModInfo.MOD_ID, modifier.id), modifier.description.flavor);
+				}
+			} else {
+				// XXX Remove this once all modifiers have been converted
+				String warning = "THIS MODIFIER HAS NOT BEEN CONVERTED TO THE NEW SYSTEM AND IS NOT USABLE YET!";
+				if (modifier.description.flavor.isEmpty()) {
+					add(String.format("modifier.%s.%s.flavor", ModInfo.MOD_ID, modifier.id), warning);
+				} else {
+					add(String.format("modifier.%s.%s.flavor", ModInfo.MOD_ID, modifier.id), modifier.description.flavor + warning);
+				}
 			}
 			if (!modifier.description.traits.isEmpty()) {
 				add(String.format("modifier.%s.%s.description", ModInfo.MOD_ID, modifier.id), modifier.description.traits);

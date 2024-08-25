@@ -11,6 +11,10 @@ public abstract class Modifier extends slimeknights.tconstruct.library.modifiers
 	public String name;
 	public Description description = new Description();
 
+	// XXX This is temporary to determine which modifiers have been converted to the new system
+	// Remove this once all modifiers have been converted
+	public boolean usable = false;
+
 	public ResourceLocation resourceLocation;
 
 	public Modifier(String id, String name, Description description, int color) {
