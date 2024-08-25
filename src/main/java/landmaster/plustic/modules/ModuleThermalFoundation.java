@@ -17,7 +17,7 @@ import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.smeltery.*;
 import slimeknights.tconstruct.library.traits.*;
 
-public class ModuleTF implements IModule {
+public class ModuleThermalFoundation implements IModule {
 
 	public void init() {
 		if (Config.thermalFoundation && Loader.isModLoaded("thermalfoundation")) {

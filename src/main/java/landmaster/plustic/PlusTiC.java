@@ -113,7 +113,7 @@ public class PlusTiC {
 				new ModuleAdvRocketry(),
 				new ModuleBotania(),
 				new ModuleArmorPlus(),
-				new ModuleTF(),
+				new ModuleThermalFoundation(),
 				new ModuleDraconicEvolution(),
 				new ModuleActAdd(),
 				new ModulePsi(),
