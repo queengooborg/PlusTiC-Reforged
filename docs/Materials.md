@@ -42,6 +42,12 @@ See the [Mod Support](./Mod%20Support.md) page for a list of mods that PlusTiC R
 - Phoenixite
   - Uses `forge:gems/phoenixite` tag
   - Known compatible mods: GemsPlusPlus
+- Dark Matter
+  - Uses `projecte:dark_matter` item ID
+  - From: ProjectE
+- Red Matter
+  - Uses `projecte:red_matter` item ID
+  - From: ProjectE
 
 ## Requesting New Materials
 
