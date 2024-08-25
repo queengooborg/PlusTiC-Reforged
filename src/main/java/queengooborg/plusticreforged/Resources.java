@@ -17,6 +17,9 @@ public class Resources {
 			new ApocalypseModifier(),
 			new GetLuckyModifier(),
 			new ExplosiveModifier(),
+			new DarkTravelerModifier(),
+			new IgnobleModifier(),
+			new UnstableMatterModifier()
 	};
 
 	public static final Material[] MATERIALS = new Material[]{
@@ -34,13 +37,16 @@ public class Resources {
 			new AmethystMaterial(),
 			new PhoenixiteMaterial(),
 
+			// ModuleProjectE
+			new DarkMatterMaterial(),
+			new RedMatterMaterial(),
+
 			// Available and maintained:
 			// ModuleAppEng2
 			// ModuleArmorPlus
 			// ModuleBotania
 			// ModuleIndusForego
 			// ModuleIndusForegoStuff
-			// ModuleProjectE
 			// ModulePsi
 			// ModuleTF
 			// ModuleDraconicEvolution -- unavailable in MC 1.19
