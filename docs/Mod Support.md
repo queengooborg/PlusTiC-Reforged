@@ -15,6 +15,7 @@ PlusTiC Reforged is designed to add support to a variety of mods. The following 
 - [The Twilight Forest](https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest) -- in progress
 - [Draconic Evolution](https://www.curseforge.com/minecraft/mc-mods/draconic-evolution) (unavailable in MC 1.19) -- in progress
 - [GemsPlusPlus](https://www.curseforge.com/minecraft/mc-mods/gemsplusplus) (discontinued since MC 1.16)
+- [Silent's Gems](https://www.curseforge.com/minecraft/mc-mods/silents-gems)
 - [Jade](https://www.curseforge.com/minecraft/mc-mods/jade) (previously [HWYLA](https://www.curseforge.com/minecraft/mc-mods/hwyla)) -- in progress
 - [Just Enough Items](https://www.curseforge.com/minecraft/mc-mods/jei) -- in progress
 

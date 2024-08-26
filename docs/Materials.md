@@ -20,25 +20,25 @@ See the [Mod Support](./Mod%20Support.md) page for a list of mods that PlusTiC R
   - From: Minecraft
 - Ruby
   - Uses `forge:gems/ruby` tag
-  - Known compatible mods: Project Red, GemsPlusPlus
+  - Known compatible mods: Project Red, GemsPlusPlus, Silent's Gems
 - Sapphire
   - Uses `forge:gems/sapphire` tag
-  - Known compatible mods: Project Red, GemsPlusPlus
+  - Known compatible mods: Project Red, GemsPlusPlus, Silent's Gems
 - Peridot
   - Uses `forge:gems/peridot` tag
-  - Known compatible mods: Project Red
+  - Known compatible mods: Project Red, Silent's Gems
 - Jade
   - Uses `forge:gems/jade` tag
-  - Known compatible mods: GemsPlusPlus
+  - Known compatible mods: GemsPlusPlus, Silent's Gems
 - Malachite
   - Uses `forge:gems/malachite` tag
-  - Known compatible mods: GemsPlusPlus
+  - Known compatible mods: GemsPlusPlus, Silent's Gems
 - Topaz
   - Uses `forge:gems/topaz` tag
-  - Known compatible mods: GemsPlusPlus
+  - Known compatible mods: GemsPlusPlus, Silent's Gems
 - Amethyst
   - Uses `forge:gems/amethyst` tag
-  - Known compatible mods: GemsPlusPlus
+  - Known compatible mods: GemsPlusPlus, Silent's Gems
 - Phoenixite
   - Uses `forge:gems/phoenixite` tag
   - Known compatible mods: GemsPlusPlus
