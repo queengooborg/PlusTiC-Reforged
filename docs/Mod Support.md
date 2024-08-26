@@ -5,26 +5,25 @@ PlusTiC Reforged is designed to add support to a variety of mods. The following 
 ## Materials
 
 - [Project Red](https://www.curseforge.com/minecraft/mc-mods/project-red-core)
-- [Botania](https://www.curseforge.com/minecraft/mc-mods/botania)
-- [ArmorPlus](https://www.curseforge.com/minecraft/mc-mods/armorplus)
-- [Thermal Foundation](https://www.curseforge.com/minecraft/mc-mods/thermal-foundation)
-- [Psi](https://www.curseforge.com/minecraft/mc-mods/psi)
-- [Industrial Foregoing](https://www.curseforge.com/minecraft/mc-mods/industrial-foregoing)
+- [Botania](https://www.curseforge.com/minecraft/mc-mods/botania) -- in progress
+- [ArmorPlus](https://www.curseforge.com/minecraft/mc-mods/armorplus) -- in progress
+- [Thermal Foundation](https://www.curseforge.com/minecraft/mc-mods/thermal-foundation) -- in progress
+- [Psi](https://www.curseforge.com/minecraft/mc-mods/psi) -- in progress
+- [Industrial Foregoing](https://www.curseforge.com/minecraft/mc-mods/industrial-foregoing) -- in progress
 - [ProjectE](https://www.curseforge.com/minecraft/mc-mods/projecte)
-- [Applied Energistics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2)
-- [The Twilight Forest](https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest)
-- [Draconic Evolution](https://www.curseforge.com/minecraft/mc-mods/draconic-evolution) (unavailable in MC 1.19)
-- [Astral Sorcery](https://www.curseforge.com/minecraft/mc-mods/astral-sorcery) (discontinued since MC 1.16)
-- [Survivalist](https://www.curseforge.com/minecraft/mc-mods/survivalist) (discontinued since MC 1.16)
+- [Applied Energistics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2) -- in progress
+- [The Twilight Forest](https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest) -- in progress
+- [Draconic Evolution](https://www.curseforge.com/minecraft/mc-mods/draconic-evolution) (unavailable in MC 1.19) -- in progress
 - [GemsPlusPlus](https://www.curseforge.com/minecraft/mc-mods/gemsplusplus) (discontinued since MC 1.16)
-- [Avaritia](https://www.curseforge.com/minecraft/mc-mods/avaritia-1-10) (unavailable in MC 1.16, discontinued since MC 1.18)
+- [Jade](https://www.curseforge.com/minecraft/mc-mods/jade) (previously [HWYLA](https://www.curseforge.com/minecraft/mc-mods/hwyla)) -- in progress
+- [Just Enough Items](https://www.curseforge.com/minecraft/mc-mods/jei) -- in progress
 
 ### Previously Supported
 
 #### In Original PlusTiC
 
 - [Advanced Rocketry](https://www.curseforge.com/minecraft/mc-mods/advanced-rocketry) (discontinued since MC 1.12)
-  - [Natural Pledge](https://www.curseforge.com/minecraft/mc-mods/natural-pledge)* (discontinued since MC 1.12)
+- [Natural Pledge](https://www.curseforge.com/minecraft/mc-mods/natural-pledge)* (discontinued since MC 1.12)
 - [Natura](https://www.curseforge.com/minecraft/mc-mods/natura) (discontinued since MC 1.12)
 - [Galacticraft Legacy](https://www.curseforge.com/minecraft/mc-mods/galacticraft-legacy) (discontinued since MC 1.12)
 - [Environmental Tech](https://www.curseforge.com/minecraft/mc-mods/environmental-tech) (discontinued since MC 1.12)
@@ -35,23 +34,16 @@ PlusTiC Reforged is designed to add support to a variety of mods. The following 
 - [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism) (has built-in support since MC 1.16)
 - [Advent of Ascension (Nevermine)](https://www.curseforge.com/minecraft/mc-mods/advent-of-ascension-nevermine) (has built-in support since AoA v3.3)
 - [Biomes o' Plenty](https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty) (items used in PlusTiC materials were removed in MC 1.16)
-
-\* About Natural Pledge: Starting in v5.1.2.0, PlusTiC forced out and overrode Natural Pledge TiC materials by default. This could be changed in the config so that PlusTiC did not add Botania materials if Natural Pledge was loaded.
-
-## Utility
-
-- [Jade](https://www.curseforge.com/minecraft/mc-mods/jade) (previously [HWYLA](https://www.curseforge.com/minecraft/mc-mods/hwyla))
-- [Just Enough Items](https://www.curseforge.com/minecraft/mc-mods/jei)
-
-### Previously Supported
-
-#### In Original PlusTiC
-
+- [Astral Sorcery](https://www.curseforge.com/minecraft/mc-mods/astral-sorcery) (discontinued since MC 1.16)
+- [Survivalist](https://www.curseforge.com/minecraft/mc-mods/survivalist) (discontinued since MC 1.16)
+- [Avaritia](https://www.curseforge.com/minecraft/mc-mods/avaritia-1-10) (unavailable in MC 1.16, discontinued since MC 1.18)
 - [CraftTweaker](https://www.curseforge.com/minecraft/mc-mods/crafttweaker) (did not feel like maintaining support)
 - [Construct's Armory](https://www.curseforge.com/minecraft/mc-mods/constructs-armory) (discontinued since MC 1.12, functionality merged into Tinkers' Construct)
 - [ModTweaker](https://www.curseforge.com/minecraft/mc-mods/modtweaker) (discontinued since MC 1.12)
 - [Tesla](https://www.curseforge.com/minecraft/mc-mods/tesla) (discontinued since MC 1.12)
 - [Tesla Core Lib](https://www.curseforge.com/minecraft/mc-mods/tesla-core-lib) (discontinued since MC 1.12)
+
+\* About Natural Pledge: Starting in v5.1.2.0, PlusTiC forced out and overrode Natural Pledge TiC materials by default. This could be changed in the config so that PlusTiC did not add Botania materials if Natural Pledge was loaded.
 
 ## New Mod Support
 
