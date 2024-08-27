@@ -29,31 +29,6 @@ public class MaterialColors {
 	}
 
 	public MaterialColors(Color base, int luminosity) {
-		// XXX This is a placeholder for the actual color calculation
-		// Iron example (base: 0xD8D8D8):
-		// [...].colorMapper(
-		//  GreyToColorMapping.builderFromBlack()
-		//  .addARGB(63, 0xFF353535)
-		//  .addARGB(102, 0xFF5E5E5E)
-		//  .addARGB(140, 0xFF828282)
-		//  .addARGB(178, 0xFFA8A8A8)
-		//  .addARGB(216, 0xFFD8D8D8)
-		//  .addARGB(255, 0xFFFFFFFF)
-		//  .build()
-		// );
-
-		// Copper example (base: 0xF98648):
-		// [...].colorMapper(
-		//  GreyToColorMapping.builderFromBlack()
-		//  .addARGB(63, 0xFF72341A)
-		//  .addARGB(102, 0xFF934828)
-		//  .addARGB(140, 0xFFD87236)
-		//  .addARGB(178, 0xFFEF8345)
-		//  .addARGB(216, 0xFFFBA165)
-		//  .addARGB(255, 0xFFFAC493)
-		//  .build()
-		// );
-
 		this.base = Objects.requireNonNull(base);
 		this.f63 = adjustColorBrightness(base, 63);
 		this.f102 = adjustColorBrightness(base, 102);
@@ -88,6 +63,31 @@ public class MaterialColors {
 
 	public Color adjustColorBrightness(Color input, int brightness) {
 		// XXX This is a placeholder for the actual color brightness calculation
+
+		// Iron example (base: 0xD8D8D8):
+		// [...].colorMapper(
+		//  GreyToColorMapping.builderFromBlack()
+		//  .addARGB(63, 0xFF353535)
+		//  .addARGB(102, 0xFF5E5E5E)
+		//  .addARGB(140, 0xFF828282)
+		//  .addARGB(178, 0xFFA8A8A8)
+		//  .addARGB(216, 0xFFD8D8D8)
+		//  .addARGB(255, 0xFFFFFFFF)
+		//  .build()
+		// );
+
+		// Copper example (base: 0xF98648):
+		// [...].colorMapper(
+		//  GreyToColorMapping.builderFromBlack()
+		//  .addARGB(63, 0xFF72341A)
+		//  .addARGB(102, 0xFF934828)
+		//  .addARGB(140, 0xFFD87236)
+		//  .addARGB(178, 0xFFEF8345)
+		//  .addARGB(216, 0xFFFBA165)
+		//  .addARGB(255, 0xFFFAC493)
+		//  .build()
+		// );
+
 		int shift = (brightness - 127) / 3;
 		return new Color(
 				Math.min(255, Math.max(0, input.getRed() + shift)),
