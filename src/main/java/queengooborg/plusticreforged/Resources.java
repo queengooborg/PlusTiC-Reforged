@@ -19,7 +19,10 @@ public class Resources {
 			new ExplosiveModifier(),
 			new DarkTravelerModifier(),
 			new IgnobleModifier(),
-			new UnstableMatterModifier()
+			new UnstableMatterModifier(),
+			new PsicologicalModifier(),
+			new GlobalModifier(),
+			new PortlyModifier(),
 	};
 
 	public static final Material[] MATERIALS = new Material[]{
@@ -41,14 +44,17 @@ public class Resources {
 			new DarkMatterMaterial(),
 			new RedMatterMaterial(),
 
+			// ModulePsi
+			new PsimetalMaterial(),
+			new PsigemMaterial(),
+
 			// Available and maintained:
 			// ModuleAppEng2
 			// ModuleArmorPlus
 			// ModuleBotania
 			// ModuleIndusForego
 			// ModuleIndusForegoStuff
-			// ModulePsi
-			// ModuleTF
+			// ModuleThermalFoundation
 			// ModuleDraconicEvolution -- unavailable in MC 1.19
 
 			// Discontinued:

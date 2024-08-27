@@ -48,6 +48,12 @@ See the [Mod Support](./Mod%20Support.md) page for a list of mods that PlusTiC R
 - Red Matter
   - Uses `projecte:red_matter` item ID
   - From: ProjectE
+- Psi Metal
+  - Uses `forge:ingots/psi` tag
+  - From: Psi
+- Psi Gem
+  - Uses `forge:gems/psi` tag
+  - From: Psi
 
 ## Requesting New Materials
 
