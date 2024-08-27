@@ -1,25 +1,36 @@
 package queengooborg.plusticreforged.modifiers;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
+import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
+import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
+
+import java.util.Random;
 
 public class NaturesPowerModifier extends Modifier {
+	private Random random;
+
 	public NaturesPowerModifier() {
 		super("naturespower", "Nature's Power", new Description("After attacking a mob: 20% chance to burn target. 20% chance to give player Speed. 20% chance to give player Strength."), 0xFFFF00);
+		this.usable = true;
 	}
 
-	// XXX Convert me!
+	public int afterEntityHit(IModifierToolStack tool, int level, ToolAttackContext context, float damageDealt) {
+		LivingEntity target = context.getLivingTarget();
+		LivingEntity player = context.getPlayerAttacker();
 
-	//	@Override
-	//	public void afterHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damageDealt, boolean wasCritical, boolean wasHit) {
-	//		if (wasHit) {
-	//			float rnd = random.nextFloat();
-	//			if (rnd < 0.2 && target.isEntityAlive())
-	//				target.setFire(3);
-	//			else if (rnd < 0.4 && player.isEntityAlive())
-	//				player.addPotionEffect(new PotionEffect(MobEffects.SPEED,101));
-	//			else if (rnd < 0.6 && player.isEntityAlive())
-	//				player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH,101));
-	//		}
-	//	}
+		float rnd = random.nextFloat();
+		if (rnd < 0.2 && target.isAlive()) {
+			target.setSecondsOnFire(3);
+		} else if (rnd < 0.4 && player.isAlive()) {
+			player.addEffect(new EffectInstance(Effects.MOVEMENT_SPEED, 101));
+		} else if (rnd < 0.6 && player.isAlive()) {
+			player.addEffect(new EffectInstance(Effects.DAMAGE_BOOST, 101));
+		}
+
+		return 0;
+	}
 }

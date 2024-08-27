@@ -1,5 +1,7 @@
 package queengooborg.plusticreforged.modifiers;
 
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
@@ -8,6 +10,7 @@ import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 public class HeavyModifier extends Modifier {
 	public HeavyModifier() {
 		super("heavy_metal", "Heavy", new Description("Increased knockback + Slowness on target."), 0x555555);
+		this.usable = true;
 	}
 
 	@Override
@@ -18,8 +21,7 @@ public class HeavyModifier extends Modifier {
 	@Override
 	public int afterEntityHit(IModifierToolStack tool, int level, ToolAttackContext context, float damageDealt) {
 		if ((damageDealt > 0) && context.getTarget().isAlive()) {
-			// XXX Figure me out!
-//			context.getTarget().addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 120, 1));
+			context.getLivingTarget().addEffect(new EffectInstance(Effects.MOVEMENT_SLOWDOWN, 120, 1));
 		}
 
 		return 0;
