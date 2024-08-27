@@ -42,7 +42,7 @@ public class GeneratorLang extends LanguageProvider {
 				if (modifier.description.flavor.isEmpty()) {
 					add(String.format("modifier.%s.%s.flavor", ModInfo.MOD_ID, modifier.id), warning);
 				} else {
-					add(String.format("modifier.%s.%s.flavor", ModInfo.MOD_ID, modifier.id), modifier.description.flavor + warning);
+					add(String.format("modifier.%s.%s.flavor", ModInfo.MOD_ID, modifier.id), warning + "\n\n" + modifier.description.flavor);
 				}
 			}
 			if (!modifier.description.traits.isEmpty()) {
