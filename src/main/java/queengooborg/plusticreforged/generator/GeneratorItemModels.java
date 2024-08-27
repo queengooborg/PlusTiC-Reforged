@@ -37,7 +37,7 @@ public class GeneratorItemModels extends ItemModelProvider {
 		ModelBuilder<ItemModelBuilder> builder = getBuilder(reg.getId().getPath()).parent(getExistingFile(new ResourceLocation(ModInfo.MOD_ID, fluid.isHot() ? "item/bucket_hot_fluid" : "item/bucket_fluid")));
 
 		// Shamelessly copied from Materialis
-		builder.customLoader((t, u) -> new CustomLoaderBuilder(((ModelBuilder<?>) t).getLocation(), t, (ExistingFileHelper) u) {
+		builder.customLoader((t, u) -> new CustomLoaderBuilder(t.getLocation(), t, u) {
 			public JsonObject toJson(JsonObject json) {
 				json.addProperty("loader", "forge:bucket");
 				json.addProperty("fluid", reg.get().getFluid().getRegistryName().toString());

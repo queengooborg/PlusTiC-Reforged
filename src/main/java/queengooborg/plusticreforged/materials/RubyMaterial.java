@@ -3,15 +3,14 @@ package queengooborg.plusticreforged.materials;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
-import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
-import slimeknights.tconstruct.library.modifiers.Modifier;
 
 import java.awt.*;
 
-import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.*;
+import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.ORDER_COMPAT;
+import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.ORDER_HARVEST;
 
 public class RubyMaterial extends Material {
 	public RubyMaterial() {

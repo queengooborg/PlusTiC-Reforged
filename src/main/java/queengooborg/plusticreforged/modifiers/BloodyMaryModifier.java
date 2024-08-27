@@ -23,13 +23,13 @@ public class BloodyMaryModifier extends Modifier {
 
 	@Override
 	public float getEntityDamage(IModifierToolStack tool, int level, ToolAttackContext context, float baseDamage, float damage) {
-		return (float) (damage + Math.pow(context.getLivingTarget().getMaxHealth()-context.getLivingTarget().getHealth(),0.6));
+		return (float) (damage + Math.pow(context.getLivingTarget().getMaxHealth() - context.getLivingTarget().getHealth(), 0.6));
 	}
 
 	@Override
 	public int afterEntityHit(IModifierToolStack tool, int level, ToolAttackContext context, float damageDealt) {
 		Entity target = context.getTarget();
-		spillBlood(target.level,target.getX(),target.getY(),target.getZ(),0.23f);
+		spillBlood(target.level, target.getX(), target.getY(), target.getZ(), 0.23f);
 		return 0;
 	}
 

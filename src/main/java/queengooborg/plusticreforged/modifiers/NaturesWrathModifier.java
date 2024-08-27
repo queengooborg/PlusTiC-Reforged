@@ -1,7 +1,5 @@
 package queengooborg.plusticreforged.modifiers;
 
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;

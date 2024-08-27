@@ -1,16 +1,8 @@
 package queengooborg.plusticreforged.modifiers;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.EntityDamageSource;
-import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.entity.living.LivingEvent;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
-import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
-import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
 public class JadedModifier extends Modifier {
 	public static final String JADED_LEVEL_TAG = "PlusTiC_JadedLevel";

@@ -2,8 +2,8 @@ package queengooborg.plusticreforged;
 
 import queengooborg.plusticreforged.api.Material;
 import queengooborg.plusticreforged.api.Modifier;
-import queengooborg.plusticreforged.modifiers.*;
 import queengooborg.plusticreforged.materials.*;
+import queengooborg.plusticreforged.modifiers.*;
 
 public class Resources {
 	public static final Modifier[] MODIFIERS = new Modifier[]{

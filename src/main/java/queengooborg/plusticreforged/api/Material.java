@@ -11,7 +11,8 @@ import slimeknights.tconstruct.library.modifiers.Modifier;
 
 import java.util.Objects;
 
-import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.*;
+import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.ORDER_COMPAT;
+import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.ORDER_HARVEST;
 
 public class Material {
 	public String id;
@@ -76,12 +77,12 @@ public class Material {
 			this.condition = new OrCondition(conditions);
 		} else if (type == MaterialType.METAL) {
 			ICondition[] conditions = new ICondition[]{
-				ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS,
-				new NotCondition(
-					ingredient.isTag ?
-					new TagEmptyCondition(ingredient.location) :
-					new TagEmptyCondition("forge", "ingots/" + ingredient.location.getPath())
-				)
+					ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS,
+					new NotCondition(
+							ingredient.isTag ?
+									new TagEmptyCondition(ingredient.location) :
+									new TagEmptyCondition("forge", "ingots/" + ingredient.location.getPath())
+					)
 			};
 			if (condition != null) {
 				// We have to...create an entirely new array to add an element? Ugh, that's annoying...

@@ -9,7 +9,8 @@ import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 
 import java.awt.*;
 
-import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.*;
+import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.ORDER_COMPAT;
+import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.ORDER_HARVEST;
 
 public class BedrockMaterial extends Material {
 	public BedrockMaterial() {

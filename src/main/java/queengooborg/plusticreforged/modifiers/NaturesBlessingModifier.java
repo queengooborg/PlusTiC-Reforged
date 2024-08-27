@@ -1,6 +1,5 @@
 package queengooborg.plusticreforged.modifiers;
 
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -11,10 +10,7 @@ import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.context.ToolHarvestContext;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
-import slimeknights.tconstruct.shared.TinkerCommons;
-import slimeknights.tconstruct.shared.block.SlimeType;
 
-import javax.annotation.Nullable;
 import java.util.Random;
 
 public class NaturesBlessingModifier extends Modifier {

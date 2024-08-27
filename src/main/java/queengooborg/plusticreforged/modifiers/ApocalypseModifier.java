@@ -21,7 +21,7 @@ public class ApocalypseModifier extends Modifier {
 			int amp = -1;
 			EffectInstance potionEffect = target.getActiveEffectsMap().get(Effects.WITHER);
 			if (potionEffect != null) amp = potionEffect.getAmplifier();
-			amp = Math.min(3, amp+1);
+			amp = Math.min(3, amp + 1);
 			target.addEffect(new EffectInstance(Effects.WITHER, 130, amp));
 		}
 
