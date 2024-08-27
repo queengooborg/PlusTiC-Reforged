@@ -88,7 +88,7 @@ public class MaterialColors {
 		//  .build()
 		// );
 
-		int shift = (brightness - 127) / 3;
+		int shift = (brightness - 127 - 40) / 2;
 		return new Color(
 				Math.min(255, Math.max(0, input.getRed() + shift)),
 				Math.min(255, Math.max(0, input.getGreen() + shift)),
