@@ -41,12 +41,12 @@ public class MaterialColors {
 
 	public MaterialColors(Color base, int luminosity, Color f63, Color f102, Color f140, Color f178, Color f216, Color f255) {
 		this.base = base;
-		this.f63 = f63;
-		this.f102 = f102;
-		this.f140 = f140;
-		this.f178 = f178;
-		this.f216 = f216;
-		this.f255 = f255;
+		this.f63 = f63 == null ? adjustColorBrightness(base, 63) : f63;
+		this.f102 = f102 == null ? adjustColorBrightness(base, 102) : f102;
+		this.f140 = f140 == null ? adjustColorBrightness(base, 140) : f140;
+		this.f178 = f178 == null ? adjustColorBrightness(base, 178) : f178;
+		this.f216 = f216 == null ? adjustColorBrightness(base, 216) : f216;
+		this.f255 = f255 == null ? adjustColorBrightness(base, 255) : f255;
 		this.luminosity = luminosity;
 	}
 
