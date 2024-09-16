@@ -20,7 +20,7 @@ public class ExplosiveModifier extends Modifier {
 		LivingEntity target = context.getLivingTarget();
 
 		if (target != null) {
-				target.level.explode(context.getLivingTarget(), context.getLivingTarget().getX(), context.getLivingTarget().getY(), context.getLivingTarget().getZ(), 2.4f, false, Explosion.Mode.NONE);
+				target.level.explode(context.getLivingTarget(), context.getLivingTarget().getX(), context.getLivingTarget().getY(), context.getLivingTarget().getZ(), 0.5f, false, Explosion.Mode.NONE);
 		}
 
 		return 0;
