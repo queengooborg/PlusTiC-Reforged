@@ -22,7 +22,7 @@ public class TNTMaterial extends Material {
 				4,
 				MaterialType.STONE,
 				ORDER_HARVEST + ORDER_COMPAT,
-				new MaterialColors(new Color(255, 79, 79)),
+				new MaterialColors(new Color(255, 79, 79), 0, new Color(17, 17, 29), new Color(85, 85, 85), null, null, null, null),
 				new MaterialStats(HeadMaterialStats.DEFAULT, HandleMaterialStats.DEFAULT, ExtraMaterialStats.DEFAULT),
 				Resources.getModifier("explosive"),
 				300
