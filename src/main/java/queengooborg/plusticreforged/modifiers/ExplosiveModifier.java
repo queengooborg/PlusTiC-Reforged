@@ -1,18 +1,28 @@
 package queengooborg.plusticreforged.modifiers;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.world.Explosion;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
+import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
+import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
+
+import java.util.Objects;
 
 public class ExplosiveModifier extends Modifier {
 	public ExplosiveModifier() {
 		super("explosive", "Explosive", new Description("As the name implies, an explosion is created when the tool is used."), 0xFF4F4F);
+		this.usable = true;
 	}
 
-	// XXX Convert me!
+	@Override
+	public int afterEntityHit(IModifierToolStack tool, int level, ToolAttackContext context, float damageDealt) {
+		LivingEntity target = context.getLivingTarget();
 
-	// @Override
-	//	public void onHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damage, boolean isCritical) {
-	//		if (!player.getEntityWorld().isRemote)
-	//			target.getEntityWorld().createExplosion(player, target.posX, target.posY, target.posZ, 2.4f, false);
-	//	}
+		if (target != null) {
+				target.level.explode(context.getLivingTarget(), context.getLivingTarget().getX(), context.getLivingTarget().getY(), context.getLivingTarget().getZ(), 2.4f, false, Explosion.Mode.NONE);
+		}
+
+		return 0;
+	}
 }
