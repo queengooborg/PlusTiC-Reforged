@@ -4,6 +4,7 @@ import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
 
 import java.util.concurrent.*;
 
+import com.buuz135.industrial.entity.EntityPinkSlime;
 import landmaster.plustic.*;
 import landmaster.plustic.api.*;
 import landmaster.plustic.config.*;
@@ -14,10 +15,13 @@ import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.eventhandler.*;
 import slimeknights.tconstruct.library.*;
 import slimeknights.tconstruct.library.materials.*;
+import slimeknights.tconstruct.tools.traits.TraitSlimey;
 
 @Mod.EventBusSubscriber(modid = ModInfo.MODID)
 public class ModuleIndusForego implements IModule {
 	private static final CompletableFuture<?> regFut = new CompletableFuture<>();
+
+	public static final TraitSlimey slimey_pink = new TraitSlimey("pink", EntityPinkSlime.class);
 	
 	@Override
 	public void init() {
@@ -29,7 +33,7 @@ public class ModuleIndusForego implements IModule {
 			final CompletableFuture<?> mfrFut = regFut.thenRun(() -> {
 				final Item pink_slime = Item.REGISTRY.getObject(new ResourceLocation("industrialforegoing:pink_slime"));
 				
-				pink_slime_mat.addTrait(ModuleIndusForegoStuff.slimey_pink);
+				pink_slime_mat.addTrait(slimey_pink);
 				pink_slime_mat.addItem(pink_slime, 1, Material.VALUE_Ingot);
 				pink_slime_mat.setCraftable(true);
 				pink_slime_mat.setRepresentativeItem(pink_slime);
