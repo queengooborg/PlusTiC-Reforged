@@ -48,6 +48,9 @@ public class Resources {
 			new PsimetalMaterial(),
 			new PsigemMaterial(),
 
+			// ModuleDraconicEvolution -- unavailable in MC 1.19
+			// XXX Original used three of four cores, but we should use the ingots instead
+
 			// Available and maintained:
 			// ModuleAppEng2
 			// ModuleArmorPlus
@@ -55,12 +58,6 @@ public class Resources {
 			// ModuleIndusForego
 			// ModuleIndusForegoStuff
 			// ModuleThermalFoundation
-			// ModuleDraconicEvolution -- unavailable in MC 1.19
-
-			// Discontinued:
-			// ModuleAvaritia -- unavailable in MC 1.16, discontinued since MC 1.18
-			// ModuleAstralSorcery -- discontinued since MC 1.16
-			// ModuleSurvivalist -- discontinued since MC 1.16
 	};
 
 	public static Modifier getModifier(String id) {
