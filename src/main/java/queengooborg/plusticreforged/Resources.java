@@ -48,15 +48,34 @@ public class Resources {
 			new PsimetalMaterial(),
 			new PsigemMaterial(),
 
+			// ModuleAppEng2
+			// new CertusQuartzMaterial(),
+			// new FluixMaterial(),
+
+			// ModuleBotania
+			// new TerrasteelMaterial(),
+			// new ElementiumMaterial(),
+			// new ManasteelMaterial(),
+			// new LivingwoodMaterial(),
+			// new MirionMaterial(),
+
+			// ModuleIndusForego
+			// new PinkSlimeMaterial(),
+
+			// ModuleThermalFoundation
+			// new LumiumMaterial(),
+			// new SignalumMaterial(),
+			// new PlatinumMaterial(),
+			// new EnderiumMaterial(),
+
+			// ModuleArmorPlus
+			// new WitherBoneMaterial(),
+			// new GuardianScaleMaterial(),
+
 			// ModuleDraconicEvolution -- unavailable in MC 1.19
 			// XXX Original used three of four cores, but we should use the ingots instead
-
-			// Available and maintained:
-			// ModuleAppEng2
-			// ModuleArmorPlus
-			// ModuleBotania
-			// ModuleIndusForego
-			// ModuleThermalFoundation
+			// new DraconiumMaterial(),
+			// new AwakenedMaterial(),
 	};
 
 	public static Modifier getModifier(String id) {
