@@ -56,7 +56,6 @@ public class Resources {
 			// ModuleArmorPlus
 			// ModuleBotania
 			// ModuleIndusForego
-			// ModuleIndusForegoStuff
 			// ModuleThermalFoundation
 	};
 
