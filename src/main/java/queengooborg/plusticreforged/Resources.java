@@ -75,7 +75,7 @@ public class Resources {
 			// ModuleDraconicEvolution -- unavailable in MC 1.19
 			// XXX Original used three of four cores, but we should use the ingots instead
 			// new DraconiumMaterial(),
-			// new AwakenedMaterial(),
+			// new AwakenedDraconiumMaterial(),
 	};
 
 	public static Modifier getModifier(String id) {
