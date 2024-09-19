@@ -1,30 +1,40 @@
 package queengooborg.plusticreforged.modifiers;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.monster.IMob;
+import net.minecraft.util.EntityDamageSource;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
+import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
+import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
+
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class DarkTravelerModifier extends Modifier {
+	Random random = new Random();
+
 	public DarkTravelerModifier() {
 		super("dark_traveler", "Dark Traveler", new Description("Surrounding mobs get randomly afflicted with damage."), 0x270133);
+		this.usable = true;
 	}
 
-	// XXX Convert me!
+	@Override
+	public int afterEntityHit(IModifierToolStack tool, int level, ToolAttackContext context, float damageDealt) {
+		if (random.nextFloat() < 0.035f && tool.getCurrentDurability() >= 1) {
+			List<LivingEntity> lst = context.getPlayerAttacker().level.getEntitiesOfClass(LivingEntity.class, context.getTarget().getBoundingBox().inflate(8, 8, 8), ent -> ent instanceof IMob && ent != context.getPlayerAttacker());
 
-//	@Override
-//	public void onUpdate(ItemStack tool, World world, Entity entity, int itemSlot, boolean isSelected) {
-//		if (world.isRemote || !isSelected) return;
-//		if (random.nextFloat() < 0.035f && ToolHelper.getCurrentDurability(tool) >= 1) {
-//			List<EntityLiving> lst = world.getEntitiesWithinAABB(EntityLiving.class,
-//					Utils.AABBfromVecs(entity.getPositionVector().subtract(8,8,8),
-//							entity.getPositionVector().add(8,8,8)),
-//					ent -> ent instanceof IMob && ent != entity);
-//			if (lst.size() > 0) {
-//				EntityLiving randomEntity = lst.get(random.nextInt(lst.size()));
-//				randomEntity.attackEntityFrom(new EntityDamageSource("darktraveler", entity).setDamageBypassesArmor(),
-//						2f+random.nextFloat()*2.5f);
-//				ToolHelper.damageTool(tool, 1, entity instanceof EntityLivingBase
-//						? (EntityLivingBase)entity : null);
-//			}
-//		}
-//	}
+			if (lst.isEmpty()) {
+				return 0;
+			}
+
+			LivingEntity target = lst.get(random.nextInt(lst.size()));
+			target.hurt(new EntityDamageSource("darktraveler", target), 2f + random.nextFloat() * 2.5f);
+			return 1;
+		}
+
+
+		return 0;
+	}
 }
