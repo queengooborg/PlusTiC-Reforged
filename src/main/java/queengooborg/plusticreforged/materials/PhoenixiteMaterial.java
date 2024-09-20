@@ -25,7 +25,7 @@ public class PhoenixiteMaterial extends Material {
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(255, 69, 17)),
 				new MaterialStats(new HeadMaterialStats(1300, 9, HarvestLevels.NETHERITE, 5), new HandleMaterialStats(1.4f, 1, 1, 1), ExtraMaterialStats.DEFAULT),
-				Resources.getModifier("getlucky"),
+				Resources.getModifier("fromtheashes"),
 				750
 		);
 	}

@@ -3,9 +3,9 @@ package queengooborg.plusticreforged.modifiers;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
 
-public class GetLuckyModifier extends Modifier {
-	public GetLuckyModifier() {
-		super("getlucky", "Get Lucky", new Description("Like the legend of the phoenix...", "Press the \"set portal\" key (default \"N\") to set a virtual portal on the block you are pointing at. If you are on the brink of death, you have %d phoenixite gems to spare, and the portal has enough space above, then the gems are consumed, you are teleported to the virtual portal, and you are spared. (The tool must be in your hand.)"), 0xFF4511);
+public class FromTheAshesModifier extends Modifier {
+	public FromTheAshesModifier() {
+		super("fromtheashes", "From the Ashes", new Description("Like the legend of the phoenix...", "Press the \"set portal\" key (default \"N\") to set a virtual portal on the block you are pointing at. If you are on the brink of death, you have %d phoenixite gems to spare, and the portal has enough space above, then the gems are consumed, you are teleported to the virtual portal, and you are spared. (The tool must be in your hand.)"), 0xFF4511);
 	}
 
 	// XXX Convert me!

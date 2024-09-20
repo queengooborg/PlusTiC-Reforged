@@ -15,7 +15,7 @@ public class Resources {
 			new NaturesWrathModifier(),
 			new NaturesPowerModifier(),
 			new ApocalypseModifier(),
-			new GetLuckyModifier(),
+			new FromTheAshesModifier(),
 			new ExplosiveModifier(),
 			new DarkTravelerModifier(),
 			new IgnobleModifier(),
