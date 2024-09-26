@@ -226,10 +226,19 @@ tasks.named('jar', Jar).configure {
     finalizedBy 'reobfJar'
 }
 
+java {
+    withSourcesJar()
+}
+
+artifacts {
+    archives sourcesJar
+}
+
 publishing {
     publications {
         register('mavenJava', MavenPublication) {
             artifact jar
+            artifact sourcesJar
         }
     }
     repositories {
