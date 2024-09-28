@@ -62,12 +62,6 @@ public class Resources {
 			// ModuleIndusForego
 			// new PinkSlimeMaterial(),
 
-			// ModuleThermalFoundation
-			// new LumiumMaterial(),
-			// new SignalumMaterial(),
-			// new PlatinumMaterial(),
-			// new EnderiumMaterial(),
-
 			// ModuleArmorPlus
 			// new WitherBoneMaterial(),
 			// new GuardianScaleMaterial(),

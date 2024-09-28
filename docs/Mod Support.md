@@ -7,7 +7,6 @@ PlusTiC Reforged is designed to add support to a variety of mods. The following 
 - [Project Red](https://www.curseforge.com/minecraft/mc-mods/project-red-core)
 - [Botania](https://www.curseforge.com/minecraft/mc-mods/botania) -- in progress
 - [ArmorPlus](https://www.curseforge.com/minecraft/mc-mods/armorplus) -- in progress
-- [Thermal Foundation](https://www.curseforge.com/minecraft/mc-mods/thermal-foundation) -- in progress
 - [Psi](https://www.curseforge.com/minecraft/mc-mods/psi) -- in progress
 - [Industrial Foregoing](https://www.curseforge.com/minecraft/mc-mods/industrial-foregoing) -- in progress
 - [ProjectE](https://www.curseforge.com/minecraft/mc-mods/projecte)
@@ -33,6 +32,7 @@ PlusTiC Reforged is designed to add support to a variety of mods. The following 
 - [Future MC](https://www.curseforge.com/minecraft/mc-mods/future-mc) (added in v9.1.0, mod is a compatibility layer to add MC 1.15+ features to MC 1.12, thus is not needed in newer versions)
 - [Actually Additions](https://www.curseforge.com/minecraft/mc-mods/actually-additions) (unavailable between MC 1.16 and 1.19, available for MC 1.20 -- not planning to add support unless requested)
 - [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism) (has built-in support since MC 1.16)
+- [Thermal Foundation](https://www.curseforge.com/minecraft/mc-mods/thermal-foundation) (has built-in support since MC 1.16)
 - [Advent of Ascension (Nevermine)](https://www.curseforge.com/minecraft/mc-mods/advent-of-ascension-nevermine) (has built-in support since AoA v3.3)
 - [Biomes o' Plenty](https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty) (items used in PlusTiC materials were removed in MC 1.16)
 - [Astral Sorcery](https://www.curseforge.com/minecraft/mc-mods/astral-sorcery) (discontinued since MC 1.16)
