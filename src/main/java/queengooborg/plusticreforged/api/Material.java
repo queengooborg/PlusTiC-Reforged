@@ -73,12 +73,12 @@ public class Material {
 				conditions = new ICondition[]{
 						ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS,
 						new NotCondition(
-								item.isTag ?
+								item instanceof ItemTag ?
 										new TagEmptyCondition(item.location) :
 										new TagEmptyCondition("forge", "ingots/" + item.location.getPath())
 						)
 				};
-			} else if (item.isTag) {
+			} else if (item instanceof ItemTag) {
 				conditions = new ICondition[]{new NotCondition(new TagEmptyCondition(item.location))};
 			}
 

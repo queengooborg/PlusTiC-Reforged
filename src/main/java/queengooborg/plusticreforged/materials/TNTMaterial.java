@@ -17,7 +17,7 @@ public class TNTMaterial extends Material {
 				"tnt",
 				"TNT",
 				new Description("A band once wrote a song about it, but I don't remember the lyrics...", ""),
-				new Item("minecraft", "tnt", false),
+				new ItemID("minecraft", "tnt"),
 				null,
 				4,
 				MaterialType.STONE,

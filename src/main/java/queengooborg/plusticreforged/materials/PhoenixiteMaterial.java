@@ -18,7 +18,7 @@ public class PhoenixiteMaterial extends Material {
 				"phoenixite",
 				"Phoenixite",
 				new Description("A fiery gemstone that is said to be reborn from its ashes."),
-				new Item("forge", "gems/phoenixite", true),
+				new ItemTag("forge", "gems/phoenixite"),
 				null,
 				2,
 				MaterialType.GEM,

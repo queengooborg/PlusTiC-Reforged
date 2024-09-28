@@ -18,7 +18,7 @@ public class JadeMaterial extends Material {
 				"jade",
 				"Jade",
 				new Description("A green-ish gemstone that is said to have healing properties...which is ironic, considering this stops other mobs from healing.", ""),
-				new Item("forge", "gems/jade", true),
+				new ItemTag("forge", "gems/jade"),
 				null,
 				2,
 				MaterialType.GEM,

@@ -18,7 +18,7 @@ public class RedMatterMaterial extends Material {
 				"red_matter",
 				"Red Matter",
 				new Description("A very powerful material...and far more dangerous than Dark Matter."),
-				new Item("projecte", "red_matter", false),
+				new ItemID("projecte", "red_matter"),
 				null,
 				5,
 				MaterialType.GEM,

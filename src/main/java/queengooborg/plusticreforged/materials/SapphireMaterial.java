@@ -17,7 +17,7 @@ public class SapphireMaterial extends Material {
 				"sapphire",
 				"Sapphire",
 				new Description("A blue gemstone that is said improve the owner's focus.", ""),
-				new Item("forge", "gems/sapphire", true),
+				new ItemTag("forge", "gems/sapphire"),
 				null,
 				2,
 				MaterialType.GEM,

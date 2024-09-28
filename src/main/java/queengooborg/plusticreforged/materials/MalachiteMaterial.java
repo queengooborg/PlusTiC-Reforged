@@ -18,7 +18,7 @@ public class MalachiteMaterial extends Material {
 				"malachite",
 				"Malachite",
 				new Description("A dark green gemstone that is said to protect against negative energy.", ""),
-				new Item("forge", "gems/malachite", true),
+				new ItemTag("forge", "gems/malachite"),
 				null,
 				2,
 				MaterialType.GEM,
