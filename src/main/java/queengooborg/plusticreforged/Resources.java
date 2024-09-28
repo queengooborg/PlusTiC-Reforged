@@ -49,27 +49,27 @@ public class Resources {
 			new PsigemMaterial(),
 
 			// ModuleAppEng2
-			// new CertusQuartzMaterial(),
-			// new FluixMaterial(),
+			// new CertusQuartzMaterial(), -- Forge tags: forge:gems/certus_quartz
+			// new FluixMaterial(), -- Forge tags: forge:gems/fluix
 
 			// ModuleBotania
-			// new TerrasteelMaterial(),
-			// new ElementiumMaterial(),
-			// new ManasteelMaterial(),
-			// new LivingwoodMaterial(),
-			// new MirionMaterial(),
+			// new ManasteelMaterial(), -- Forge tags: forge:ingots/manasteel
+			// new TerrasteelMaterial(), -- Forge tags: forge:ingots/terrasteel
+			// new ElementiumMaterial(), -- Forge tags: forge:ingots/elementium
+			// new LivingwoodMaterial(), -- botania:livingwood
+			// new MirionMaterial(), -- custom alloy
 
 			// ModuleIndusForego
-			// new PinkSlimeMaterial(),
+			// new PinkSlimeMaterial(), -- unsure how to implement yet
 
 			// ModuleArmorPlus
-			// new WitherBoneMaterial(),
-			// new GuardianScaleMaterial(),
+			// new WitherBoneMaterial(), -- armorplus:wither_bone
+			// new GuardianScaleMaterial(), -- armorplus:guardian_scale
 
 			// ModuleDraconicEvolution -- unavailable in MC 1.19
 			// XXX Original used three of four cores, but we should use the ingots instead
-			// new DraconiumMaterial(),
-			// new AwakenedDraconiumMaterial(),
+			// new DraconiumMaterial(), -- Forge tags: forge:ingots/draconium
+			// new AwakenedDraconiumMaterial(), -- Forge tags: forge:ingots/draconium_awakened
 	};
 
 	public static Modifier getModifier(String id) {
