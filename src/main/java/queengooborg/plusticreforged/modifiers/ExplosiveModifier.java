@@ -7,8 +7,6 @@ import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
-import java.util.Objects;
-
 public class ExplosiveModifier extends Modifier {
 	public ExplosiveModifier() {
 		super("explosive", "Explosive", new Description("As the name implies, an explosion is created when the tool is used."), 0xFF4F4F);
@@ -20,7 +18,7 @@ public class ExplosiveModifier extends Modifier {
 		LivingEntity target = context.getLivingTarget();
 
 		if (target != null) {
-				target.level.explode(context.getLivingTarget(), context.getLivingTarget().getX(), context.getLivingTarget().getY(), context.getLivingTarget().getZ(), 0.5f, false, Explosion.Mode.NONE);
+			target.level.explode(context.getLivingTarget(), context.getLivingTarget().getX(), context.getLivingTarget().getY(), context.getLivingTarget().getZ(), 0.5f, false, Explosion.Mode.NONE);
 		}
 
 		return 0;

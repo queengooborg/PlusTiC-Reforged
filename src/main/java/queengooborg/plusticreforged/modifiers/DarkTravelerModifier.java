@@ -10,7 +10,6 @@ import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class DarkTravelerModifier extends Modifier {
 	Random random = new Random();
