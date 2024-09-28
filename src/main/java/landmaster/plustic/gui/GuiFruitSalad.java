@@ -1,23 +1,23 @@
 package landmaster.plustic.gui;
 
-import landmaster.plustic.api.*;
-import landmaster.plustic.traits.*;
-import net.minecraft.client.gui.inventory.*;
-import net.minecraft.client.renderer.*;
-import net.minecraft.entity.player.*;
-import net.minecraft.inventory.*;
-import net.minecraft.util.*;
+import landmaster.plustic.api.ModInfo;
+import landmaster.plustic.traits.FruitSalad;
+import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.inventory.Container;
+import net.minecraft.util.ResourceLocation;
 
 public class GuiFruitSalad extends GuiContainer {
 	public static final ResourceLocation TEX = new ResourceLocation(ModInfo.MODID, "textures/gui/fruitsalad.png");
-	
-	private InventoryPlayer playerInv;
-	
+
+	private final InventoryPlayer playerInv;
+
 	public GuiFruitSalad(Container cont, InventoryPlayer playerInv) {
 		super(cont);
 		this.playerInv = playerInv;
 	}
-	
+
 	@Override
 	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
 		drawDefaultBackground();
@@ -33,7 +33,7 @@ public class GuiFruitSalad extends GuiContainer {
 		int y = (height - ySize) / 2;
 		drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
 	}
-	
+
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
 		String name = FruitSalad.fruitsalad.getLocalizedName();

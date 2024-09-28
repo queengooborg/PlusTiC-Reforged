@@ -1,34 +1,30 @@
 package landmaster.plustic.modules;
 
-import static slimeknights.tconstruct.library.materials.MaterialTypes.*;
-import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
-import static slimeknights.tconstruct.tools.TinkerTraits.*;
-
-import landmaster.plustic.*;
-import landmaster.plustic.api.*;
-import landmaster.plustic.config.*;
-import landmaster.plustic.tools.stats.*;
+import landmaster.plustic.PlusTiC;
+import landmaster.plustic.api.ModInfo;
+import landmaster.plustic.config.Config;
+import landmaster.plustic.tools.stats.LaserMediumMaterialStats;
 import landmaster.plustic.traits.*;
-import landmaster.plustic.util.*;
-import net.minecraft.client.resources.*;
-import net.minecraft.item.*;
-import net.minecraft.nbt.*;
-import net.minecraft.util.*;
-import net.minecraft.util.text.*;
-import net.minecraftforge.event.entity.player.*;
-import net.minecraftforge.fml.common.*;
-import net.minecraftforge.fml.common.eventhandler.*;
-import net.minecraftforge.fml.relauncher.*;
+import landmaster.plustic.util.OreRegisterPromise;
+import landmaster.plustic.util.Utils;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.relauncher.Side;
 import slimeknights.tconstruct.library.*;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.*;
+
+import static slimeknights.tconstruct.library.materials.MaterialTypes.*;
+import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
+import static slimeknights.tconstruct.tools.TinkerTraits.*;
 
 @Mod.EventBusSubscriber(modid = ModInfo.MODID, value = Side.CLIENT)
 public class ModuleGems implements IModule {
 
 	public void init() {
 		final boolean isBoPLoaded = Loader.isModLoaded("BiomesOPlenty") || Loader.isModLoaded("biomesoplenty");
-		
+
 		if (Config.erebus && Loader.isModLoaded("erebus")) {
 			Material jade = new Material("jade", 0x00e682);
 			jade.addTrait(Jaded.jaded);
@@ -44,7 +40,7 @@ public class ModuleGems implements IModule {
 					new LaserMediumMaterialStats(7, 60));
 			PlusTiC.materials.put("jade", jade);
 		}
-		
+
 		if ((Config.bop && isBoPLoaded)
 				|| (Config.projectRed && Loader.isModLoaded("projectred-core"))) {
 			Material sapphire = new Material("sapphire", TextFormatting.BLUE);
@@ -57,7 +53,7 @@ public class ModuleGems implements IModule {
 			TinkerRegistry.addMaterialStats(sapphire, new ExtraMaterialStats(120));
 			TinkerRegistry.addMaterialStats(sapphire, new BowMaterialStats(1, 1.5f, 4));
 			PlusTiC.materials.put("sapphire", sapphire);
-			
+
 			Material ruby = new Material("ruby", TextFormatting.RED);
 			ruby.addTrait(BloodyMary.bloodymary);
 			ruby.addTrait(sharp, HEAD);
@@ -70,7 +66,7 @@ public class ModuleGems implements IModule {
 			TinkerRegistry.addMaterialStats(ruby, new ExtraMaterialStats(20));
 			TinkerRegistry.addMaterialStats(ruby, new BowMaterialStats(1.5f, 1.4f, 4));
 			PlusTiC.materials.put("ruby", ruby);
-			
+
 			Material peridot = new Material("peridot", TextFormatting.GREEN);
 			peridot.addTrait(NaturesBlessing.naturesblessing);
 			peridot.addItem("gemPeridot", 1, Material.VALUE_Ingot);
@@ -95,7 +91,7 @@ public class ModuleGems implements IModule {
 			TinkerRegistry.addMaterialStats(malachite, new ExtraMaterialStats(20));
 			TinkerRegistry.addMaterialStats(malachite, new BowMaterialStats(1.4f, 1.4f, 4));
 			PlusTiC.materials.put("malachite", malachite);
-			
+
 			Material amber = new Material("amber", TextFormatting.GOLD);
 			amber.addTrait(shocking);
 			amber.addTrait(Thundering.thundering, PROJECTILE);
@@ -110,7 +106,7 @@ public class ModuleGems implements IModule {
 			TinkerRegistry.addMaterialStats(amber, PlusTiC.justWhy);
 			TinkerRegistry.addMaterialStats(amber, new ArrowShaftMaterialStats(1, 5));
 			PlusTiC.materials.put("amber", amber);
-			
+
 			Material topaz = new Material("topaz", TextFormatting.GOLD);
 			topaz.addTrait(NaturesPower.naturespower);
 			topaz.addItem("gemTopaz", 1, Material.VALUE_Ingot);
@@ -122,7 +118,7 @@ public class ModuleGems implements IModule {
 			TinkerRegistry.addMaterialStats(topaz, new ExtraMaterialStats(65));
 			TinkerRegistry.addMaterialStats(topaz, new BowMaterialStats(0.4f, 1.4f, 7));
 			PlusTiC.materials.put("topaz", topaz);
-			
+
 			Material tanzanite = new Material("tanzanite", TextFormatting.LIGHT_PURPLE);
 			tanzanite.addTrait(freezing);
 			tanzanite.addItem("gemTanzanite", 1, Material.VALUE_Ingot);

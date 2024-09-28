@@ -1,9 +1,9 @@
 package landmaster.plustic.block;
 
-import net.minecraft.block.*;
-import net.minecraft.block.material.*;
-import net.minecraft.util.math.*;
-import net.minecraft.world.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import slimeknights.tconstruct.library.*;
 
 public class MetalBlock extends Block {
@@ -14,7 +14,7 @@ public class MetalBlock extends Block {
 		this.setTranslationKey(name).setRegistryName(name);
 		this.setCreativeTab(TinkerRegistry.tabGeneral);
 	}
-	
+
 	@Override
 	public boolean isBeaconBase(IBlockAccess worldObj, BlockPos pos, BlockPos beacon) {
 		return true;

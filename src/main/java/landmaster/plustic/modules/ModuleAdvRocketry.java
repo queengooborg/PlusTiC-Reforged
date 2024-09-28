@@ -1,17 +1,18 @@
 package landmaster.plustic.modules;
 
-import static slimeknights.tconstruct.library.materials.MaterialTypes.*;
-import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
-
-import landmaster.plustic.*;
-import landmaster.plustic.config.*;
-import landmaster.plustic.fluids.*;
-import landmaster.plustic.traits.*;
-import landmaster.plustic.util.*;
-import net.minecraft.util.text.*;
-import net.minecraftforge.fml.common.*;
+import landmaster.plustic.PlusTiC;
+import landmaster.plustic.config.Config;
+import landmaster.plustic.fluids.FluidMolten;
+import landmaster.plustic.traits.Anticorrosion;
+import landmaster.plustic.traits.Light;
+import landmaster.plustic.util.Utils;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraftforge.fml.common.Loader;
 import slimeknights.tconstruct.library.*;
 import slimeknights.tconstruct.library.materials.*;
+
+import static slimeknights.tconstruct.library.materials.MaterialTypes.*;
+import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
 
 public class ModuleAdvRocketry implements IModule {
 
@@ -26,21 +27,21 @@ public class ModuleAdvRocketry implements IModule {
 				titanium.setCraftable(false).setCastable(true);
 				Utils.setDispItem(titanium, "libvulpes", "productingot", 7);
 				PlusTiC.proxy.setRenderInfo(titanium, 0xDCE1EA);
-				
+
 				FluidMolten titaniumFluid = Utils.fluidMetal("titanium", 0xDCE1EA);
 				titaniumFluid.setTemperature(790);
 				Utils.initFluidMetal(titaniumFluid);
 				titanium.setFluid(titaniumFluid);
-				
+
 				TinkerRegistry.addMaterialStats(titanium, new HeadMaterialStats(560, 6, 6, OBSIDIAN));
 				TinkerRegistry.addMaterialStats(titanium, new HandleMaterialStats(1.4f, 0));
 				TinkerRegistry.addMaterialStats(titanium, new ExtraMaterialStats(40));
 				TinkerRegistry.addMaterialStats(titanium, new BowMaterialStats(1.15f, 1.3f, 6.6f));
 				TinkerRegistry.addMaterialStats(titanium, new FletchingMaterialStats(1.0f, 1.3f));
-				
+
 				PlusTiC.materials.put("titanium", titanium);
 			}
 		}
 	}
-	
+
 }

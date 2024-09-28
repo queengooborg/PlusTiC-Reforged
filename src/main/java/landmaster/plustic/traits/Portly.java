@@ -1,33 +1,38 @@
 package landmaster.plustic.traits;
 
-import landmaster.plustic.*;
-import landmaster.plustic.api.*;
-import landmaster.plustic.net.*;
-import net.minecraft.client.resources.*;
-import net.minecraft.entity.*;
-import net.minecraft.entity.player.*;
-import net.minecraft.init.*;
-import net.minecraft.item.*;
-import net.minecraft.nbt.*;
-import net.minecraft.util.*;
-import net.minecraft.util.text.*;
-import net.minecraft.world.*;
-import net.minecraftforge.common.*;
-import net.minecraftforge.event.entity.player.*;
-import net.minecraftforge.fml.common.*;
-import net.minecraftforge.fml.common.eventhandler.*;
-import net.minecraftforge.fml.relauncher.*;
+import landmaster.plustic.PlusTiC;
+import landmaster.plustic.api.Sounds;
+import landmaster.plustic.net.PacketHandler;
+import landmaster.plustic.net.PacketReleaseEntity;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import slimeknights.tconstruct.library.traits.*;
 import slimeknights.tconstruct.library.utils.*;
 
 public class Portly extends AbstractTrait {
 	public static final Portly portly = new Portly();
-	
+
 	public Portly() {
 		super("portly", 0x00443B);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
-	
+
 	@Override
 	public void onUpdate(ItemStack tool, World world, Entity entity, int itemSlot, boolean isSelected) {
 		if (isSelected && FMLCommonHandler.instance().getSide().isClient()) {
@@ -36,7 +41,7 @@ public class Portly extends AbstractTrait {
 			}
 		}
 	}
-	
+
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public void captureEntity(PlayerInteractEvent.EntityInteract event) {
 		NBTTagCompound nbt = TagUtil.getTagSafe(event.getItemStack());
@@ -62,6 +67,7 @@ public class Portly extends AbstractTrait {
 		event.setCanceled(true);
 		event.setCancellationResult(EnumActionResult.SUCCESS);
 	}
+
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent
 	public void tooltip(ItemTooltipEvent event) {
@@ -73,8 +79,9 @@ public class Portly extends AbstractTrait {
 					nbt.getCompoundTag("portlyGentleman").getString("id")));
 		}
 	}
+
 	private int durabilityCost(Entity entity) {
 		return Math.max(15, entity instanceof EntityLivingBase ?
-				(int)((EntityLivingBase)entity).getHealth() : 15);
+				(int) ((EntityLivingBase) entity).getHealth() : 15);
 	}
 }

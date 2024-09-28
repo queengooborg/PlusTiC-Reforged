@@ -1,22 +1,22 @@
 package landmaster.plustic.modules;
 
+import landmaster.plustic.PlusTiC;
+import landmaster.plustic.config.Config;
+import landmaster.plustic.traits.*;
+import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import slimeknights.tconstruct.library.*;
+import slimeknights.tconstruct.library.materials.*;
+
 import static slimeknights.tconstruct.library.materials.MaterialTypes.*;
 import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
 import static slimeknights.tconstruct.tools.TinkerTraits.*;
 
-import landmaster.plustic.*;
-import landmaster.plustic.config.*;
-import landmaster.plustic.traits.*;
-import net.minecraft.item.*;
-import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.common.registry.*;
-import slimeknights.tconstruct.library.*;
-import slimeknights.tconstruct.library.materials.*;
-
 public class ModuleEnvironTech implements IModule {
 	@GameRegistry.ObjectHolder("environmentaltech:mica")
 	public static final Item micaItem = null;
-	
+
 	public void init() {
 		if (Config.environTech && Loader.isModLoaded("environmentaltech")) {
 			Material mica = new Material("mica", 0xBBBBBB);
@@ -28,7 +28,7 @@ public class ModuleEnvironTech implements IModule {
 					new ExtraMaterialStats(90),
 					PlusTiC.justWhy);
 			PlusTiC.materials.put("mica", mica);
-			
+
 			Material litherite = new Material("litherite", 0x078E51);
 			litherite.addTrait(stonebound, HEAD);
 			litherite.addTrait(crude2);
@@ -42,7 +42,7 @@ public class ModuleEnvironTech implements IModule {
 					PlusTiC.justWhy);
 			PlusTiC.materials.put("litherite", litherite);
 			PlusTiC.materialOreDicts.put("litherite", "crystalLitherite");
-			
+
 			Material erodium = new Material("erodium", 0xBB56FF);
 			erodium.addTrait(Vindictive.vindictive);
 			erodium.addTrait(NaturesWrath.natureswrath);
@@ -55,7 +55,7 @@ public class ModuleEnvironTech implements IModule {
 					PlusTiC.justWhy);
 			PlusTiC.materials.put("erodium", erodium);
 			PlusTiC.materialOreDicts.put("erodium", "crystalErodium");
-			
+
 			Material kyronite = new Material("kyronite", 0x77007f);
 			kyronite.addTrait(FruitSalad.fruitsalad, HEAD);
 			kyronite.addTrait(NaturesBlessing.naturesblessing);
@@ -68,7 +68,7 @@ public class ModuleEnvironTech implements IModule {
 					new BowMaterialStats(0.6f, 1.6f, 5));
 			PlusTiC.materials.put("kyronite", kyronite);
 			PlusTiC.materialOreDicts.put("kyronite", "crystalKyronite");
-			
+
 			Material pladium = new Material("pladium", 0x070070);
 			pladium.addTrait(TeamPlayer.teamplayer);
 			pladium.addItem("crystalPladium", 1, Material.VALUE_Ingot);
@@ -80,7 +80,7 @@ public class ModuleEnvironTech implements IModule {
 					new BowMaterialStats(0.49f, 2.2f, 6.5f));
 			PlusTiC.materials.put("pladium", pladium);
 			PlusTiC.materialOreDicts.put("pladium", "crystalPladium");
-			
+
 			Material ionite = new Material("ionite", 0x6df5ff);
 			ionite.addTrait(LightningRod.lightningrod, HEAD);
 			ionite.addTrait(Illuminati.illuminati);
@@ -93,7 +93,7 @@ public class ModuleEnvironTech implements IModule {
 					new BowMaterialStats(0.38f, 3f, 8));
 			PlusTiC.materials.put("ionite", ionite);
 			PlusTiC.materialOreDicts.put("ionite", "crystalIonite");
-			
+
 			Material aethium = new Material("aethium", 0x000000);
 			aethium.addTrait(MusicOfTheSpheres.musicofthespheres);
 			aethium.addItem("crystalAethium", 1, Material.VALUE_Ingot);
@@ -107,7 +107,7 @@ public class ModuleEnvironTech implements IModule {
 			PlusTiC.materialOreDicts.put("aethium", "crystalAethium");
 		}
 	}
-	
+
 	public void init2() {
 		final Material mica = PlusTiC.materials.get("mica");
 		if (mica != null) {

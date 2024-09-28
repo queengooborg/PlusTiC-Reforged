@@ -1,6 +1,7 @@
 package landmaster.plustic.waila;
 
-import landmaster.plustic.tile.*;
+import landmaster.plustic.tile.TECentrifugeCore;
+import landmaster.plustic.tile.TECentrifugeTank;
 import mcp.mobius.waila.api.*;
 import slimeknights.tconstruct.plugin.waila.*;
 

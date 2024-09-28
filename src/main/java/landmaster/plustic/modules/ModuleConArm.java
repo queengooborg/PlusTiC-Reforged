@@ -1,16 +1,17 @@
 package landmaster.plustic.modules;
 
-import java.util.*;
-
 import c4.conarm.lib.materials.*;
 import c4.conarm.lib.utils.*;
-import landmaster.plustic.*;
-import landmaster.plustic.config.*;
-import landmaster.plustic.modifiers.armor.*;
-import landmaster.plustic.traits.*;
+import landmaster.plustic.PlusTiC;
+import landmaster.plustic.config.Config;
+import landmaster.plustic.modifiers.armor.JetpackPancakeHippos;
+import landmaster.plustic.traits.NickOfTime;
+import landmaster.plustic.traits.Terrafirma;
 import landmaster.plustic.traits.armor.*;
 import net.minecraftforge.fml.common.Loader;
 import slimeknights.tconstruct.library.*;
+
+import java.util.Optional;
 
 import static c4.conarm.common.armor.traits.ArmorTraits.*;
 
@@ -56,7 +57,7 @@ public class ModuleConArm implements IModule {
 						new PlatesMaterialStats(1.15f, -0.5f, 2.4f),
 						new TrimMaterialStats(5f));
 			});
-			
+
 			Optional.ofNullable(PlusTiC.materials.get("sapphire")).ifPresent(mat -> {
 				ArmorMaterials.addArmorTrait(mat, aquaspeed);
 				TinkerRegistry.addMaterialStats(mat,
@@ -87,7 +88,7 @@ public class ModuleConArm implements IModule {
 			SJ.init();
 		}
 	}
-	
+
 	private static class SJ {
 		public static void init() {
 			JetpackPancakeHippos.jetpackpancakehippos.values().forEach(mod -> {

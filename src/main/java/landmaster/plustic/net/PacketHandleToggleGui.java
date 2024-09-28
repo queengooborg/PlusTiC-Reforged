@@ -1,32 +1,35 @@
 package landmaster.plustic.net;
 
-import java.util.*;
-
 import io.netty.buffer.*;
-import landmaster.plustic.api.*;
-import net.minecraft.entity.player.*;
-import net.minecraft.nbt.*;
-import net.minecraft.util.*;
-import net.minecraft.world.*;
+import landmaster.plustic.api.Toggle;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.IThreadListener;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
-import net.minecraftforge.fml.common.network.*;
-import net.minecraftforge.fml.common.network.simpleimpl.*;
+import net.minecraftforge.fml.common.network.ByteBufUtils;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import slimeknights.tconstruct.library.utils.*;
+
+import java.util.Set;
 
 public class PacketHandleToggleGui implements IMessage {
 	@CapabilityInject(Toggle.IToggleArmor.class)
-	private static Capability<Toggle.IToggleArmor> TOGGLE_ARMOR = null;
-	
+	private static final Capability<Toggle.IToggleArmor> TOGGLE_ARMOR = null;
+
 	private String identifier;
-	
-	public PacketHandleToggleGui() {}
+
+	public PacketHandleToggleGui() {
+	}
+
 	public PacketHandleToggleGui(String identifier) {
 		this.identifier = identifier;
 	}
 
 	public static IMessage onMessage(PacketHandleToggleGui message, MessageContext ctx) {
-		IThreadListener mainThread = (WorldServer)ctx.getServerHandler().player.getEntityWorld();
+		IThreadListener mainThread = (WorldServer) ctx.getServerHandler().player.getEntityWorld();
 		mainThread.addScheduledTask(() -> {
 			EntityPlayerMP ep = ctx.getServerHandler().player;
 			if (ep.getEntityWorld().isRemote) {

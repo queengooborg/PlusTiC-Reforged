@@ -1,22 +1,25 @@
 package landmaster.plustic.net;
 
 import io.netty.buffer.*;
-import landmaster.plustic.api.*;
-import landmaster.plustic.traits.*;
-import landmaster.plustic.util.*;
-import net.minecraft.entity.player.*;
-import net.minecraft.init.*;
-import net.minecraft.nbt.*;
-import net.minecraft.util.*;
-import net.minecraft.util.text.*;
-import net.minecraft.world.*;
-import net.minecraftforge.fml.common.network.simpleimpl.*;
+import landmaster.plustic.api.Portal;
+import landmaster.plustic.api.Sounds;
+import landmaster.plustic.traits.BrownMagic;
+import landmaster.plustic.util.Coord4D;
+import landmaster.plustic.util.Utils;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.IThreadListener;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.world.WorldServer;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import slimeknights.tconstruct.library.utils.*;
 
 public class PacketBrownAbracadabra implements IMessage {
-	
+
 	public static IMessage onMessage(PacketBrownAbracadabra message, MessageContext ctx) {
-		IThreadListener mainThread = (WorldServer)ctx.getServerHandler().player.getEntityWorld();
+		IThreadListener mainThread = (WorldServer) ctx.getServerHandler().player.getEntityWorld();
 		mainThread.addScheduledTask(() -> {
 			EntityPlayerMP ep = ctx.getServerHandler().player;
 			if (ep.getEntityWorld().isRemote)

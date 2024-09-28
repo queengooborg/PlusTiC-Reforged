@@ -1,28 +1,34 @@
 package landmaster.plustic.modules;
 
-import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
-import static slimeknights.tconstruct.tools.TinkerTraits.*;
-
-import java.util.concurrent.*;
-
 import com.progwml6.natura.shared.*;
-
-import landmaster.plustic.*;
-import landmaster.plustic.api.*;
-import landmaster.plustic.config.*;
+import landmaster.plustic.PlusTiC;
+import landmaster.plustic.api.ModInfo;
+import landmaster.plustic.config.Config;
 import landmaster.plustic.traits.*;
-import net.minecraft.item.*;
-import net.minecraft.util.text.*;
-import net.minecraftforge.event.*;
-import net.minecraftforge.fml.common.*;
-import net.minecraftforge.fml.common.eventhandler.*;
+import net.minecraft.item.Item;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import slimeknights.tconstruct.library.*;
 import slimeknights.tconstruct.library.materials.*;
+
+import java.util.concurrent.CompletableFuture;
+
+import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
+import static slimeknights.tconstruct.tools.TinkerTraits.*;
 
 @Mod.EventBusSubscriber(modid = ModInfo.MODID)
 public class ModuleNatura implements IModule {
 	private static final CompletableFuture<?> itemPromise = new CompletableFuture<>();
-	
+
+	@SubscribeEvent(priority = EventPriority.LOWEST)
+	public static void itemRegEvent(RegistryEvent.Register<Item> event) {
+		itemPromise.complete(null);
+	}
+
 	public void init() {
 		if (Config.natura && Loader.isModLoaded("natura")) {
 			Material darkwood = new Material("darkwood_plustic", TextFormatting.DARK_BLUE);
@@ -30,7 +36,7 @@ public class ModuleNatura implements IModule {
 			darkwood.addTrait(ecological);
 			CompletableFuture<?> darkwoodPromise = itemPromise.thenRun(() -> {
 				darkwood.addItem(ModuleNaturaStuff.darkwoodPlankStack(), 1, Material.VALUE_Ingot);
-				darkwood.addItem(ModuleNaturaStuff.darkwoodLogStack(), 1, 4*Material.VALUE_Ingot);
+				darkwood.addItem(ModuleNaturaStuff.darkwoodLogStack(), 1, 4 * Material.VALUE_Ingot);
 				darkwood.addItem(NaturaCommons.darkwood_stick, 1, Material.VALUE_Shard);
 				darkwood.setRepresentativeItem(ModuleNaturaStuff.darkwoodPlankStack());
 			});
@@ -43,13 +49,13 @@ public class ModuleNatura implements IModule {
 					new BowMaterialStats(1.2f, 1.3f, 3));
 			PlusTiC.materials.put("darkwood", darkwood);
 			PlusTiC.materialIntegrationStages.put("darkwood", darkwoodPromise);
-			
+
 			Material ghostwood = new Material("ghostwood_plustic", TextFormatting.WHITE);
 			ghostwood.addTrait(Ghastly.ghastly);
 			ghostwood.addTrait(ecological);
 			CompletableFuture<?> ghostwoodPromise = itemPromise.thenRun(() -> {
 				ghostwood.addItem(ModuleNaturaStuff.ghostwoodPlankStack(), 1, Material.VALUE_Ingot);
-				ghostwood.addItem(ModuleNaturaStuff.ghostwoodLogStack(), 1, 4*Material.VALUE_Ingot);
+				ghostwood.addItem(ModuleNaturaStuff.ghostwoodLogStack(), 1, 4 * Material.VALUE_Ingot);
 				ghostwood.addItem(NaturaCommons.ghostwood_stick, 1, Material.VALUE_Shard);
 				ghostwood.setRepresentativeItem(ModuleNaturaStuff.ghostwoodPlankStack());
 			});
@@ -62,13 +68,13 @@ public class ModuleNatura implements IModule {
 					new BowMaterialStats(1.6f, 1.1f, 2));
 			PlusTiC.materials.put("ghostwood", ghostwood);
 			PlusTiC.materialIntegrationStages.put("ghostwood", ghostwoodPromise);
-			
+
 			Material fusewood = new Material("fusewood_plustic", 0x00D18E);
 			fusewood.addTrait(UnstableMatter.unstablematter);
 			fusewood.addTrait(ecological);
 			CompletableFuture<?> fusewoodPromise = itemPromise.thenRun(() -> {
 				fusewood.addItem(ModuleNaturaStuff.fusewoodPlankStack(), 1, Material.VALUE_Ingot);
-				fusewood.addItem(ModuleNaturaStuff.fusewoodLogStack(), 1, 4*Material.VALUE_Ingot);
+				fusewood.addItem(ModuleNaturaStuff.fusewoodLogStack(), 1, 4 * Material.VALUE_Ingot);
 				fusewood.addItem(NaturaCommons.fusewood_stick, 1, Material.VALUE_Shard);
 				fusewood.setRepresentativeItem(ModuleNaturaStuff.fusewoodPlankStack());
 			});
@@ -81,13 +87,13 @@ public class ModuleNatura implements IModule {
 					new BowMaterialStats(0.7f, 2.0f, 7));
 			PlusTiC.materials.put("fusewood", fusewood);
 			PlusTiC.materialIntegrationStages.put("fusewood", fusewoodPromise);
-			
+
 			Material bloodwood = new Material("bloodwood_plustic", 0x600000);
 			bloodwood.addTrait(BloodyMary.bloodymary);
 			bloodwood.addTrait(ecological);
 			CompletableFuture<?> bloodwoodPromise = itemPromise.thenRun(() -> {
 				bloodwood.addItem(ModuleNaturaStuff.bloodwoodPlankStack(), 1, Material.VALUE_Ingot);
-				bloodwood.addItem(ModuleNaturaStuff.bloodwoodLogStack(), 1, 4*Material.VALUE_Ingot);
+				bloodwood.addItem(ModuleNaturaStuff.bloodwoodLogStack(), 1, 4 * Material.VALUE_Ingot);
 				bloodwood.addItem(NaturaCommons.bloodwood_stick, 1, Material.VALUE_Shard);
 				bloodwood.setRepresentativeItem(ModuleNaturaStuff.bloodwoodPlankStack());
 			});
@@ -100,7 +106,7 @@ public class ModuleNatura implements IModule {
 					new BowMaterialStats(1.6f, 1.4f, 7));
 			PlusTiC.materials.put("bloodwood", bloodwood);
 			PlusTiC.materialIntegrationStages.put("bloodwood", bloodwoodPromise);
-			
+
 			Material flamestring = new Material("flamestring_plustic", 0xFF3314);
 			flamestring.addTrait(Naphtha.naphtha);
 			CompletableFuture<?> flamestringPromise = itemPromise.thenRun(() -> {
@@ -113,10 +119,5 @@ public class ModuleNatura implements IModule {
 			PlusTiC.materials.put("flamestring", flamestring);
 			PlusTiC.materialIntegrationStages.put("flamestring", flamestringPromise);
 		}
-	}
-	
-	@SubscribeEvent(priority = EventPriority.LOWEST)
-	public static void itemRegEvent(RegistryEvent.Register<Item> event) {
-		itemPromise.complete(null);
 	}
 }

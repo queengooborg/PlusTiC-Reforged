@@ -1,15 +1,17 @@
 package landmaster.plustic.modules;
 
-import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
-
-import landmaster.plustic.*;
-import landmaster.plustic.config.*;
-import landmaster.plustic.tools.stats.*;
-import landmaster.plustic.traits.*;
-import landmaster.plustic.util.*;
+import landmaster.plustic.PlusTiC;
+import landmaster.plustic.config.Config;
+import landmaster.plustic.tools.stats.BatteryCellMaterialStats;
+import landmaster.plustic.tools.stats.LaserMediumMaterialStats;
+import landmaster.plustic.traits.Elemental;
+import landmaster.plustic.traits.Portly;
+import landmaster.plustic.util.OreRegisterPromise;
 import net.minecraftforge.fml.common.Loader;
 import slimeknights.tconstruct.library.*;
 import slimeknights.tconstruct.library.materials.*;
+
+import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
 
 public class ModuleAppEng2 implements IModule {
 	public void init() {
@@ -18,10 +20,10 @@ public class ModuleAppEng2 implements IModule {
 			certusQuartz.addTrait(Elemental.elemental);
 			certusQuartz.setCraftable(true);
 			new OreRegisterPromise("crystalCertusQuartz")
-			.thenAccept(quartz -> {
-				certusQuartz.addItem("crystalCertusQuartz", 1, Material.VALUE_Ingot);
-				certusQuartz.setRepresentativeItem(quartz);
-			});
+					.thenAccept(quartz -> {
+						certusQuartz.addItem("crystalCertusQuartz", 1, Material.VALUE_Ingot);
+						certusQuartz.setRepresentativeItem(quartz);
+					});
 			PlusTiC.proxy.setRenderInfo(certusQuartz, 0x55D3E7FF);
 			TinkerRegistry.addMaterialStats(certusQuartz, new HeadMaterialStats(250, 6.4f, 4.5f, DIAMOND),
 					new HandleMaterialStats(0.8f, 80),
@@ -29,15 +31,15 @@ public class ModuleAppEng2 implements IModule {
 					PlusTiC.justWhy,
 					new LaserMediumMaterialStats(5, 14));
 			PlusTiC.materials.put("certusQuartz", certusQuartz);
-			
+
 			Material fluixCrystal = new Material("fluixCrystal_plustic", 0x883D0099);
 			fluixCrystal.addTrait(Portly.portly);
 			fluixCrystal.setCraftable(true);
 			new OreRegisterPromise("crystalFluix")
-			.thenAccept(crystal -> {
-				fluixCrystal.addItem("crystalFluix", 1, Material.VALUE_Ingot);
-				fluixCrystal.setRepresentativeItem(crystal);
-			});
+					.thenAccept(crystal -> {
+						fluixCrystal.addItem("crystalFluix", 1, Material.VALUE_Ingot);
+						fluixCrystal.setRepresentativeItem(crystal);
+					});
 			PlusTiC.proxy.setRenderInfo(fluixCrystal, 0x883D0099);
 			TinkerRegistry.addMaterialStats(fluixCrystal, new HeadMaterialStats(700, 7, 6.2f, OBSIDIAN),
 					new HandleMaterialStats(1.0f, 0),

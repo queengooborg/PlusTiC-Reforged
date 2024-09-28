@@ -1,25 +1,27 @@
 package landmaster.plustic.net;
 
 import io.netty.buffer.*;
-import landmaster.plustic.api.*;
-import landmaster.plustic.util.*;
-import net.minecraft.entity.player.*;
-import net.minecraft.nbt.*;
-import net.minecraft.util.*;
-import net.minecraft.util.math.*;
-import net.minecraft.util.text.*;
-import net.minecraft.world.*;
+import landmaster.plustic.api.Portal;
+import landmaster.plustic.util.Coord4D;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.IThreadListener;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
-import net.minecraftforge.fml.common.network.simpleimpl.*;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import slimeknights.tconstruct.library.utils.*;
 
 public class PacketSetPortal implements IMessage {
 	@CapabilityInject(Portal.IPortalArmor.class)
-	private static Capability<Portal.IPortalArmor> PORTAL_ARMOR = null;
-	
+	private static final Capability<Portal.IPortalArmor> PORTAL_ARMOR = null;
+
 	public static IMessage onMessage(PacketSetPortal message, MessageContext ctx) {
-		IThreadListener mainThread = (WorldServer)ctx.getServerHandler().player.getEntityWorld();
+		IThreadListener mainThread = (WorldServer) ctx.getServerHandler().player.getEntityWorld();
 		mainThread.addScheduledTask(() -> {
 			EntityPlayerMP ep = ctx.getServerHandler().player;
 			if (ep.getEntityWorld().isRemote) {

@@ -1,31 +1,22 @@
 package landmaster.plustic.modules;
 
-import static slimeknights.tconstruct.library.materials.MaterialTypes.*;
-import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
-import static slimeknights.tconstruct.tools.TinkerTraits.*;
-
-import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
-import landmaster.plustic.*;
-import landmaster.plustic.api.*;
-import landmaster.plustic.config.*;
+import landmaster.plustic.PlusTiC;
+import landmaster.plustic.api.ModInfo;
+import landmaster.plustic.config.Config;
 import landmaster.plustic.fluids.FluidMolten;
-import landmaster.plustic.tools.stats.*;
-import landmaster.plustic.traits.*;
-import landmaster.plustic.util.*;
-import net.minecraft.client.resources.*;
-import net.minecraft.item.*;
-import net.minecraft.nbt.*;
-import net.minecraft.util.*;
-import net.minecraft.util.text.*;
-import net.minecraftforge.event.entity.player.*;
-import net.minecraftforge.fml.common.*;
-import net.minecraftforge.fml.common.eventhandler.*;
-import net.minecraftforge.fml.relauncher.*;
+import landmaster.plustic.tools.stats.LaserMediumMaterialStats;
+import landmaster.plustic.util.Utils;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.relauncher.Side;
 import slimeknights.tconstruct.library.*;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.*;
 
-import java.util.Map;
+import static slimeknights.tconstruct.library.materials.MaterialTypes.*;
+import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
+import static slimeknights.tconstruct.tools.TinkerTraits.*;
 
 @Mod.EventBusSubscriber(modid = ModInfo.MODID, value = Side.CLIENT)
 public class ModuleFuture implements IModule {

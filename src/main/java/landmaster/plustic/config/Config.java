@@ -1,28 +1,34 @@
 package landmaster.plustic.config;
 
-import java.io.*;
-import java.lang.invoke.*;
-import java.lang.reflect.*;
-import java.util.*;
-import java.util.stream.*;
-
-import org.apache.commons.lang3.tuple.*;
-
 import com.google.common.base.Throwables;
-
 import it.unimi.dsi.fastutil.ints.*;
-import landmaster.plustic.traits.*;
-import net.minecraft.item.*;
-import net.minecraft.util.*;
-import net.minecraft.util.text.translation.*;
-import net.minecraftforge.common.config.*;
-import net.minecraftforge.fluids.*;
-import net.minecraftforge.fml.common.event.*;
+import landmaster.plustic.traits.Botanical;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.translation.LanguageMap;
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.config.Property;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.tuple.*;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.smeltery.*;
 
+import java.io.InputStream;
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.MethodHandles;
+import java.lang.reflect.Method;
+import java.util.*;
+import java.util.stream.Collectors;
+
 public class Config extends Configuration {
+	private static final IntArrayList botan_amount = new IntArrayList(Botanical.MAX_LEVELS);
+	private static final Set<Pair<String, Set<String>>> blacklistedForCentrifuge = new HashSet<>();
+	private static final List<TrashThing> trashThings = new ArrayList<>();
+	private static final MethodHandle injectHandle;
+	private static final LanguageMap englishMap = new LanguageMap();
 	// MODULES
 	public static boolean base;
 	public static boolean bop;
@@ -50,85 +56,96 @@ public class Config extends Configuration {
 	public static boolean astralSorcery;
 	public static boolean erebus;
 	public static boolean future;
-	
 	public static boolean jetpackConarmModifier;
 	public static float jetpackDurabilityBonusScale;
-	
 	// alas…
 	public static boolean forceOutNaturalPledgeMaterials;
-	
 	public static boolean pyrotheumSmelt;
 	public static boolean tfMelt;
-	
 	public static boolean katana;
 	public static boolean laserGun;
-	
 	public static float katana_combo_multiplier;
 	public static boolean katana_boosts_only_on_killing;
 	public static boolean katana_smooth_progression;
-	
 	public static int laser_energy;
-	
 	public static int centrifugeEnergyPerMB;
-	
-	private static final IntArrayList botan_amount = new IntArrayList(Botanical.MAX_LEVELS);
-	
-	private static final Set<Pair<String, Set<String>>> blacklistedForCentrifuge = new HashSet<>();
+	public static List<ItemStack> fruitStacks = new ArrayList<>();
+	public static IntSet fruitOreDicts;
+	private static int trashThingsSum = 0;
+
+	static {
+		try {
+			Method temp = LanguageMap.class.getDeclaredMethod("inject", LanguageMap.class, InputStream.class);
+			temp.setAccessible(true);
+			injectHandle = MethodHandles.lookup().unreflect(temp);
+		} catch (Throwable e) {
+			Throwables.throwIfUnchecked(e);
+			throw new RuntimeException(e);
+		}
+	}
+
+	static {
+		try {
+			final String[] langFiles = new String[]{"/assets/plustic/lang/en_us.lang", "/assets/plustic/lang/en_US.lang"};
+			for (String langFile : langFiles) {
+				try (InputStream inS = Config.class.getResourceAsStream(langFile)) {
+					injectHandle.invokeExact(englishMap, inS);
+				}
+			}
+		} catch (Throwable e) {
+			Throwables.throwIfUnchecked(e);
+			throw new RuntimeException(e);
+		}
+	}
+
+	public Config(FMLPreInitializationEvent event) {
+		super(event.getSuggestedConfigurationFile());
+	}
 
 	public static IntList getBotanAmount() {
 		return IntLists.unmodifiable(botan_amount);
 	}
-	
-	private static class TrashThing {
-		public final int weight;
-		public final ItemStack stack;
-		
-		public TrashThing(int weight, ItemStack stack) {
-			this.weight = weight;
-			this.stack = stack;
-		}
-	}
-	
-	private static final List<TrashThing> trashThings = new ArrayList<>();
-	
-	private static int trashThingsSum = 0;
+
 	public static @javax.annotation.Nullable ItemStack fetchThing(Random random) {
 		if (trashThingsSum <= 0) {
 			trashThingsSum = trashThings.stream().mapToInt(t -> t.weight).sum();
 		}
 		int rval = random.nextInt(trashThingsSum);
 		ItemStack thing = ItemStack.EMPTY;
-		for (TrashThing entry: trashThings) {
+		for (TrashThing entry : trashThings) {
 			rval -= entry.weight;
 			thing = entry.stack;
 			if (rval < 0) break;
 		}
 		return thing;
 	}
-	
-	public static List<ItemStack> fruitStacks = new ArrayList<>();
-	public static IntSet fruitOreDicts;
+
 	public static boolean isFruit(ItemStack stack) {
-		for (int id: OreDictionary.getOreIDs(stack)) {
+		for (int id : OreDictionary.getOreIDs(stack)) {
 			if (fruitOreDicts.contains(id)) {
 				return true;
 			}
 		}
-		for (ItemStack fruit: fruitStacks) {
+		for (ItemStack fruit : fruitStacks) {
 			if (OreDictionary.itemMatches(fruit, stack, false)) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
-	public Config(FMLPreInitializationEvent event) {
-		super(event.getSuggestedConfigurationFile());
+
+	public static boolean isCentrifugeRecipeValid(AlloyRecipe recipe) {
+		Pair<String, Set<String>> pairToCheck = Pair.of(
+				FluidRegistry.getFluidName(recipe.getResult()),
+				recipe.getFluids().stream()
+						.map(FluidRegistry::getFluidName)
+						.collect(Collectors.toSet()));
+		return !blacklistedForCentrifuge.contains(pairToCheck);
 	}
-	
+
 	public void init1() {
 		this.addCustomCategoryComment("modules", "Use this to disable entire modules.");
-		
+
 		// MODULES
 		base = getBoolean("Enable vanilla TiC addons", "modules", true, "Add features to vanilla Tinkers Construct");
 		bop = getBoolean("Enable BoP integration", "modules", true, "Integrate with Biomes o' Plenty");
@@ -138,8 +155,8 @@ public class Config extends Configuration {
 		{
 			forceOutNaturalPledgeMaterials = getBoolean("Force out Natural Pledge TiC materials", "tweaks", true,
 					"If Natural Pledge is loaded:\n"
-					+ "If true: replace Natural Pledge Botania TiC materials with PlusTiC ones;\n"
-					+ "Otherwise: do *not* load the Botania module for PlusTiC, overriding other settings.");
+							+ "If true: replace Natural Pledge Botania TiC materials with PlusTiC ones;\n"
+							+ "Otherwise: do *not* load the Botania module for PlusTiC, overriding other settings.");
 		}
 		advancedRocketry = getBoolean("Enable Advanced Rocketry integration", "modules", true, "Integrate with Advanced Rocketry (actually LibVulpes)");
 		armorPlus = getBoolean("Enable ArmorPlus integration", "modules", true, "Integrate with ArmorPlus");
@@ -166,28 +183,28 @@ public class Config extends Configuration {
 		astralSorcery = getBoolean("Enable Astral Sorcery support", "modules", true, "Integrate with Astral Sorcery");
 		erebus = getBoolean("Enable Erebus support", "modules", true, "Integrate with Erebus");
 		future = getBoolean("Enable Future MC (Netherite) support", "modules", true, "Integrate with Future MC (to add Netherite)");
-		
+
 		jetpackConarmModifier = getBoolean("Add Simply Jetpacks as ConArm modifiers", "modifiers", true, "Add Simply Jetpacks as ConArm modifiers");
-		jetpackDurabilityBonusScale = getFloat("Durability bonus scalar for Simply Jetpacks modifiers", "modifiers", 1f/8000, 0, Float.MAX_VALUE, "Durability bonus calculated as FUEL_CAPACITY_OF_JETPACK*this_scalar");
-		
+		jetpackDurabilityBonusScale = getFloat("Durability bonus scalar for Simply Jetpacks modifiers", "modifiers", 1f / 8000, 0, Float.MAX_VALUE, "Durability bonus calculated as FUEL_CAPACITY_OF_JETPACK*this_scalar");
+
 		// TOOLS
 		katana = getBoolean("Enable Katana", "tools", true, "Enable Katana");
 		katana_combo_multiplier = getFloat("Katana combo multiplier", "tools", 1.25f, 0, Float.MAX_VALUE, "Multiply combo value by this to calculate bonus damage");
 		katana_boosts_only_on_killing = getBoolean("Katana boosts only on killing", "tools", true, "Does Katana boost only on killing mob (true) or on any hit (false)?");
 		katana_smooth_progression = getBoolean("Smooth Katana progression", "tools", false, "Should boosted damage of Katana change smoothly from material to material?");
-		
+
 		laserGun = getBoolean("Enable Laser Gun", "tools", true, "Enable Laser Gun");
 		laser_energy = getInt("Laser Gun Energy consumed", "tools", 100, 0, Integer.MAX_VALUE, "How much energy is used, by default, per laser attack");
-		
+
 		// Trash
 		String[] trash_things_arr = getStringList("Trash generation", "tweaks",
-				new String[] {"20|coal", "5|slime_ball", "10|saddle",
+				new String[]{"20|coal", "5|slime_ball", "10|saddle",
 						"5|tconstruct:edible;1", "1|emerald", "3|melon"},
 				"Objects that the Trash modifier will generate; enter in the format \"weight|modid:name;meta\" (leave meta blank for zero metadata)");
 		{
 			int meta = 0;
 			int weight = 0;
-			for (int i=0; i<trash_things_arr.length; ++i) {
+			for (int i = 0; i < trash_things_arr.length; ++i) {
 				String[] trash_wi = trash_things_arr[i].split("\\|");
 				try {
 					weight = Integer.parseInt(trash_wi[0]);
@@ -211,13 +228,13 @@ public class Config extends Configuration {
 				}
 			}
 		}
-		
+
 		// Fruit salad
 		String[] fruitStacksArr = this.getStringList("Fruits stack list", "tweaks",
-				new String[] {"apple", "golden_apple;"+OreDictionary.WILDCARD_VALUE, "melon", "chorus_fruit"}, "Enter in the format \"modid:name;meta\" (leave meta blank for zero metadata)");
+				new String[]{"apple", "golden_apple;" + OreDictionary.WILDCARD_VALUE, "melon", "chorus_fruit"}, "Enter in the format \"modid:name;meta\" (leave meta blank for zero metadata)");
 		{
 			int meta = 0;
-			for (int i=0; i<fruitStacksArr.length; ++i) {
+			for (int i = 0; i < fruitStacksArr.length; ++i) {
 				String[] loc_meta = fruitStacksArr[i].split(";");
 				if (loc_meta.length > 1) {
 					try {
@@ -233,30 +250,30 @@ public class Config extends Configuration {
 			}
 		}
 		fruitOreDicts = Arrays.stream(this.getStringList("Fruits oredict list", "tweaks",
-				new String[] { "cropApple", "listAllfruit" }, "Valid ore dictionary values for Fruit Salad"))
+						new String[]{"cropApple", "listAllfruit"}, "Valid ore dictionary values for Fruit Salad"))
 				.mapToInt(OreDictionary::getOreID)
 				.collect(IntOpenHashSet::new, IntOpenHashSet::add, IntOpenHashSet::addAll);
-		
+
 		// Modifier values for Botanical
 		Property botan_amount_prop = this.get("tweaks", "Modifier values for Botanical", new int[0]);
 		botan_amount_prop.setLanguageKey("Modifiers added for Botanical modifier");
 		botan_amount_prop.setComment("Enter integer amounts, specifying the amount of modifiers added to the tool for each level, in increasing order of level (defaults will be extrapolated if some left blank)");
 		botan_amount_prop.setMinValue(0);
-		
+
 		botan_amount.addElements(botan_amount.size(), botan_amount_prop.getIntList());
 		if (botan_amount.isEmpty()) botan_amount.add(1);
 		while (botan_amount.size() < Botanical.MAX_LEVELS) {
-			botan_amount.add(botan_amount.getInt(botan_amount.size()-1)<<1);
+			botan_amount.add(botan_amount.getInt(botan_amount.size() - 1) << 1);
 		}
-		
+
 		// Centrifuge
-		for (String blacklistEntry: this.getStringList("Centrifuge blacklist", "tweaks", new String[0], "Enter in the format inputFluid:outputFluid1;outputFluid2;outputFluid3")) {
+		for (String blacklistEntry : this.getStringList("Centrifuge blacklist", "tweaks", new String[0], "Enter in the format inputFluid:outputFluid1;outputFluid2;outputFluid3")) {
 			String[] separateInOut = blacklistEntry.split(":");
 			blacklistedForCentrifuge.add(Pair.of(separateInOut[0], new HashSet<>(Arrays.asList(separateInOut[1].split(";")))));
 		}
 		centrifugeEnergyPerMB = this.getInt("Centrifuge energy per mB", "tweaks", 5, 0, Integer.MAX_VALUE, "Energy consumed by centrifuge per millibucket");
-		
-		for (String traitLoadEntry: this.getStringList("Force load traits", "tweaks", new String[0], "Force-load these traits (as a fully-qualified class name; e.g. landmaster.plustic.traits.Global) without the required mods themselves being loaded")) {
+
+		for (String traitLoadEntry : this.getStringList("Force load traits", "tweaks", new String[0], "Force-load these traits (as a fully-qualified class name; e.g. landmaster.plustic.traits.Global) without the required mods themselves being loaded")) {
 			try {
 				Class.forName(traitLoadEntry);
 			} catch (ClassNotFoundException e) {
@@ -264,37 +281,10 @@ public class Config extends Configuration {
 			}
 		}
 	}
-	
-	private static final MethodHandle injectHandle;
-	static {
-		try {
-			Method temp = LanguageMap.class.getDeclaredMethod("inject", LanguageMap.class, InputStream.class);
-			temp.setAccessible(true);
-			injectHandle = MethodHandles.lookup().unreflect(temp);
-		} catch (Throwable e) {
-			Throwables.throwIfUnchecked(e);
-			throw new RuntimeException(e);
-		}
-	}
-	
-	private static final LanguageMap englishMap = new LanguageMap();
-	static {
-		try {
-			final String[] langFiles = new String[] { "/assets/plustic/lang/en_us.lang", "/assets/plustic/lang/en_US.lang" };
-			for (String langFile: langFiles) {
-				try (InputStream inS = Config.class.getResourceAsStream(langFile)) {
-					injectHandle.invokeExact(englishMap, inS);
-				}
-			}
-		} catch (Throwable e) {
-			Throwables.throwIfUnchecked(e);
-			throw new RuntimeException(e);
-		}
-	}
-	
+
 	public void init2(Map<String, Material> materials) {
 		this.addCustomCategoryComment("materials", "Materials will only appear here when their respective modules are loaded.");
-		
+
 		for (final Iterator<Material> it = materials.values().iterator(); it.hasNext(); ) {
 			final Material mat = it.next();
 			final String matName = englishMap.translateKey(String.format(Material.LOC_Name, mat.getIdentifier()));
@@ -304,17 +294,18 @@ public class Config extends Configuration {
 			}
 		}
 	}
-	
+
 	public void update() {
 		if (hasChanged()) save();
 	}
 
-	public static boolean isCentrifugeRecipeValid(AlloyRecipe recipe) {
-		Pair<String, Set<String>> pairToCheck = Pair.of(
-				FluidRegistry.getFluidName(recipe.getResult()),
-				recipe.getFluids().stream()
-				.map(FluidRegistry::getFluidName)
-				.collect(Collectors.toSet()));
-		return !blacklistedForCentrifuge.contains(pairToCheck);
+	private static class TrashThing {
+		public final int weight;
+		public final ItemStack stack;
+
+		public TrashThing(int weight, ItemStack stack) {
+			this.weight = weight;
+			this.stack = stack;
+		}
 	}
 }

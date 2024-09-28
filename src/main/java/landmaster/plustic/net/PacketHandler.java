@@ -1,13 +1,13 @@
 package landmaster.plustic.net;
 
-import landmaster.plustic.api.*;
-import net.minecraftforge.fml.common.network.*;
-import net.minecraftforge.fml.common.network.simpleimpl.*;
-import net.minecraftforge.fml.relauncher.*;
+import landmaster.plustic.api.ModInfo;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.relauncher.Side;
 
 public class PacketHandler {
 	public static final SimpleNetworkWrapper INSTANCE = NetworkRegistry.INSTANCE.newSimpleChannel(ModInfo.MODID);
-	
+
 	public static void init() {
 		INSTANCE.registerMessage(PacketReleaseEntity::onMessage, PacketReleaseEntity.class, 0, Side.SERVER);
 		INSTANCE.registerMessage(PacketHandleToggleGui::onMessage, PacketHandleToggleGui.class, 1, Side.SERVER);
@@ -27,7 +27,7 @@ public class PacketHandler {
 		INSTANCE.registerMessage(PacketUpdateTECentrifugeLiquid::onMessage, PacketUpdateTECentrifugeLiquid.class, 15, Side.CLIENT);
 		INSTANCE.registerMessage(PacketUpdateTECentrifugeCoreEnergy::onMessage, PacketUpdateTECentrifugeCoreEnergy.class, 16, Side.CLIENT);
 		INSTANCE.registerMessage(PacketRequestUpdateTECentrifuge::onMessage, PacketRequestUpdateTECentrifuge.class, 17, Side.SERVER);
-		
+
 		// TODO add mroe messages when needed
 	}
 }

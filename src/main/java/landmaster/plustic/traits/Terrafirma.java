@@ -21,15 +21,15 @@ import slimeknights.tconstruct.library.traits.*;
 @net.minecraftforge.fml.common.Optional.Interface(iface = "c4.conarm.lib.traits.IArmorAbility", modid = "conarm")
 public class Terrafirma extends AbstractTraitLeveled implements IArmorTrait, IArmorAbility {
 	public static final List<Terrafirma> terrafirma = ImmutableList.of(new Terrafirma(1), new Terrafirma(2));
-	
+
 	public Terrafirma(int levels) {
 		super("terrafirma", 0x00FF00, 3, levels);
 	}
-	
+
 	@Override
 	public void onUpdate(ItemStack tool, World world, Entity entity, int itemSlot, boolean isSelected) {
 		if (isSelected && entity instanceof EntityLivingBase && random.nextFloat() < 0.05) {
-			((EntityLivingBase)entity).heal(levels/3.0f);
+			((EntityLivingBase) entity).heal(levels / 3.0f);
 		}
 	}
 
@@ -40,7 +40,7 @@ public class Terrafirma extends AbstractTraitLeveled implements IArmorTrait, IAr
 
 	@Override
 	public ArmorModifications getModifications(EntityPlayer arg0, ArmorModifications arg1, ItemStack arg2,
-			DamageSource arg3, double arg4, int arg5) {
+	                                           DamageSource arg3, double arg4, int arg5) {
 		return arg1;
 	}
 
@@ -73,7 +73,7 @@ public class Terrafirma extends AbstractTraitLeveled implements IArmorTrait, IAr
 
 	@Override
 	public float onDamaged(ItemStack arg0, EntityPlayer arg1, DamageSource arg2, float arg3, float arg4,
-			LivingDamageEvent arg5) {
+	                       LivingDamageEvent arg5) {
 		return arg4;
 	}
 
@@ -89,7 +89,7 @@ public class Terrafirma extends AbstractTraitLeveled implements IArmorTrait, IAr
 
 	@Override
 	public float onHurt(ItemStack arg0, EntityPlayer arg1, DamageSource arg2, float arg3, float arg4,
-			LivingHurtEvent arg5) {
+	                    LivingHurtEvent arg5) {
 		return arg4;
 	}
 

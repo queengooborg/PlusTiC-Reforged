@@ -1,16 +1,16 @@
 package landmaster.plustic.traits;
 
-import net.minecraft.entity.*;
-import net.minecraft.item.*;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.ItemStack;
 import slimeknights.tconstruct.library.traits.*;
 
 public class NaturesWrath extends AbstractTrait {
 	public static final NaturesWrath natureswrath = new NaturesWrath();
-	
+
 	public NaturesWrath() {
-		super("natureswrath",0x007523);
+		super("natureswrath", 0x007523);
 	}
-	
+
 	@Override
 	public void afterHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damageDealt, boolean wasCritical, boolean wasHit) {
 		if (wasHit) {
