@@ -18,7 +18,7 @@ public class PeridotMaterial extends Material {
 				"peridot",
 				"Peridot",
 				new Description("A green gemstone that vibrates with the energy of sunshine.", ""),
-				new ItemOrTag("forge", "gems/peridot", true),
+				new Item("forge", "gems/peridot", true),
 				null,
 				2,
 				MaterialType.GEM,

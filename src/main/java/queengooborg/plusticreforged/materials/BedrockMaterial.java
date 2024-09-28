@@ -18,7 +18,7 @@ public class BedrockMaterial extends Material {
 				"bedrock",
 				"Bedrock",
 				new Description("You could only obtain these tools through Creative or cheats -- so if you're gonna cheat, you might as well commit, right?", "The tool takes no damage"),
-				new ItemOrTag("minecraft", "bedrock", false),
+				new Item("minecraft", "bedrock", false),
 				null,
 				6,
 				MaterialType.STONE,

@@ -18,7 +18,7 @@ public class AmethystMaterial extends Material {
 				"amethyst",
 				"Amethyst",
 				new Description("A purple gemstone that vibrates at a high frequency."),
-				new ItemOrTag("forge", "gems/amethyst", true),
+				new Item("forge", "gems/amethyst", true),
 				null,
 				2,
 				MaterialType.GEM,

@@ -18,7 +18,7 @@ public class PsimetalMaterial extends Material {
 				"psimetal",
 				"Psimetal",
 				new Description("A metal infused with psionic energy."),
-				new ItemOrTag("forge", "ingots/psimetal", true),
+				new Item("forge", "ingots/psimetal", true),
 				null,
 				2,
 				MaterialType.METAL,

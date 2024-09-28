@@ -18,7 +18,7 @@ public class DarkMatterMaterial extends Material {
 				"dark_matter",
 				"Dark Matter",
 				new Description("A mysterious substance that seems to defy the laws of physics."),
-				new ItemOrTag("projecte", "dark_matter", false),
+				new Item("projecte", "dark_matter", false),
 				null,
 				4,
 				MaterialType.GEM,
