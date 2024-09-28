@@ -18,7 +18,7 @@ public class RubyMaterial extends Material {
 				"ruby",
 				"Ruby",
 				new Description("A red gemstone that is said to increase the owner's vitality.", ""),
-				new ItemTag("forge", "gems/ruby", true),
+				new ItemTag("forge", "gems/ruby"),
 				null,
 				2,
 				MaterialType.GEM,
