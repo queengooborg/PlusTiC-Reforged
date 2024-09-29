@@ -82,6 +82,7 @@ public class Resources {
 		return null;
 	}
 
+	@SuppressWarnings("unused")
 	public static Material getMaterial(String id) {
 		for (Material material : MATERIALS) {
 			if (material.id.equals(id)) {
