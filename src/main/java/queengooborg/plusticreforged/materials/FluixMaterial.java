@@ -24,7 +24,7 @@ public class FluixMaterial extends Material {
 				MaterialType.GEM,
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(61, 0, 153, 136)),
-				new MaterialStats(new HeadMaterialStats(700, 7, HarvestLevels.NETHERITE, 6.2f), new HandleMaterialStats(150, 1, 1, 1), ExtraMaterialStats.DEFAULT),
+				new MaterialStats(new HeadMaterialStats(700, 7, HarvestLevels.NETHERITE, 6.2f), new HandleMaterialStats(1, 1, 1, 1), ExtraMaterialStats.DEFAULT),
 				Resources.getModifier("portly"),
 				1000
 		);

@@ -24,7 +24,7 @@ public class CertusQuartzMaterial extends Material {
 				MaterialType.GEM,
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(211, 231, 255)),
-				new MaterialStats(new HeadMaterialStats(250, 6.4f, HarvestLevels.DIAMOND, 4.5f), new HandleMaterialStats(80, 1, 1, 1), ExtraMaterialStats.DEFAULT),
+				new MaterialStats(new HeadMaterialStats(250, 6.4f, HarvestLevels.DIAMOND, 4.5f), new HandleMaterialStats(0.8f, 1, 1, 1), ExtraMaterialStats.DEFAULT),
 				Resources.getModifier("elemental"),
 				1000
 		);
