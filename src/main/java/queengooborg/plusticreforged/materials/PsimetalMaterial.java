@@ -29,23 +29,4 @@ public class PsimetalMaterial extends Material {
 				696
 		);
 	}
-
-	// Material psimetal = new Material("psimetal", 0x6D9EFF);
-	//			psimetal.addTrait(Psicological.psicological);
-	//			psimetal.addTrait(Global.global);
-	//			psimetal.addItem("ingotPsi", 1, Material.VALUE_Ingot);
-	//			psimetal.setCraftable(false).setCastable(true);
-	//			Utils.setDispItem(psimetal, "ingotPsi");
-	//			PlusTiC.proxy.setRenderInfo(psimetal, 0x6D9EFF);
-	//
-	//			FluidMolten psimetalFluid = Utils.fluidMetal("psimetal", 0x6D9EFF);
-	//			psimetalFluid.setTemperature(696);
-	//			Utils.initFluidMetal(psimetalFluid);
-	//			psimetal.setFluid(psimetalFluid);
-	//
-	//			TinkerRegistry.addMaterialStats(psimetal,
-	//					new HeadMaterialStats(620, 7f, 5, OBSIDIAN),
-	//					new HandleMaterialStats(1.3f, -10),
-	//					new ExtraMaterialStats(30),
-	//					new BowMaterialStats(1, 1.6f, 4));
 }
