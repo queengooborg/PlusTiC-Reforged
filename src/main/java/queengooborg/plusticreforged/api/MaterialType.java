@@ -8,6 +8,7 @@ public class MaterialType {
 	public static MaterialType POWDER = new MaterialType(new String[]{"powder"});
 	public static MaterialType STONE = new MaterialType(new String[]{"stone", "wood", "stick"});
 	public static MaterialType WOOD = new MaterialType(new String[]{"wood", "stick"});
+	public static MaterialType BONE = new MaterialType(new String[]{"bone", "stick"});
 
 	public String[] fallbacks = {"metal"};
 
