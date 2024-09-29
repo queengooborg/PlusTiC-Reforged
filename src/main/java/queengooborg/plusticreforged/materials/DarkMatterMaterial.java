@@ -17,7 +17,7 @@ public class DarkMatterMaterial extends Material {
 		super(
 				"dark_matter",
 				"Dark Matter",
-				new Description("A mysterious substance that seems to defy the laws of physics."),
+				new Description("A mysterious substance that seems to defy the laws of physics.", ""),
 				new ItemID("projecte", "dark_matter"),
 				null,
 				4,

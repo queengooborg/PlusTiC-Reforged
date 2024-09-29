@@ -17,7 +17,7 @@ public class PsigemMaterial extends Material {
 		super(
 				"psigem",
 				"Psigem",
-				new Description("A gemstone that resonates with psionic energy."),
+				new Description("A gemstone that resonates with psionic energy.", ""),
 				new ItemTag("forge", "gems/psigem"),
 				null,
 				2,

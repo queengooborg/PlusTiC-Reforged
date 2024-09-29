@@ -17,7 +17,7 @@ public class TopazMaterial extends Material {
 		super(
 				"topaz",
 				"Topaz",
-				new Description("Golden topaz, a gemstone that helps channel the power of manifestation."),
+				new Description("Golden topaz, a gemstone that helps channel the power of manifestation.", ""),
 				new ItemTag("forge", "gems/topaz"),
 				null,
 				2,
