@@ -3,9 +3,11 @@ package queengooborg.plusticreforged.modifiers;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
 
+import java.awt.*;
+
 public class UnstableMatterModifier extends Modifier {
 	public UnstableMatterModifier() {
-		super("unstable_matter", "Unstable Matter", new Description("Random explosions plague your enemies. Also, when you are attacked, there is a chance to get Absorption."), 0xE80000);
+		super("unstable_matter", "Unstable Matter", new Description("Random explosions plague your enemies. Also, when you are attacked, there is a chance to get Absorption."), new Color(232, 0, 0));
 	}
 
 	// XXX Convert me!

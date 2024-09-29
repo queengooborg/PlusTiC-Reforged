@@ -3,9 +3,11 @@ package queengooborg.plusticreforged.modifiers;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
 
+import java.awt.*;
+
 public class IgnobleModifier extends Modifier {
 	public IgnobleModifier() {
-		super("ignoble", "Ignoble", new Description("As one takes damage, one starts to harbor feelings of ignoble jealousy as the offender is killed. When this trait is enabled, those feelings are vented when attacking while sneaking."), 0x270133);
+		super("ignoble", "Ignoble", new Description("As one takes damage, one starts to harbor feelings of ignoble jealousy as the offender is killed. When this trait is enabled, those feelings are vented when attacking while sneaking."), new Color(39, 1, 51));
 	}
 
 	// XXX Convert me!

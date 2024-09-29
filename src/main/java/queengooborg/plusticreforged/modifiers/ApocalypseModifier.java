@@ -8,9 +8,11 @@ import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
+import java.awt.*;
+
 public class ApocalypseModifier extends Modifier {
 	public ApocalypseModifier() {
-		super("apocalypse", "Apocalypse", new Description("The end times...", "Your victim becomes moribund and is afflicted with increasing levels of Wither."), 0x3A2D7D);
+		super("apocalypse", "Apocalypse", new Description("The end times...", "Your victim becomes moribund and is afflicted with increasing levels of Wither."), new Color(58, 45, 125));
 		this.usable = true;
 	}
 

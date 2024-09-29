@@ -3,9 +3,11 @@ package queengooborg.plusticreforged.modifiers;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
 
+import java.awt.*;
+
 public class PortlyModifier extends Modifier {
 	public PortlyModifier() {
-		super("portly", "Portly", new Description("Crouch and use an entity to capture it (costs durability based on entity health). Press the \"release entity\" key (default \"0\") in order to release it."), 0x00443B);
+		super("portly", "Portly", new Description("Crouch and use an entity to capture it (costs durability based on entity health). Press the \"release entity\" key (default \"0\") in order to release it."), new Color(0, 68, 59));
 	}
 
 	// XXX Convert me!

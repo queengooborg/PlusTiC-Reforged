@@ -7,9 +7,11 @@ import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
+import java.awt.*;
+
 public class HeavyModifier extends Modifier {
 	public HeavyModifier() {
-		super("heavy_metal", "Heavy", new Description("Increased knockback + Slowness on target."), 0x555555);
+		super("heavy_metal", "Heavy", new Description("Increased knockback + Slowness on target."), new Color(85, 85, 85));
 		this.usable = true;
 	}
 

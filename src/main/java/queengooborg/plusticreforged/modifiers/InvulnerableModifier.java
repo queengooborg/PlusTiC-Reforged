@@ -6,10 +6,11 @@ import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
 import javax.annotation.Nullable;
+import java.awt.*;
 
 public class InvulnerableModifier extends Modifier {
 	public InvulnerableModifier() {
-		super("invulnerable", "Invulnerable", new Description("You could only obtain these tools through Creative or cheats -- so if you're gonna cheat, you might as well commit, right?", "The tool takes no damage"), 0x555555);
+		super("invulnerable", "Invulnerable", new Description("You could only obtain these tools through Creative or cheats -- so if you're gonna cheat, you might as well commit, right?", "The tool takes no damage"), new Color(85, 85, 85));
 		this.usable = true;
 	}
 

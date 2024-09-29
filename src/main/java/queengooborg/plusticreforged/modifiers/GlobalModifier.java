@@ -3,9 +3,11 @@ package queengooborg.plusticreforged.modifiers;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
 
+import java.awt.*;
+
 public class GlobalModifier extends Modifier {
 	public GlobalModifier() {
-		super("global", "Global", new Description("Around the world... and back.", "Crouch and use on a block in order for items from broken blocks and killed entities to get transported in there if it is an inventory."), 0xFFE0F1);
+		super("global", "Global", new Description("Around the world... and back.", "Crouch and use on a block in order for items from broken blocks and killed entities to get transported in there if it is an inventory."), new Color(255, 224, 241));
 	}
 
 	// XXX Convert me!

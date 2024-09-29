@@ -3,9 +3,11 @@ package queengooborg.plusticreforged.modifiers;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
 
+import java.awt.*;
+
 public class PsicologicalModifier extends Modifier {
 	public PsicologicalModifier() {
-		super("psicological", "Psicological", new Description("...the reverse kind.", "Tools heal with Psi."), 0x6D9EFF);
+		super("psicological", "Psicological", new Description("...the reverse kind.", "Tools heal with Psi."), new Color(109, 158, 255));
 	}
 
 	// XXX Convert me!

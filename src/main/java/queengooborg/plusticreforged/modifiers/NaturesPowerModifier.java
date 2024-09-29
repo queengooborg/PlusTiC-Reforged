@@ -8,13 +8,14 @@ import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
+import java.awt.*;
 import java.util.Random;
 
 public class NaturesPowerModifier extends Modifier {
 	private Random random;
 
 	public NaturesPowerModifier() {
-		super("naturespower", "Nature's Power", new Description("After attacking a mob: 20% chance to burn target. 20% chance to give player Speed. 20% chance to give player Strength."), 0xFFFF00);
+		super("naturespower", "Nature's Power", new Description("After attacking a mob: 20% chance to burn target. 20% chance to give player Speed. 20% chance to give player Strength."), new Color(255, 255, 0));
 		this.usable = true;
 	}
 

@@ -8,6 +8,7 @@ import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
+import java.awt.*;
 import java.util.List;
 import java.util.Random;
 
@@ -15,7 +16,7 @@ public class DarkTravelerModifier extends Modifier {
 	Random random = new Random();
 
 	public DarkTravelerModifier() {
-		super("dark_traveler", "Dark Traveler", new Description("Surrounding mobs get randomly afflicted with damage."), 0x270133);
+		super("dark_traveler", "Dark Traveler", new Description("Surrounding mobs get randomly afflicted with damage."), new Color(39, 1, 51));
 		this.usable = true;
 	}
 

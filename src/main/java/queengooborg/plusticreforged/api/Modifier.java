@@ -4,6 +4,7 @@ import net.minecraft.util.ResourceLocation;
 import queengooborg.plusticreforged.Registries;
 import queengooborg.plusticreforged.config.ModInfo;
 
+import java.awt.*;
 import java.util.Objects;
 
 public abstract class Modifier extends slimeknights.tconstruct.library.modifiers.Modifier {
@@ -17,8 +18,8 @@ public abstract class Modifier extends slimeknights.tconstruct.library.modifiers
 
 	public ResourceLocation resourceLocation;
 
-	public Modifier(String id, String name, Description description, int color) {
-		super(color);
+	public Modifier(String id, String name, Description description, Color color) {
+		super(color.getRGB());
 
 		this.id = Objects.requireNonNull(id);
 		this.name = Objects.requireNonNull(name);

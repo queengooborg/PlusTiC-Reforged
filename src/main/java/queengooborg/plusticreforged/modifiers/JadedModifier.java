@@ -4,13 +4,15 @@ import net.minecraftforge.common.MinecraftForge;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
 
+import java.awt.*;
+
 public class JadedModifier extends Modifier {
 	public static final String JADED_LEVEL_TAG = "PlusTiC_JadedLevel";
 	public static final String JADED_TIMER_TAG = "PlusTiC_JadedTimer";
 	public static final String JADED_LASTHEALTH_TAG = "PlusTiC_JadedLastHealth";
 
 	public JadedModifier() {
-		super("jaded", "Jaded", new Description("Mobs attacked with this tool have their ability to heal temporarily hindered."), 0x00e682);
+		super("jaded", "Jaded", new Description("Mobs attacked with this tool have their ability to heal temporarily hindered."), new Color(0, 230, 130));
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 

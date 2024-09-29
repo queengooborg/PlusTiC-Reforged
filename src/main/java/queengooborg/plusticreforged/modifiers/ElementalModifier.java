@@ -7,9 +7,11 @@ import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
+import java.awt.*;
+
 public class ElementalModifier extends Modifier {
 	public ElementalModifier() {
-		super("elemental", "Elemental", new Description("When gravity-affected blocks are destroyed, break all blocks of the same type above and below. Also, a chance to gain various benefits from a successful attack."), 0xF66AFD);
+		super("elemental", "Elemental", new Description("When gravity-affected blocks are destroyed, break all blocks of the same type above and below. Also, a chance to gain various benefits from a successful attack."), new Color(246, 106, 253));
 	}
 }
 

@@ -5,13 +5,14 @@ import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
+import java.awt.*;
 import java.util.Random;
 
 public class NaturesWrathModifier extends Modifier {
 	private Random random;
 
 	public NaturesWrathModifier() {
-		super("natureswrath", "Nature's Wrath", new Description("Nature's wrath burning...", "After attacking a mob, there is a chance to burn the target, as well as to heal the player."), 0x007523);
+		super("natureswrath", "Nature's Wrath", new Description("Nature's wrath burning...", "After attacking a mob, there is a chance to burn the target, as well as to heal the player."), new Color(0, 117, 35));
 		this.usable = true;
 	}
 

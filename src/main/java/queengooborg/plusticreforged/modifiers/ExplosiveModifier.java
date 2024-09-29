@@ -7,9 +7,11 @@ import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
+import java.awt.*;
+
 public class ExplosiveModifier extends Modifier {
 	public ExplosiveModifier() {
-		super("explosive", "Explosive", new Description("As the name implies, an explosion is created when the tool is used."), 0xFF4F4F);
+		super("explosive", "Explosive", new Description("As the name implies, an explosion is created when the tool is used."), new Color(255, 79, 79));
 		this.usable = true;
 	}
 

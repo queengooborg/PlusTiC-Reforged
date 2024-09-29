@@ -11,13 +11,14 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.context.ToolHarvestContext;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
+import java.awt.*;
 import java.util.Random;
 
 public class NaturesBlessingModifier extends Modifier {
 	private Random random;
 
 	public NaturesBlessingModifier() {
-		super("naturesblessing", "Nature's Blessing", new Description("A chance to drop bread per mob killed or block broken. Sometimes heals the player by a bit after killing a mob."), 0xBEFA5C);
+		super("naturesblessing", "Nature's Blessing", new Description("A chance to drop bread per mob killed or block broken. Sometimes heals the player by a bit after killing a mob."), new Color(190, 250, 92));
 		this.usable = true;
 	}
 

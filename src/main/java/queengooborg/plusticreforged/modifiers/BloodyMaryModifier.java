@@ -11,13 +11,14 @@ import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 import slimeknights.tconstruct.shared.TinkerCommons;
 import slimeknights.tconstruct.shared.block.SlimeType;
 
+import java.awt.*;
 import java.util.Random;
 
 public class BloodyMaryModifier extends Modifier {
 	private Random random;
 
 	public BloodyMaryModifier() {
-		super("bloodymary", "Bloody Mary", new Description("Brought to you by the legendary Queen of England...", "Deals bonus damage depending on the amount of health already lost by the target. Also, a chance to drop a Coagulated Blood for each hit."), 0xFF0000);
+		super("bloodymary", "Bloody Mary", new Description("Brought to you by the legendary Queen of England...", "Deals bonus damage depending on the amount of health already lost by the target. Also, a chance to drop a Coagulated Blood for each hit."), new Color(255, 0, 0));
 		this.usable = true;
 	}
 
