@@ -50,10 +50,16 @@ See the [Mod Support](./Mod%20Support.md) page for a list of mods that PlusTiC R
   - From: ProjectE
 - Psi Metal
   - Uses `forge:ingots/psi` tag
-  - From: Psi
+  - Known compatible mods: Psi
 - Psi Gem
   - Uses `forge:gems/psi` tag
-  - From: Psi
+  - Known compatible mods: Psi
+- Certus Quartz
+  - Uses `forge:gems/certus_quartz` tag
+  - Known compatible mods: Applied Energistics 2
+- Fluix
+  - Uses `forge:gems/fluix` tag
+  - Known compatible mods: Applied Energistics 2
 
 ## Requesting New Materials
 

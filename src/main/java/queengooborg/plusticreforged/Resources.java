@@ -23,6 +23,7 @@ public class Resources {
 			new PsicologicalModifier(),
 			new GlobalModifier(),
 			new PortlyModifier(),
+			new ElementalModifier(),
 	};
 
 	public static final Material[] MATERIALS = new Material[]{
@@ -49,8 +50,8 @@ public class Resources {
 			new PsigemMaterial(),
 
 			// ModuleAppEng2
-			// new CertusQuartzMaterial(), -- Forge tags: forge:gems/certus_quartz
-			// new FluixMaterial(), -- Forge tags: forge:gems/fluix
+			 new CertusQuartzMaterial(),
+			 new FluixMaterial(),
 
 			// ModuleBotania
 			// new ManasteelMaterial(), -- Forge tags: forge:ingots/manasteel
