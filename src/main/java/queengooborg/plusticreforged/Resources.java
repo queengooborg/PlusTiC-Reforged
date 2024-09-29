@@ -24,6 +24,8 @@ public class Resources {
 			new GlobalModifier(),
 			new PortlyModifier(),
 			new ElementalModifier(),
+			new ManaModifier(),
+			new TerrafirmaModifier(),
 	};
 
 	public static final Material[] MATERIALS = new Material[]{
@@ -50,13 +52,13 @@ public class Resources {
 			new PsigemMaterial(),
 
 			// ModuleAppEng2
-			 new CertusQuartzMaterial(),
-			 new FluixMaterial(),
+			new CertusQuartzMaterial(),
+			new FluixMaterial(),
 
 			// ModuleBotania
-			// new ManasteelMaterial(), -- Forge tags: forge:ingots/manasteel
-			// new TerrasteelMaterial(), -- Forge tags: forge:ingots/terrasteel
-			// new ElementiumMaterial(), -- Forge tags: forge:ingots/elementium
+			new ManasteelMaterial(),
+			new TerrasteelMaterial(),
+			new ElementiumMaterial(),
 			// new LivingwoodMaterial(), -- botania:livingwood
 			// new MirionMaterial(), -- custom alloy
 

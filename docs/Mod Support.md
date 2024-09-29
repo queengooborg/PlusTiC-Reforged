@@ -5,18 +5,18 @@ PlusTiC Reforged is designed to add support to a variety of mods. The following 
 ## Materials
 
 - [Project Red](https://www.curseforge.com/minecraft/mc-mods/project-red-core)
-- [Botania](https://www.curseforge.com/minecraft/mc-mods/botania) -- in progress
-- [ArmorPlus](https://www.curseforge.com/minecraft/mc-mods/armorplus) -- in progress
-- [Psi](https://www.curseforge.com/minecraft/mc-mods/psi) -- in progress
-- [Industrial Foregoing](https://www.curseforge.com/minecraft/mc-mods/industrial-foregoing) -- in progress
+- [Botania](https://www.curseforge.com/minecraft/mc-mods/botania) -- partially implemented
+- [ArmorPlus](https://www.curseforge.com/minecraft/mc-mods/armorplus) -- pending
+- [Psi](https://www.curseforge.com/minecraft/mc-mods/psi)
+- [Industrial Foregoing](https://www.curseforge.com/minecraft/mc-mods/industrial-foregoing) -- pending
 - [ProjectE](https://www.curseforge.com/minecraft/mc-mods/projecte)
-- [Applied Energistics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2) -- in progress
-- [The Twilight Forest](https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest) -- in progress
-- [Draconic Evolution](https://www.curseforge.com/minecraft/mc-mods/draconic-evolution) (unavailable in MC 1.19) -- in progress
+- [Applied Energistics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2)
+- [The Twilight Forest](https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest) -- pending
+- [Draconic Evolution](https://www.curseforge.com/minecraft/mc-mods/draconic-evolution) (unavailable in MC 1.19) -- pending
 - [GemsPlusPlus](https://www.curseforge.com/minecraft/mc-mods/gemsplusplus) (discontinued since MC 1.16)
 - [Silent's Gems](https://www.curseforge.com/minecraft/mc-mods/silents-gems)
-- [Jade](https://www.curseforge.com/minecraft/mc-mods/jade) (previously [HWYLA](https://www.curseforge.com/minecraft/mc-mods/hwyla)) -- in progress
-- [Just Enough Items](https://www.curseforge.com/minecraft/mc-mods/jei) -- in progress
+- [Jade](https://www.curseforge.com/minecraft/mc-mods/jade) (previously [HWYLA](https://www.curseforge.com/minecraft/mc-mods/hwyla)) -- pending
+- [Just Enough Items](https://www.curseforge.com/minecraft/mc-mods/jei) -- pending
 
 ### Previously Supported
 

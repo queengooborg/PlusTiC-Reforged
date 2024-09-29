@@ -60,6 +60,15 @@ See the [Mod Support](./Mod%20Support.md) page for a list of mods that PlusTiC R
 - Fluix
   - Uses `forge:gems/fluix` tag
   - Known compatible mods: Applied Energistics 2
+- Manasteel
+  - Uses `forge:ingots/manasteel` tag
+  - Known compatible mods: Botania
+- Elementium
+  - Uses `forge:ingots/elementium` tag
+  - Known compatible mods: Botania
+- Terrasteel
+  - Uses `forge:ingots/terrasteel` tag
+  - Known compatible mods: Botania
 
 ## Requesting New Materials
 
