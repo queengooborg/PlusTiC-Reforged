@@ -1,9 +1,9 @@
 package queengooborg.plusticreforged.modifiers;
 
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.world.entity.LivingEntity;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
-import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import javax.annotation.Nullable;
 import java.awt.*;
@@ -15,7 +15,7 @@ public class InvulnerableModifier extends Modifier {
 	}
 
 	@Override
-	public int onDamageTool(IModifierToolStack toolStack, int level, int amount, @Nullable LivingEntity holder) {
+	public int onDamageTool(IToolStackView toolStack, int level, int amount, @Nullable LivingEntity holder) {
 		// Prevents the tool from taking damage
 		return 0;
 	}

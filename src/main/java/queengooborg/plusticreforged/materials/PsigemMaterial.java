@@ -1,8 +1,8 @@
 package queengooborg.plusticreforged.materials;
 
+import net.minecraft.world.item.Tiers;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.*;
-import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
@@ -21,10 +21,10 @@ public class PsigemMaterial extends Material {
 				new ItemTag("forge", "gems/psigem"),
 				null,
 				2,
-				MaterialType.GEM,
+				MaterialType.CRYSTAL,
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(8, 67, 163)),
-				new MaterialStats(new HeadMaterialStats(620, 7, HarvestLevels.NETHERITE, 5), new HandleMaterialStats(1.3f, 1, 1, 1), ExtraMaterialStats.DEFAULT),
+				new MaterialStats(new HeadMaterialStats(620, 7, Tiers.NETHERITE, 5), new HandleMaterialStats(1.3f, 1, 1, 1), ExtraMaterialStats.DEFAULT),
 				new Modifier[]{Resources.getModifier("psicological"), Resources.getModifier("portly")},
 				750
 		);

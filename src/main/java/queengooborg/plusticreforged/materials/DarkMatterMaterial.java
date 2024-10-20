@@ -1,8 +1,8 @@
 package queengooborg.plusticreforged.materials;
 
+import net.minecraft.world.item.Tiers;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.*;
-import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
@@ -21,10 +21,10 @@ public class DarkMatterMaterial extends Material {
 				new ItemID("projecte", "dark_matter"),
 				null,
 				4,
-				MaterialType.GEM,
+				MaterialType.CRYSTAL,
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(39, 1, 51)),
-				new MaterialStats(new HeadMaterialStats(1729, 10, HarvestLevels.NETHERITE, 10.5f), new HandleMaterialStats(1.7f, 1.2f, 1, 1.5f), ExtraMaterialStats.DEFAULT),
+				new MaterialStats(new HeadMaterialStats(1729, 10, Tiers.NETHERITE, 10.5f), new HandleMaterialStats(1.7f, 1.2f, 1, 1.5f), ExtraMaterialStats.DEFAULT),
 				new Modifier[]{Resources.getModifier("ignoble"), Resources.getModifier("dark_traveler")},
 				1000
 		);

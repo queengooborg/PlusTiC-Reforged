@@ -7,8 +7,9 @@ import net.minecraftforge.common.crafting.conditions.TagEmptyCondition;
 import queengooborg.plusticreforged.config.ModInfo;
 import slimeknights.tconstruct.common.json.ConfigEnabledCondition;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
-import slimeknights.tconstruct.library.modifiers.Modifier;
+import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.ORDER_COMPAT;
@@ -96,5 +97,9 @@ public class Material {
 		System.arraycopy(conditions, 0, newConditions, 0, conditions.length);
 		newConditions[conditions.length] = newCondition;
 		return newConditions;
+	}
+
+	public StaticModifier[] getModifiers() {
+		return Arrays.stream(modifiers).map(modifier -> modifier.instance).toArray(StaticModifier[]::new);
 	}
 }

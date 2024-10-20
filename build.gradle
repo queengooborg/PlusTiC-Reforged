@@ -13,8 +13,8 @@ base {
     archivesName = mod_id
 }
 
-// Mojang ships Java 17 to end users in 1.18+, 1.16.5 ships Java 8
-java.toolchain.languageVersion = JavaLanguageVersion.of(8)
+// Mojang ships Java 17 to end users in 1.18+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 
@@ -163,23 +163,23 @@ dependencies {
     runtimeOnly fg.deobf("mezz.jei:jei-${jei_version}")
 
     // Libs for optional mods
-    runtimeOnly fg.deobf("curse.maven:scorge-471286:3276638")
-    runtimeOnly fg.deobf("local:codechickenlib:${minecraft_version}-4.0.7.445:universal") // "codechicken:CodeChickenLib:1.16.5-4.0.1.426"
-    runtimeOnly fg.deobf("local:CBMultipart:${minecraft_version}-3.0.4.123:universal") // "curse.maven:cb-multipart-258426:2755790-deobf-2755791"
-    runtimeOnly fg.deobf("local:BrandonsCore:${minecraft_version}-3.0.15.248:universal")
-    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-53.3") // fg.deobf("curse.maven:patchouli-306770:3847029")
-    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.16.5-4.1.0.1") // fg.deobf("curse.maven:curios-309927:4419403")
+//    runtimeOnly fg.deobf("curse.maven:scorge-471286:3276638")
+//    runtimeOnly fg.deobf("local:codechickenlib:${minecraft_version}-4.0.7.445:universal") // "codechicken:CodeChickenLib:1.16.5-4.0.1.426"
+//    runtimeOnly fg.deobf("local:CBMultipart:${minecraft_version}-3.0.4.123:universal") // "curse.maven:cb-multipart-258426:2755790-deobf-2755791"
+//    runtimeOnly fg.deobf("local:BrandonsCore:${minecraft_version}-3.0.15.248:universal")
+//    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-53.3") // fg.deobf("curse.maven:patchouli-306770:3847029")
+//    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.16.5-4.1.0.1") // fg.deobf("curse.maven:curios-309927:4419403")
 
     // Optional mods
-    runtimeOnly fg.deobf("curse.maven:project-red-core-228702:4607539") // "mrtjp:ProjectRed-${minecraft_version}:${projectred_version}:core"
-    runtimeOnly fg.deobf("curse.maven:project-red-exploration-229049:4607541") // "mrtjp:ProjectRed-${minecraft_version}:${projectred_version}:exploration"
+//    runtimeOnly fg.deobf("curse.maven:project-red-core-228702:4607539") // "mrtjp:ProjectRed-${minecraft_version}:${projectred_version}:core"
+//    runtimeOnly fg.deobf("curse.maven:project-red-exploration-229049:4607541") // "mrtjp:ProjectRed-${minecraft_version}:${projectred_version}:exploration"
 //    runtimeOnly fg.deobf("curse.maven:psi-241665:4458005") // 'vazkii.psi:Psi:1.16-97.474'
 //    runtimeOnly fg.deobf("vazkii.botania:Botania:1.16.5-420.3") // fg.deobf("curse.maven:botania-225643:4066054")
 //    runtimeOnly "curse.maven:armorplus-237366:2952741"
 //    runtimeOnly "curse.maven:thermal-foundation-222880:2926428"
-    runtimeOnly fg.deobf("local:Draconic-Evolution:${minecraft_version}-3.0.29.518:universal")
-    runtimeOnly fg.deobf("curse.maven:projecte-226410:3736621-api-3736622")
-    runtimeOnly fg.deobf("curse.maven:gemsplusplus-310914:3462347")
+//    runtimeOnly fg.deobf("local:Draconic-Evolution:${minecraft_version}-3.0.29.518:universal")
+//    runtimeOnly fg.deobf("curse.maven:projecte-226410:3736621-api-3736622")
+//    runtimeOnly fg.deobf("curse.maven:gemsplusplus-310914:3462347")
 //    runtimeOnly fg.deobf("curse.maven:silents-gems-220311:3353519")
 //    runtimeOnly fg.deobf("curse.maven:applied-energistics-2-223794:3608871") // "appeng:appliedenergistics2-forge:15.2.8"
 //    runtimeOnly fg.deobf("curse.maven:industrial-foregoing-266515:2745321-sources-2745322-api-2745323-deobf-2745324") // "com.buuz135:industrial-foregoing:1.20.1-3.5.19"
@@ -250,4 +250,5 @@ publishing {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+    options.compilerArgs << "-Xmaxerrs" << "1000" // Show way more compiler errors
 }

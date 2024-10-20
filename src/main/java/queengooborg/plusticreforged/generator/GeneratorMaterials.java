@@ -18,7 +18,9 @@ public class GeneratorMaterials extends AbstractMaterialDataProvider {
 	protected void addMaterials() {
 		for (Material material : Resources.MATERIALS) {
 			log.info("Adding material {}", material.id);
-			addMaterial(material.resourceLocation, material.tier, material.order, false, material.color.base.getRGB(), false, material.condition);
+			addMaterial(material.resourceLocation, material.tier, material.order, false, false, material.condition);
+			// XXX Need to re-add material colors...?
+			// addMaterial(material.resourceLocation, material.tier, material.order, false, material.color.base.getRGB(), false, material.condition);
 		}
 	}
 

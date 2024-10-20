@@ -23,7 +23,7 @@ public class GeneratorMaterialTraits extends AbstractMaterialTraitDataProvider {
 				noTraits(material.resourceLocation);
 			} else {
 				log.info("Adding {} modifiers to material {}", material.modifiers.length, material.id);
-				addDefaultTraits(material.resourceLocation, material.modifiers);
+				addDefaultTraits(material.resourceLocation, material.getModifiers());
 			}
 		}
 	}

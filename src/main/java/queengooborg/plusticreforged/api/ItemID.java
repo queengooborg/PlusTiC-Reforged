@@ -1,6 +1,6 @@
 package queengooborg.plusticreforged.api;
 
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 
 public class ItemID extends Item {
 	public ItemID(ResourceLocation location) {

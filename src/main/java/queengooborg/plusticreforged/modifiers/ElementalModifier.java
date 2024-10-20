@@ -1,11 +1,11 @@
 package queengooborg.plusticreforged.modifiers;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.world.Explosion;
+//import net.minecraft.entity.LivingEntity;
+//import net.minecraft.world.Explosion;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
-import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
-import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
+//import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
+//import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
 import java.awt.*;
 

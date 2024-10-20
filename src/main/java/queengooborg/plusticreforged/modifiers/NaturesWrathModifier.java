@@ -3,7 +3,7 @@ package queengooborg.plusticreforged.modifiers;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
-import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.awt.*;
 import java.util.Random;
@@ -16,7 +16,7 @@ public class NaturesWrathModifier extends Modifier {
 		this.usable = true;
 	}
 
-	public int afterEntityHit(IModifierToolStack tool, int level, ToolAttackContext context, float damageDealt) {
+	public int afterEntityHit(IToolStackView tool, int level, ToolAttackContext context, float damageDealt) {
 		float rnd = random.nextFloat();
 		if (rnd < 0.2f && context.getLivingTarget().isAlive()) {
 			context.getLivingTarget().setSecondsOnFire(5);

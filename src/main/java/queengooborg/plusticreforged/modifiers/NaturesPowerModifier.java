@@ -1,12 +1,12 @@
 package queengooborg.plusticreforged.modifiers;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
-import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.awt.*;
 import java.util.Random;
@@ -19,7 +19,7 @@ public class NaturesPowerModifier extends Modifier {
 		this.usable = true;
 	}
 
-	public int afterEntityHit(IModifierToolStack tool, int level, ToolAttackContext context, float damageDealt) {
+	public int afterEntityHit(IToolStackView tool, int level, ToolAttackContext context, float damageDealt) {
 		LivingEntity target = context.getLivingTarget();
 		LivingEntity player = context.getPlayerAttacker();
 
@@ -27,9 +27,9 @@ public class NaturesPowerModifier extends Modifier {
 		if (rnd < 0.2 && target.isAlive()) {
 			target.setSecondsOnFire(3);
 		} else if (rnd < 0.4 && player.isAlive()) {
-			player.addEffect(new EffectInstance(Effects.MOVEMENT_SPEED, 101));
+			player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 101));
 		} else if (rnd < 0.6 && player.isAlive()) {
-			player.addEffect(new EffectInstance(Effects.DAMAGE_BOOST, 101));
+			player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 101));
 		}
 
 		return 0;

@@ -1,11 +1,11 @@
 package queengooborg.plusticreforged.modifiers;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.world.Explosion;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.Explosion;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
-import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.awt.*;
 
@@ -16,11 +16,11 @@ public class ExplosiveModifier extends Modifier {
 	}
 
 	@Override
-	public int afterEntityHit(IModifierToolStack tool, int level, ToolAttackContext context, float damageDealt) {
+	public int afterEntityHit(IToolStackView tool, int level, ToolAttackContext context, float damageDealt) {
 		LivingEntity target = context.getLivingTarget();
 
 		if (target != null) {
-			target.level.explode(context.getLivingTarget(), context.getLivingTarget().getX(), context.getLivingTarget().getY(), context.getLivingTarget().getZ(), 0.5f, false, Explosion.Mode.NONE);
+			target.level.explode(context.getLivingTarget(), context.getLivingTarget().getX(), context.getLivingTarget().getY(), context.getLivingTarget().getZ(), 0.5f, false, Explosion.BlockInteraction.NONE);
 		}
 
 		return 0;

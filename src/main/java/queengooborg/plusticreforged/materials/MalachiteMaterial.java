@@ -1,8 +1,8 @@
 package queengooborg.plusticreforged.materials;
 
+import net.minecraft.world.item.Tiers;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.*;
-import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
@@ -21,10 +21,10 @@ public class MalachiteMaterial extends Material {
 				new ItemTag("forge", "gems/malachite"),
 				null,
 				2,
-				MaterialType.GEM,
+				MaterialType.CRYSTAL,
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(0, 117, 35)),
-				new MaterialStats(new HeadMaterialStats(640, 3, HarvestLevels.NETHERITE, 6.1f), new HandleMaterialStats(1.3f, 1.5f, 1, 1), ExtraMaterialStats.DEFAULT),
+				new MaterialStats(new HeadMaterialStats(640, 3, Tiers.NETHERITE, 6.1f), new HandleMaterialStats(1.3f, 1.5f, 1, 1), ExtraMaterialStats.DEFAULT),
 				Resources.getModifier("natureswrath"),
 				750
 		);

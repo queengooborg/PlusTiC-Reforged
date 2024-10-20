@@ -1,8 +1,8 @@
 package queengooborg.plusticreforged.materials;
 
+import net.minecraft.world.item.Tiers;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.*;
-import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
@@ -21,10 +21,10 @@ public class FluixMaterial extends Material {
 				new ItemTag("forge", "gems/fluix"),
 				null,
 				5,
-				MaterialType.GEM,
+				MaterialType.CRYSTAL,
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(61, 0, 153, 136)),
-				new MaterialStats(new HeadMaterialStats(700, 7, HarvestLevels.NETHERITE, 6.2f), new HandleMaterialStats(1, 1, 1, 1), ExtraMaterialStats.DEFAULT),
+				new MaterialStats(new HeadMaterialStats(700, 7, Tiers.NETHERITE, 6.2f), new HandleMaterialStats(1, 1, 1, 1), ExtraMaterialStats.DEFAULT),
 				Resources.getModifier("portly"),
 				1000
 		);

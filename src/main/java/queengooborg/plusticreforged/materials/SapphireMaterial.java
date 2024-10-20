@@ -1,7 +1,7 @@
 package queengooborg.plusticreforged.materials;
 
+import net.minecraft.world.item.Tiers;
 import queengooborg.plusticreforged.api.*;
-import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
@@ -20,10 +20,10 @@ public class SapphireMaterial extends Material {
 				new ItemTag("forge", "gems/sapphire"),
 				null,
 				2,
-				MaterialType.GEM,
+				MaterialType.CRYSTAL,
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(1, 1, 200)),
-				new MaterialStats(new HeadMaterialStats(700, 5, HarvestLevels.NETHERITE, 6.4f), HandleMaterialStats.DEFAULT, ExtraMaterialStats.DEFAULT),
+				new MaterialStats(new HeadMaterialStats(700, 5, Tiers.NETHERITE, 6.4f), HandleMaterialStats.DEFAULT, ExtraMaterialStats.DEFAULT),
 				new Modifier[]{}, // TinkerModifiers.aquaaffinity.get(),
 				750
 		);

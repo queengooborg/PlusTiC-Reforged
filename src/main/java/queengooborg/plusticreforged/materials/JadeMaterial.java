@@ -1,8 +1,8 @@
 package queengooborg.plusticreforged.materials;
 
+import net.minecraft.world.item.Tiers;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.*;
-import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
@@ -21,10 +21,10 @@ public class JadeMaterial extends Material {
 				new ItemTag("forge", "gems/jade"),
 				null,
 				2,
-				MaterialType.GEM,
+				MaterialType.CRYSTAL,
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(1, 170, 1)),
-				new MaterialStats(new HeadMaterialStats(1600, 8, HarvestLevels.NETHERITE, 5), new HandleMaterialStats(1.35f, 1.1f, 1, 1), ExtraMaterialStats.DEFAULT),
+				new MaterialStats(new HeadMaterialStats(1600, 8, Tiers.NETHERITE, 5), new HandleMaterialStats(1.35f, 1.1f, 1, 1), ExtraMaterialStats.DEFAULT),
 				Resources.getModifier("jaded"),
 				750
 		);

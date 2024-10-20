@@ -1,15 +1,15 @@
 package queengooborg.plusticreforged.modifiers;
 
-import net.minecraft.entity.item.ItemEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.context.ToolHarvestContext;
-import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.awt.*;
 import java.util.Random;
@@ -23,12 +23,12 @@ public class NaturesBlessingModifier extends Modifier {
 	}
 
 	@Override
-	public void afterBlockBreak(IModifierToolStack tool, int level, ToolHarvestContext context) {
+	public void afterBlockBreak(IToolStackView tool, int level, ToolHarvestContext context) {
 		dropBread(context.getWorld(), context.getPos(), 0.005f);
 	}
 
 	@Override
-	public int afterEntityHit(IModifierToolStack tool, int level, ToolAttackContext context, float damageDealt) {
+	public int afterEntityHit(IToolStackView tool, int level, ToolAttackContext context, float damageDealt) {
 		if (!context.getLivingTarget().isAlive()) {
 			dropBread(context.getLivingTarget().level, context.getLivingTarget().blockPosition(), 0.05f);
 			float rnd = random.nextFloat();
@@ -40,10 +40,10 @@ public class NaturesBlessingModifier extends Modifier {
 		return 0;
 	}
 
-	protected void dropBread(World world, BlockPos pos, float chance) {
+	protected void dropBread(Level level, BlockPos pos, float chance) {
 		if (random.nextFloat() < chance) {
-			ItemEntity entity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.BREAD, 1));
-			world.addFreshEntity(entity);
+			ItemEntity entity = new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.BREAD, 1));
+			level.addFreshEntity(entity);
 		}
 	}
 }

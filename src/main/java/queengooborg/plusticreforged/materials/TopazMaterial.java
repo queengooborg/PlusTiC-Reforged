@@ -1,8 +1,8 @@
 package queengooborg.plusticreforged.materials;
 
+import net.minecraft.world.item.Tiers;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.*;
-import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
@@ -21,10 +21,10 @@ public class TopazMaterial extends Material {
 				new ItemTag("forge", "gems/topaz"),
 				null,
 				2,
-				MaterialType.GEM,
+				MaterialType.CRYSTAL,
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(255, 255, 0)),
-				new MaterialStats(new HeadMaterialStats(690, 6, HarvestLevels.NETHERITE, 6), new HandleMaterialStats(0.8f, 1, 1, 1), ExtraMaterialStats.DEFAULT),
+				new MaterialStats(new HeadMaterialStats(690, 6, Tiers.NETHERITE, 6), new HandleMaterialStats(0.8f, 1, 1, 1), ExtraMaterialStats.DEFAULT),
 				Resources.getModifier("naturespower"),
 				750
 		);

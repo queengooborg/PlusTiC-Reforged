@@ -1,8 +1,8 @@
 package queengooborg.plusticreforged.materials;
 
+import net.minecraft.world.item.Tiers;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.*;
-import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
@@ -21,10 +21,10 @@ public class AmethystMaterial extends Material {
 				new ItemTag("forge", "gems/amethyst"),
 				null,
 				2,
-				MaterialType.GEM,
+				MaterialType.CRYSTAL,
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(255, 0, 255)),
-				new MaterialStats(new HeadMaterialStats(1100, 6, HarvestLevels.NETHERITE, 8), new HandleMaterialStats(1.5f, 1, 1, 1), ExtraMaterialStats.DEFAULT),
+				new MaterialStats(new HeadMaterialStats(1100, 6, Tiers.NETHERITE, 8), new HandleMaterialStats(1.5f, 1, 1, 1), ExtraMaterialStats.DEFAULT),
 				Resources.getModifier("apocalypse"),
 				750
 		);

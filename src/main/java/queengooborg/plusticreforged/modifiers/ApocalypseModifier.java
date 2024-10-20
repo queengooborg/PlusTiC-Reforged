@@ -1,12 +1,12 @@
 package queengooborg.plusticreforged.modifiers;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
-import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.awt.*;
 
@@ -17,14 +17,14 @@ public class ApocalypseModifier extends Modifier {
 	}
 
 	@Override
-	public int afterEntityHit(IModifierToolStack tool, int level, ToolAttackContext context, float damageDealt) {
+	public int afterEntityHit(IToolStackView tool, int level, ToolAttackContext context, float damageDealt) {
 		LivingEntity target = context.getLivingTarget();
 		if (target.isAlive()) {
 			int amp = -1;
-			EffectInstance potionEffect = target.getActiveEffectsMap().get(Effects.WITHER);
+			MobEffectInstance potionEffect = target.getActiveEffectsMap().get(MobEffects.WITHER);
 			if (potionEffect != null) amp = potionEffect.getAmplifier();
 			amp = Math.min(3, amp + 1);
-			target.addEffect(new EffectInstance(Effects.WITHER, 130, amp));
+			target.addEffect(new MobEffectInstance(MobEffects.WITHER, 130, amp));
 		}
 
 		return 0;

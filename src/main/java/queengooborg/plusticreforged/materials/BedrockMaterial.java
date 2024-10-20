@@ -1,8 +1,8 @@
 package queengooborg.plusticreforged.materials;
 
+import net.minecraft.world.item.Tiers;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.*;
-import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
@@ -24,7 +24,7 @@ public class BedrockMaterial extends Material {
 				MaterialType.STONE,
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(60, 60, 60)),
-				new MaterialStats(new HeadMaterialStats(99999999, 10, HarvestLevels.NETHERITE, 99), new HandleMaterialStats(9999999, 10, 10, 99), ExtraMaterialStats.DEFAULT),
+				new MaterialStats(new HeadMaterialStats(99999999, 10, Tiers.NETHERITE, 99), new HandleMaterialStats(9999999, 10, 10, 99), ExtraMaterialStats.DEFAULT),
 				Resources.getModifier("invulnerable"),
 				1000
 		);

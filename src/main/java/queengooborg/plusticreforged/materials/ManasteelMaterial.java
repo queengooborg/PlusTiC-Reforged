@@ -1,8 +1,8 @@
 package queengooborg.plusticreforged.materials;
 
+import net.minecraft.world.item.Tiers;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.*;
-import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
@@ -24,7 +24,7 @@ public class ManasteelMaterial extends Material {
 				MaterialType.METAL,
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(84, 229, 255)),
-				new MaterialStats(new HeadMaterialStats(540, 7, HarvestLevels.NETHERITE, 6), new HandleMaterialStats(1.25f, 1, 1, 1), ExtraMaterialStats.DEFAULT),
+				new MaterialStats(new HeadMaterialStats(540, 7, Tiers.NETHERITE, 6), new HandleMaterialStats(1.25f, 1, 1, 1), ExtraMaterialStats.DEFAULT),
 				Resources.getModifier("mana"),
 				681
 		);

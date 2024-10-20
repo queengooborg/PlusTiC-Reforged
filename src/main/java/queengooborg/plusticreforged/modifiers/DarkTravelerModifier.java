@@ -1,12 +1,12 @@
 package queengooborg.plusticreforged.modifiers;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.monster.IMob;
-import net.minecraft.util.EntityDamageSource;
+import net.minecraft.world.damagesource.EntityDamageSource;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import queengooborg.plusticreforged.api.Description;
 import queengooborg.plusticreforged.api.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
-import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.awt.*;
 import java.util.List;
@@ -21,9 +21,9 @@ public class DarkTravelerModifier extends Modifier {
 	}
 
 	@Override
-	public int afterEntityHit(IModifierToolStack tool, int level, ToolAttackContext context, float damageDealt) {
+	public int afterEntityHit(IToolStackView tool, int level, ToolAttackContext context, float damageDealt) {
 		if (random.nextFloat() < 0.035f && tool.getCurrentDurability() >= 1) {
-			List<LivingEntity> lst = context.getPlayerAttacker().level.getEntitiesOfClass(LivingEntity.class, context.getTarget().getBoundingBox().inflate(8, 8, 8), ent -> ent instanceof IMob && ent != context.getPlayerAttacker());
+			List<LivingEntity> lst = context.getPlayerAttacker().level.getEntitiesOfClass(LivingEntity.class, context.getTarget().getBoundingBox().inflate(8, 8, 8), ent -> ent instanceof Mob && ent != context.getPlayerAttacker());
 
 			if (lst.isEmpty()) {
 				return 0;

@@ -1,8 +1,8 @@
 package queengooborg.plusticreforged.materials;
 
+import net.minecraft.world.item.Tiers;
 import queengooborg.plusticreforged.Resources;
 import queengooborg.plusticreforged.api.*;
-import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
@@ -24,7 +24,7 @@ public class PsimetalMaterial extends Material {
 				MaterialType.METAL,
 				ORDER_HARVEST + ORDER_COMPAT,
 				new MaterialColors(new Color(109, 158, 255)),
-				new MaterialStats(new HeadMaterialStats(620, 7, HarvestLevels.NETHERITE, 5), new HandleMaterialStats(1.3f, 1, 1, 1), ExtraMaterialStats.DEFAULT),
+				new MaterialStats(new HeadMaterialStats(620, 7, Tiers.NETHERITE, 5), new HandleMaterialStats(1.3f, 1, 1, 1), ExtraMaterialStats.DEFAULT),
 				new Modifier[]{Resources.getModifier("psicological"), Resources.getModifier("global")},
 				696
 		);

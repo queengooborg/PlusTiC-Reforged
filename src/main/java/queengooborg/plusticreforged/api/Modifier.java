@@ -1,8 +1,9 @@
 package queengooborg.plusticreforged.api;
 
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import queengooborg.plusticreforged.Registries;
 import queengooborg.plusticreforged.config.ModInfo;
+import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
 import java.awt.*;
 import java.util.Objects;
@@ -17,9 +18,11 @@ public abstract class Modifier extends slimeknights.tconstruct.library.modifiers
 	public boolean usable = false;
 
 	public ResourceLocation resourceLocation;
+	public StaticModifier<Modifier> instance;
 
 	public Modifier(String id, String name, Description description, Color color) {
-		super(color.getRGB());
+		// XXX Need to figure out how to set the colors in the new system
+//		super(color.getRGB());
 
 		this.id = Objects.requireNonNull(id);
 		this.name = Objects.requireNonNull(name);
@@ -27,6 +30,6 @@ public abstract class Modifier extends slimeknights.tconstruct.library.modifiers
 
 		this.resourceLocation = new ResourceLocation(ModInfo.MOD_ID, id);
 
-		Registries.MODIFIERS.register(id, () -> this);
+		this.instance = Registries.MODIFIERS.register(id, () -> this);
 	}
 }

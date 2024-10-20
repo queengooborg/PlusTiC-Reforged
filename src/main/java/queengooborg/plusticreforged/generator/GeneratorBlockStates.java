@@ -1,8 +1,9 @@
 package queengooborg.plusticreforged.generator;
 
-import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import queengooborg.plusticreforged.Resources;
@@ -24,7 +25,7 @@ public class GeneratorBlockStates extends BlockStateProvider {
 			}
 
 			// Register blockstates for fluids
-			Supplier<FlowingFluidBlock> fluid = material.moltenFluid.FLUID_BLOCK;
+			Supplier<LiquidBlock> fluid = material.moltenFluid.FLUID_BLOCK;
 			ResourceLocation name = fluid.get().getRegistryName();
 			simpleBlock(fluid.get(), models().cubeAll(name.getPath(), new ResourceLocation("tconstruct", "block/fluid/molten/still")));
 		}
