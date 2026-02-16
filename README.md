@@ -56,7 +56,7 @@ If Tinker's Construct _did_ introduce support for Fabric/Quilt, however, I proba
 
 ### For versions of Minecraft that NeoForge is available, will you port it to the original Forge too?
 
-I don't particularly plan to support the original Forge from Minecraft 1.20.2 and up, which are the versions that NeoForge is available for. While it should "just work" as they share similar codebases (at least for now), my time to work on this is limited.
+I don't particularly plan to support the original Forge from Minecraft 1.20.2 and up, which are the versions that NeoForge is available for. Depending on how difficult it will be to support both modloaders, I may end up adding support.
 
 ### Are you going to add code that blocks a specific player's UUID from joining servers?
 
